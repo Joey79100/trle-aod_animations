@@ -1,0 +1,301 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset0 Courier New;}}
+\viewkind4\uc1\pard\lang2057\b\f0\fs23 ;================================================================================================
+\par ;Notes
+\par ;================================================================================================
+\par 
+\par ;Used Variables:
+\par 
+\par ;Local Short Alfa1
+\par ;Local Short Alfa2
+\par ;Local Short Beta1
+\par ;Local Short Beta2
+\par ;Local Short Delta1 \tab (Lara's Shadow)
+\par ;Local Byte Delta1\tab\tab 
+\par ;Local Byte Delta2\tab\tab 
+\par ;Local Byte Delta3\tab\tab (Grip Meter %)
+\par ;Global Short Alfa2\tab\tab (Money Value)\tab\tab\tab\tab\tab (NOT USED?)
+\par ;Global Short Beta1\tab\tab (Health Bar)\tab\tab\tab\tab\tab (NOT USED?)
+\par ;Global Short Beta2\tab\tab (Ammo Counter)
+\par ;Global Byte Alfa1\tab\tab (Grip Upgrade Amount)\tab\tab\tab\tab (NOT USED?)
+\par ;Global Byte Alfa2\tab\tab (Ammo Counter Ammo Type)
+\par ;Global Byte Delta1\tab\tab (Flashlight Time) (optional)\tab\tab (NOT USED ANYMORE)
+\par ;Global Byte Delta2\tab\tab (Flashlight On/Off)\tab\tab\tab\tab (NOT USED ANYMORE)
+\par ;Current Value\tab\tab\tab (Not continuously)
+\par 
+\par ;=================================================
+\par ;Remove Lara's Shadow
+\par ;=================================================
+\par 
+\par GlobalTrigger=\tab 106,\tab -1,GT_ALWAYS,-1,-1,106,-1
+\par TriggerGroup=\tab 106,\tab $2000,232,$0054, \tab >\tab ; Variables. Memory. Set the <&> Slot as Selected Slot Memory (Set Lara as Local Short Delta1)
+\par \tab\tab\tab\tab $2000,232,$54, \tab\tab >\tab ; Variables. Numeric. Set <&> Variable with (E)value (Set Local Short Delta1 to 0)
+\par \tab\tab\tab\tab $2000,294,$C54\tab\tab\tab ; Variables. Memory. Copy from <&>Numeric Variable to (E)Selected Slot Memory (Set Local Short Delta1 to FootStep (Short))\tab 
+\par 
+\par ;================================================================================================
+\par ;Water and Alpha fixes
+\par ;================================================================================================
+\par Customize=\tab\tab CUST_TR5_UNDERWATER_COLLISIONS
+\par Customize=\tab\tab CUST_FIX_WATER_FOG_BUG, ENABLED
+\par Customize=\tab\tab CUST_FIX_BUGS, BUGF_TRANSPARENT_WHITE_ON_FOG
+\par ForceVolumetricFX=\tab DISABLED
+\par 
+\par ;================================================================================================
+\par ;Flares
+\par ;================================================================================================
+\par 
+\par Customize= \tab\tab CUST_FLARE, FFL_ADD_SPARKS + FFL_ADD_SMOKE_TO_SPARKS + FFL_ADD_GLOW_LIGHT, 60, 255, 96, 72, 24
+\par 
+\par ;================================================================================================
+\par ;Ammo Counter
+\par ;================================================================================================
+\par 
+\par Customize=\tab\tab CUST_SHOW_AMMO_COUNTER,CL_WHITE,FT_UNDER_LEFT_BARS,IGNORE,SC_NORMAL,SHOWC_USE_GRAPHIC_AMMO
+\par 
+\par ;================================================================================================
+\par ;General Camera Settings
+\par ;================================================================================================
+\par 
+\par Customize=\tab\tab CUST_CAMERA, FCAM_DISABLE_COMBAT_CAM, 1152, -1365, -1, -1, -1, -1, -1, 8
+\par 
+\par ;================================================================================================
+\par ;Quick Save
+\par ;================================================================================================
+\par 
+\par GlobalTrigger=\tab 16, FGT_REMOVE_INPUT + FGT_SINGLE_SHOT_RESUMED, GT_KEYBOARD_CODE, 63, IGNORE, 36, IGNORE      \tab ;IF player presses F5
+\par TriggerGroup=\tab 36, $2000, 97, $1, $2000, 357, $304                                                      \tab\tab ;THEN Save game in backup file 1, show sprite 3 on screen
+\par 
+\par GlobalTrigger=\tab 17, FGT_REMOVE_INPUT + FGT_SINGLE_SHOT_RESUMED, GT_KEYBOARD_CODE, 64, IGNORE, 37, IGNORE      \tab ;IF player presses F6
+\par TriggerGroup=\tab 37, $2000, 98, $1                                                                       \tab\tab ;THEN Load game in backup file 1
+\par 
+\par Parameters=\tab PARAM_SHOW_SPRITE, 4, IGNORE, 860, 860, 60, 60, CUSTOM_SPRITES, 3, IGNORE, IGNORE, IGNORE, IGNORE
+\par 
+\par GlobalTrigger=\tab 18, IGNORE, GT_LOADED_SAVEGAME, IGNORE, IGNORE, 38, IGNORE\tab\tab\tab\tab\tab\tab\tab ;IF Player loads savegame
+\par TriggerGroup=\tab 38, $2000, 358, $4                                                                      \tab\tab ;THEN Remove sprite 3 from screen
+\par 
+\par ;================================================================================================
+\par ;Heartbeat effect
+\par ;================================================================================================
+\par 
+\par GlobalTrigger=\tab 23, FGT_SINGLE_SHOT_RESUMED, GT_LARA_HP_LESS_THAN, 300, IGNORE,45, IGNORE
+\par GlobalTrigger=\tab 24, FGT_SINGLE_SHOT_RESUMED, GT_LARA_HP_HIGHER_THAN, 300, IGNORE,46, IGNORE
+\par GlobalTrigger=\tab 25, FGT_SINGLE_SHOT_RESUMED, GT_LARA_HP_LESS_THAN,1, IGNORE,46, IGNORE
+\par 
+\par Organizer=\tab\tab 12, FO_TICK_TIME+FO_LOOP, IGNORE, 30, 44
+\par Triggergroup=\tab 44, $2000, 71, $1F5C \tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab ;Play lara_nof.wav once
+\par TriggerGroup=\tab 45, $2000, 127, $C \tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab ;Enable Organizer 12
+\par TriggerGroup=\tab 46, $2000, 128, $C \tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab ;Stop Organizer 12
+\par 
+\par ;================================================================================================
+\par ;Bar Graphic
+\par ;================================================================================================
+\par 
+\par ;#TriggerGroup=\tab 82, $2000, 357, $5    \tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab ;Enable Sprite Parameter 5
+\par ;#Parameters=\tab PARAM_SHOW_SPRITE, 5, FSS_SHOW_SPRITE_GRID + FSS_EFFECT_FROM_RIGHT, 880, 4, 96, 104,>
+\par ;\tab\tab\tab CUSTOM_SPRITES, 8, IGNORE, 2, 1, 20
+\par 
+\par ColorRGB=\tab\tab 1, 16, 64, 164
+\par TriggerGroup=\tab 1, $2000, 357, $3
+\par Organizer=\tab\tab 3, FO_ENABLED + FO_TICK_TIME, IGNORE, 0, 1
+\par Parameters=\tab PARAM_SHOW_SPRITE, 3, FSS_SHOW_SPRITE_GRID , 6, 13, 70, 93, CUSTOM_SPRITES, 4, IGNORE, 4, 1, 20
+\par 
+\par Organizer=\tab\tab 30, FO_ENABLED + FO_TICK_TIME, IGNORE, 0, 82
+\par 
+\par Organizer=\tab\tab 5,FO_ENABLED + FO_TICK_TIME, IGNORE, 0, 43
+\par TriggerGroup=\tab 43, $2000, 357, $6
+\par Parameters=\tab PARAM_SHOW_SPRITE, 6, FSS_TRANSPARENT, 6, 13, 70, 93, CUSTOM_SPRITES, 21, IGNORE, 1, 1, IGNORE
+\par 
+\par ;================================================================================================
+\par ;Bar Design
+\par ;================================================================================================
+\par 
+\par ColorRGB=\tab\tab 2, 192, 0, 0
+\par ColorRGB=\tab\tab 3, 96, 0, 0
+\par ColorRGB=\tab\tab 4, 112, 208, 255
+\par ColorRGB=\tab\tab 5, 112, 255, 112
+\par Customize=\tab\tab CUST_BAR,BAR_HEALTH, FBAR_DRAW_ALWAYS, 43, 26, 130, 9, 2, 2, IGNORE
+\par Customize=\tab\tab CUST_BAR,BAR_AIR, IGNORE, 42, 35, 98, 7, 4, 4, IGNORE
+\par Customize=\tab\tab CUST_BAR,BAR_DASH, IGNORE, 0, 0, 0, 0, 5, 5, IGNORE
+\par 
+\par ;Customize=\tab\tab CUST_BAR,BAR_CUSTOM2, IGNORE, 41, 24, 130, 9, 2, 2, #0052
+\par ;GlobalTrigger=\tab 27, IGNORE, GT_ALWAYS, IGNORE, IGNORE, 2, IGNORE
+\par ;TriggerGroup=\tab 2, $5000, 0, $36, $2000, 256, $C52, $2000, 253, $A52, $2000, 331, $5
+\par 
+\par ;================================================================================================
+\par ;Walking Mode
+\par ;================================================================================================
+\par ;
+\par ;GlobalTrigger=\tab 1, IGNORE, GT_CONDITION_GROUP, IGNORE, 23, 24, 25
+\par ;
+\par ;TriggerGroup=\tab 23, $8000, 42, $10C, $8000+TGROUP_OR, 54, $10C
+\par ;TriggerGroup=\tab 24, $2000, 231, $141, $2000, 357, $1
+\par ;TriggerGroup=\tab 25, $2000, 232, $41, $8000, 64, $12B, $2000, 127, $1,>
+\par ;\tab\tab\tab     $8000+TGROUP_ELSE, 64, $22B, $2000, 128, $1, $2000, 358, $1, $2000, 233, $240,>
+\par ;\tab\tab\tab     $8000+TGROUP_ELSE, 64, $32B, $2000, 358, $1, $2000, 233, $340,>
+\par ;\tab\tab\tab     $8000+TGROUP_ELSE, 64, $42B, $2000, 233, $340
+\par ;
+\par ;GlobalTrigger=\tab 2, IGNORE, GT_CONDITION_GROUP, IGNORE, 26, 5, IGNORE
+\par ;TriggerGroup=\tab 26, $8000, 65, $12B
+\par ;TriggerGroup=\tab 5, $2000, 231, $140
+\par ;
+\par ;GlobalTrigger=\tab 3, IGNORE, GT_CONDITION_GROUP, IGNORE, 6, 7, IGNORE
+\par ;TriggerGroup=\tab 6, $8000, 65, $62B
+\par ;TriggerGroup=\tab 7, $2000, 231, $240
+\par ;
+\par ;GlobalTrigger=\tab 4, IGNORE, GT_CONDITION_GROUP, IGNORE, 8, 9, IGNORE
+\par ;TriggerGroup=\tab 8, $8000, 65, $82B
+\par ;TriggerGroup=\tab 9, $2000, 233, $141
+\par ;
+\par ;Organizer=\tab\tab 1, FO_LOOP, IGNORE, 0, 10
+\par ;TriggerGroup=\tab 10, $2000, 53, $7
+\par ;
+\par ;Parameters=\tab PARAM_SHOW_SPRITE, 1, IGNORE,920, 860,80,80, CUSTOM_SPRITES, 1, IGNORE,IGNORE, IGNORE, IGNORE
+\par ;
+\par ;GlobalTrigger=\tab 5, IGNORE, GT_CONDITION_GROUP, IGNORE, 11, 12, 13
+\par ;TriggerGroup=\tab 11, $8000, 79, $10C, $8000+TGROUP_OR, 81, $10C
+\par ;TriggerGroup=\tab 12, $2000, 357, $2
+\par ;TriggerGroup=\tab 13, $2000, 358, $2
+\par ;
+\par ;Parameters=\tab PARAM_SHOW_SPRITE, 2, IGNORE,920,860,80,80, CUSTOM_SPRITES, 1, IGNORE,IGNORE, IGNORE, IGNORE
+\par ;
+\par ;
+\par ;================================================================================================
+\par ;Grip Strength Control
+\par ;================================================================================================
+\par ; // There is something in this setup that disables the Action key (Ctrl+Enter too) for 1 second
+\par ; // when starting the level, and the counter doesn't move while you're in the pause screen
+\par ; // (so if you open the Pause menu too soon, you won't be able to do anything, you'll have to
+\par ; //  close it, wait, then open it again to have it useable)
+\par 
+\par #DEFINE VAR_LBD3\tab #004A
+\par 
+\par TriggerGroup=\tab 92, $2000, 233, $14A\tab ; Remove 1 unit from LBD3
+\par Organizer=\tab\tab 13, FO_TICK_TIME + FO_LOOP, IGNORE,  9, 92\tab ; Fast decrease (hands only): Remove 1 unit from LBD3 every  9 tick
+\par Organizer=\tab\tab 14, FO_TICK_TIME + FO_LOOP, IGNORE, 18, 92\tab ; Slow decrease (hands & feet): Remove 1 unit from LBD3 every 18 tick
+\par 
+\par ;--If grabbing with hands only, Perform Organiser 13
+\par GlobalTrigger=\tab 37, FGT_SINGLE_SHOT_RESUMED, GT_CONDITION_GROUP, IGNORE, 82, 83, IGNORE
+\par TriggerGroup=\tab 82,\tab\tab\tab $8000,  12,  $5,>\tab ; IF Lara is performing <Monkey> action
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000,  18,  $5,>\tab ; OR Lara is performing <Hanging> action
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 215, $1E,>\tab ; OR Lara is performing animation 215\tab // deathslide - sliding
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 331, $1E,>\tab ; OR Lara is performing animation 331\tab // polerope - grab (forward jump)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 337, $1E,>\tab ; OR Lara is performing animation 337\tab // polerope - grab (standing jump grab)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 355, $1E,>\tab ; OR Lara is performing animation 355\tab // hanging - outer corner (left) (part 1)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 356, $1E,>\tab ; OR Lara is performing animation 356\tab // hanging - outer corner (left) (part 2)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 357, $1E,>\tab ; OR Lara is performing animation 357\tab // hanging - outer corner (right) (part 1)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 358, $1E,>\tab ; OR Lara is performing animation 358\tab // hanging - outer corner (right) (part 2)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 359, $1E,>\tab ; OR Lara is performing animation 359\tab // hanging - inner corner (left) (part 1)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 360, $1E,>\tab ; OR Lara is performing animation 360\tab // hanging - inner corner (left) (part 2)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 361, $1E,>\tab ; OR Lara is performing animation 361\tab // hanging - inner corner (right) (part 1)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 362, $1E\tab\tab ; OR Lara is performing animation 362\tab // hanging - inner corner (right) (part 2)
+\par TriggerGroup=\tab 83,\tab $2000, 127, $D, >\tab ; Start Organizer <13> (fast decrease)
+\par \tab\tab\tab\tab $2000, 128, $E\tab\tab ; Stop Organizer <14> (slow decrease)
+\par 
+\par ;--If grabbing with hands & feet, Perform Organiser 14
+\par GlobalTrigger=\tab 38, FGT_SINGLE_SHOT_RESUMED, GT_CONDITION_GROUP, IGNORE, 84, 85, IGNORE
+\par TriggerGroup=\tab 84,\tab\tab\tab $8000,   0,  $5,>\tab ; IF Lara is performing <Climbing> action
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 363, $1E,>\tab ; OR Lara is performing animation 363\tab // climbing - outer corner (left) (part 1)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 364, $1E,>\tab ; OR Lara is performing animation 364\tab // climbing - outer corner (left) (part 2)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 365, $1E,>\tab ; OR Lara is performing animation 365\tab // climbing - outer corner (right) (part 1)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 366, $1E,>\tab ; OR Lara is performing animation 366\tab // climbing - outer corner (right) (part 2)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 367, $1E,>\tab ; OR Lara is performing animation 367\tab // climbing - inner corner (left) (part 1)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 368, $1E,>\tab ; OR Lara is performing animation 368\tab // climbing - inner corner (left) (part 2)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 369, $1E,>\tab ; OR Lara is performing animation 369\tab // climbing - inner corner (right) (part 1)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 370, $1E,>\tab ; OR Lara is performing animation 370\tab // climbing - inner corner (right) (part 2)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 604, $1E,>\tab ; OR Lara is performing animation 604\tab // freeclimb - step up (right)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 605, $1E,>\tab ; OR Lara is performing animation 605\tab // freeclimb - step up (left)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 606, $1E,>\tab ; OR Lara is performing animation 606\tab // freeclimb - step down (right)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 607, $1E,>\tab ; OR Lara is performing animation 607\tab // freeclimb - step down (left)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 610, $1E,>\tab ; OR Lara is performing animation 610\tab // climbing - to freeclimb (convex) (part 1)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 611, $1E,>\tab ; OR Lara is performing animation 611\tab // freeclimb - to climbing (convex) (part 1)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 614, $1E,>\tab ; OR Lara is performing animation 614\tab // climbing - to freeclimb (convex) (part 2)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 615, $1E,>\tab ; OR Lara is performing animation 615\tab // freeclimb - to climbing (convex) (part 2)
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 616, $1E,>\tab ; OR Lara is performing animation 616\tab // freeclimb - ???
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 617, $1E,>\tab ; OR Lara is performing animation 617\tab // monkey - to overhead climbing
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 618, $1E,>\tab ; OR Lara is performing animation 618\tab // freeclimb - ???
+\par \tab\tab\tab\tab TGROUP_OR+\tab $8000, 619, $1E\tab\tab ; OR Lara is performing animation 619\tab // monkey - to overhead freeclimb
+\par TriggerGroup=\tab 85,\tab $2000, 127, $E, >\tab ; Start Organizer <14> (slow decrease)
+\par \tab\tab\tab\tab $2000, 128, $D\tab\tab ; Stop Organizer <13> (fast decrease)
+\par 
+\par ;--If not grabbing, Set grip to 100, Stop Organisers, Hide bar
+\par GlobalTrigger=\tab 41, IGNORE,GT_CONDITION_GROUP, IGNORE, 90, 91, IGNORE
+\par TriggerGroup=\tab 90,\tab TGROUP_NOT+\tab  $8000, 82, $F, >\tab ; IF conditions of TG <82> are NOT true (Lara is not hanging)
+\par \tab\tab\tab\tab TGROUP_NOT+\tab  $8000, 84, $F\tab\tab ; AND conditions of TG <84> are NOT true (Lara is not climbing)
+\par TriggerGroup=\tab 91,\tab $2000, 232, $644A,>\tab ; Set LBD3 = 100
+\par \tab\tab\tab\tab $2000, 128, $D,>\tab\tab ; Stop Organizer 13 (fast decrease)
+\par \tab\tab\tab\tab $2000, 128, $E\tab\tab ; Stop Organizer 14 (slow decrease)
+\par 
+\par ;--If grip = 0, Disable action for 1 second
+\par GlobalTrigger=\tab 40, FGT_SINGLE_SHOT_RESUMED, GT_CONDITION_GROUP, IGNORE, 88, 89, IGNORE
+\par TriggerGroup=\tab 88,\tab $8000, 74, $2B\tab\tab ; IF LBD3 = 0
+\par TriggerGroup=\tab 89,\tab $2000, 51, $109,>\tab ; THEN Disable Action (and Enter) keys for 1 second
+\par \tab\tab\tab\tab $2000, 128, $D, >\tab ; Stop Organizer <13> (fast decrease)
+\par \tab\tab\tab\tab $2000, 128, $E\tab\tab ; Stop Organizer <14> (slow decrease)
+\par 
+\par ;--Dont restore Grip when Lara is falling (so she cant cheat on ladders for example)
+\par ;#GlobalTrigger=37,IGNORE,GT_CONDITION_GROUP,IGNORE,83,85,IGNORE
+\par ;#TriggerGroup=\tab 83,$8000, 3, $5\tab\tab ; IF Lara is performing action "Falling"
+\par ;#TriggerGroup=\tab 85,$2000, 109, $2B00\tab ; Disable GT <43>
+\par 
+\par ;#GlobalTrigger=38,IGNORE,GT_CONDITION_GROUP,IGNORE,84,86,IGNORE
+\par ;#TriggerGroup=\tab 84,$8000, 3, $105\tab ; IF Lara is NOT performing action "Falling"
+\par ;#TriggerGroup=\tab 86,$2000, 109, $2B01\tab ; Enable GT <43>
+\par 
+\par ;================================================================================================
+\par ;Grip Strength Bar
+\par ;================================================================================================
+\par 
+\par ;--Defining the strength bar
+\par ;ColorRGB=\tab\tab 10, 0, 0, 0
+\par ;ColorRGB=\tab\tab 11, 250, 211, 97
+\par ;Customize=\tab\tab CUST_BAR, BAR_CUSTOM1, FBAR_SHOW_BAR_NAME, 200, 10, 200, 10, 10, 11, VAR_LBD3
+\par ;GlobalTrigger=\tab 111, FGT_SINGLE_SHOT, GT_ALWAYS, IGNORE, IGNORE, 111, IGNORE
+\par ;TriggerGroup=\tab 111, $2000, 331, $4\tab ; Show BAR_CUSTOM1 at start of level
+\par 
+\par ;--Removing the strength bar off the screen when Lara starts dying
+\par GlobalTrigger=\tab 51, IGNORE, GT_LARA_HP_LESS_THAN, 1, IGNORE, 109, IGNORE
+\par 
+\par ;--Showing the Grip HUD
+\par ;--(decide which TG to call depending on the grip level)
+\par Switch=\tab\tab 1, VAR_LBD3, SWT_BASE_ZERO, >\tab\tab\tab\tab\tab\tab ; GRIP LEVEL\tab 
+\par \tab\tab\tab\tab\tab\tab 120, >\tab\tab\tab\tab\tab\tab\tab ;  0
+\par \tab\tab\tab\tab\tab\tab 121,121,121,121,121,121,121,121,121,121,>\tab ;  1-10
+\par \tab\tab\tab\tab\tab\tab 122,122,122,122,122,122,122,122,122,122,>\tab ; 11-20
+\par \tab\tab\tab\tab\tab\tab 123,123,123,123,123,123,123,123,123,123,>\tab ; 21-30
+\par \tab\tab\tab\tab\tab\tab 124,124,124,124,124,124,124,124,124,124,>\tab ; 31-40
+\par \tab\tab\tab\tab\tab\tab 125,125,125,125,125,125,125,125,125,125,>\tab ; 41-50
+\par \tab\tab\tab\tab\tab\tab 126,126,126,126,126,126,126,126,126,126,>\tab ; 51-60
+\par \tab\tab\tab\tab\tab\tab 127,127,127,127,127,127,127,127,127,127,>\tab ; 61-70
+\par \tab\tab\tab\tab\tab\tab 128,128,128,128,128,128,128,128,128,128,>\tab ; 71-80
+\par \tab\tab\tab\tab\tab\tab 129,129,129,129,129,129,129,129,129,129,>\tab ; 81-90
+\par \tab\tab\tab\tab\tab\tab 130,130,130,130,130,130,130,130,130,130\tab ; 91-100
+\par 
+\par Parameters=\tab PARAM_SHOW_SPRITE, 11, IGNORE, 6,13,70,93,CUSTOM_SPRITES,11,IGNORE,IGNORE,IGNORE,IGNORE
+\par Parameters=\tab PARAM_SHOW_SPRITE, 12, IGNORE, 6,13,70,93,CUSTOM_SPRITES,12,IGNORE,IGNORE,IGNORE,IGNORE
+\par Parameters=\tab PARAM_SHOW_SPRITE, 13, IGNORE, 6,13,70,93,CUSTOM_SPRITES,13,IGNORE,IGNORE,IGNORE,IGNORE
+\par Parameters=\tab PARAM_SHOW_SPRITE, 14, IGNORE, 6,13,70,93,CUSTOM_SPRITES,14,IGNORE,IGNORE,IGNORE,IGNORE
+\par Parameters=\tab PARAM_SHOW_SPRITE, 15, IGNORE, 6,13,70,93,CUSTOM_SPRITES,15,IGNORE,IGNORE,IGNORE,IGNORE
+\par Parameters=\tab PARAM_SHOW_SPRITE, 16, IGNORE, 6,13,70,93,CUSTOM_SPRITES,16,IGNORE,IGNORE,IGNORE,IGNORE
+\par Parameters=\tab PARAM_SHOW_SPRITE, 17, IGNORE, 6,13,70,93,CUSTOM_SPRITES,17,IGNORE,IGNORE,IGNORE,IGNORE
+\par Parameters=\tab PARAM_SHOW_SPRITE, 18, IGNORE, 6,13,70,93,CUSTOM_SPRITES,18,IGNORE,IGNORE,IGNORE,IGNORE
+\par Parameters=\tab PARAM_SHOW_SPRITE, 19, IGNORE, 6,13,70,93,CUSTOM_SPRITES,19,IGNORE,IGNORE,IGNORE,IGNORE
+\par Parameters=\tab PARAM_SHOW_SPRITE, 20, IGNORE, 6,13,70,93,CUSTOM_SPRITES,20,IGNORE,IGNORE,IGNORE,IGNORE
+\par 
+\par ; -- Show only one sprite at a time
+\par TriggerGroup=\tab 120, $2000,358, $B, $2000,358,$C, $2000,358,$D, $2000,358,$E, $2000,358,$F, $2000,358,$10, $2000,358,$11, $2000,358,$12, $2000,358,$13, $2000,358,$14\tab ; Hide all sprites (PARAM_SHOW_SPRITE <11-20>)
+\par TriggerGroup=\tab 121, $2000,371,$78,  $2000,357, $B\tab ; Hide all sprites (TG <120>), then show PARAM_SHOW_SPRITE <11>
+\par TriggerGroup=\tab 122, $2000,371,$78,  $2000,357, $C\tab ; Hide all sprites (TG <120>), then show PARAM_SHOW_SPRITE <12>
+\par TriggerGroup=\tab 123, $2000,371,$78,  $2000,357, $D\tab ; Hide all sprites (TG <120>), then show PARAM_SHOW_SPRITE <13>
+\par TriggerGroup=\tab 124, $2000,371,$78,  $2000,357, $E\tab ; Hide all sprites (TG <120>), then show PARAM_SHOW_SPRITE <14>
+\par TriggerGroup=\tab 125, $2000,371,$78,  $2000,357, $F\tab ; Hide all sprites (TG <120>), then show PARAM_SHOW_SPRITE <15>
+\par TriggerGroup=\tab 126, $2000,371,$78,  $2000,357,$10\tab ; Hide all sprites (TG <120>), then show PARAM_SHOW_SPRITE <16>
+\par TriggerGroup=\tab 127, $2000,371,$78,  $2000,357,$11\tab ; Hide all sprites (TG <120>), then show PARAM_SHOW_SPRITE <17>
+\par TriggerGroup=\tab 128, $2000,371,$78,  $2000,357,$12\tab ; Hide all sprites (TG <120>), then show PARAM_SHOW_SPRITE <18>
+\par TriggerGroup=\tab 129, $2000,371,$78,  $2000,357,$13\tab ; Hide all sprites (TG <120>), then show PARAM_SHOW_SPRITE <19>
+\par TriggerGroup=\tab 130, $2000,371,$78,  $2000,357,$14\tab ; Hide all sprites (TG <120>), then show PARAM_SHOW_SPRITE <20>
+\par 
+\par ;--Always enable SWITCH <1> to show the correct sprite according to the grip level
+\par GlobalTrigger=\tab 20, IGNORE, GT_ALWAYS, IGNORE, IGNORE, 47, IGNORE
+\par TriggerGroup=\tab 47, $2000, 289, $1\tab ; Perform Switch <1>
+\par 
+\par }
+ 

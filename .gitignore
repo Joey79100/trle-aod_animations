@@ -1,0 +1,26 @@
+
+*_log.txt
+*.log
+LastExtraction.lst
+shot***.bmp
+*.mem
+LastExtraction.lst
+Last_Crash_*.txt
+savegame.*
+backgame.*
+log_tom2pc.txt
+autosave.prj
+NG_Settings.bin
+NG_Tom2Pc_Last_Log.txt
+*.lnk
+DETECTED CRASH.txt
+db_patches_crash.bin
+Script/.vscode/
+Exported_*.txt
+*.trw
+Crash_Report_*.txt
+db_patches_crash.bin
+NG_Settings.bin
+db_patches_crash.bin
+NG_Settings.bin
+*_warm_up_log.txt

@@ -1,0 +1,36 @@
+
+<FORMAT>
+#TITLE#=The Dark Renaissance
+<END_FORMAT>
+Centuries ago, in the darkest age of European history, dread alchemist Pieter van Eckhardt forged an alchemical conduit known as the Blood Sign. Intended as a tool in aiding him in resurrecting a lineage of fallen angels known as the Nephilim.
+Just last year, Eckhardt was on the cusp of resuscitating such a remnant, known as the Sleeper, until I subjugated him with my companion, a Lux Veritatis neonate by the name of Kurtis Trent, who has seemingly gone missing.
+#END_PAGE#
+
+
+<FORMAT>
+#TITLE#=
+<END_FORMAT>
+Months later, following my redemption in the eyes of the French authorities, I found myself on a familiar trail as more grisly murders, like the one that took my friend and mentor Werner Von Croy away from me, are being reported in the Bavarian Alps of Germany.
+I suspect the Cabal may still be at large without their depraved master Eckhardt, and so I set off to investigate, and to my surprise, the sentient Chirugai - an heirlook of Kurtis' lineage, responded to my conviction.
+#END_PAGE#
+
+<FORMAT>
+#TITLE#=
+<END_FORMAT>
+I have ended up in the only place where I can imagine finding him. Deep within the crypts of the bomb-ravaged Castle Kriegler on the German-Austrian border. I will have to go far beyond, however, in order to stop the Dark Renaissance...
+#END_PAGE#
+
+
+<FORMAT>
+#TITLE#=Camera Modes
+<END_FORMAT>
+
+Lost the orientation on the journey? Don't worry. The new camera modes will help you!
+You can press the F9 , F10,  F11 and F12 keys to toggle the camera mode and F8 to reset it.
+#END_PAGE#
+
+<FORMAT>
+#TITLE#=Quick Save
+<END_FORMAT>
+
+Now you can press F5 to quicksave and F6 to quickload the game.

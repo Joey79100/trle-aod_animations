@@ -1,0 +1,76 @@
+
+; 1-1000 = range of TRIGGERGROUPS and GLOBALTRIGGERS reserved for GLOBAL scripts
+; 1-99 = range of ORGANIZERS, PARAMETERS and other STUFF reserved for GLOBAL scripts
+
+;-------------------------------------------------
+; Global Settings/Extensions
+;-------------------------------------------------
+
+[PSXExtensions]
+Level=		.PSX
+Cut=			.CUT
+FMV=			.FMV
+
+[PCExtensions]
+Level=		.TR4
+Cut=			.TR4
+FMV=			.BIK
+
+[Language]
+File=			0,English.TXT
+
+[Options]
+; UNINSTALLED PLUGIN: Plugin=		6, Plugin_SlopeFix, IGNORE
+; UNINSTALLED PLUGIN: Plugin=		5, Plugin_CeilingClimbing, IGNORE
+Plugin=		4, Plugin_ClassicInventory, IGNORE
+Plugin=		3, Plugin_ChocolateFanFlareSFX, IGNORE
+Plugin=		2, Plugin_Renaissance, IGNORE
+Plugin=		1, Plugin_AkyVMix01, IGNORE
+LoadSave=		ENABLED
+Title=		ENABLED
+PlayAnyLevel=	DISABLED
+InputTimeout=	18000													;Frames * Seconds = 60x30
+FlyCheat=		ENABLED
+Security=		$55
+DemoDisc=		DISABLED
+LoadSave=		DISABLED
+CRS=			ENABLED
+WorldFarView=	127
+
+;-------------------------------------------------
+; Diagnostic
+;-------------------------------------------------
+
+;Diagnostic=		ENABLED
+;DiagnosticType=		DGX_COMMON_VARIABLES, IGNORE ; show variable values
+
+; -- Shows only cheat codes --
+;DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, EDGX_SLOW_MOTION+EDGX_SWAP_VIEW	; Shows only information about Lara
+;DiagnosticType=	DGX_SFX_SOUNDS+DGX_CHEATS, IGNORE								; Shows only information about sounds
+
+; -- Shows Lara info and BREAKABLE WALL info --
+;DiagnosticType=	DGX_LARA + DGX_ANIMATION, IGNORE
+;LogItem=			FLI_SHOW_DIFFERENCES, 62	; on land
+;LogItem=			FLI_SHOW_DIFFERENCES, 63	; underwater
+
+; -- Shows Lara info and PICKABLE STATUE info --
+;DiagnosticType=	DGX_LARA + DGX_ANIMATION, IGNORE
+;LogItem=			FLI_SHOW_DIFFERENCES, 129	; STATUE 1 (yellow-lit square)
+
+;-------------------------------------------------
+; Levels
+;-------------------------------------------------
+
+[Title]
+WindowTitle=	Tomb Raider: The Dark Renaissance
+#INCLUDE		"Title.txt"
+
+[Level]			;TECH DEMO - LARA
+WindowTitle=	Tomb Raider: The Dark Renaissance
+#INCLUDE		"Demo.txt"
+#INCLUDE 		"General.txt"
+#INCLUDE 		"Inventory.txt"
+#INCLUDE 		"Animations_Lara.txt"
+
+#INCLUDE 		"WIP_stuff.txt"
+#INCLUDE 		"PickableStatues.txt"
