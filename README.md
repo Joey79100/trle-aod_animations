@@ -1,17 +1,38 @@
-# the-dark-renaissance
-A CANCELLED continuation of Tomb Raider the Angel of Darkness.
+# TRLE - AOD Animations
 
-Authors:
-Caesum, Dale, Krystian, Joey, Adam Khuverr, thomaskobialka, Mrshina, Lore, AODFan, tomblover, LevelNextGen and probably an entire lot of other people who worked on it from time to time.
+A project that aims at recreating *Lara Croft*'s animations from **Tomb Raider: The Angel Of Darkness** into **Tomb Raider: Level Editor**. This is basically an upgrade of Lara's classic animations, with improvements to make her feel more responsive than she ever was in the classic Tomb Raider games.
 
-WARNING: Some prj2 files were made with Tomb Editor version that was not released yet (28.07.2019). Because of that I strongly suggest to wait until next TE release (probably in august 2019) before editing any levels or wad2 files.
+This repository includes an *all-in-one* testing ground: it contains the executable, compiled demo level, the map, objects, sounds, etc. It is based on [the-dark-renaissance](https://github.com/Castigavi/the-dark-renaissance "the-dark-renaissance: A CANCELLED continuation of Tomb Raider the Angel of Darkness.") package, because it originally started for this project. This is why you may find references to it in the files.
 
-TERMS OF USE:
-You can take anything you like from this project for as long as you credit the people mentioned above. Also, if you use some existing setup from the game and improve it, then: please share, don't keep it to yourself. Since we shared our setups and assets and it's your basis, it's only fair that you share your version with other people as well.
+## How is it done?
+I use *3DSMax* as my animation software. The reason for this choice is that it is the only advanced animation software supported by TRLE tools.
 
-HOW TO DOWNLOAD:
-The recommended way to download the files is to use a GitHuB Desktop application. You can download it here:
-https://desktop.github.com/
+My workflow is usually as follow:
+* Import AOD Lara in 3DSMax, and import the animation I want to work on.
+* Import TRLE Lara in 3DSMax, most of the time with an existing animation.
+* Put them side by side, and start recreating on TRLE Lara the poses AOD Lara does. I make extensive use of Interactive IK with position/orientation locking when needed.
+* When I'm finished, I remove AOD Lara, and see if there is anything that looks jerky or accidental that I should fix. I also try to make the animation faster if it doesn't make it look like fast forward.
 
-If you can't download the application or any of its alternatives (there are many), you might want to try downloading files through the browser.
-However, it is known that downloading files from the browser tends to change *.WAS and *.SAM files' end of lines from CRLF (Windows format) to LF (Unix format). This does not corrupt the files themselves, but makes it impossible to open them in WADMerger without additional steps. For that you have to open each and every *.was and *.sam file in Notepad++, then go to Edit menu > Convert End of lines > Convert to Windows (CRLF) and save. This is not the recommended way.
+For other animations that do not exist in AOD, I usually use real-life references. This currenly mainly applies to roll in air, polerope, and die after jumping animations.
+
+What I want to emphasize is that I **never** import an animation: it is always re/created by hand.
+
+**Note**: Since this demo level was created aroud 2012/2013, there are some old animations remaining.
+
+## Is this ever going to be finished?
+Frankly, I have no idea. I have opened this repository so I can keep on working on these animations even after the cancellation of TDR, but I don't know if I'll ever reach the end and replace every single existing TR4 animation. Time will tell!
+
+## Where can I find the animations?
+The animations can be found in [`graphics\wads\demo.wad`](graphics/wads), that you can open using *Wadmerger*.
+
+## How about a preview?
+See current progress (**Jul 28, 2019**) on Youtube:
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=O-3Q1sZRti4
+" target="_blank"><img src="https://img.youtube.com/vi/O-3Q1sZRti4/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
+## Important information
+1. `tomb4.exe` may be seen as a thread by your antivirus, because it has been patched with FLEP. It is a _false-positive_.
+2. Lara's outfit has been created by **Mrshina**. It has a particularity: Lara's mesh positions have been changed from the original classic model to match the original AOD model more closely.
+   Thus, copying LARA from this project's WAD to your WAD will result in an alien-like Lara in-game, unless you manually reposition the meshes or use an outfit that uses the same mesh positions.
