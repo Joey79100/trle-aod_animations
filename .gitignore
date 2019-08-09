@@ -25,6 +25,6 @@ db_patches_crash.bin
 NG_Settings.bin
 *_warm_up_log.txt
 flep.cfg
-Graphics\Wads\*.3ds
-Graphics\Wads\*.tga
-Graphics\Wads\*.trw
+/Graphics/Wads/*.3ds
+/Graphics/Wads/*.tga
+/Graphics/Wads/*.trw
