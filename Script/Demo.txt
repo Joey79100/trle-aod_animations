@@ -1,4 +1,4 @@
-Name=			Demo - Lara
+Name=			Demo - Lara - NGLE
 Horizon=		ENABLED
 LoadCamera=		0,0,0,0,0,0,255
 Level=			DATA\DEMO,031

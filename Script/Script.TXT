@@ -28,7 +28,7 @@ Plugin=		2, Plugin_Renaissance, IGNORE
 Plugin=		1, Plugin_AkyVMix01, IGNORE
 LoadSave=		ENABLED
 Title=		ENABLED
-PlayAnyLevel=	DISABLED
+PlayAnyLevel=	ENABLED
 InputTimeout=	18000													;Frames * Seconds = 60x30
 FlyCheat=		ENABLED
 Security=		$55
@@ -65,9 +65,21 @@ WorldFarView=	127
 WindowTitle=	Tomb Raider: The Dark Renaissance
 #INCLUDE		"Title.txt"
 
-[Level]			;TECH DEMO - LARA
+[Level]			;TECH DEMO - LARA - NGLE version
 WindowTitle=	Tomb Raider: The Dark Renaissance
 #INCLUDE		"Demo.txt"
+#INCLUDE 		"General.txt"
+#INCLUDE 		"Inventory.txt"
+#INCLUDE 		"Animations_Lara.txt"
+
+#INCLUDE 		"WIP_stuff.txt"
+#INCLUDE 		"PickableStatues.txt"
+
+
+
+[Level]			;TECH DEMO - LARA - TOMB EDITOR version
+WindowTitle=	Tomb Raider: The Dark Renaissance
+#INCLUDE		"Demo_TE.txt"
 #INCLUDE 		"General.txt"
 #INCLUDE 		"Inventory.txt"
 #INCLUDE 		"Animations_Lara.txt"

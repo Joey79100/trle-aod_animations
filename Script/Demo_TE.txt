@@ -1,0 +1,6 @@
+Name=			Demo - Lara - TE
+Horizon=		ENABLED
+LoadCamera=		0,0,0,0,0,0,255
+Level=			DATA\DEMO2,031
+
+Customize=		CUST_HAIR_TYPE, HAIR_ONE_TR5_PONYTAIL

@@ -1,12 +1,12 @@
 [Strings]
 \nWerner's Notebook
 Title Load Screen
-Demo - Lara
+Demo - Lara - NGLE
 Demo - Kurtis
 Mountain of the Martyrs
 Castle Kriegler
 Sunken City of Cennet
-N/A
+Demo - Lara - TE
 The Zenoath
 Lost Valley
 Himalayan Precipice
