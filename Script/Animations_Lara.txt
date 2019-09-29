@@ -298,6 +298,48 @@ Animation=		99, KEY1_JUMP, IGNORE, FAN_PERFORM_TRIGGER_GROUP, IGNORE, IGNORE, IG
 TriggerGroup=	99, $2000, 78, $1121	; Set NextStateID 17 (STATE_SWIM) - preserve current StateID (33)
 
 
+;============================================================================
+; Stance to hang on a ledge
+;============================================================================
+; -- BACK --
+;Animation=		-644, IGNORE, IGNORE, IGNORE, ENV_MULT_CONDITION, 644, IGNORE, -11,-103,-1,-2,-3,-388,-389,-20,-21,-6,-7,-8,-9,-10,-12,-13,-38,-39,-40,-41,-390,-391
+Animation=		644, KEY1_ACTION, IGNORE, FAN_SET_BUSY_HANDS + FAN_ALIGN_TO_ENV_POS, ENV_MULT_CONDITION, 644, IGNORE, >
+							-103, >						; during stance
+							-66, -68					; during sidestep end
+MultEnvCondition=	644,	ENV_HOLE_FLOOR_BACK, 769, IGNORE, >
+							ENV_LARA_IN_MICRO_STRIP, 7424+28, IGNORE, >		; distance from front sector limit | range 0..32 | used: 28..29
+							ENV_FREE_HANDS, IGNORE, IGNORE, >
+							ENV_ONLAND, IGNORE, IGNORE
+
+; -- FRONT --
+;Animation=		-648, IGNORE, IGNORE, IGNORE, ENV_MULT_CONDITION, 644, IGNORE, -11,-103,-1,-2,-3,-388,-389,-20,-21,-6,-7,-8,-9,-10,-12,-13,-38,-39,-40,-41,-390,-391
+Animation=		648, KEY1_ACTION, IGNORE, FAN_SET_BUSY_HANDS + FAN_ALIGN_TO_ENV_POS, ENV_MULT_CONDITION, 648, IGNORE, >
+							-103, >						; during stance
+							-66, -68					; during sidestep end
+MultEnvCondition=	648,	ENV_HOLE_FLOOR_IN_FRONT, 769, IGNORE, >
+							ENV_LARA_IN_MICRO_STRIP, 1024+3, IGNORE, >		; distance from front sector limit | range 0..32 | used: 2..3
+							ENV_FREE_HANDS, IGNORE, IGNORE, >
+							ENV_ONLAND, IGNORE, IGNORE
+
+; ; -- FRONT CROUCH --
+; Animation=		648, KEY1_ACTION, IGNORE, FAN_SET_BUSY_HANDS + FAN_ALIGN_TO_ENV_POS, ENV_MULT_CONDITION, 648, IGNORE, >
+; 							-222, >						; during crouch stance
+; 							-263, -264, -266, -268		; during crawl stance
+; MultEnvCondition=	648,	ENV_HOLE_FLOOR_IN_FRONT, 769, IGNORE, >
+; 							ENV_LARA_IN_MICRO_STRIP, 1024+3, IGNORE, >		; distance from front sector limit | range 0..32 | used: 2..3
+; 							ENV_FREE_HANDS, IGNORE, IGNORE, >
+; 							ENV_ONLAND, IGNORE, IGNORE
+
+; standing cz=56219
+; hanging cz=56421
+; difference: -202 | 202
+
+; crouching: cz=56069
+; hanging cz=56421
+; difference: -352 | 352 (anim: 250??)
+							
+
+
 ;================================================================================================
 ; Ladder
 ;================================================================================================
@@ -365,6 +407,8 @@ MultEnvCondition=17,ENV_POS_HORTOGONAL+ENV_CONDITION_TRIGGER_GROUP, 217, -1, ENV
 
 
 ; -- True if detects that lara touch the door type 6 --
+
+
 TriggerGroup= 217,	$8000, $0147, $1B						; IF Lara is touching a DOOR_TYPE6
 TriggerGroup= 218,	TGROUP_USE_FOUND_ITEM_INDEX+$5000, -1, $36,>		; (Set this DOOR_TYPE6 as Selected Item)
 				$2000, 256, $4FF, >						; (Copy Lara's Now StateID to CurrentValue)

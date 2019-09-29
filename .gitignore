@@ -28,3 +28,8 @@ flep.cfg
 /Graphics/Wads/*.3ds
 /Graphics/Wads/*.tga
 /Graphics/Wads/*.trw
+Graphics/Wads/catatest.was
+Graphics/Wads/catatest.wad
+Graphics/Wads/catatest.swd
+Graphics/Wads/catatest.sfx
+Graphics/Wads/catatest.sam

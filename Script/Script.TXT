@@ -41,11 +41,11 @@ WorldFarView=	127
 ; Diagnostic
 ;-------------------------------------------------
 
-;Diagnostic=		ENABLED
+Diagnostic=		ENABLED
 ;DiagnosticType=		DGX_COMMON_VARIABLES, IGNORE ; show variable values
 
 ; -- Shows only cheat codes --
-;DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, EDGX_SLOW_MOTION+EDGX_SWAP_VIEW	; Shows only information about Lara
+DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, EDGX_SLOW_MOTION+EDGX_SWAP_VIEW	; Shows only information about Lara
 ;DiagnosticType=	DGX_SFX_SOUNDS+DGX_CHEATS, IGNORE								; Shows only information about sounds
 
 ; -- Shows Lara info and BREAKABLE WALL info --
@@ -73,7 +73,7 @@ WindowTitle=	Tomb Raider: The Dark Renaissance
 #INCLUDE 		"Animations_Lara.txt"
 
 #INCLUDE 		"WIP_stuff.txt"
-#INCLUDE 		"PickableStatues.txt"
+;#INCLUDE 		"PickableStatues.txt"
 
 
 
@@ -85,4 +85,4 @@ WindowTitle=	Tomb Raider: The Dark Renaissance
 #INCLUDE 		"Animations_Lara.txt"
 
 #INCLUDE 		"WIP_stuff.txt"
-#INCLUDE 		"PickableStatues.txt"
+;#INCLUDE 		"PickableStatues.txt"

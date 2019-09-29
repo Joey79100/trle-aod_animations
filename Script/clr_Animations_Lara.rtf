@@ -1,0 +1,526 @@
+{\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fnil\fcharset0 Courier New;}}
+\viewkind4\uc1\pard\lang1036\b\f0\fs23 
+\par ;================================================================================================
+\par ; Generic 
+\par ;================================================================================================
+\par 
+\par Customize=\tab\tab CUST_TR5_UNDERWATER_COLLISIONS
+\par 
+\par 
+\par ; -- Slide to run --
+\par Animation=\tab\tab\tab 246,\tab KEY1_UP, IGNORE, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -71\tab\tab ; Slide to Run
+\par Animation=\tab\tab\tab 247,\tab KEY1_UP, IGNORE, IGNORE, ENV_FRAME_NUMBER, 7, IGNORE, -71\tab\tab ; Slide to Run (later)
+\par 
+\par 
+\par ; -- Crawlspace roll --
+\par Animation=\tab\tab 218, IGNORE, KEY2_DASH, FAN_KEEP_NEXT_STATEID + FAN_SET_FREE_HANDS_TEMP, ENV_MULT_CONDITION, 4, IGNORE, -222, -353, -354
+\par MultEnvCondition=\tab 4, ENV_NO_BLOCK_IN_FRONT, 256, IGNORE, ENV_NON_TRUE + ENV_HOLE_FLOOR_IN_FRONT, 512 ,IGNORE
+\par 
+\par 
+\par ; -- Roll to run --
+\par Animation=\tab\tab 175, KEY1_UP, IGNORE, IGNORE, ENV_FRAME_NUMBER, 11, IGNORE, -147
+\par 
+\par 
+\par ; -- Crouch to sprint --
+\par Animation=\tab\tab 224, KEY1_UP, KEY2_DASH, IGNORE, ENV_FRAME_NUMBER, 11, IGNORE, -227
+\par 
+\par 
+\par ; -- Dive roll to run --
+\par Animation=\tab\tab 399, KEY1_UP, IGNORE, IGNORE, ENV_FRAME_NUMBER, 6, IGNORE, -151
+\par Animation=\tab\tab  20, KEY1_UP+KEY1_WALK, IGNORE, IGNORE, ENV_FRAME_RANGE, 6935, 0, -151\tab ; End of roll to walk / F23 to F27 - (F27*256+F23= 6 935)
+\par Animation=\tab\tab   6, KEY1_UP, IGNORE, IGNORE, ENV_FRAME_RANGE, 6935, IGNORE, -151\tab\tab ; End of roll to run  / F23 to F27 - (F27*256+F23= 6 935)
+\par 
+\par ; -- Responsiveness fixes after step up while running --
+\par Animation=\tab\tab   9, KEY1_UP + KEY1_WALK, IGNORE, IGNORE, ENV_FRAME_NUMBER, 16, IGNORE, -55\tab ; LEFT FOOT - To walk
+\par Animation=\tab\tab  16, KEY1_UP + KEY1_JUMP, IGNORE, IGNORE, ENV_FRAME_NUMBER, 15, IGNORE, -55\tab ; LEFT FOOT - To jump
+\par Animation=\tab\tab 225, KEY1_UP, KEY2_DASH, IGNORE, ENV_FRAME_NUMBER, 12, IGNORE, -55\tab\tab\tab ; LEFT FOOT - To sprint
+\par Animation=\tab\tab  10, KEY1_UP + KEY1_WALK, IGNORE, IGNORE, ENV_FRAME_NUMBER, 16, IGNORE, -56\tab ; RIGHT FOOT - To walk
+\par Animation=\tab\tab  18, KEY1_UP + KEY1_JUMP, IGNORE, IGNORE, ENV_FRAME_NUMBER, 15, IGNORE, -56\tab ; RIGHT FOOT - To jump
+\par Animation=\tab\tab 224, KEY1_UP, KEY2_DASH, IGNORE, ENV_FRAME_NUMBER, 12, IGNORE, -56\tab\tab\tab ; RIGHT FOOT - To sprint
+\par 
+\par 
+\par ;================================================================================================
+\par ; Fixing the waist-deep water bug
+\par ;================================================================================================
+\par ; When Lara plays animations 55 or 56 (stepping up a block while running), tell the engine she's
+\par ; not in the water anymore
+\par 
+\par GlobalTrigger=\tab 56, FGT_SINGLE_SHOT_RESUMED, GT_CONDITION_GROUP, IGNORE, 55, 56, IGNORE
+\par TriggerGroup=\tab 55, $8000, 55, $1E, >\tab\tab\tab ; IF anim 55
+\par \tab\tab\tab TGROUP_OR + $8000, 56, $1E\tab\tab ; OR anim 56
+\par 
+\par TriggerGroup=\tab 56, $2000, 246, $8\tab\tab ; THEN Tell the engine she's not in the water anymore
+\par \tab\tab\tab     \tab\tab\tab\tab\tab ; (Variables. Memory. Set in <"Lara. Environment where lara is">Savegame Memory the ("0")Value)
+\par \tab\tab\tab     
+\par 
+\par ;---------------------------------------------------------
+\par ; Variable: Savegame Memory zone
+\par ;---------------------------------------------------------
+\par ; Lara. Environment where lara is.
+\par ; 0 = Ground, but also climbing, monkey, jumping, falling
+\par ; 1 = Underwater
+\par ; 2 = Floating on the water
+\par ; 3 = Special: dozy, vehicle, hardcoded cutscenes
+\par ; 4 = Low water at ankles
+\par ;---------------------------------------------------------
+\par 
+\par ;================================================================================================
+\par ; Wall Kicking
+\par ;================================================================================================
+\par 
+\par ; -- On land Wall Kicking --
+\par Animation=\tab\tab  12, KEY1_ACTION, IGNORE, FAN_PERFORM_TRIGGER_GROUP + FAN_ALIGN_TO_ENV_POS, ENV_MULT_CONDITION, 12, IGNORE, -103, -0 -1, -2, -3
+\par MultEnvCondition=\tab 12,\tab ENV_FREE_HANDS, IGNORE, IGNORE, >
+\par \tab\tab\tab\tab\tab ENV_ITEM_TEST_POSITION, 12, IGNORE;, >
+\par \tab\tab\tab\tab\tab ;ENV_CONDITION_TRIGGER_GROUP, 13, IGNORE
+\par TestPosition=\tab\tab 12, TPOS_TURN_FACING_180, ANIMATING1, >
+\par \tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab 0-512,\tab\tab  0+512,\tab\tab >\tab ; X distance
+\par \tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab 0-512,\tab\tab  0+512,\tab\tab >\tab ; Y distance
+\par \tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab -256-256,\tab\tab  -256+256,\tab\tab >\tab ; Z distance
+\par \tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab $8080 - 8192,\tab  $8080 + 8192,\tab >\tab ; H orient
+\par \tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab 0-4096,\tab\tab  0+4096,\tab\tab >\tab ; V orient
+\par \tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab 0-1024,\tab\tab  0+1024\tab\tab\tab ; R orient
+\par 
+\par TriggerGroup=\tab 13,\tab TGROUP_USE_FOUND_ITEM_INDEX + $9000, 145, $10E\tab ; Creature. <#>Enemy has not been activated yet
+\par 
+\par TriggerGroup=\tab 12, \tab $2000, 170, $13B, >\tab\tab\tab\tab\tab\tab ; Lara. (Animation) Force Animation <315> for Lara, set new StateId
+\par \tab\tab\tab\tab TGROUP_USE_FOUND_ITEM_INDEX + $5000, 145, $2B, >\tab ; Trigger. (Moveable) Activate <#>Object with Timer value (0)
+\par \tab\tab\tab\tab TGROUP_USE_FOUND_ITEM_INDEX + $5000, 145, $27\tab ; Enemy. Set Next State Id (1) for <#>enemy
+\par 
+\par 
+\par ; -- Underwater Wall Kicking --
+\par Animation=\tab\tab 11, KEY1_ACTION, IGNORE, FAN_PERFORM_TRIGGER_GROUP + FAN_ALIGN_TO_ENV_POS, ENV_MULT_CONDITION, 13, IGNORE, -86, -87, -107, -108, -109, -198, -199, -200
+\par MultEnvCondition=\tab 13,\tab ENV_UNDERWATER, IGNORE, IGNORE, >
+\par \tab\tab\tab\tab\tab ENV_ITEM_TEST_POSITION, 13, IGNORE;, >
+\par \tab\tab\tab\tab\tab ;ENV_CONDITION_TRIGGER_GROUP, 13, IGNORE
+\par TestPosition=\tab\tab 13, TPOS_TURN_FACING_180, ANIMATING1, >
+\par \tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab 0-640,\tab\tab  0+640,\tab\tab >\tab ; X distance
+\par \tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab -512-512,\tab\tab -512+512,\tab\tab >\tab ; Y distance
+\par \tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab -128-512,\tab\tab  -128+512,\tab\tab >\tab ; Z distance
+\par \tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab $8080 - 8192,\tab  $8080 + 8192,\tab >\tab ; H orient
+\par \tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab 0-8192,\tab\tab  0+8192,\tab\tab >\tab ; V orient
+\par \tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab 0-8192,\tab\tab  0+8192\tab\tab\tab ; R orient
+\par 
+\par ;TriggerGroup=\tab 13,\tab TGROUP_USE_FOUND_ITEM_INDEX + $9000, 145, $10E\tab ; Creature. <#>Enemy has not been activated yet
+\par 
+\par TriggerGroup=\tab 11, \tab $2000, 170, $1C7, >\tab\tab\tab\tab\tab\tab ; Lara. (Animation) Force Animation <455> for Lara, set new StateId
+\par \tab\tab\tab\tab TGROUP_USE_FOUND_ITEM_INDEX + $5000, 145, $2B, >\tab ; Trigger. (Moveable) Activate <#>Object with Timer value (0)
+\par \tab\tab\tab\tab TGROUP_USE_FOUND_ITEM_INDEX + $5000, 145, $227\tab ; Enemy. Set Next State Id (2) for <#>enemy
+\par 
+\par 
+\par ;================================================================================================
+\par ; Grab animation
+\par ;================================================================================================
+\par 
+\par ;Animation=\tab\tab 573, -1, -1, FAN_SET_BUSY_HANDS, ENV_MULT_CONDITION, 6, -1, -96\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab ; -- ANNOYING WHEN IT HAPPENS ALL THE TIME
+\par MultEnvCondition=6, ENV_FRAME_NUMBER, 1, 20, ENV_NON_TRUE, -1, -1
+\par 
+\par ;Animation=\tab\tab 574, -1, -1, -1, ENV_MULT_CONDITION ,5, -1, -96\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab ; Dangles   -- MISSING ANIMATION
+\par MultEnvCondition=\tab 5,  ENV_NO_BLOCK_IN_FRONT, 128, -1,  ENV_NON_TRUE, -1, -1,  ENV_FRAME_NUMBER, 0, -1,  ENV_SUPPORT_IN_FRONT_WALL, $333, -1\tab\tab ; One Click Dangle ENV
+\par 
+\par 
+\par 
+\par ;================================================================================================
+\par ; Swing Pole (by Symsi)
+\par ;================================================================================================
+\par 
+\par Customize=\tab\tab CUST_PARALLEL_BARS, PB_DOUBLE_FACE+PB_LARA_CAN_SLIDE, 2, 10
+\par Animation=\tab\tab 463, KEY1_UP,    -1,  FAN_START_FROM_EXTRA_FRAME, ENV_FRAME_NUMBER, 19, 16, -474
+\par Animation=\tab\tab 474, KEY1_UP + KEY1_RELEASED,  -1,  FAN_START_FROM_EXTRA_FRAME, ENV_FRAME_NUMBER, 14, 19, -463
+\par Animation=\tab\tab 462, KEY1_UP,    -1, -1, -1, -1, -1, -461
+\par Animation=\tab\tab 463, KEY1_UP,    -1, -1, -1, -1, -1, -471
+\par Animation=\tab\tab 28,  KEY1_ACTION + KEY1_RELEASED, -1, FAN_ENABLE_GRAVITY, -1, -1, -1, -471
+\par Animation=\tab\tab 464, KEY1_DOWN,  -1, -1, -1, -1, -1, -471
+\par Animation=\tab\tab 466, KEY1_DOWN,  -1, -1, ENV_FRAME_NUMBER, 23, -1, -462
+\par Animation=\tab\tab 472, KEY1_DOWN,  -1, -1, ENV_FRAME_NUMBER,  7, -1, -462
+\par Animation=\tab\tab 468, KEY1_JUMP,  -1, -1, ENV_FRAME_NUMBER,  8, -1, -462
+\par Animation=      537, KEY1_JUMP, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -471\tab\tab\tab\tab\tab\tab ;Swingpole to Crouch
+\par Animation=      539, KEY1_JUMP, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -538\tab\tab\tab\tab\tab\tab ;Jump Off Swingpole
+\par Animation=      540, KEY1_LEFT, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -538\tab\tab\tab\tab\tab\tab ;Crouch to Tightrope
+\par 
+\par 
+\par 
+\par ;================================================================================================
+\par ; Tightrope (by Symsi)
+\par ;================================================================================================
+\par 
+\par Animation=\tab\tab 530, KEY1_DOWN,          -1, -1, -1, -1, -1, -477\tab\tab\tab\tab\tab\tab\tab\tab ;Idle  to Turn #1
+\par Animation=\tab\tab 532, KEY1_DOWN,          -1, -1, -1, -1, -1, -478\tab\tab\tab\tab\tab\tab\tab\tab ;Idle  to Turn #2
+\par Animation=\tab\tab 530, KEY1_ROLL,          -1, -1, -1, -1, -1, -477\tab\tab\tab\tab\tab\tab\tab\tab ;Idle  to Turn #1
+\par Animation=\tab\tab 532, KEY1_ROLL,          -1, -1, -1, -1, -1, -478\tab\tab\tab\tab\tab\tab\tab\tab ;Idle  to Turn #2
+\par 
+\par 
+\par Animation=\tab\tab 479, KEY1_UP + KEY1_ACTION,    -1, -1, -1, -1, -1, -477\tab\tab\tab\tab\tab\tab\tab\tab ;Idle  to Walk #1
+\par Animation=\tab\tab 480, KEY1_UP + KEY1_ACTION,    -1, -1, -1, -1, -1, -478\tab\tab\tab\tab\tab\tab\tab\tab ;Idle  to Walk #2
+\par 
+\par 
+\par Animation=\tab\tab 482, KEY1_UP + KEY1_RELEASED,  -1, -1, ENV_FRAME_NUMBER, 36, -1, -481\tab\tab\tab\tab\tab ;Walk  to Idle #1
+\par Animation=\tab\tab 483, KEY1_UP + KEY1_RELEASED,  -1, -1, ENV_FRAME_NUMBER, 16, -1, -481\tab\tab\tab\tab\tab ;Walk  to Idle #2
+\par Animation=\tab\tab 486, KEY1_UP + KEY1_RELEASED,  -1, -1, ENV_FRAME_NUMBER, 3, -1, -481\tab\tab\tab\tab\tab ;Walk  to Idle #3
+\par Animation=\tab\tab 487, KEY1_UP + KEY1_RELEASED,  -1, -1, ENV_FRAME_NUMBER, 23, -1, -481\tab\tab\tab\tab\tab ;Walk  to Idle #4
+\par Animation=\tab\tab 484, KEY1_UP + KEY1_RELEASED,  -1, -1, ENV_FRAME_NUMBER, 10, -1, -481\tab\tab\tab\tab\tab ;Walk  to Idle #5
+\par Animation=\tab\tab 485, KEY1_UP + KEY1_RELEASED,  -1, -1, ENV_FRAME_NUMBER, 30, -1, -481\tab\tab\tab\tab\tab ;Walk  to Idle #6
+\par 
+\par Animation=\tab\tab 482, KEY1_ACTION + KEY1_RELEASED, -1, -1, ENV_FRAME_NUMBER, 36, -1, -481\tab\tab\tab\tab\tab\tab ;Walk  to Idle #1
+\par Animation=\tab\tab 483, KEY1_ACTION + KEY1_RELEASED, -1, -1, ENV_FRAME_NUMBER, 16, -1, -481\tab\tab\tab\tab\tab\tab ;Walk  to Idle #2
+\par Animation=\tab\tab 486, KEY1_ACTION + KEY1_RELEASED, -1, -1, ENV_FRAME_NUMBER, 3, -1, -481\tab\tab\tab\tab\tab\tab ;Walk  to Idle #3
+\par Animation=\tab\tab 487, KEY1_ACTION + KEY1_RELEASED, -1, -1, ENV_FRAME_NUMBER, 23, -1, -481\tab\tab\tab\tab\tab\tab ;Walk  to Idle #4
+\par Animation=\tab\tab 484, KEY1_ACTION + KEY1_RELEASED, -1, -1, ENV_FRAME_NUMBER, 10, -1, -481\tab\tab\tab\tab\tab\tab ;Walk  to Idle #5
+\par Animation=\tab\tab 485, KEY1_ACTION + KEY1_RELEASED, -1, -1, ENV_FRAME_NUMBER, 30, -1, -481\tab\tab\tab\tab\tab\tab ;Walk  to Idle #6
+\par 
+\par 
+\par Animation=\tab\tab 459, KEY1_ACTION + KEY1_RELEASED, -1, -1, ENV_DISTANCE_FLOOR + ENV_NON_TRUE, $75, -1, -477\tab\tab ;Idle  to Stance #1
+\par Animation=\tab\tab 460, KEY1_ACTION + KEY1_RELEASED, -1, -1, ENV_DISTANCE_FLOOR + ENV_NON_TRUE, $75, -1, -478\tab\tab ;Idle  to Stance #2
+\par 
+\par 
+\par Animation=\tab\tab 534, -1,         -1,  FAN_RANDOM,  IGNORE, -1,  3, -534\tab\tab\tab\tab\tab\tab ;Random walk
+\par ;Animation=\tab\tab 541, KEY1_ACTION + KEY1_RELEASED, -1, -1, 39, $350, -1, -475\tab\tab\tab\tab\tab\tab ;Idle  to Hang #1
+\par 
+\par 
+\par 
+\par 
+\par ;================================================================================================
+\par ; Crouching / On all fours
+\par ;================================================================================================
+\par 
+\par Animation=\tab\tab 218, IGNORE, KEY2_DASH, FAN_KEEP_NEXT_STATEID, ENV_MULT_CONDITION, 10, IGNORE, -222,-353,-354,-306,-307\tab\tab\tab\tab ; crawlspace roll
+\par MultEnvCondition=  10, ENV_NO_BLOCK_IN_FRONT, 256, IGNORE, ENV_NON_TRUE + ENV_HOLE_FLOOR_IN_FRONT, 512, IGNORE \tab\tab\tab\tab\tab\tab ; crawlspace roll
+\par Animation=\tab\tab 218, IGNORE, KEY2_DASH, FAN_KEEP_NEXT_STATEID, ENV_MULT_CONDITION, 11, IGNORE, -219\tab\tab\tab\tab\tab\tab\tab\tab ; chaining crawlspace rolls
+\par MultEnvCondition=  11, ENV_NO_BLOCK_IN_FRONT, 256, IGNORE, ENV_NON_TRUE + ENV_HOLE_FLOOR_IN_FRONT, 512, IGNORE, ENV_FRAME_NUMBER,14,IGNORE \tab ; chaining crawlspace rolls 
+\par 
+\par Animation=\tab\tab 258, KEY1_UP,    IGNORE, IGNORE, ENV_MULT_CONDITION, 8, IGNORE, -219\tab ; Roll > Crawls > Crawl forward
+\par Animation=\tab\tab 353, KEY1_LEFT,  IGNORE, IGNORE, ENV_MULT_CONDITION, 8, IGNORE, -219\tab ; Roll > Crawls > Rotate left
+\par Animation=\tab\tab 354, KEY1_RIGHT, IGNORE, IGNORE, ENV_MULT_CONDITION, 8, IGNORE, -219\tab ; Roll > Crawls > Rotate right
+\par MultEnvCondition=\tab 8, ENV_FRAME_NUMBER, 14, IGNORE, >
+\par \tab\tab\tab\tab    ENV_DISTANCE_CEILING+ENV_NON_TRUE, $280, IGNORE
+\par 
+\par 
+\par 
+\par Animation=\tab\tab\tab 303, KEY1_RELEASED, KEY2_DUCK, IGNORE, ENV_FRAME_NUMBER, 4, IGNORE, -217\tab\tab\tab\tab\tab\tab ; going into crouch position - key released - get back up
+\par Animation=\tab\tab\tab 221, KEY1_RELEASED, KEY2_DUCK, IGNORE, ENV_DISTANCE_CEILING, $300, IGNORE, -220,-245,-306,-307\tab\tab ; crouching - get back up (delay removed)
+\par Animation=\tab\tab\tab 221, KEY1_RELEASED, KEY2_DUCK, IGNORE, ENV_MULT_CONDITION, 2, IGNORE, -310,-245,-306,-307\tab\tab\tab ; crouching - get back up (delay removed)
+\par MultEnvCondition=\tab  2 , ENV_DISTANCE_CEILING, $300, IGNORE, ENV_FRAME_NUMBER, 25, IGNORE\tab\tab\tab\tab\tab\tab ; condition
+\par Animation=\tab\tab\tab 221, KEY1_RELEASED, KEY2_DUCK, IGNORE, ENV_DISTANCE_CEILING, $300, IGNORE, -265\tab\tab\tab\tab ; crouching - get back up (delay removed)
+\par Animation=\tab\tab\tab 258, KEY1_UP, KEY2_DUCK, IGNORE, IGNORE, IGNORE, IGNORE, -265, -306, -307\tab\tab\tab\tab\tab ; has just crouched - crawl forward
+\par Animation=\tab\tab\tab 258, KEY1_UP, IGNORE, IGNORE, ENV_DISTANCE_CEILING+ENV_NON_TRUE, $280, IGNORE, -265, -306, -307\tab ; has just crouched - crawl forward
+\par 
+\par ;Animation=\tab\tab\tab 566,  IGNORE, KEY2_DUCK, IGNORE, ENV_FRAME_NUMBER, 8, IGNORE, -151 \tab\tab\tab\tab ; dive - roll - duck
+\par ;Animation=\tab\tab\tab 566, KEY1_UP, KEY2_DUCK, IGNORE, ENV_FRAME_NUMBER, 8, IGNORE, -151 \tab\tab\tab\tab ; dive - roll - duck
+\par Animation=\tab\tab\tab 310,  IGNORE, KEY2_DUCK, FAN_START_FROM_EXTRA_FRAME, ENV_FRAME_NUMBER, 10, 16, -495\tab\tab ; sprint - roll - crouch (left)
+\par Animation= \tab\tab\tab 311,  IGNORE, KEY2_DUCK, FAN_START_FROM_EXTRA_FRAME, ENV_FRAME_NUMBER, 10, 16, -497\tab\tab ; sprint - roll - crouch (right)
+\par Animation=\tab\tab\tab 258, KEY1_UP, KEY2_DUCK, IGNORE, ENV_FRAME_RANGE, 9497, IGNORE, -310, -311\tab\tab\tab ; has just crouched - crawl forward - from F25 to F37 - (F37*256+F25=9497)
+\par Animation=\tab\tab\tab 258, KEY1_UP,   IGNORE,  IGNORE, ENV_MULT_CONDITION, 16, IGNORE, -310, -311 \tab\tab\tab ; has just crouched - crawl forward
+\par MultEnvCondition=\tab  16, ENV_DISTANCE_CEILING+ENV_NON_TRUE, $280, IGNORE, ENV_FRAME_RANGE, 9497, IGNORE\tab ; F25 to F37 - (F37*256+F25=9497)
+\par 
+\par 
+\par ;Animation=\tab\tab 96, IGNORE, IGNORE, FAN_START_FROM_EXTRA_FRAME, IGNORE, IGNORE, 21, -302\tab\tab ; Bug fix - crawl to hang position
+\par 
+\par 
+\par ; --- Unlocking Lara when she stops ---
+\par 
+\par Animation=\tab\tab 259, IGNORE, KEY1_RELEASED+KEY2_DUCK, IGNORE, ENV_DISTANCE_CEILING, $280, IGNORE, -264, -266, -268, -278, -280 ; Get up right after stopping
+\par Animation=\tab\tab 261,    KEY1_UP, IGNORE, IGNORE, ENV_MULT_CONDITION,  18, IGNORE, -264, -266, -268, -278, -280\tab ; Crawls forward right after stopping
+\par 
+\par Animation=\tab\tab 275,  KEY1_DOWN, IGNORE, IGNORE, ENV_MULT_CONDITION, 19, IGNORE, -264, -266, -268, -278, -280\tab ; Crawls backwards right after stopping
+\par Animation=\tab\tab 269,  KEY1_LEFT, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -266, -264, -268, -278, -280\tab\tab ; Rotates left right after stopping
+\par Animation=\tab\tab 270, KEY1_RIGHT, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -266, -264, -268, -278, -280\tab\tab ; Rotates right right after stopping
+\par MultEnvCondition= 18,\tab ENV_DISTANCE_NORTH_WALL+ENV_NON_TRUE,  102, IGNORE, >
+\par \tab\tab\tab\tab ENV_DISTANCE_SOUTH_WALL+ENV_NON_TRUE,  102, IGNORE, >
+\par \tab\tab\tab\tab ENV_DISTANCE_EAST_WALL +ENV_NON_TRUE,  102, IGNORE, >
+\par \tab\tab\tab\tab ENV_DISTANCE_WEST_WALL +ENV_NON_TRUE,  102, IGNORE, >
+\par \tab\tab\tab\tab ENV_DISTANCE_CEILING  + ENV_NON_TRUE, $280, IGNORE
+\par MultEnvCondition= 19,\tab ENV_DISTANCE_NORTH_WALL+ENV_NON_TRUE,  102, IGNORE, >
+\par \tab\tab\tab\tab ENV_DISTANCE_SOUTH_WALL+ENV_NON_TRUE,  102, IGNORE, >
+\par \tab\tab\tab\tab ENV_DISTANCE_EAST_WALL +ENV_NON_TRUE,  102, IGNORE, >
+\par \tab\tab\tab\tab ENV_DISTANCE_WEST_WALL +ENV_NON_TRUE,  102, IGNORE
+\par 
+\par 
+\par 
+\par 
+\par ; ----- Krystian's Crawlspace flexibility set -----
+\par ;
+\par ;Animation=\tab\tab 569,\tab KEY1_UP + KEY1_ACTION, IGNORE, FAN_SET_BUSY_HANDS + FAN_ALIGN_TO_ENV_POS, ENV_MULT_CONDITION, 11, IGNORE, -103\tab\tab ; Climbing 3 clicks
+\par ;MultEnvCondition= 11,\tab ENV_FREE_HANDS, IGNORE, IGNORE, >
+\par ;\tab\tab\tab\tab ENV_POS_HORTOGONAL + ENV_WALL_HOLE_IN_FRONT, $2233, IGNORE, >
+\par ;\tab\tab\tab\tab ENV_LARA_IN_MICRO_STRIP, 768, IGNORE
+\par ; 
+\par ;Animation=\tab\tab 570,\tab KEY1_UP + KEY1_ACTION, IGNORE, FAN_SET_BUSY_HANDS + FAN_ALIGN_TO_ENV_POS, ENV_MULT_CONDITION, 12, IGNORE, -103\tab\tab ; Climbing 2 clicks
+\par ;MultEnvCondition= 12,\tab ENV_FREE_HANDS, IGNORE, IGNORE, >
+\par ;\tab\tab\tab\tab ENV_POS_HORTOGONAL + ENV_WALL_HOLE_IN_FRONT, $2222, IGNORE, >
+\par ;\tab\tab\tab\tab ENV_LARA_IN_MICRO_STRIP, 768, IGNORE
+\par ;
+\par ;Animation=\tab\tab 571,\tab KEY1_ACTION, IGNORE, FAN_SET_BUSY_HANDS + FAN_ALIGN_TO_ENV_POS, ENV_MULT_CONDITION, 13, IGNORE, -103\tab\tab\tab\tab ; Climbing 1 click
+\par ;MultEnvCondition= 13,\tab ENV_FREE_HANDS, IGNORE, IGNORE, >
+\par ;\tab\tab\tab\tab ENV_POS_HORTOGONAL + ENV_WALL_HOLE_IN_FRONT, $2211, IGNORE, >
+\par ;\tab\tab\tab\tab ENV_LARA_IN_MICRO_STRIP, 768, IGNORE
+\par ;
+\par ;
+\par ;
+\par ;Animation=\tab\tab 572,\tab KEY1_UP + KEY1_ACTION, IGNORE, FAN_ALIGN_TO_ENV_POS, ENV_MULT_CONDITION, 17, IGNORE, -263\tab\tab\tab ; Climbing 1 click (IN a crawlspace)
+\par ;MultEnvCondition= 17, \tab ENV_SUPPORT_IN_FRONT_WALL, $0111, IGNORE, >
+\par ;\tab\tab\tab\tab ENV_DISTANCE_CEILING + ENV_NON_TRUE, 640, IGNORE, >
+\par ;\tab\tab\tab\tab ENV_POS_HORTOGONAL + ENV_LARA_IN_MICRO_STRIP, 2048, IGNORE
+\par ;
+\par ;Animation=\tab\tab 573, IGNORE, IGNORE, IGNORE, ENV_DISTANCE_CEILING + ENV_NON_TRUE, 640, IGNORE, -111\tab\tab\tab ; Get out of Water - Normal\tab crawlspace\tab\tab ( 1 click)
+\par ;Animation=\tab\tab 574, IGNORE, IGNORE, IGNORE, ENV_DISTANCE_CEILING + ENV_NON_TRUE, 640, IGNORE, -191\tab\tab\tab ; Get out of Water - Water level\tab crawlspace\tab ( 0 click)
+\par ;Animation=\tab\tab 575, IGNORE, IGNORE, IGNORE, ENV_DISTANCE_CEILING + ENV_NON_TRUE, 640, IGNORE, -193\tab\tab\tab ; Get out of Water - Submerged crawlspace\tab (-1 click)
+\par 
+\par 
+\par 
+\par Animation=\tab\tab 568,\tab KEY1_JUMP, IGNORE, IGNORE, ENV_MULT_CONDITION, 15, IGNORE, -263\tab\tab\tab\tab\tab ; Exiting from crawlspace
+\par MultEnvCondition= 15,\tab ENV_HOLE_FLOOR_IN_FRONT, 128, IGNORE, >
+\par \tab\tab\tab\tab ENV_LARA_IN_MICRO_STRIP, 2048, IGNORE
+\par 
+\par 
+\par 
+\par 
+\par 
+\par ;================================================================================================
+\par ; Water 
+\par ;================================================================================================
+\par 
+\par ; -- Fast dive while surface swimming --
+\par ;Animation=\tab\tab\tab 115,\tab KEY1_JUMP, IGNORE, FAN_SET_LARA_PLACE ,IGNORE, IGNORE, PLACE_UNDERWATER, -118, -116, -117
+\par 
+\par 
+\par ; -- Water to climb wall --
+\par Animation= \tab\tab\tab 523,\tab KEY1_ACTION, IGNORE, FAN_SET_LARA_PLACE + FAN_ALIGN_TO_ENV_POS, ENV_MULT_CONDITION, 28, PLACE_GROUND, -110 \tab ; from water to ladder
+\par MultEnvCondition= \tab  28,\tab ENV_CLIMB_WALL_IN_FRONT, IGNORE, IGNORE,>
+\par \tab\tab\tab\tab\tab ENV_POS_HORTOGONAL + ENV_FLOATING, IGNORE,>
+\par \tab\tab\tab\tab\tab IGNORE, ENV_MULT_OR_CONDITION, 29, IGNORE
+\par MultEnvCondition=\tab  29,\tab ENV_DISTANCE_WEST_WALL, 102, IGNORE,>
+\par \tab\tab\tab\tab\tab ENV_DISTANCE_SOUTH_WALL, 102, IGNORE,>
+\par \tab\tab\tab\tab\tab ENV_DISTANCE_NORTH_WALL, 102, IGNORE,>
+\par \tab\tab\tab\tab\tab ENV_DISTANCE_EAST_WALL, 102, IGNORE
+\par 
+\par 
+\par ; -- Dive delay removal --
+\par Animation=\tab\tab 99, KEY1_JUMP, IGNORE, FAN_PERFORM_TRIGGER_GROUP, IGNORE, IGNORE, IGNORE, -110
+\par TriggerGroup=\tab 99, $2000, 78, $1121\tab ; Set NextStateID 17 (STATE_SWIM) - preserve current StateID (33)
+\par 
+\par 
+\par ;============================================================================
+\par ; Stance to hang on a ledge
+\par ;============================================================================
+\par ; -- BACK --
+\par ;Animation=\tab\tab -644, IGNORE, IGNORE, IGNORE, ENV_MULT_CONDITION, 644, IGNORE, -11,-103,-1,-2,-3,-388,-389,-20,-21,-6,-7,-8,-9,-10,-12,-13,-38,-39,-40,-41,-390,-391
+\par Animation=\tab\tab 644, KEY1_ACTION, IGNORE, FAN_SET_BUSY_HANDS + FAN_ALIGN_TO_ENV_POS, ENV_MULT_CONDITION, 644, IGNORE, >
+\par \tab\tab\tab\tab\tab\tab\tab -103, >\tab\tab\tab\tab\tab\tab ; during stance
+\par \tab\tab\tab\tab\tab\tab\tab -66, -68\tab\tab\tab\tab\tab ; during sidestep end
+\par MultEnvCondition=\tab 644,\tab ENV_FRAME_NUMBER + ENV_NON_TRUE, 0, IGNORE\tab ; not during frame 0 of the animation (or sometimes it kicks in when it shouldn't)
+\par \tab\tab\tab\tab\tab\tab\tab ENV_HOLE_FLOOR_BACK, 769, IGNORE, >
+\par \tab\tab\tab\tab\tab\tab\tab ENV_LARA_IN_MICRO_STRIP, 7424+28, IGNORE, >\tab ; distance from front sector limit | range 0..32 | used: 28..29
+\par \tab\tab\tab\tab\tab\tab\tab ENV_FREE_HANDS, IGNORE, IGNORE, >
+\par \tab\tab\tab\tab\tab\tab\tab ENV_ONLAND, IGNORE, IGNORE
+\par 
+\par ; -- FRONT --
+\par ;Animation=\tab\tab -648, IGNORE, IGNORE, IGNORE, ENV_MULT_CONDITION, 644, IGNORE, -11,-103,-1,-2,-3,-388,-389,-20,-21,-6,-7,-8,-9,-10,-12,-13,-38,-39,-40,-41,-390,-391
+\par Animation=\tab\tab 648, KEY1_ACTION, IGNORE, FAN_SET_BUSY_HANDS + FAN_ALIGN_TO_ENV_POS, ENV_MULT_CONDITION, 648, IGNORE, >
+\par \tab\tab\tab\tab\tab\tab\tab -103, >\tab\tab\tab\tab\tab\tab ; during stance
+\par \tab\tab\tab\tab\tab\tab\tab -66, -68\tab\tab\tab\tab\tab ; during sidestep end
+\par MultEnvCondition=\tab 648,\tab ENV_FRAME_NUMBER + ENV_NON_TRUE, 0, IGNORE\tab ; not during frame 0 of the animation (or sometimes it kicks in when it shouldn't)
+\par \tab\tab\tab\tab\tab\tab\tab ENV_HOLE_FLOOR_IN_FRONT, 769, IGNORE, >
+\par \tab\tab\tab\tab\tab\tab\tab ENV_LARA_IN_MICRO_STRIP, 1024+3, IGNORE, >\tab ; distance from front sector limit | range 0..32 | used: 2..3
+\par \tab\tab\tab\tab\tab\tab\tab ENV_FREE_HANDS, IGNORE, IGNORE, >
+\par \tab\tab\tab\tab\tab\tab\tab ENV_ONLAND, IGNORE, IGNORE
+\par 
+\par ; ; -- FRONT CROUCH --
+\par ; Animation=\tab\tab 648, KEY1_ACTION, IGNORE, FAN_SET_BUSY_HANDS + FAN_ALIGN_TO_ENV_POS, ENV_MULT_CONDITION, 648, IGNORE, >
+\par ; \tab\tab\tab\tab\tab\tab\tab -222, >\tab\tab\tab\tab\tab\tab ; during crouch stance
+\par ; \tab\tab\tab\tab\tab\tab\tab -263, -264, -266, -268\tab\tab ; during crawl stance
+\par ; MultEnvCondition=\tab 648,\tab ENV_FRAME_NUMBER + ENV_NON_TRUE, 0, IGNORE\tab ; not during frame 0 of the animation (or sometimes it kicks in when it shouldn't)
+\par ;\tab\tab\tab\tab\tab\tab\tab ENV_HOLE_FLOOR_IN_FRONT, 769, IGNORE, >
+\par ; \tab\tab\tab\tab\tab\tab\tab ENV_LARA_IN_MICRO_STRIP, 1024+3, IGNORE, >\tab ; distance from front sector limit | range 0..32 | used: 2..3
+\par ; \tab\tab\tab\tab\tab\tab\tab ENV_FREE_HANDS, IGNORE, IGNORE, >
+\par ; \tab\tab\tab\tab\tab\tab\tab ENV_ONLAND, IGNORE, IGNORE
+\par 
+\par ; standing cz=56219
+\par ; hanging cz=56421
+\par ; difference: -202 | 202
+\par 
+\par ; crouching: cz=56069
+\par ; hanging cz=56421
+\par ; difference: -352 | 352 (anim: 250??)
+\par \tab\tab\tab\tab\tab\tab\tab 
+\par 
+\par 
+\par ;================================================================================================
+\par ; Ladder
+\par ;================================================================================================
+\par 
+\par ; -- Mounting --
+\par Animation=\tab\tab\tab 586, KEY1_ACTION, IGNORE, FAN_ALIGN_TO_ENV_POS, ENV_MULT_CONDITION, 30, IGNORE, -103 ; Stand to Ladder
+\par MultEnvCondition= 30,\tab ENV_ITEM_TEST_POSITION, 1, IGNORE, >
+\par \tab\tab\tab\tab ENV_FREE_HANDS, IGNORE, IGNORE
+\par TestPosition= 1, TPOS_FAST_ALIGNMENT, ANIMATING4, 0-300, 0+300, 0-128, 0+128, 348-348, 348+200, 0-6000, 0+6000, 0-6000, 0+6000, 0-6000, 0+6000 ; TestPosition for Ladder
+\par 
+\par 
+\par ; -- Going up --
+\par Animation=\tab\tab\tab 588, KEY1_UP, IGNORE, IGNORE, ENV_MULT_CONDITION, 26, IGNORE, -587 ; Start climbing up
+\par MultEnvCondition= 26, ENV_DISTANCE_CEILING, 1280, IGNORE, ENV_SUPPORT_IN_FRONT_WALL + ENV_NON_TRUE, $0333
+\par 
+\par Animation=\tab\tab\tab 590, KEY1_UP + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -589 ; Stop climbing up (UP key released)
+\par Animation=\tab\tab\tab 590, IGNORE, IGNORE, IGNORE, ENV_MULT_CONDITION, 20, IGNORE, -589 ; Stop climbing up (ceiling in the way)
+\par MultEnvCondition= 20,\tab ENV_DISTANCE_CEILING + ENV_NON_TRUE, 1536, IGNORE, >
+\par \tab\tab\tab\tab ENV_FRAME_NUMBER, 0, IGNORE
+\par 
+\par Animation=\tab\tab\tab 591, KEY1_UP + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 18, IGNORE, -589 ; Stop climbing up (UP key released)
+\par Animation=\tab\tab\tab 591, IGNORE, IGNORE, IGNORE, ENV_MULT_CONDITION, 21, IGNORE, -589 ; Stop climbing up (ceiling in the way)
+\par MultEnvCondition= 21,\tab ENV_DISTANCE_CEILING + ENV_NON_TRUE, 1536, IGNORE, >
+\par \tab\tab\tab\tab ENV_FRAME_NUMBER, 18, IGNORE
+\par 
+\par 
+\par ; -- Going down --
+\par Animation=\tab\tab\tab 592, KEY1_DOWN, IGNORE, IGNORE, ENV_DISTANCE_FLOOR, 256, IGNORE, -587 ; Start climbing down
+\par 
+\par Animation=\tab\tab\tab 594, KEY1_DOWN + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -593 ; Stop climbing down (DOWN key released)
+\par Animation=\tab\tab\tab 594, IGNORE, IGNORE, IGNORE, ENV_MULT_CONDITION, 22, IGNORE, -593 ; Stop climbing down (floor in the way)
+\par MultEnvCondition= 22,\tab ENV_DISTANCE_FLOOR + ENV_NON_TRUE, 512, IGNORE, >
+\par \tab\tab\tab\tab ENV_FRAME_NUMBER, 0, IGNORE
+\par 
+\par Animation=\tab\tab\tab 595, KEY1_DOWN + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 14, IGNORE, -593 ; Stop climbing down (DOWN key released)
+\par Animation=\tab\tab\tab 595, IGNORE, IGNORE, IGNORE, ENV_MULT_CONDITION, 23, IGNORE, -593 ; Stop climbing down (floor in the way)
+\par MultEnvCondition= 23,\tab ENV_DISTANCE_FLOOR + ENV_NON_TRUE, 512, IGNORE, >
+\par \tab\tab\tab\tab ENV_FRAME_NUMBER, 14, IGNORE
+\par 
+\par 
+\par ; -- Dismounting --
+\par Animation=\tab\tab\tab 596, KEY1_DOWN, IGNORE, IGNORE, ENV_DISTANCE_FLOOR + ENV_NON_TRUE, 256, IGNORE, -587 ; Ladder to Stand (doesn't work as planned)
+\par Animation=\tab\tab\tab 596, KEY1_ACTION + KEY1_RELEASED, IGNORE, IGNORE, ENV_DISTANCE_FLOOR + ENV_NON_TRUE, 256, IGNORE, -587 ; Ladder to Stand (doesn't work as planned)
+\par Animation=\tab\tab\tab 596, KEY1_ACTION + KEY1_RELEASED, IGNORE, FAN_START_FROM_EXTRA_FRAME, ENV_MULT_CONDITION, 27, 12, -586 ; Ladder to Stand
+\par MultEnvCondition= 27, ENV_DISTANCE_FLOOR + ENV_NON_TRUE, 256, IGNORE,   ENV_ANIM_COMPLETE, IGNORE, IGNORE
+\par 
+\par Animation=\tab\tab\tab 597, KEY1_JUMP, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -587 ; Jump off Ladder
+\par 
+\par 
+\par ; -- Climb up --
+\par Animation=\tab\tab\tab 598, IGNORE, IGNORE, IGNORE, ENV_MULT_CONDITION, 24, IGNORE, -589 ; Pull up on top (from climbing up)
+\par MultEnvCondition= 24, ENV_SUPPORT_IN_FRONT_WALL, $0333, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE
+\par 
+\par Animation=\tab\tab\tab 599, IGNORE, IGNORE, IGNORE, ENV_MULT_CONDITION, 25, IGNORE, -589 ; Pull up on top (from climbing up)
+\par MultEnvCondition= 25, ENV_SUPPORT_IN_FRONT_WALL, $0111, IGNORE, ENV_FRAME_NUMBER, 18, IGNORE
+\par 
+\par 
+\par ;================================================================================================
+\par ; Sliding door (by Apofyse)
+\par ;================================================================================================
+\par 
+\par ; -- Opening the DOOR_TYPE6 --
+\par Animation=\tab 578, KEY1_ACTION, -1, -1, ENV_MULT_CONDITION, 17, -1, -11
+\par MultEnvCondition=17,ENV_POS_HORTOGONAL+ENV_CONDITION_TRIGGER_GROUP, 217, -1, ENV_CONDITION_TRIGGER_GROUP, 218, -1
+\par 
+\par 
+\par ; -- True if detects that lara touch the door type 6 --
+\par 
+\par 
+\par 
+\par TriggerGroup= 217,\tab $8000, $0147, $1B\tab\tab\tab\tab\tab\tab ; IF Lara is touching a DOOR_TYPE6
+\par TriggerGroup= 218,\tab TGROUP_USE_FOUND_ITEM_INDEX+$5000, -1, $36,>\tab\tab ; (Set this DOOR_TYPE6 as Selected Item)
+\par \tab\tab\tab\tab $2000, 256, $4FF, >\tab\tab\tab\tab\tab\tab ; (Copy Lara's Now StateID to CurrentValue)
+\par \tab\tab\tab\tab $8000, 255, $2B\tab\tab\tab\tab\tab\tab\tab ; IF CurrentValue (Lara's Now StateID) is = 31
+\par 
+\par ; -- Tests whether the DOOR_TYPE6 opens --
+\par GlobalTrigger=80, -1, GT_CONDITION_GROUP, -1, 219, 223, -1
+\par TriggerGroup=\tab 219,\tab $8000, 17, $10,\tab >\tab\tab\tab\tab\tab\tab ; IF all conditions of MultEnvCondition 17 are true
+\par \tab\tab\tab\tab TGROUP_AND+$8000, 578, $1E\tab\tab\tab\tab\tab ; AND Lara is performing animation 578
+\par TriggerGroup=\tab 223, $2000, 127, $14\tab\tab\tab\tab\tab\tab\tab ; THEN Trigger Organizer 20
+\par 
+\par ; -- Blocking commands (TG220), opening the door (TG221) --
+\par Organizer=20, FO_TICK_TIME, -1,     0,220;,   1,221
+\par TriggerGroup=220, $2000, 51, $400\tab\tab\tab\tab\tab\tab\tab\tab ; First: block commands for 4 seconds
+\par \tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab ; Second: [missing trigger]
+\par 
+\par 
+\par 
+\par ;================================================================================================
+\par ; Ceiling Climbing (by Krystian)
+\par ;================================================================================================
+\par ;
+\par ;AssignSlot=\tab\tab NEW_SLOT5, OBJ_LARA_CEILING_CLIMB
+\par ;Parameters=\tab\tab PARAM_SET_CAMERA, 60, IGNORE, 2048, +4096, IGNORE, 6
+\par ;
+\par ;
+\par ; --- Restore camera ----
+\par ;TriggerGroup=\tab 60,\tab $2000, 214, $3C\tab ; Camera. Change camera mode with PARAM_SET_CAMERA <60>
+\par ;
+\par ; F371 - TriggerGroup. Perform TriggerGroup <60>
+\par ; AnimCommand: Frame=0
+\par ; Set Position [-24576 - [FrameIndex]] [371] [61]
+\par ;
+\par ;
+\par ;
+\par ; --- Change camera to PARAM_SET_CAMERA <61> ----
+\par ;TriggerGroup=\tab 61,\tab $2000, 215, $3C, >\tab\tab ; Camera. Restore camera mode after a "change camera" flipeffect
+\par ;\tab\tab\tab\tab $2000, 214, $3C\tab\tab\tab ; Camera. Change camera mode with PARAM_SET_CAMERA <60>
+\par ;
+\par ; F371 - TriggerGroup. Perform TriggerGroup <61>
+\par ; AnimCommand: Frame=0
+\par ; Set Position [-24576] [371] [61]
+\par ;
+\par ;
+\par ;GlobalTrigger=\tab 113, IGNORE, GT_CONDITION_GROUP, IGNORE, 226, 227, 228
+\par ;GlobalTrigger=\tab 113, FGT_SINGLE_SHOT_RESUMED, GT_CONDITION_GROUP, IGNORE, 226, 227, 228
+\par ;TriggerGroup=\tab 226, >\tab\tab\tab\tab\tab\tab\tab\tab ; IF Lara is playing animations:
+\par ;\tab\tab\tab\tab TGROUP_OR + $8000, 602, $1E, >\tab\tab\tab ;    Animation 602
+\par ;\tab\tab\tab\tab\tab TGROUP_OR + $8000, 603, $1E, >\tab\tab ;    Animation 603
+\par ;\tab\tab\tab\tab\tab TGROUP_OR + $8000, 604, $1E, >\tab\tab ;    Animation 604
+\par ;\tab\tab\tab\tab\tab TGROUP_OR + $8000, 605, $1E, >\tab\tab ;    Animation 605
+\par ;\tab\tab\tab\tab\tab TGROUP_OR + $8000, 606, $1E, >\tab\tab ;    Animation 606
+\par ;\tab\tab\tab\tab\tab TGROUP_OR + $8000, 607, $1E, >\tab\tab ;    Animation 607
+\par ;\tab\tab\tab\tab\tab TGROUP_OR + $8000, 608, $1E, >\tab\tab ;    Animation 608
+\par ;\tab\tab\tab\tab\tab TGROUP_OR + $8000, 610, $1E, >\tab\tab ;    Animation 610
+\par ;\tab\tab\tab\tab\tab TGROUP_OR + $8000, 613, $1E\tab\tab\tab ;    Animation 613
+\par ;TriggerGroup=\tab 227, $2000, 214, $13C\tab\tab ; THEN Change camera to PARAM_SET_CAMERA <60>
+\par ;TriggerGroup=\tab 228, $2000, 215, $3C\tab\tab ; ELSE Restore camera
+\par ;
+\par ;
+\par ;
+\par ;============================================================================
+\par ; Monkey To Overhang Ladder (by Krystian)
+\par ;============================================================================
+\par 
+\par Animation= 622, KEY1_UP, IGNORE, FAN_ALIGN_TO_ENV_POS, ENV_MULT_CONDITION, 61, IGNORE, -234, -150
+\par MultEnvCondition= 61, ENV_HOLE_IN_FRONT_CEILING_CLIMB + ENV_POS_HORTOGONAL + ENV_POS_STRIP_1, IGNORE, IGNORE
+\par 
+\par 
+\par ;============================================================================
+\par ; Ladder To Overhang Monkey (by GeckoKid)
+\par ;============================================================================
+\par 
+\par ;Animation= 624, KEY1_ACTION + KEY1_UP, IGNORE, IGNORE, ENV_MONKEY_CEILING, 1027, IGNORE, -164
+\par ; TODO: This animation conflicts with Krytian's freeclimb animations - it triggers even when the monkey ceiling isn't flat
+\par 
+\par 
+\par ;============================================================================
+\par ; Ladder Sideways Dismounts (by Krystian)
+\par ;============================================================================
+\par 
+\par Animation= 625, KEY1_LEFT, IGNORE, IGNORE, ENV_MULT_CONDITION, 62, IGNORE, -164 ; dismount ladder on the left
+\par MultEnvCondition= 62,\tab ENV_DISTANCE_FLOOR + ENV_NON_TRUE, 300, IGNORE,>
+\par \tab\tab\tab\tab ENV_HOLE_FLOOR_AT_RIGHT, 240, IGNORE,>
+\par \tab\tab\tab\tab ENV_CLIMB_RIGHT_SPACE + ENV_NON_TRUE, 8, IGNORE
+\par 
+\par Animation= 626, KEY1_RIGHT, IGNORE, IGNORE, ENV_MULT_CONDITION, 63, IGNORE, -164 ; dismount ladder on the right
+\par MultEnvCondition= 63,\tab ENV_DISTANCE_FLOOR + ENV_NON_TRUE, 300, IGNORE,>
+\par \tab\tab\tab\tab ENV_HOLE_FLOOR_AT_LEFT, 240, IGNORE,>
+\par \tab\tab\tab\tab ENV_CLIMB_LEFT_SPACE + ENV_NON_TRUE, 8, IGNORE
+\par 
+\par 
+\par ;============================================================================
+\par ; True slopes (by Krystian)
+\par ;============================================================================
+\par ;
+\par ;Customize=\tab CUST_TRUE_SLOPES, ENABLED
+\par ;Customize=\tab CUST_SLOPE_TURNING, ENABLED, 2048, 3, 5
+\par ;
+\par ;
+\par ;============================================================================
+\par ;   Death camera as in TR3's source code
+\par ;============================================================================
+\par 
+\par Parameters=\tab\tab PARAM_SET_CAMERA, 70, IGNORE, IGNORE, -4096, 5472, 15
+\par GlobalTrigger=\tab 112, IGNORE, GT_CONDITION_GROUP, IGNORE, 224, 225, IGNORE
+\par TriggerGroup=\tab 224, $8000, 1, $21D\tab\tab ; IF Lara HP < 1
+\par TriggerGroup=\tab 225, $2000, 214, $46\tab\tab ; THEN Change camera to PARAM_SET_CAMERA <70>
+\par }
+ 
