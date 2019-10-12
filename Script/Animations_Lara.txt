@@ -294,8 +294,8 @@ MultEnvCondition=	 29,	ENV_DISTANCE_WEST_WALL, 102, IGNORE,>
 
 
 ; -- Dive delay removal --
-Animation=		99, KEY1_JUMP, IGNORE, FAN_PERFORM_TRIGGER_GROUP, IGNORE, IGNORE, IGNORE, -110
-TriggerGroup=	99, $2000, 78, $1121	; Set NextStateID 17 (STATE_SWIM) - preserve current StateID (33)
+; Animation=		99, KEY1_JUMP, IGNORE, FAN_PERFORM_TRIGGER_GROUP, IGNORE, IGNORE, IGNORE, -110
+; TriggerGroup=	99, $2000, 78, $1121	; Set NextStateID 17 (STATE_SWIM) - preserve current StateID (33)
 
 
 ;============================================================================
