@@ -95,8 +95,13 @@ TriggerGroup=	234,	>
 				$2000, 292, $5F, >	; Variables. Memory. Set the <SAS[95]>Slot as Selected Slot Memory
 				$5000, 0, $0036, >	; Variables. Memory. Set the <SAS[0]>Item as Selected Item
 				>
+				>				; ==== Getting the relative Animation index from SAS ===
+				$2000, 293, $1255, >	; Variables. Memory. Copy from (First Animation Index)Selected Slot Memory to <LSD2>Numeric Variable
+				$2000, 256, $7FF, >	; Variables. Memory. Copy value from Selected Item's (Animation Now) field to <CurrentValue>
+				$2000, 286, $55, >	; Variables. Numeric. Subtract from CurrentValue the <LS2>Numeric Variable
+				$2000, 272, $55, >	; Variables. Numeric. Copy CurrentValue to <LSD2>Numeric Variable
+				>
 				>				; ==== Copying the stuff we need to variables ====
-				$2000, 256, $755, >	; Variables. Memory. Copy value from Selected Item's (Animation Now) field to <LSD2>
 				$2000, 256, $450, >	; Variables. Memory. Copy value from Selected Item's (StateID Now) field to <LSA1>
 				$2000, 256, $551, >	; Variables. Memory. Copy value from Selected Item's (StateID Next) field to <LSA2>
 				$2000, 256, $654, >	; Variables. Memory. Copy value from Selected Item's (StateID Goal) field to <LSD1>
@@ -106,7 +111,6 @@ TriggerGroup=	234,	>
 				$2000, 66, $505, >	; Text. Set <Metal>color and (Top line, right alignment)position for next Print String flipeffect
 				$2000, 81, $3, >		; Text. <Half Width and Height>size characters for next print string command
 				$2000, 65, $C		; Text. Print Standard <ENGLISH.txt:12>string on screen for (Forever) seconds
-
 
 TriggerGroup=	235,	>
 				>				; ==== Selecting SLOT and ITEM for further operations ====
