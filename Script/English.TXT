@@ -11,12 +11,12 @@ The Zenoath
 Lost Valley
 Himalayan Precipice
 Beneath the Great Pyramid
-Custom_D: #0041
+Anim Now: #0055 (LSD2)\nStateID Now: #0050 (LSA1)\nStateID Next: #0051 (LSA2)\nStateID Goal: #0054 (LSD1)
 Schonbrunn Palace
 Line of Descent
 Passport
 Dread Palace Ghemal
-N/A
+Custom_A: #0050 (LSA1)\nCustom_B: #0051 (LSA2)\nCustom_C: #0054 (LSD1)\nCustom_D: #0055 (LSD2)
 N/A
 Tomb Raider: The Dark Renaissance
 N/A
