@@ -54,7 +54,10 @@ Customize=		CUST_SHOW_AMMO_COUNTER,CL_WHITE,FT_UNDER_LEFT_BARS,IGNORE,SC_NORMAL,
 ;General Camera Settings
 ;================================================================================================
 
-Customize=		CUST_CAMERA, FCAM_DISABLE_COMBAT_CAM, 1152, -1365, -1, -1, -1, -1, -1, 8
+;Customize=		CUST_CAMERA, FCAM_DISABLE_COMBAT_CAM, 1152, -1365, -1, -1, -1, -1, -1, 8
+;Customize=		CUST_CAMERA, IGNORE, 1152, -1365, -1, 1152, -1365, -1, -1, 8
+;Customize=		CUST_CAMERA, IGNORE, 1152, -1365, -1, 1152, -4865, -1, -1, 8
+Customize=		CUST_CAMERA, IGNORE, 1152, -1365, -1, 1752, -5365, -1, -1, 8
 
 ;================================================================================================
 ;Quick Save

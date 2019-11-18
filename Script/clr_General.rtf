@@ -1,5 +1,5 @@
-{\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset0 Courier New;}}
-\viewkind4\uc1\pard\lang2057\b\f0\fs23 ;================================================================================================
+{\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fnil\fcharset0 Courier New;}}
+\viewkind4\uc1\pard\lang1036\b\f0\fs23 ;================================================================================================
 \par ;Notes
 \par ;================================================================================================
 \par 
@@ -55,22 +55,27 @@
 \par ;General Camera Settings
 \par ;================================================================================================
 \par 
-\par Customize=\tab\tab CUST_CAMERA, FCAM_DISABLE_COMBAT_CAM, 1152, -1365, -1, -1, -1, -1, -1, 8
+\par ;Customize=\tab\tab CUST_CAMERA, FCAM_DISABLE_COMBAT_CAM, 1152, -1365, -1, -1, -1, -1, -1, 8
+\par ;Customize=\tab\tab CUST_CAMERA, IGNORE, 1152, -1365, -1, 1152, -1365, -1, -1, 8
+\par Customize=\tab\tab CUST_CAMERA, IGNORE, 1152, -1365, -1, 1152, -4865, -1, -1, 8
+\par Customize=\tab\tab CUST_CAMERA, IGNORE, 1152, -1365, -1, 1152, -5865, -1, -1, 8
 \par 
 \par ;================================================================================================
 \par ;Quick Save
 \par ;================================================================================================
 \par 
-\par GlobalTrigger=\tab 16, FGT_REMOVE_INPUT + FGT_SINGLE_SHOT_RESUMED, GT_KEYBOARD_CODE, 63, IGNORE, 36, IGNORE      \tab ;IF player presses F5
-\par TriggerGroup=\tab 36, $2000, 97, $1, $2000, 357, $304                                                      \tab\tab ;THEN Save game in backup file 1, show sprite 3 on screen
+\par TriggerGroup=\tab 36, $8000, 42, $20C\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab ;Condition: is NOT holding SHIFT LEFT
 \par 
-\par GlobalTrigger=\tab 17, FGT_REMOVE_INPUT + FGT_SINGLE_SHOT_RESUMED, GT_KEYBOARD_CODE, 64, IGNORE, 37, IGNORE      \tab ;IF player presses F6
-\par TriggerGroup=\tab 37, $2000, 98, $1                                                                       \tab\tab ;THEN Load game in backup file 1
+\par GlobalTrigger=\tab 16, FGT_REMOVE_INPUT + FGT_SINGLE_SHOT_RESUMED, GT_KEYBOARD_CODE, 63, 36, 37, IGNORE      \tab\tab ;IF player presses F5 AND is NOT holding SHIFT LEFT
+\par TriggerGroup=\tab 37, $2000, 97, $1, $2000, 357, $304                                                      \tab\tab ;THEN Save game in backup file 1, show sprite 3 on screen
+\par 
+\par GlobalTrigger=\tab 17, FGT_REMOVE_INPUT + FGT_SINGLE_SHOT_RESUMED, GT_KEYBOARD_CODE, 64, 36, 38, IGNORE      \tab\tab ;IF player presses F6 AND is NOT holding SHIFT LEFT
+\par TriggerGroup=\tab 38, $2000, 98, $1                                                                       \tab\tab ;THEN Load game in backup file 1
 \par 
 \par Parameters=\tab PARAM_SHOW_SPRITE, 4, IGNORE, 860, 860, 60, 60, CUSTOM_SPRITES, 3, IGNORE, IGNORE, IGNORE, IGNORE
 \par 
-\par GlobalTrigger=\tab 18, IGNORE, GT_LOADED_SAVEGAME, IGNORE, IGNORE, 38, IGNORE\tab\tab\tab\tab\tab\tab\tab ;IF Player loads savegame
-\par TriggerGroup=\tab 38, $2000, 358, $4                                                                      \tab\tab ;THEN Remove sprite 3 from screen
+\par GlobalTrigger=\tab 18, IGNORE, GT_LOADED_SAVEGAME, IGNORE, IGNORE, 39, IGNORE\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab ;IF Player loads savegame
+\par TriggerGroup=\tab 39, $2000, 358, $4                                                                      \tab\tab ;THEN Remove sprite 3 from screen
 \par 
 \par ;================================================================================================
 \par ;Heartbeat effect
