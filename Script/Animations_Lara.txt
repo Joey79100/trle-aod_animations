@@ -353,7 +353,8 @@ TestPosition= 1, TPOS_FAST_ALIGNMENT, ANIMATING4, 0-300, 0+300, 0-128, 0+128, 34
 
 ; -- Going up --
 Animation=			588, KEY1_UP, IGNORE, IGNORE, ENV_MULT_CONDITION, 26, IGNORE, -587 ; Start climbing up
-MultEnvCondition= 26, ENV_DISTANCE_CEILING, 1280, IGNORE, ENV_SUPPORT_IN_FRONT_WALL + ENV_NON_TRUE, $0333
+MultEnvCondition= 26,	ENV_DISTANCE_CEILING, $500, IGNORE, >
+				ENV_SUPPORT_IN_FRONT_WALL + ENV_NON_TRUE, $0333
 
 Animation=			590, KEY1_UP + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -589 ; Stop climbing up (UP key released)
 Animation=			590, IGNORE, IGNORE, IGNORE, ENV_MULT_CONDITION, 20, IGNORE, -589 ; Stop climbing up (ceiling in the way)
@@ -471,7 +472,7 @@ TriggerGroup=220, $2000, 51, $400								; First: block commands for 4 seconds
 ;
 ;
 ;============================================================================
-; Monkey To Overhang Ladder (by Krystian)
+; Monkey To Overhang Wallclimb (by Krystian)
 ;============================================================================
 
 Animation= 622, KEY1_UP, IGNORE, FAN_ALIGN_TO_ENV_POS, ENV_MULT_CONDITION, 61, IGNORE, -234, -150
@@ -479,7 +480,7 @@ MultEnvCondition= 61, ENV_HOLE_IN_FRONT_CEILING_CLIMB + ENV_POS_HORTOGONAL + ENV
 
 
 ;============================================================================
-; Ladder To Overhang Monkey (by GeckoKid)
+; Wallclimb To Overhang Monkey (by GeckoKid)
 ;============================================================================
 
 ;Animation= 624, KEY1_ACTION + KEY1_UP, IGNORE, IGNORE, ENV_MONKEY_CEILING, 1027, IGNORE, -164
@@ -487,7 +488,7 @@ MultEnvCondition= 61, ENV_HOLE_IN_FRONT_CEILING_CLIMB + ENV_POS_HORTOGONAL + ENV
 
 
 ;============================================================================
-; Ladder Sideways Dismounts (by Krystian)
+; Wallclimb Sideways Dismounts (by Krystian)
 ;============================================================================
 
 Animation= 625, KEY1_LEFT, IGNORE, IGNORE, ENV_MULT_CONDITION, 62, IGNORE, -164 ; dismount ladder on the left

@@ -68,9 +68,9 @@ WindowTitle=	Tomb Raider: The Dark Renaissance
 [Level]			;TECH DEMO - LARA - NGLE version
 WindowTitle=	Tomb Raider: The Dark Renaissance
 #INCLUDE		"Demo.txt"
-#INCLUDE 		"General.txt"
+#INCLUDE "General.txt"
 #INCLUDE 		"Inventory.txt"
-#INCLUDE 		"Animations_Lara.txt"
+#INCLUDE "Animations_Lara.txt"
 
 #INCLUDE 		"WIP_stuff.txt"
 ;#INCLUDE 		"PickableStatues.txt"

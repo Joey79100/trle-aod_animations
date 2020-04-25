@@ -57,9 +57,27 @@ Customize=		CUST_SHOW_AMMO_COUNTER,CL_WHITE,FT_UNDER_LEFT_BARS,IGNORE,SC_NORMAL,
 ;Customize=		CUST_CAMERA, FCAM_DISABLE_COMBAT_CAM, 1152, -1365, -1, -1, -1, -1, -1, 8
 ;Customize=		CUST_CAMERA, IGNORE, 1152, -1365, -1, 1152, -1365, -1, -1, 8
 ;Customize=		CUST_CAMERA, IGNORE, 1152, -1365, -1, 1152, -4865, -1, -1, 8
-Customize=		CUST_CAMERA, IGNORE, 1152, -1365, -1, 1752, -5365, -1, -1, 8
+;Customize=		CUST_CAMERA, IGNORE, 1152, -1365, -1, 1752, -5365, -1, -1, 8
+Customize=		CUST_CAMERA, IGNORE, 1352, -1365, -1, 1752, -5365, -1, -1, 8
+
+; -- Raildex's workaround to fix camera not continuously updating its position --
+#DEFINE LARA_ID			102
+#DEFINE ORG_UPD_CAM		321
+#DEFINE TG_UPD_CAM_ADD_1	321
+#DEFINE TG_UPD_CAM_SUB_1	320
+Organizer= ORG_UPD_CAM, FO_LOOP + FO_ENABLED + FO_TICK_TIME, IGNORE,    1, TG_UPD_CAM_ADD_1,    1, TG_UPD_CAM_SUB_1
+Triggergroup= TG_UPD_CAM_ADD_1, >
+			$5000, LARA_ID, $0036,	 >	; A54: Variables. Set the index of <LARA_ID>moveable as Selected Item
+			$2000, 232, $01FF, >		; F232: Variables. Numeric. Set <CurrentValue>Variable with (1)value
+			$2000, 275, $001C		; F275: Variables. Memory. Add to <Facing Vertical (Short)>Selected Item Memory  the CurrentValue
+Triggergroup= TG_UPD_CAM_SUB_1, >
+			$5000, LARA_ID, $0036, >	; A54: Variables. Set the index of <LARA_ID>moveable as Selected Item
+			$2000, 232, $01FF, >		; F232: Variables. Numeric. Set <CurrentValue>Variable with (1)value
+			$2000, 276, $001C		; F275: Variables. Memory. Subtract to <Facing Vertical (Short)>Selected Item Memory  the CurrentValue
+
 
 ;================================================================================================
+
 ;Quick Save
 ;================================================================================================
 

@@ -1,13 +1,13 @@
-LARA_FEET:              foot01 foot02 foot03 foot04     VOL20   P V    		  	RAD06   
+LARA_FEET:              foot01 foot02 foot03 foot04     VOL20   P     		PIT07  	RAD07   #g
 LARA_CLIMB2:		lara_jump1 lara_jump2 lara_jump3 VOL55	   			RAD06	#g
 LARA_NO:		lara_no				VOL50	    			RAD06	#g #t
-LARA_SLIPPING:		slope				VOL25	      			RAD06	#g
-LARA_LAND:		land1 land2			VOL65	P V			RAD06	#g
-LARA_CLIMB1:		lara_climb1 lara_climb2 lara_climb3 lara_climb4	VOL30	P  	CH40		RAD06	#g
-LARA_DRAW:		hols_out			VOL75	 			RAD06	#g
-LARA_HOLSTER:		hols_in				VOL75	 			RAD06	#g
+LARA_SLIPPING:		slope				VOL28	      L			RAD06	#g
+LARA_LAND:		landing				VOL72	P V			RAD09	#g
+LARA_CLIMB1:		Clim_up1A Clim_up1B Clim_up1C Clim_up1D	VOL30	P  	CH40		RAD06	#g
+LARA_DRAW:		hols_out			VOL45	 			RAD05	#g
+LARA_HOLSTER:		hols_in				VOL40	 			RAD05	#g
 LARA_FIRE:		pistol				VOL75	      			RAD13	#g
-LARA_RELOAD:		reload				VOL80				RAD06	#g
+LARA_RELOAD:		reload				VOL50				RAD07	#g
 LARA_RICOCHET:		rico1 rico2 rico3 rico4		VOL60	P V 	CH50		RAD06	#g
 PUSH_BLOCK_END:		phend				VOL40
 METAL_SCRAPE_LOOP:	l_stomet			VOL80	      L		PIT-40	RAD15
@@ -24,15 +24,15 @@ CLOTHES_GRAB:		grab_clt1 grab_clt2		VOL45	P  			RAD20	#g
 LARA_PICKUP:		pickup				VOL30	      				#g
 KNEES_SHUFFLE:		shfl1 shfl2 shfl3		VOL26	P 			RAD06	#g
 PUSH_SPX_SWITCH:	spx_swt				VOL95	P 		PIT10	RAD10
-LARA_CLIMB_HARD:	climbup				VOL50	  			RAD06	#g
+LARA_CLIMB_HARD:	Clim_up3 Clim_up3B Clim_up3C	VOL50	  			RAD06	#g
 LARA_BODYSL:		lara_hurt1 lara_hurt2 lara_hurt3 lara_hurt4 VOL45	  	CH40 		RAD13	#g
 LARA_SHIMMY:		shimmy1 shimmy2	shimmy3		VOL20	P 			RAD06	#g
 LARA_JUMP:		lara_jump1 lara_jump2 lara_jump3 VOL55	  	CH60		RAD06	#g
 LARA_FALL:		f2f_scrm			VOL60				RAD06	#g
 LARA_HURT:		lara_hurt1 lara_hurt2 lara_hurt3 lara_hurt4 VOL45	  	CH40 		RAD06	#g
 LARA_ROLL:		roll				VOL35	  			RAD06	#g
-LARA_SPLASH:		splash				VOL57	P V			RAD13	#g
-LARA_GETOUT:		go_water			VOL62	P V			RAD13	#g
+LARA_SPLASH:		splash				VOL67	P V		PIT-03	RAD13	#g
+LARA_GETOUT:		go_water			VOL53	P V			RAD13	#g
 LARA_SWIM:              swim1 swim2 swim3		VOL45   P			RAD05	#g
 LARA_BREATH:		breath				VOL40	  V			RAD13	#g #t
 LARA_BUBBLES:           bubbles                         VOL15   P V 	CH70    PIT-75	RAD06	#g
@@ -58,7 +58,7 @@ LARA_GRABBODY:		back_jm2			VOL80	P 			RAD06	#g
 RATCHET_3SHOT:		l_wrain1			VOL60	      L		PIT-10	RAD14
 RAIN_LOOP1:		l_rain1				VOL40	      L		PIT0	RAD13
 RAIN_LOOP2:		l_rain2				VOL40	      L 	PIT-10	RAD13
-UNDERWATER:		uw_loop				VOL70	      L		PIT-20		#g
+UNDERWATER:		undwatr				VOL75	      L		PIT-85		#g
 UNDERWATER_SWITCH:      uw_swt                          VOL70   P				#d
 LARA_PICKUP:            aha                             VOL30					#g
 PUSHABLE_SOUND:		l_moveable			VOL30	      L			RAD10
@@ -286,13 +286,13 @@ OBJ_BOX_HIT_CHANCE:	boxhit1 boxhit2			VOL99	P V	CH80	PIT30	RAD10
 OBJ_GEM_SMASH:		crysmash			VOL66			PIT60	RAD10	#g
 CATBLADES_DRAW:		trapbld1			VOL60	P V		PIT20	RAD13
 SWIRLY_LONG_MOVE_SFX:	swrl_mov			VOL40			PIT-55	RAD15
-FOOTSTEPS_288_MUD:	ft_wtr1 ft_wtr2	ft_wtr3 ft_wtr4	ft_wtr5	ft_wtr6	VOL30	P 			RAD06	 #g
-FOOTSTEPS_289_GRASS:	ft_grs1	ft_grs2	ft_grs3	ft_grs4	VOL30	P 			RAD06	 #g
-FOOTSTEPS_290_GRAVEL:	ft_snd1 ft_snd2 ft_snd3 ft_snd4	VOL30	P 			RAD06	 #g
-FOOTSTEPS_291_SAND:	ft_car1	ft_car2	ft_car3	ft_car4 VOL30	P 			RAD06	 #g
-FOOTSTEPS_292_WOOD:	ft_wd1  ft_wd2  ft_wd3  ft_wd4	VOL30	P 			RAD06	 #g
-FOOTSTEPS_293_STONE:	ft_stn1 ft_stn2 ft_stn3 ft_stn4	ft_stn5 ft_stn6 ft_stn7 ft_stn8	VOL30	P 			RAD06	 #g
-FOOTSTEPS_294_METAL:	ft_met1 ft_met2	ft_met3	ft_met4	VOL30	P 			RAD06	 #g
+FOOTSTEPS_288_MUD:	ft_wtr1 ft_wtr2	ft_wtr3 ft_wtr4	ft_wtr5	ft_wtr6	VOL27	P 			RAD06	 #g
+FOOTSTEPS_289_GRASS:	ft_grs1	ft_grs2	ft_grs3	ft_grs4	VOL20	P 			RAD06	 #g
+FOOTSTEPS_290_GRAVEL:	ft_snd1 ft_snd2 ft_snd3 ft_snd4	VOL25	P 			RAD06	 #g
+FOOTSTEPS_291_SAND:	ft_car1	ft_car2	ft_car3	ft_car4 VOL20	P 			RAD06	 #g
+FOOTSTEPS_292_WOOD:	ft_wd1  ft_wd2  ft_wd3  ft_wd4	VOL25	P 			RAD06	 #g
+FOOTSTEPS_293_STONE:	ft_stn1 ft_stn2 ft_stn3 ft_stn4	ft_stn5 ft_stn6 ft_stn7 ft_stn8	VOL25	P 		PIT-05	RAD06	 #g
+FOOTSTEPS_294_METAL:	ft_met1 ft_met2	ft_met3	ft_met4	VOL20	P 			RAD06	 #g
 GEN_SPHINX_DOORTHD:	hvy_fall			VOL60	P		PIT-25	RAD10
 SETT_PLASMA_1:		set_plas			VOL90	P		PIT-30	RAD20
 SETT_BOLT_1:		set_bolt			VOL99			PIT50	RAD20

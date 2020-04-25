@@ -57,10 +57,28 @@
 \par 
 \par ;Customize=\tab\tab CUST_CAMERA, FCAM_DISABLE_COMBAT_CAM, 1152, -1365, -1, -1, -1, -1, -1, 8
 \par ;Customize=\tab\tab CUST_CAMERA, IGNORE, 1152, -1365, -1, 1152, -1365, -1, -1, 8
-\par Customize=\tab\tab CUST_CAMERA, IGNORE, 1152, -1365, -1, 1152, -4865, -1, -1, 8
-\par Customize=\tab\tab CUST_CAMERA, IGNORE, 1152, -1365, -1, 1152, -5865, -1, -1, 8
+\par ;Customize=\tab\tab CUST_CAMERA, IGNORE, 1152, -1365, -1, 1152, -4865, -1, -1, 8
+\par ;Customize=\tab\tab CUST_CAMERA, IGNORE, 1152, -1365, -1, 1752, -5365, -1, -1, 8
+\par Customize=\tab\tab CUST_CAMERA, IGNORE, 1352, -1365, -1, 1752, -5365, -1, -1, 8
+\par 
+\par ; -- Raildex's workaround to fix camera not continuously updating its position --
+\par #DEFINE LARA_ID\tab\tab\tab 102
+\par #DEFINE ORG_UPD_CAM\tab\tab 321
+\par #DEFINE TG_UPD_CAM_ADD_1\tab 321
+\par #DEFINE TG_UPD_CAM_SUB_1\tab 320
+\par Organizer= ORG_UPD_CAM, FO_LOOP + FO_ENABLED + FO_TICK_TIME, IGNORE,    1, TG_UPD_CAM_ADD_1,    1, TG_UPD_CAM_SUB_1
+\par Triggergroup= TG_UPD_CAM_ADD_1, >
+\par \tab\tab\tab $5000, LARA_ID, $0036,\tab  >\tab ; A54: Variables. Set the index of <LARA_ID>moveable as Selected Item
+\par \tab\tab\tab $2000, 232, $01FF, >\tab\tab ; F232: Variables. Numeric. Set <CurrentValue>Variable with (1)value
+\par \tab\tab\tab $2000, 275, $001C\tab\tab ; F275: Variables. Memory. Add to <Facing Vertical (Short)>Selected Item Memory  the CurrentValue
+\par Triggergroup= TG_UPD_CAM_SUB_1, >
+\par \tab\tab\tab $5000, LARA_ID, $0036, >\tab ; A54: Variables. Set the index of <LARA_ID>moveable as Selected Item
+\par \tab\tab\tab $2000, 232, $01FF, >\tab\tab ; F232: Variables. Numeric. Set <CurrentValue>Variable with (1)value
+\par \tab\tab\tab $2000, 276, $001C\tab\tab ; F275: Variables. Memory. Subtract to <Facing Vertical (Short)>Selected Item Memory  the CurrentValue
+\par 
 \par 
 \par ;================================================================================================
+\par 
 \par ;Quick Save
 \par ;================================================================================================
 \par 

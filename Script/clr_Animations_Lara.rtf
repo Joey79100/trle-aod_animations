@@ -295,8 +295,8 @@
 \par 
 \par 
 \par ; -- Dive delay removal --
-\par Animation=\tab\tab 99, KEY1_JUMP, IGNORE, FAN_PERFORM_TRIGGER_GROUP, IGNORE, IGNORE, IGNORE, -110
-\par TriggerGroup=\tab 99, $2000, 78, $1121\tab ; Set NextStateID 17 (STATE_SWIM) - preserve current StateID (33)
+\par ; Animation=\tab\tab 99, KEY1_JUMP, IGNORE, FAN_PERFORM_TRIGGER_GROUP, IGNORE, IGNORE, IGNORE, -110
+\par ; TriggerGroup=\tab 99, $2000, 78, $1121\tab ; Set NextStateID 17 (STATE_SWIM) - preserve current StateID (33)
 \par 
 \par 
 \par ;============================================================================
@@ -307,32 +307,29 @@
 \par Animation=\tab\tab 644, KEY1_ACTION, IGNORE, FAN_SET_BUSY_HANDS + FAN_ALIGN_TO_ENV_POS, ENV_MULT_CONDITION, 644, IGNORE, >
 \par \tab\tab\tab\tab\tab\tab\tab -103, >\tab\tab\tab\tab\tab\tab ; during stance
 \par \tab\tab\tab\tab\tab\tab\tab -66, -68\tab\tab\tab\tab\tab ; during sidestep end
-\par MultEnvCondition=\tab 644,\tab ENV_FRAME_NUMBER + ENV_NON_TRUE, 0, IGNORE\tab ; not during frame 0 of the animation (or sometimes it kicks in when it shouldn't)
-\par \tab\tab\tab\tab\tab\tab\tab ENV_HOLE_FLOOR_BACK, 769, IGNORE, >
-\par \tab\tab\tab\tab\tab\tab\tab ENV_LARA_IN_MICRO_STRIP, 7424+28, IGNORE, >\tab ; distance from front sector limit | range 0..32 | used: 28..29
+\par MultEnvCondition=\tab 644,\tab ENV_HOLE_FLOOR_BACK, 769, IGNORE, >
+\par \tab\tab\tab\tab\tab\tab\tab ENV_LARA_IN_MICRO_STRIP, 7424+28, IGNORE, >\tab\tab ; distance from front sector limit | range 0..32 | used: 28..29
 \par \tab\tab\tab\tab\tab\tab\tab ENV_FREE_HANDS, IGNORE, IGNORE, >
 \par \tab\tab\tab\tab\tab\tab\tab ENV_ONLAND, IGNORE, IGNORE
 \par 
 \par ; -- FRONT --
-\par ;Animation=\tab\tab -648, IGNORE, IGNORE, IGNORE, ENV_MULT_CONDITION, 644, IGNORE, -11,-103,-1,-2,-3,-388,-389,-20,-21,-6,-7,-8,-9,-10,-12,-13,-38,-39,-40,-41,-390,-391
-\par Animation=\tab\tab 648, KEY1_ACTION, IGNORE, FAN_SET_BUSY_HANDS + FAN_ALIGN_TO_ENV_POS, ENV_MULT_CONDITION, 648, IGNORE, >
+\par ;Animation=\tab\tab -647, IGNORE, IGNORE, IGNORE, ENV_MULT_CONDITION, 644, IGNORE, -11,-103,-1,-2,-3,-388,-389,-20,-21,-6,-7,-8,-9,-10,-12,-13,-38,-39,-40,-41,-390,-391
+\par Animation=\tab\tab 647, KEY1_ACTION, IGNORE, FAN_SET_BUSY_HANDS + FAN_ALIGN_TO_ENV_POS, ENV_MULT_CONDITION, 647, IGNORE, >
 \par \tab\tab\tab\tab\tab\tab\tab -103, >\tab\tab\tab\tab\tab\tab ; during stance
 \par \tab\tab\tab\tab\tab\tab\tab -66, -68\tab\tab\tab\tab\tab ; during sidestep end
-\par MultEnvCondition=\tab 648,\tab ENV_FRAME_NUMBER + ENV_NON_TRUE, 0, IGNORE\tab ; not during frame 0 of the animation (or sometimes it kicks in when it shouldn't)
-\par \tab\tab\tab\tab\tab\tab\tab ENV_HOLE_FLOOR_IN_FRONT, 769, IGNORE, >
-\par \tab\tab\tab\tab\tab\tab\tab ENV_LARA_IN_MICRO_STRIP, 1024+3, IGNORE, >\tab ; distance from front sector limit | range 0..32 | used: 2..3
+\par MultEnvCondition=\tab 647,\tab ENV_HOLE_FLOOR_IN_FRONT, 769, IGNORE, >
+\par \tab\tab\tab\tab\tab\tab\tab ENV_LARA_IN_MICRO_STRIP, 1024+3, IGNORE, >\tab\tab ; distance from front sector limit | range 0..32 | used: 2..3
 \par \tab\tab\tab\tab\tab\tab\tab ENV_FREE_HANDS, IGNORE, IGNORE, >
 \par \tab\tab\tab\tab\tab\tab\tab ENV_ONLAND, IGNORE, IGNORE
 \par 
-\par ; ; -- FRONT CROUCH --
-\par ; Animation=\tab\tab 648, KEY1_ACTION, IGNORE, FAN_SET_BUSY_HANDS + FAN_ALIGN_TO_ENV_POS, ENV_MULT_CONDITION, 648, IGNORE, >
-\par ; \tab\tab\tab\tab\tab\tab\tab -222, >\tab\tab\tab\tab\tab\tab ; during crouch stance
-\par ; \tab\tab\tab\tab\tab\tab\tab -263, -264, -266, -268\tab\tab ; during crawl stance
-\par ; MultEnvCondition=\tab 648,\tab ENV_FRAME_NUMBER + ENV_NON_TRUE, 0, IGNORE\tab ; not during frame 0 of the animation (or sometimes it kicks in when it shouldn't)
-\par ;\tab\tab\tab\tab\tab\tab\tab ENV_HOLE_FLOOR_IN_FRONT, 769, IGNORE, >
-\par ; \tab\tab\tab\tab\tab\tab\tab ENV_LARA_IN_MICRO_STRIP, 1024+3, IGNORE, >\tab ; distance from front sector limit | range 0..32 | used: 2..3
-\par ; \tab\tab\tab\tab\tab\tab\tab ENV_FREE_HANDS, IGNORE, IGNORE, >
-\par ; \tab\tab\tab\tab\tab\tab\tab ENV_ONLAND, IGNORE, IGNORE
+\par ; -- FRONT CROUCH --
+\par Animation=\tab\tab 648, KEY1_ACTION, IGNORE, FAN_SET_BUSY_HANDS + FAN_ALIGN_TO_ENV_POS, ENV_MULT_CONDITION, 648, IGNORE, >
+\par \tab\tab\tab\tab\tab\tab\tab -222, >\tab\tab\tab\tab\tab\tab ; during crouch stance
+\par \tab\tab\tab\tab\tab\tab\tab -263, -264, -266, -268\tab\tab ; during crawl stance
+\par MultEnvCondition=\tab 648,\tab ENV_HOLE_FLOOR_IN_FRONT, 769, IGNORE, >
+\par \tab\tab\tab\tab\tab\tab\tab ENV_LARA_IN_MICRO_STRIP, 1024+3, IGNORE, >\tab\tab ; distance from front sector limit | range 0..32 | used: 2..3
+\par \tab\tab\tab\tab\tab\tab\tab ENV_FREE_HANDS, IGNORE, IGNORE, >
+\par \tab\tab\tab\tab\tab\tab\tab ENV_ONLAND, IGNORE, IGNORE
 \par 
 \par ; standing cz=56219
 \par ; hanging cz=56421
@@ -357,7 +354,8 @@
 \par 
 \par ; -- Going up --
 \par Animation=\tab\tab\tab 588, KEY1_UP, IGNORE, IGNORE, ENV_MULT_CONDITION, 26, IGNORE, -587 ; Start climbing up
-\par MultEnvCondition= 26, ENV_DISTANCE_CEILING, 1280, IGNORE, ENV_SUPPORT_IN_FRONT_WALL + ENV_NON_TRUE, $0333
+\par MultEnvCondition= 26,\tab ENV_DISTANCE_CEILING, $500, IGNORE, >
+\par \tab\tab\tab\tab ENV_SUPPORT_IN_FRONT_WALL + ENV_NON_TRUE, $0333
 \par 
 \par Animation=\tab\tab\tab 590, KEY1_UP + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -589 ; Stop climbing up (UP key released)
 \par Animation=\tab\tab\tab 590, IGNORE, IGNORE, IGNORE, ENV_MULT_CONDITION, 20, IGNORE, -589 ; Stop climbing up (ceiling in the way)
@@ -411,7 +409,6 @@
 \par 
 \par 
 \par ; -- True if detects that lara touch the door type 6 --
-\par 
 \par 
 \par 
 \par TriggerGroup= 217,\tab $8000, $0147, $1B\tab\tab\tab\tab\tab\tab ; IF Lara is touching a DOOR_TYPE6
@@ -476,7 +473,7 @@
 \par ;
 \par ;
 \par ;============================================================================
-\par ; Monkey To Overhang Ladder (by Krystian)
+\par ; Monkey To Overhang Wallclimb (by Krystian)
 \par ;============================================================================
 \par 
 \par Animation= 622, KEY1_UP, IGNORE, FAN_ALIGN_TO_ENV_POS, ENV_MULT_CONDITION, 61, IGNORE, -234, -150
@@ -484,7 +481,7 @@
 \par 
 \par 
 \par ;============================================================================
-\par ; Ladder To Overhang Monkey (by GeckoKid)
+\par ; Wallclimb To Overhang Monkey (by GeckoKid)
 \par ;============================================================================
 \par 
 \par ;Animation= 624, KEY1_ACTION + KEY1_UP, IGNORE, IGNORE, ENV_MONKEY_CEILING, 1027, IGNORE, -164
@@ -492,7 +489,7 @@
 \par 
 \par 
 \par ;============================================================================
-\par ; Ladder Sideways Dismounts (by Krystian)
+\par ; Wallclimb Sideways Dismounts (by Krystian)
 \par ;============================================================================
 \par 
 \par Animation= 625, KEY1_LEFT, IGNORE, IGNORE, ENV_MULT_CONDITION, 62, IGNORE, -164 ; dismount ladder on the left
