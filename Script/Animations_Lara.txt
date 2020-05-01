@@ -392,10 +392,11 @@ Animation=			597, KEY1_JUMP, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -587 ; Jump
 
 ; -- Climb up --
 Animation=			598, IGNORE, IGNORE, IGNORE, ENV_MULT_CONDITION, 24, IGNORE, -589 ; Pull up on top (from climbing up)
-MultEnvCondition= 24, ENV_SUPPORT_IN_FRONT_WALL, $0333, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE
+MultEnvCondition= 24, ENV_SUPPORT_IN_FRONT_WALL, $0433, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE
 
 Animation=			599, IGNORE, IGNORE, IGNORE, ENV_MULT_CONDITION, 25, IGNORE, -589 ; Pull up on top (from climbing up)
-MultEnvCondition= 25, ENV_SUPPORT_IN_FRONT_WALL, $0111, IGNORE, ENV_FRAME_NUMBER, 18, IGNORE
+MultEnvCondition= 25, ENV_SUPPORT_IN_FRONT_WALL, $0433, IGNORE, ENV_FRAME_NUMBER, 18, IGNORE
+
 
 
 ;================================================================================================
