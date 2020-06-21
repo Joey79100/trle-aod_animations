@@ -67,12 +67,12 @@ WindowTitle=	Tomb Raider: The Dark Renaissance
 
 [Level]			;TECH DEMO - LARA - NGLE version
 WindowTitle=	Tomb Raider: The Dark Renaissance
-#INCLUDE		"Demo.txt"
+#INCLUDE "Demo.txt"
 #INCLUDE "General.txt"
 #INCLUDE 		"Inventory.txt"
 #INCLUDE "Animations_Lara.txt"
 
-#INCLUDE 		"WIP_stuff.txt"
+#INCLUDE "WIP_stuff.txt"
 ;#INCLUDE 		"PickableStatues.txt"
 
 
@@ -128,4 +128,16 @@ TriggerGroup=	235,	>
 				$2000, 66, $505, >	; Text. Set <Metal>color and (Top line, right alignment)position for next Print String flipeffect
 				$2000, 81, $3, >		; Text. <Half Width and Height>size characters for next print string command
 				$2000, 65, $11		; Text. Print Standard <ENGLISH.txt:17>string on screen for (Forever) seconds
+
+
+
+[Level]			;TECH DEMO - LARA - TOMB EDITOR version
+Name= SkidooTest
+Level= Data\SkidooTest, 107
+LoadCamera= 0,0,0,0,0,0,255
+WindowTitle=	Tomb Raider: The Dark Renaissance
+#INCLUDE 		"Animations_Lara.txt"
+
+#INCLUDE "snowmobile_scripts.txt"
+
 

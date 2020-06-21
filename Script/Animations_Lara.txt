@@ -339,6 +339,15 @@ MultEnvCondition=	648,	ENV_HOLE_FLOOR_IN_FRONT, 769, IGNORE, >
 ; difference: -352 | 352 (anim: 250??)
 							
 
+;================================================================================================
+; Skip/run back
+;================================================================================================
+
+Animation=		652, KEY1_DOWN, KEY2_DASH, IGNORE, IGNORE, IGNORE, IGNORE, -11, -103
+Animation=		652, KEY1_DOWN, KEY2_DASH, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -88
+Animation=		90, KEY1_DOWN + KEY1_RELEASED, KEY2_DASH, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -653
+Animation=		90, KEY1_DOWN + KEY1_RELEASED, KEY2_DASH, IGNORE, ENV_FRAME_NUMBER, 8, IGNORE, -653
+
 
 ;================================================================================================
 ; Ladder
