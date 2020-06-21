@@ -4,10 +4,10 @@
     <WadSoundInfo>
       <Id>50</Id>
       <Name>BULLET_HIT_KLONA</Name>
-      <Volume>50</Volume>
+      <Volume>60</Volume>
       <RangeInSectors>13</RangeInSectors>
-      <Chance>50</Chance>
-      <PitchFactor>10</PitchFactor>
+      <Chance>75</Chance>
+      <PitchFactor>20</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>true</RandomizePitch>
       <RandomizeVolume>true</RandomizeVolume>
@@ -25,7 +25,7 @@
       <Name>INJURY_KLONA</Name>
       <Volume>55</Volume>
       <RangeInSectors>13</RangeInSectors>
-      <Chance>50</Chance>
+      <Chance>75</Chance>
       <PitchFactor>10</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>true</RandomizePitch>
@@ -45,7 +45,7 @@
       <Volume>45</Volume>
       <RangeInSectors>13</RangeInSectors>
       <Chance>50</Chance>
-      <PitchFactor>6</PitchFactor>
+      <PitchFactor>54</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>true</RandomizePitch>
       <RandomizeVolume>true</RandomizeVolume>
