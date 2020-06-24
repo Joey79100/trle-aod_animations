@@ -344,17 +344,16 @@ MultEnvCondition=	648,	ENV_HOLE_FLOOR_IN_FRONT, 769, IGNORE, >
 ;================================================================================================
 
 ; Engage in normal mode (use Sprint+Down)
-Animation=		652, KEY1_DOWN, KEY2_DASH, IGNORE, IGNORE, IGNORE, IGNORE, -11, -103
-Animation=		652, KEY1_DOWN, KEY2_DASH, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -88
+Animation=		652, KEY1_DOWN, KEY2_DASH, IGNORE, IGNORE, IGNORE, IGNORE, -11, -103 ; start from stance
+Animation=		652, KEY1_DOWN, KEY2_DASH, FAN_START_FROM_EXTRA_FRAME, ENV_FRAME_NUMBER, 0, 4, -88 ; start from backward hop's beginning
 
 ; Engage when guns are drawn (overrides hop backward)
-Animation=		652, KEY1_DOWN, IGNORE, IGNORE, ENV_FREE_HANDS + ENV_NON_TRUE, IGNORE, IGNORE, -11, -103, -88
-Animation=		653, KEY1_DOWN, IGNORE, IGNORE, ENV_FREE_HANDS + ENV_NON_TRUE, IGNORE, IGNORE, -89 ; if already hopping bacwkards, switch to loop
+Animation=		652, KEY1_DOWN, IGNORE, FAN_START_FROM_EXTRA_FRAME, ENV_FREE_HANDS + ENV_NON_TRUE, IGNORE, 2, -11, -103, -88 ; general start
+Animation=		653, KEY1_DOWN, IGNORE, IGNORE, ENV_FREE_HANDS + ENV_NON_TRUE, IGNORE, IGNORE, -89 ; start from middle of bacwkard hop (switch to loop)
 
 ; Stop
-Animation=		90, KEY1_DOWN + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -653
-Animation=		90, KEY1_DOWN + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 8, IGNORE, -653
-
+Animation=		654, KEY1_DOWN + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 10, IGNORE, -652 ; start cancel
+Animation=		654, KEY1_DOWN + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -653 ; stop
 
 ;================================================================================================
 ; Ladder
