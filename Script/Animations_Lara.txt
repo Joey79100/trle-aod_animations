@@ -352,7 +352,7 @@ Animation=		652, KEY1_DOWN, IGNORE, FAN_START_FROM_EXTRA_FRAME, ENV_FREE_HANDS +
 Animation=		653, KEY1_DOWN, IGNORE, IGNORE, ENV_FREE_HANDS + ENV_NON_TRUE, IGNORE, IGNORE, -89 ; start from middle of bacwkard hop (switch to loop)
 
 ; Stop
-Animation=		654, KEY1_DOWN + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 10, IGNORE, -652 ; start cancel
+Animation=		655, KEY1_DOWN + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 10, IGNORE, -652 ; start cancel
 Animation=		654, KEY1_DOWN + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -653 ; stop
 
 ;================================================================================================
