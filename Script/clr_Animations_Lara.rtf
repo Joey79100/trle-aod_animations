@@ -346,7 +346,8 @@
 \par 
 \par ; Engage in normal mode (use Sprint+Down)
 \par Animation=\tab\tab 652, KEY1_DOWN, KEY2_DASH, IGNORE, IGNORE, IGNORE, IGNORE, -11, -103 ; start from stance
-\par Animation=\tab\tab 652, KEY1_DOWN, KEY2_DASH, FAN_START_FROM_EXTRA_FRAME, ENV_FRAME_NUMBER, 0, 4, -88 ; start from backward hop's beginning
+\par Animation=\tab\tab 652, KEY1_DOWN, KEY2_DASH, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -88 ; start from backward hop's beginning (frame 0)
+\par Animation=\tab\tab 652, KEY1_DOWN, KEY2_DASH, FAN_START_FROM_EXTRA_FRAME, ENV_FRAME_RANGE, 2049, 4, -88 ; start from backward hop's beginning (frame 1 to 8: 8*256 + 1))
 \par 
 \par ; Engage when guns are drawn (overrides hop backward)
 \par Animation=\tab\tab 652, KEY1_DOWN, IGNORE, FAN_START_FROM_EXTRA_FRAME, ENV_FREE_HANDS + ENV_NON_TRUE, IGNORE, 2, -11, -103, -88 ; general start
@@ -408,6 +409,7 @@
 \par 
 \par ; -- Climb up --
 \par Animation=\tab\tab\tab 598, IGNORE, IGNORE, IGNORE, ENV_MULT_CONDITION, 24, IGNORE, -589 ; Pull up on top (from climbing up)
+\par 
 \par MultEnvCondition= 24, ENV_SUPPORT_IN_FRONT_WALL, $0433, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE
 \par 
 \par Animation=\tab\tab\tab 599, IGNORE, IGNORE, IGNORE, ENV_MULT_CONDITION, 25, IGNORE, -589 ; Pull up on top (from climbing up)

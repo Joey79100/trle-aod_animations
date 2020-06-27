@@ -345,7 +345,8 @@ MultEnvCondition=	648,	ENV_HOLE_FLOOR_IN_FRONT, 769, IGNORE, >
 
 ; Engage in normal mode (use Sprint+Down)
 Animation=		652, KEY1_DOWN, KEY2_DASH, IGNORE, IGNORE, IGNORE, IGNORE, -11, -103 ; start from stance
-Animation=		652, KEY1_DOWN, KEY2_DASH, FAN_START_FROM_EXTRA_FRAME, ENV_FRAME_NUMBER, 0, 4, -88 ; start from backward hop's beginning
+Animation=		652, KEY1_DOWN, KEY2_DASH, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -88 ; start from backward hop's beginning (frame 0)
+Animation=		652, KEY1_DOWN, KEY2_DASH, FAN_START_FROM_EXTRA_FRAME, ENV_FRAME_RANGE, 2049, 4, -88 ; start from backward hop's beginning (frame 1 to 8: 8*256 + 1))
 
 ; Engage when guns are drawn (overrides hop backward)
 Animation=		652, KEY1_DOWN, IGNORE, FAN_START_FROM_EXTRA_FRAME, ENV_FREE_HANDS + ENV_NON_TRUE, IGNORE, 2, -11, -103, -88 ; general start
