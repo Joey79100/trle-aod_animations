@@ -1,0 +1,183 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset0 Courier New;}}
+\viewkind4\uc1\pard\lang1036\b\f0\fs23 
+\par ;============================================================================
+\par ;   Shovel meshswap - Swaps Lara's hand (mesh 10) to the one of MESHWAP3
+\par ;============================================================================
+\par 
+\par ;----------------------------------------------------------------------------
+\par ; SHOWING THE SHOVEL
+\par GlobalTrigger=\tab 240, IGNORE, GT_CONDITION_GROUP, IGNORE, 240, 241, IGNORE
+\par 
+\par ; // IF LARA.animation == 433 && LARA.frame == 0
+\par TriggerGroup=\tab 240,\tab $8000, 433, $1E, > \tab\tab\tab\tab ; C30 | Lara. (Animation) Lara is performing <433>animation
+\par \tab\tab\tab\tab\tab\tab $8000, 240, $10 \tab\tab\tab\tab ; C16 | Multiple condition of <240>MultEnvCondition script command in (AND)way
+\par MultEnvCondition=\tab 240, ENV_FRAME_NUMBER, 0, IGNORE
+\par 
+\par ; // THEN swap LARA.mesh10 with MESHSWAP3
+\par TriggerGroup=\tab 241,\tab $2000, 100, $570A\tab\tab\tab\tab ; F100 | Lara. (Mesh) Set single <Lara Right Hand>Lara mesh with mesh got from (419 MESHSWAP)slot
+\par ;----------------------------------------------------------------------------
+\par 
+\par ;----------------------------------------------------------------------------
+\par ; HIDING THE SHOVEL
+\par GlobalTrigger=\tab 242, IGNORE, GT_CONDITION_GROUP, IGNORE, 242, 243, IGNORE
+\par 
+\par ; // IF LARA.animation == 433 && LARA.frame == \{ANIM_COMPLETE\}
+\par TriggerGroup=\tab 242,\tab $8000, 433, $1E, > \tab ; C30 | Lara. (Animation) Lara is performing <433>animation
+\par \tab\tab\tab\tab\tab\tab $8000, 242, $10 \tab ; C16 | Multiple condition of <242>MultEnvCondition script command in (AND)way
+\par MultEnvCondition=\tab 242, ENV_ANIM_COMPLETE, IGNORE, IGNORE
+\par 
+\par ; // THEN swap LARA.mesh10 with MESHSWAP3
+\par TriggerGroup=\tab 243,\tab $2000, 100, $80A\tab\tab\tab\tab ; F100 | Lara. (Mesh) Set single <Lara Right Hand>Lara mesh with mesh got from (0 LARA)slot
+\par ;----------------------------------------------------------------------------
+\par 
+\par 
+\par 
+\par ;============================================================================
+\par ;   Fog
+\par ;============================================================================
+\par 
+\par Fog=\tab\tab 16,24,32
+\par FogRange=\tab 0, 16
+\par ColAddHorizon=\tab ENABLED;
+\par Layer1=\tab 16,16,16,2
+\par Layer2=\tab 10,18,24,7
+\par ;----------------------------------------------------------------------------
+\par 
+\par ;Fog=\tab\tab 0,0,0
+\par ;FogRange=\tab 0, 12
+\par 
+\par Organizer=\tab\tab 237, IGNORE, IGNORE, 0, 237, 1, 238, 6, 239\tab\tab ; Called in-game near the pool
+\par 
+\par TriggerGroup=\tab 237, $2000, 355, $A03\tab\tab ; Screen. Flash screen - White - Fast
+\par TriggerGroup=\tab 238, $2000, 228, $10D\tab\tab ; Weather. Fog. Change End limit of Distance Fog - 32 sectors - 4 seconds
+\par TriggerGroup=\tab 239, $2000, 230, $1\tab\tab ; Weather. Fog. Stop the [Change END LIMIT fog distance] effect
+\par 
+\par 
+\par 
+\par 
+\par ;============================================================================
+\par ;   Animations
+\par ;============================================================================
+\par 
+\par 
+\par ; ---- Kick Over Knight ----
+\par #DEFINE\tab KEY_K\tab\tab 37
+\par Animation=\tab\tab 450, KEY_K, IGNORE, FAN_KEYS_AS_SCANCODE + FAN_DISABLE_GRAVITY, IGNORE, IGNORE, IGNORE, STATE_REACH
+\par 
+\par 
+\par 
+\par ; ---- Diagonal Wall Climbing ----
+\par 
+\par 
+\par 
+\par ; ---- Up Left ----
+\par Animation=\tab\tab 627, KEY1_ACTION + KEY1_LEFT, IGNORE, IGNORE, ENV_CLIMB_WALL_AT_LEFT + ENV_FRAME_NUMBER, 1, IGNORE, -165
+\par 
+\par Animation=\tab\tab 629, KEY1_LEFT + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -627
+\par Animation=\tab\tab 629, KEY1_LEFT + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 58, IGNORE, -627
+\par Animation=\tab\tab 630, KEY1_LEFT + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 29, IGNORE, -627
+\par 
+\par 
+\par ; ---- Up Right ----
+\par Animation=\tab\tab 631, KEY1_ACTION + KEY1_RIGHT, IGNORE, IGNORE, ENV_CLIMB_WALL_AT_RIGHT + ENV_FRAME_NUMBER, 1, IGNORE, -165
+\par 
+\par Animation=\tab\tab 633, KEY1_RIGHT + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -631
+\par Animation=\tab\tab 633, KEY1_RIGHT + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 58, IGNORE, -631
+\par Animation=\tab\tab 634, KEY1_RIGHT + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 29, IGNORE, -631
+\par 
+\par 
+\par 
+\par ; ---- Down Left ----
+\par Animation=\tab\tab 635, KEY1_ACTION + KEY1_LEFT, IGNORE, IGNORE, ENV_CLIMB_WALL_AT_LEFT + ENV_FRAME_NUMBER, 1, IGNORE, -169
+\par 
+\par Animation=\tab\tab 637, KEY1_LEFT + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -635
+\par Animation=\tab\tab 637, KEY1_LEFT + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 55, IGNORE, -635
+\par Animation=\tab\tab 638, KEY1_LEFT + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 28, IGNORE, -635
+\par 
+\par 
+\par 
+\par ; ---- Down Right ----
+\par ;Animation=\tab\tab 639, KEY1_ACTION + KEY1_RIGHT, IGNORE, IGNORE, ENV_CLIMB_WALL_AT_RIGHT + ENV_FRAME_NUMBER, 1, IGNORE, -169
+\par 
+\par Animation=\tab\tab 641, KEY1_RIGHT + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -639
+\par Animation=\tab\tab 641, KEY1_RIGHT + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 55, IGNORE, -639
+\par Animation=\tab\tab 642, KEY1_RIGHT + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 28, IGNORE, -639
+\par 
+\par 
+\par 
+\par 
+\par ;============================================================================
+\par ;   Flare sound as TR2-3
+\par ;============================================================================
+\par 
+\par ;#DEFINE GT_FLARE 1700
+\par ;#DEFINE TG_FLARE 1700
+\par ;
+\par ;GlobalTrigger=\tab GT_FLARE+0, FGT_SINGLE_SHOT_RESUMED, GT_CONDITION_GROUP, -1, TG_FLARE+0, TG_FLARE+1, -1
+\par ;TriggerGroup=\tab TG_FLARE+0,\tab $8000, 7, $23,>\tab\tab\tab ; IF Lara. (Holds) Lara is holding Flare
+\par ;\tab\tab\tab\tab\tab $2000, 244, $450,>\tab\tab ; Variables. Copy to LSA1 the (Attached Lara Status (Short))Savegame Memory value
+\par ;\tab\tab\tab\tab\tab $8000, 80, $2B\tab\tab\tab ; IF LSA1 = 0
+\par ;TriggerGroup=\tab TG_FLARE+1,\tab $2000, 264, $0,>\tab\tab\tab ; Timer. Start the <Local Timer>TRNG Timer in (Increasing Timer)Mode
+\par ;\tab\tab\tab\tab\tab $2000, 70, $96\tab\tab\tab ; Sound. Play <LOOP_FOR_SMALL_FIRES>Sound sample in LOOP mode
+\par ;
+\par ;GlobalTrigger=\tab GT_FLARE+1, -1, GT_CONDITION_GROUP, -1, TG_FLARE+2, TG_FLARE+3, -1
+\par ;TriggerGroup=\tab TG_FLARE+2,\tab $8000, 115, $26\tab\tab\tab ; IF Variables. <Local Long Timer> Variable is >= than PARAM_BIG_NUMBER[0] (900)
+\par ;TriggerGroup=\tab TG_FLARE+3,\tab $2000, 265, $0,>\tab\tab\tab ; Timer. Stop the <Local Timer>TRNG Timer
+\par ;\tab\tab\tab\tab\tab $2000, 266, $0,>\tab\tab\tab ; Timer. Initialize <Local Timer>TRNG Timer to (0)Seconds
+\par ;\tab\tab\tab\tab\tab $2000, 72, $96\tab\tab\tab ; Sound. Stop <LOOP_FOR_SMALL_FIRES>Sound sample
+\par ;
+\par ;Parameters= PARAM_BIG_NUMBERS, 900
+\par ;GlobalTrigger=\tab GT_FLARE+2, -1, GT_CONDITION_GROUP, -1, TG_FLARE+4, TG_FLARE+5, -1
+\par ;TriggerGroup=\tab TG_FLARE+4,\tab $8000, 7, $23,>\tab\tab\tab ; IF Lara. (Holds) Lara is holding Flare
+\par ;\tab\tab\tab\tab\tab $2000, 244, $450,>\tab\tab ; Variables. Copy to LSA1 the (Attached Lara Status (Short))Savegame Memory value
+\par ;\tab\tab\tab\tab\tab $8000, 80, $22B\tab\tab\tab ; IF LSA1 = 2
+\par ;TriggerGroup=\tab TG_FLARE+5,\tab $2000, 265, $0,>\tab\tab\tab ; Timer. Stop the <Local Timer>TRNG Timer
+\par ;\tab\tab\tab\tab\tab $2000, 266, $0\tab\tab\tab ; Variables. Timer. Initialize <Local Timer>TRNG Timer to (0)Seconds
+\par 
+\par ;================================================================================================
+\par ;Customizable Camera
+\par ;================================================================================================
+\par 
+\par ; -- Camera presets --
+\par Parameters=\tab PARAM_SET_CAMERA, 2, FCAM_DISABLE_COMBAT_CAM, 2048, -4000, IGNORE, IGNORE, IGNORE
+\par Parameters=\tab PARAM_SET_CAMERA, 3, FCAM_DISABLE_COMBAT_CAM, 6144, -8000, IGNORE, IGNORE, IGNORE
+\par Parameters=\tab PARAM_SET_CAMERA, 4, FCAM_DISABLE_COMBAT_CAM, 6144, -7000, -32768, IGNORE, IGNORE
+\par Parameters=\tab PARAM_SET_CAMERA, 5, FCAM_DISABLE_COMBAT_CAM, 2048, -3000, -32768, IGNORE, IGNORE
+\par 
+\par #DEFINE KEY_F8 66
+\par #DEFINE KEY_F9 67
+\par #DEFINE KEY_F10 68
+\par #DEFINE KEY_F11 87
+\par #DEFINE KEY_F12 88
+\par 
+\par ; -- F8 - Restore normal camera --
+\par GlobalTrigger=\tab 10, FGT_SINGLE_SHOT_RESUMED, GT_KEYBOARD_CODE, KEY_F8, IGNORE, 14, IGNORE
+\par TriggerGroup=\tab 14, $2000, 215, $0\tab ; Camera. Restore camera mode after a "change camera" flipeffect
+\par 
+\par ; -- F9 - Set PARAM_SET_CAMERA 2 --
+\par GlobalTrigger=\tab 6, FGT_SINGLE_SHOT_RESUMED + FGT_REMOVE_INPUT, GT_KEYBOARD_CODE, KEY_F9, IGNORE, 15, IGNORE
+\par Organizer=\tab\tab 6, FO_TICK_TIME, IGNORE, 0, 14, 1, 19
+\par TriggerGroup=\tab 15, $2000, 127, $6\tab\tab ; Enable Organizer <6>
+\par TriggerGroup=\tab 19, $2000, 214, $2\tab\tab ; Camera. Change camera mode with <"PARAM_SET_CAMERA, 2"> Parameters for ("Forever") time
+\par 
+\par ; -- F10 - Set PARAM_SET_CAMERA 3 --
+\par GlobalTrigger=\tab 7, FGT_SINGLE_SHOT_RESUMED + FGT_REMOVE_INPUT, GT_KEYBOARD_CODE, KEY_F10, IGNORE, 16, IGNORE
+\par Organizer=\tab\tab 7, FO_TICK_TIME, IGNORE, 0, 14, 1, 20
+\par TriggerGroup=\tab 16, $2000, 127, $7\tab\tab ; Enable Organizer <7>
+\par TriggerGroup=\tab 20, $2000, 214, $3\tab\tab ; Camera. Change camera mode with <"PARAM_SET_CAMERA, 3"> Parameters for ("Forever") time
+\par 
+\par ; -- F11 - Set PARAM_SET_CAMERA 4 --
+\par GlobalTrigger=\tab 8, FGT_SINGLE_SHOT_RESUMED + FGT_REMOVE_INPUT, GT_KEYBOARD_CODE, KEY_F11, IGNORE, 17, IGNORE
+\par Organizer=\tab\tab 8, FO_TICK_TIME, IGNORE, 0, 14, 1, 21
+\par TriggerGroup=\tab 17, $2000, 127, $8\tab\tab ; Enable Organizer <8>
+\par TriggerGroup=\tab 21, $2000, 214, $4\tab\tab ; Camera. Change camera mode with <"PARAM_SET_CAMERA, 4"> Parameters for ("Forever") time
+\par 
+\par ; -- F12 - Set PARAM_SET_CAMERA 5 --
+\par GlobalTrigger=\tab 9, FGT_SINGLE_SHOT_RESUMED + FGT_REMOVE_INPUT, GT_KEYBOARD_CODE, KEY_F12, IGNORE, 18, IGNORE
+\par Organizer=\tab\tab 9, FO_TICK_TIME, IGNORE, 0, 14, 1, 22
+\par TriggerGroup=\tab 18, $2000, 127, $9\tab\tab ; Enable Organizer <9>
+\par TriggerGroup=\tab 22, $2000, 214, $5\tab\tab ; Camera. Change camera mode with <"PARAM_SET_CAMERA, 5"> Parameters for ("Forever") time
+\par 
+\par 
+\par }
+ 

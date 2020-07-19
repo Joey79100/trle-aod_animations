@@ -92,8 +92,10 @@ WindowTitle=	Tomb Raider: The Dark Renaissance
 GlobalTrigger=	234, IGNORE, GT_ALWAYS, IGNORE, IGNORE, 234, IGNORE
 TriggerGroup=	234,	>
 				>				; ==== Selecting SLOT and ITEM for further operations ====
-				$2000, 292, $5F, >	; Variables. Memory. Set the <SAS[95]>Slot as Selected Slot Memory
-				$5000, 0, $0036, >	; Variables. Memory. Set the <SAS[0]>Item as Selected Item
+>;				$2000, 292, $5F, >	; Variables. Memory. Set the <SAS[95]>Slot as Selected Slot Memory
+>;				$5000, 0, $0036, >	; Variables. Memory. Set the <SAS[0]>Item as Selected Item
+				$2000, 292, $29, >	; Variables. Memory. Set the <BADDY_1[41]>Slot as Selected Slot Memory
+				$5000, 30, $0036, >	; Variables. Memory. Set the <SAS[30]>Item as Selected Item
 				>
 				>				; ==== Getting the relative Animation index from SAS ===
 				$2000, 293, $1255, >	; Variables. Memory. Copy from (First Animation Index)Selected Slot Memory to <LSD2>Numeric Variable
@@ -129,15 +131,5 @@ TriggerGroup=	235,	>
 				$2000, 81, $3, >		; Text. <Half Width and Height>size characters for next print string command
 				$2000, 65, $11		; Text. Print Standard <ENGLISH.txt:17>string on screen for (Forever) seconds
 
-
-
-[Level]			;TECH DEMO - LARA - TOMB EDITOR version
-Name= SkidooTest
-Level= Data\SkidooTest, 107
-LoadCamera= 0,0,0,0,0,0,255
-WindowTitle=	Tomb Raider: The Dark Renaissance
-#INCLUDE 		"Animations_Lara.txt"
-
-#INCLUDE "snowmobile_scripts.txt"
 
 

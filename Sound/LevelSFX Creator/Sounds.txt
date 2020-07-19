@@ -27,7 +27,7 @@ PUSH_SPX_SWITCH:	spx_swt				VOL95	P 		PIT10	RAD10
 LARA_CLIMB_HARD:	Clim_up3 Clim_up3B Clim_up3C	VOL45	  			RAD06	#g
 LARA_BODYSL:		lara_hurt1 lara_hurt2 lara_hurt3 lara_hurt4 VOL50	  	CH40 		RAD09	#g
 LARA_SHIMMY:		shimmy1 shimmy2	shimmy3		VOL20	P 			RAD06	#g
-LARA_JUMP:		lara_jump1 lara_jump2 lara_jump3 VOL55	  	CH60		RAD08	#g
+LARA_JUMP:		lara_jump1 lara_jump2 lara_jump3 VOL55	  	CH70		RAD08	#g
 LARA_FALL:		f2f_scrm			VOL60				RAD12	#g
 LARA_HURT:		lara_hurt1 lara_hurt2 lara_hurt3 lara_hurt4 VOL50	  	CH40 		RAD09	#g
 LARA_ROLL:		roll				VOL38	  			RAD07	#g

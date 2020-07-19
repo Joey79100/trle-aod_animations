@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>trle-aod_animations</Name>
+  <GameVersion>TRNG</GameVersion>
+  <DefaultLanguage>English</DefaultLanguage>
+  <LaunchFilePath>$(ProjectDirectory)\tomb4.exe</LaunchFilePath>
+  <ScriptPath>$(ProjectDirectory)\Script</ScriptPath>
+  <LevelsPath>$(ProjectDirectory)\Maps</LevelsPath>
+  <Levels>
+    <ProjectLevel>
+      <Name>Demo</Name>
+      <FolderPath>$(ProjectDirectory)\Maps\Demo</FolderPath>
+      <SpecificFile>demo.prj2</SpecificFile>
+    </ProjectLevel>
+    <ProjectLevel>
+      <Name>SkidooTest</Name>
+      <FolderPath>$(ProjectDirectory)\Maps\SkidooTest</FolderPath>
+      <SpecificFile>$(LatestFile)</SpecificFile>
+    </ProjectLevel>
+    <ProjectLevel>
+      <Name>Title</Name>
+      <FolderPath>$(ProjectDirectory)\Maps\Title</FolderPath>
+      <SpecificFile>$(LatestFile)</SpecificFile>
+    </ProjectLevel>
+  </Levels>
+</Project>
