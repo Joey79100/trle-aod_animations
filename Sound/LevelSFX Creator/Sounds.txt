@@ -159,7 +159,7 @@ BATS_1:			b1 b2 b3 b4 b5 b6 b7 b8		VOL70	P V		PIT10	RAD10
 ROLLING_DOOR:		dor_roll			VOL90			PIT-80	RAD13
 LAUNCHER_1:		lncher1				VOL80	      L		PIT-70	RAD10
 LAUNCHER_2:		lncher2				VOL80			PIT-70	RAD10
-TRAPDOOR_OPEN:          trapdoor_opn                    VOL80                   
+TRAPDOOR_OPEN:          trapd_op	                VOL80                   PIT-40  RAD09
 TRAPDOOR_CLOSE:         trapd_cl                        VOL80                   PIT-20
 Empty:
 BABOON_STAND_WAIT:	maq_stnd			VOL70	P V		PIT-20	RAD10
