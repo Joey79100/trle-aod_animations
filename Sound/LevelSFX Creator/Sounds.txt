@@ -46,7 +46,7 @@ LARA_UZI_STOP:		uzi_stp				VOL60				RAD13	#g
 LARA_SHOTGUN:		shotgun				VOL75	  V			RAD13	#g
 LARA_BLOCK_PUSH1:	lar_p&p2			VOL60	  V 			RAD13	#g
 LARA_BLOCK_PUSH2:	lara_jump1 lara_jump2 lara_jump3 VOL60	        CH50		RAD10	#g
-SARLID_PALACES:		l_wrain2			VOL50	      L		PIT0	RAD13
+SARLID_PALACES:		sarlid2				VOL70			PIT-70	RAD13	#r #T
 LARA_SHOTGUN_SHELL:     shell1 shell2 shell3 shell4 shell5 VOL12   P V	CH50		RAD13	#g
 LARA_BULLET_HIT:	lara_hurt1 lara_hurt2 lara_hurt3 lara_hurt4 VOL46	 	CH25		RAD13	#g
 LARA_BLKPULL1:		lar_p&p4 lar_jmp		VOL36	   			RAD10   #g
@@ -159,7 +159,7 @@ BATS_1:			b1 b2 b3 b4 b5 b6 b7 b8		VOL70	P V		PIT10	RAD10
 ROLLING_DOOR:		dor_roll			VOL90			PIT-80	RAD13
 LAUNCHER_1:		lncher1				VOL80	      L		PIT-70	RAD10
 LAUNCHER_2:		lncher2				VOL80			PIT-70	RAD10
-TRAPDOOR_OPEN:          trapd_op	                VOL80                   PIT-40  RAD09
+TRAPDOOR_OPEN:          trapd_op	                VOL65                   PIT-30  RAD08
 TRAPDOOR_CLOSE:         trapd_cl                        VOL80                   PIT-20
 Empty:
 BABOON_STAND_WAIT:	maq_stnd			VOL70	P V		PIT-20	RAD10
