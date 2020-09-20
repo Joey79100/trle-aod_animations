@@ -357,12 +357,6 @@ Animation=		655, KEY1_DOWN + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 10
 Animation=		654, KEY1_DOWN + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -653 ; stop
 
 ;================================================================================================
-; Big hit Front test
-;================================================================================================
-
-Animation=		656, IGNORE, KEY2_DASH, IGNORE, IGNORE, IGNORE, IGNORE, -11, -103
-
-;================================================================================================
 ; Ladder
 ;================================================================================================
 
@@ -414,6 +408,7 @@ Animation=			597, KEY1_JUMP, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -587 ; Jump
 
 ; -- Climb up --
 Animation=			598, IGNORE, IGNORE, IGNORE, ENV_MULT_CONDITION, 24, IGNORE, -589 ; Pull up on top (from climbing up)
+
 
 MultEnvCondition= 24, ENV_SUPPORT_IN_FRONT_WALL, $0433, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE
 
