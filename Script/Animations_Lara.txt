@@ -4,6 +4,7 @@
 ;================================================================================================
 
 Customize=		CUST_TR5_UNDERWATER_COLLISIONS
+Customize=		CUST_DISABLE_PUSH_AWAY_ANIMATION
 
 
 ; -- Slide to run --
@@ -408,6 +409,7 @@ Animation=			597, KEY1_JUMP, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -587 ; Jump
 
 ; -- Climb up --
 Animation=			598, IGNORE, IGNORE, IGNORE, ENV_MULT_CONDITION, 24, IGNORE, -589 ; Pull up on top (from climbing up)
+
 
 
 MultEnvCondition= 24, ENV_SUPPORT_IN_FRONT_WALL, $0433, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE
