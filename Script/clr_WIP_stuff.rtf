@@ -1,36 +1,5 @@
 {\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fnil\fcharset0 Courier New;}}
 \viewkind4\uc1\pard\lang1036\b\f0\fs23 
-\par ;============================================================================
-\par ;   Shovel meshswap - Swaps Lara's hand (mesh 10) to the one of MESHWAP3
-\par ;============================================================================
-\par 
-\par ;----------------------------------------------------------------------------
-\par ; SHOWING THE SHOVEL
-\par GlobalTrigger=\tab 240, IGNORE, GT_CONDITION_GROUP, IGNORE, 240, 241, IGNORE
-\par 
-\par ; // IF LARA.animation == 433 && LARA.frame == 0
-\par TriggerGroup=\tab 240,\tab $8000, 433, $1E, > \tab\tab\tab\tab ; C30 | Lara. (Animation) Lara is performing <433>animation
-\par \tab\tab\tab\tab\tab\tab $8000, 240, $10 \tab\tab\tab\tab ; C16 | Multiple condition of <240>MultEnvCondition script command in (AND)way
-\par MultEnvCondition=\tab 240, ENV_FRAME_NUMBER, 0, IGNORE
-\par 
-\par ; // THEN swap LARA.mesh10 with MESHSWAP3
-\par TriggerGroup=\tab 241,\tab $2000, 100, $570A\tab\tab\tab\tab ; F100 | Lara. (Mesh) Set single <Lara Right Hand>Lara mesh with mesh got from (419 MESHSWAP)slot
-\par ;----------------------------------------------------------------------------
-\par 
-\par ;----------------------------------------------------------------------------
-\par ; HIDING THE SHOVEL
-\par GlobalTrigger=\tab 242, IGNORE, GT_CONDITION_GROUP, IGNORE, 242, 243, IGNORE
-\par 
-\par ; // IF LARA.animation == 433 && LARA.frame == \{ANIM_COMPLETE\}
-\par TriggerGroup=\tab 242,\tab $8000, 433, $1E, > \tab ; C30 | Lara. (Animation) Lara is performing <433>animation
-\par \tab\tab\tab\tab\tab\tab $8000, 242, $10 \tab ; C16 | Multiple condition of <242>MultEnvCondition script command in (AND)way
-\par MultEnvCondition=\tab 242, ENV_ANIM_COMPLETE, IGNORE, IGNORE
-\par 
-\par ; // THEN swap LARA.mesh10 with MESHSWAP3
-\par TriggerGroup=\tab 243,\tab $2000, 100, $80A\tab\tab\tab\tab ; F100 | Lara. (Mesh) Set single <Lara Right Hand>Lara mesh with mesh got from (0 LARA)slot
-\par ;----------------------------------------------------------------------------
-\par 
-\par 
 \par 
 \par ;============================================================================
 \par ;   Fog

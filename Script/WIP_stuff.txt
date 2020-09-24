@@ -1,35 +1,4 @@
 
-;============================================================================
-;   Shovel meshswap - Swaps Lara's hand (mesh 10) to the one of MESHWAP3
-;============================================================================
-
-;----------------------------------------------------------------------------
-; SHOWING THE SHOVEL
-GlobalTrigger=	240, IGNORE, GT_CONDITION_GROUP, IGNORE, 240, 241, IGNORE
-
-; // IF LARA.animation == 433 && LARA.frame == 0
-TriggerGroup=	240,	$8000, 433, $1E, > 				; C30 | Lara. (Animation) Lara is performing <433>animation
-						$8000, 240, $10 				; C16 | Multiple condition of <240>MultEnvCondition script command in (AND)way
-MultEnvCondition=	240, ENV_FRAME_NUMBER, 0, IGNORE
-
-; // THEN swap LARA.mesh10 with MESHSWAP3
-TriggerGroup=	241,	$2000, 100, $570A				; F100 | Lara. (Mesh) Set single <Lara Right Hand>Lara mesh with mesh got from (419 MESHSWAP)slot
-;----------------------------------------------------------------------------
-
-;----------------------------------------------------------------------------
-; HIDING THE SHOVEL
-GlobalTrigger=	242, IGNORE, GT_CONDITION_GROUP, IGNORE, 242, 243, IGNORE
-
-; // IF LARA.animation == 433 && LARA.frame == {ANIM_COMPLETE}
-TriggerGroup=	242,	$8000, 433, $1E, > 	; C30 | Lara. (Animation) Lara is performing <433>animation
-						$8000, 242, $10 	; C16 | Multiple condition of <242>MultEnvCondition script command in (AND)way
-MultEnvCondition=	242, ENV_ANIM_COMPLETE, IGNORE, IGNORE
-
-; // THEN swap LARA.mesh10 with MESHSWAP3
-TriggerGroup=	243,	$2000, 100, $80A				; F100 | Lara. (Mesh) Set single <Lara Right Hand>Lara mesh with mesh got from (0 LARA)slot
-;----------------------------------------------------------------------------
-
-
 
 ;============================================================================
 ;   Fog
