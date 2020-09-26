@@ -41,3 +41,11 @@ What I want to emphasize is that I **never** import an animation: it is always r
 2. Lara's outfit has been created by **Mrshina**. It has a particularity: Lara's mesh positions have been changed from the original classic model to match the original AOD model more closely.
    Thus, copying LARA from this project's WAD to your WAD will result in an alien-like Lara in-game, unless you manually reposition the meshes or use an outfit that uses the same mesh positions.
 3. If you use this in your project, you may notice Lara's default footstep sounds are missing in most animations. This is deliberate. In order to get rid of that Stone sound playing on top of every other type of footstep, I had to remove its Play Sound command from the animations. In my project I've assigned the Stone samples to the Marble type, and I use Marble as a default replacement for Stone on every Stone texture.
+
+## IMPORTANT NOTE ABOUT LEVEL ENCRYPTION
+A simple request:
+> If you are going to **encrypt your levels**, then please **do not use this project**.
+
+I don't agree with encryption for many reasons, and I'll just sum it up this way: when making your game, you're using software, assets, tutorials, advices, etc... which are all **community effort**. Community effort is what kept Tomb Raider level editing going after 20 years.
+
+My project is following the same spirit. If you want to encrypt your levels, well it's your choice, but then I ask you to not use this project (or any of my stuff by the way) in it. Thank you.
