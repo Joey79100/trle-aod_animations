@@ -100,7 +100,7 @@ You can do this with Notepad++:
 
 Known affected files are `.TXT`, `.SAM`, `.WAS`. 
 
-Note: `tomb4.exe` may be seen as a thread by your antivirus, because it has been patched with FLEP. It is a _false-positive_.
+Note: `tomb4.exe` may be seen as a threat by your antivirus, because it has been patched with FLEP. It is a _false-positive_.
 
 
 ## 2.2. Importing the animations
