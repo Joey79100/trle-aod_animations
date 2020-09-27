@@ -1,0 +1,35 @@
+
+;================================================================================================
+;Bar Graphic
+;================================================================================================
+
+;#TriggerGroup=	82, $2000, 357, $5    														;Enable Sprite Parameter 5
+;#Parameters=	PARAM_SHOW_SPRITE, 5, FSS_SHOW_SPRITE_GRID + FSS_EFFECT_FROM_RIGHT, 880, 4, 96, 104,>
+;			CUSTOM_SPRITES, 8, IGNORE, 2, 1, 20
+
+ColorRGB=		1, 16, 64, 164
+TriggerGroup=	1, $2000, 357, $3
+Organizer=		3, FO_ENABLED + FO_TICK_TIME, IGNORE, 0, 1
+Parameters=	PARAM_SHOW_SPRITE, 3, FSS_SHOW_SPRITE_GRID , 6, 13, 70, 93, CUSTOM_SPRITES, 4, IGNORE, 4, 1, 20
+
+Organizer=		30, FO_ENABLED + FO_TICK_TIME, IGNORE, 0, 82
+
+Organizer=		5,FO_ENABLED + FO_TICK_TIME, IGNORE, 0, 43
+TriggerGroup=	43, $2000, 357, $6
+Parameters=	PARAM_SHOW_SPRITE, 6, FSS_TRANSPARENT, 6, 13, 70, 93, CUSTOM_SPRITES, 21, IGNORE, 1, 1, IGNORE
+
+;================================================================================================
+;Bar Design
+;================================================================================================
+
+ColorRGB=		2, 192, 0, 0
+ColorRGB=		3, 96, 0, 0
+ColorRGB=		4, 112, 208, 255
+ColorRGB=		5, 112, 255, 112
+Customize=		CUST_BAR,BAR_HEALTH, FBAR_DRAW_ALWAYS, 43, 26, 130, 9, 2, 2, IGNORE
+Customize=		CUST_BAR,BAR_AIR, IGNORE, 42, 35, 98, 7, 4, 4, IGNORE
+Customize=		CUST_BAR,BAR_DASH, IGNORE, 0, 0, 0, 0, 5, 5, IGNORE
+
+;Customize=		CUST_BAR,BAR_CUSTOM2, IGNORE, 41, 24, 130, 9, 2, 2, #0052
+;GlobalTrigger=	27, IGNORE, GT_ALWAYS, IGNORE, IGNORE, 2, IGNORE
+;TriggerGroup=	2, $5000, 0, $36, $2000, 256, $C52, $2000, 253, $A52, $2000, 331, $5

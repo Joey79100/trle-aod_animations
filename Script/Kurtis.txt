@@ -1,6 +1,0 @@
-Name=			Demo - Kurtis
-Horizon=		ENABLED
-LoadCamera=		0,0,0,0,0,0,255
-Level=			DATA\KURTIS,031
-
-Customize=		CUST_HAIR_TYPE, HAIR_PAGE_BOY

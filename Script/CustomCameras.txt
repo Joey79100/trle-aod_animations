@@ -1,0 +1,47 @@
+
+;================================================================================================
+;Customizable Camera
+;================================================================================================
+
+; -- Camera presets --
+Parameters=	PARAM_SET_CAMERA, 2, FCAM_DISABLE_COMBAT_CAM, 2048, -4000, IGNORE, IGNORE, IGNORE
+Parameters=	PARAM_SET_CAMERA, 3, FCAM_DISABLE_COMBAT_CAM, 6144, -8000, IGNORE, IGNORE, IGNORE
+Parameters=	PARAM_SET_CAMERA, 4, FCAM_DISABLE_COMBAT_CAM, 6144, -7000, -32768, IGNORE, IGNORE
+Parameters=	PARAM_SET_CAMERA, 5, FCAM_DISABLE_COMBAT_CAM, 2048, -3000, -32768, IGNORE, IGNORE
+
+#DEFINE KEY_F8 66
+#DEFINE KEY_F9 67
+#DEFINE KEY_F10 68
+#DEFINE KEY_F11 87
+#DEFINE KEY_F12 88
+
+; -- F8 - Restore normal camera --
+GlobalTrigger=	10, FGT_SINGLE_SHOT_RESUMED, GT_KEYBOARD_CODE, KEY_F8, IGNORE, 14, IGNORE
+TriggerGroup=	14, $2000, 215, $0	; Camera. Restore camera mode after a "change camera" flipeffect
+
+; -- F9 - Set PARAM_SET_CAMERA 2 --
+GlobalTrigger=	6, FGT_SINGLE_SHOT_RESUMED + FGT_REMOVE_INPUT, GT_KEYBOARD_CODE, KEY_F9, IGNORE, 15, IGNORE
+Organizer=		6, FO_TICK_TIME, IGNORE, 0, 14, 1, 19
+TriggerGroup=	15, $2000, 127, $6		; Enable Organizer <6>
+TriggerGroup=	19, $2000, 214, $2		; Camera. Change camera mode with <"PARAM_SET_CAMERA, 2"> Parameters for ("Forever") time
+
+; -- F10 - Set PARAM_SET_CAMERA 3 --
+GlobalTrigger=	7, FGT_SINGLE_SHOT_RESUMED + FGT_REMOVE_INPUT, GT_KEYBOARD_CODE, KEY_F10, IGNORE, 16, IGNORE
+Organizer=		7, FO_TICK_TIME, IGNORE, 0, 14, 1, 20
+TriggerGroup=	16, $2000, 127, $7		; Enable Organizer <7>
+TriggerGroup=	20, $2000, 214, $3		; Camera. Change camera mode with <"PARAM_SET_CAMERA, 3"> Parameters for ("Forever") time
+
+; -- F11 - Set PARAM_SET_CAMERA 4 --
+GlobalTrigger=	8, FGT_SINGLE_SHOT_RESUMED + FGT_REMOVE_INPUT, GT_KEYBOARD_CODE, KEY_F11, IGNORE, 17, IGNORE
+Organizer=		8, FO_TICK_TIME, IGNORE, 0, 14, 1, 21
+TriggerGroup=	17, $2000, 127, $8		; Enable Organizer <8>
+TriggerGroup=	21, $2000, 214, $4		; Camera. Change camera mode with <"PARAM_SET_CAMERA, 4"> Parameters for ("Forever") time
+
+; -- F12 - Set PARAM_SET_CAMERA 5 --
+GlobalTrigger=	9, FGT_SINGLE_SHOT_RESUMED + FGT_REMOVE_INPUT, GT_KEYBOARD_CODE, KEY_F12, IGNORE, 18, IGNORE
+Organizer=		9, FO_TICK_TIME, IGNORE, 0, 14, 1, 22
+TriggerGroup=	18, $2000, 127, $9		; Enable Organizer <9>
+TriggerGroup=	22, $2000, 214, $5		; Camera. Change camera mode with <"PARAM_SET_CAMERA, 5"> Parameters for ("Forever") time
+
+
+

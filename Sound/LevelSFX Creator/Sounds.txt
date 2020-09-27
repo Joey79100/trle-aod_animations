@@ -55,9 +55,9 @@ LARA_FALLDETH:		f2f_hitg			VOL90	P V		PIT20	RAD13	#g
 LARA_GRABHAND:		shimmy1 shimmy2	shimmy3		VOL35	P 			RAD08	#g
 LARA_GRAB_ARH:		lara_grab1 lara_grab2 lara_grab3 VOL34	  			RAD13	#g
 LARA_GRABBODY:		back_jm2			VOL80	P 			RAD06	#g
-RATCHET_3SHOT:		l_wrain1			VOL60	      L		PIT-10	RAD14
-RAIN_LOOP1:		l_rain1				VOL40	      L		PIT0	RAD13
-RAIN_LOOP2:		l_rain2				VOL40	      L 	PIT-10	RAD13
+SHOVEL_IN:		shovel_in			VOL50	P V    			RAD08
+SHOVEL_TOSS:		shovel_toss			VOL45	P V    	 		RAD08
+WATER_LOOP_NOTINUSE:	l_wloop				VOL50	      L 	PIT-20	RAD09	
 UNDERWATER:		undwatr				VOL80	      L		PIT-85		#g
 UNDERWATER_SWITCH:      uw_swt                          VOL70   P				#d
 LARA_PICKUP:            aha                             VOL30					#g

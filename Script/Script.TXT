@@ -28,7 +28,7 @@ Plugin=		2, Plugin_Renaissance, IGNORE
 Plugin=		1, Plugin_AkyVMix01, IGNORE
 LoadSave=		ENABLED
 Title=		ENABLED
-PlayAnyLevel=	ENABLED
+PlayAnyLevel=	DISABLED
 InputTimeout=	18000													;Frames * Seconds = 60x30
 FlyCheat=		ENABLED
 Security=		$55
@@ -45,8 +45,9 @@ Diagnostic=		ENABLED
 ;DiagnosticType=		DGX_COMMON_VARIABLES, IGNORE ; show variable values
 
 ; -- Shows only cheat codes --
-DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, EDGX_SLOW_MOTION+EDGX_SWAP_VIEW	; Shows only information about Lara
-;DiagnosticType=	DGX_SFX_SOUNDS+DGX_CHEATS, IGNORE								; Shows only information about sounds
+DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, IGNORE		; Shows only information about Lara
+;DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, EDGX_SWAP_VIEW	; Shows only information about Lara and allows rotating camera (by forcing a custom camera)
+;DiagnosticType=	DGX_SFX_SOUNDS+DGX_CHEATS, IGNORE					; Shows only information about sounds
 
 ; -- Shows Lara info and BREAKABLE WALL info --
 ;DiagnosticType=	DGX_LARA + DGX_ANIMATION, IGNORE
@@ -62,77 +63,50 @@ DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, EDGX_SLOW_MOTION+EDGX_SWA
 ;-------------------------------------------------
 
 [Title]
-WindowTitle=	Tomb Raider: The Dark Renaissance
-#INCLUDE		"Title.txt"
+#INCLUDE "Title.txt"
 
-[Level]			;TECH DEMO - LARA - NGLE version
-WindowTitle=	Tomb Raider: The Dark Renaissance
-#INCLUDE "Demo.txt"
+
+[Level]		;TECH DEMO - LARA - TOMB EDITOR version
+
+; * These files only make the level "show and play" the intended way - you don't need them
+; * They are remnants from The Dark Renaissance project
 #INCLUDE "General.txt"
-#INCLUDE 		"Inventory.txt"
-#INCLUDE "Animations_Lara.txt"
+#INCLUDE "General_Camera.txt"
+#INCLUDE "General_BarDesign.txt"
+#INCLUDE "General_Quicksaving.txt"
+;#INCLUDE "General_Walkmode.txt"
+#INCLUDE "General_LimitedGrip.txt" ; required to show the bar properly
+#INCLUDE "Inventory.txt"
 
+#INCLUDE "Demo_TE.txt"
+
+
+
+; * Basic responsivity extensions, that could not be implemented through regular State Changes (animation dispatches)
+; * It is recommended to use these extensions
+#INCLUDE "Animations_General.txt"
+#INCLUDE "Animations_WallClimbing.txt"
+#INCLUDE "Animations_CrawlspaceFlexibility.txt"
+
+
+
+; * Extra optional abilities, generally based on AOD itself
+; * You decide if you want them in your game or not
+#INCLUDE "Animations_Ladders.txt"
+#INCLUDE "Animations_WallKicking.txt"
+#INCLUDE "Animations_StanceToHang.txt"
+#INCLUDE "Animations_SkipRunBack.txt"
+;#INCLUDE "Animations_HorizontalPoles.txt"
+
+
+
+; * Contains unfinished implementations of additional abilities
 #INCLUDE "WIP_stuff.txt"
+#INCLUDE "CustomCameras.txt"
 #INCLUDE "Shovel.txt"
-;#INCLUDE "Stealth.txt"
-;#INCLUDE 		"PickableStatues.txt"
+;#INCLUDE "PickableStatues.txt"
+;#INCLUDE "EnemyInfo.txt"
 
-
-
-[Level]			;TECH DEMO - LARA - TOMB EDITOR version
-WindowTitle=	Tomb Raider: The Dark Renaissance
-#INCLUDE		"Demo_TE.txt"
-#INCLUDE 		"General.txt"
-#INCLUDE 		"Inventory.txt"
-#INCLUDE 		"Animations_Lara.txt"
-
-#INCLUDE 		"WIP_stuff.txt"
-#INCLUDE		"Shovel.txt"
-;#INCLUDE 		"PickableStatues.txt"
-
-
-; Trying to show info about SAS<0>
-GlobalTrigger=	234, IGNORE, GT_ALWAYS, IGNORE, IGNORE, 234, IGNORE
-TriggerGroup=	234,	>
-				>				; ==== Selecting SLOT and ITEM for further operations ====
->;				$2000, 292, $5F, >	; Variables. Memory. Set the <SAS[95]>Slot as Selected Slot Memory
->;				$5000, 0, $0036, >	; Variables. Memory. Set the <SAS[0]>Item as Selected Item
-				$2000, 292, $29, >	; Variables. Memory. Set the <BADDY_1[41]>Slot as Selected Slot Memory
-				$5000, 30, $0036, >	; Variables. Memory. Set the <SAS[30]>Item as Selected Item
-				>
-				>				; ==== Getting the relative Animation index from SAS ===
-				$2000, 293, $1255, >	; Variables. Memory. Copy from (First Animation Index)Selected Slot Memory to <LSD2>Numeric Variable
-				$2000, 256, $7FF, >	; Variables. Memory. Copy value from Selected Item's (Animation Now) field to <CurrentValue>
-				$2000, 286, $55, >	; Variables. Numeric. Subtract from CurrentValue the <LS2>Numeric Variable
-				$2000, 272, $55, >	; Variables. Numeric. Copy CurrentValue to <LSD2>Numeric Variable
-				>
-				>				; ==== Copying the stuff we need to variables ====
-				$2000, 256, $450, >	; Variables. Memory. Copy value from Selected Item's (StateID Now) field to <LSA1>
-				$2000, 256, $551, >	; Variables. Memory. Copy value from Selected Item's (StateID Next) field to <LSA2>
-				$2000, 256, $654, >	; Variables. Memory. Copy value from Selected Item's (StateID Goal) field to <LSD1>
-				>
-				>				; ==== Displaying everything in top-right corner of the screen ====
-				$2000, 67, $20, >	; Text. Erase all strings showed with Print String effect
-				$2000, 66, $505, >	; Text. Set <Metal>color and (Top line, right alignment)position for next Print String flipeffect
-				$2000, 81, $3, >		; Text. <Half Width and Height>size characters for next print string command
-				$2000, 65, $C		; Text. Print Standard <ENGLISH.txt:12>string on screen for (Forever) seconds
-
-TriggerGroup=	235,	>
-				>				; ==== Selecting SLOT and ITEM for further operations ====
-				$2000, 292, $5F, >	; Variables. Memory. Set the <SAS[95]>Slot as Selected Slot Memory
-				$5000, 0, $0036, >	; Variables. Memory. Set the <SAS[0]>Item as Selected Item
-				>
-				>				; ==== Copying the stuff we need to variables ====
-				$2000, 256, $1550, >	; Variables. Memory. Copy value from Selected Item's (Custom_A) field to <LSA1>
-				$2000, 256, $1651, >	; Variables. Memory. Copy value from Selected Item's (Custom_B) field to <LSA2>
-				$2000, 256, $1754, >	; Variables. Memory. Copy value from Selected Item's (Custom_C) field to <LSD1>
-				$2000, 256, $1855, >	; Variables. Memory. Copy value from Selected Item's (Custom_D) field to <LSD2>
-				>
-				>				; ==== Displaying everything in top-right corner of the screen ====
-				$2000, 67, $20, >	; Text. Erase all strings showed with Print String effect
-				$2000, 66, $505, >	; Text. Set <Metal>color and (Top line, right alignment)position for next Print String flipeffect
-				$2000, 81, $3, >		; Text. <Half Width and Height>size characters for next print string command
-				$2000, 65, $11		; Text. Print Standard <ENGLISH.txt:17>string on screen for (Forever) seconds
 
 
 

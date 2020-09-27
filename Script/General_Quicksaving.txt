@@ -1,0 +1,16 @@
+;================================================================================================
+;Quick Save
+;================================================================================================
+
+TriggerGroup=	36, $8000, 42, $20C														;Condition: is NOT holding SHIFT LEFT
+
+GlobalTrigger=	16, FGT_REMOVE_INPUT + FGT_SINGLE_SHOT_RESUMED, GT_KEYBOARD_CODE, 63, 36, 37, IGNORE      	;IF player presses F5 AND is NOT holding SHIFT LEFT
+TriggerGroup=	37, $2000, 97, $1, $2000, 357, $304                                                      		;THEN Save game in backup file 1, show sprite 3 on screen
+
+GlobalTrigger=	17, FGT_REMOVE_INPUT + FGT_SINGLE_SHOT_RESUMED, GT_KEYBOARD_CODE, 64, 36, 38, IGNORE      	;IF player presses F6 AND is NOT holding SHIFT LEFT
+TriggerGroup=	38, $2000, 98, $1                                                                       		;THEN Load game in backup file 1
+
+Parameters=	PARAM_SHOW_SPRITE, 4, IGNORE, 860, 860, 60, 60, CUSTOM_SPRITES, 3, IGNORE, IGNORE, IGNORE, IGNORE
+
+GlobalTrigger=	18, IGNORE, GT_LOADED_SAVEGAME, IGNORE, IGNORE, 39, IGNORE							;IF Player loads savegame
+TriggerGroup=	39, $2000, 358, $4                                                                      		;THEN Remove sprite 3 from screen
