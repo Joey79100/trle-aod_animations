@@ -46,7 +46,7 @@ I have opened this repository so I can keep working on these animations even aft
 
 Today (Sept 27, 2020), more than 3/4 of the common TLR/AOD animations have been remade, a whole 1/3 of TLR exlusive animations have been recreated, and more than 1/4 of the AOD exclusive animations have been implemented.
 
-This may seem like there's still a lot of work to do, and it's true, but I now I can say that: yes, I am confident that the project will be completed.
+This may seem like there's still a lot of work to do, and it's true, but now I can say that: yes, I am confident that the project will be completed.
 
 
 
