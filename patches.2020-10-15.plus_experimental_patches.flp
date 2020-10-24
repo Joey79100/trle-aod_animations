@@ -13438,6 +13438,760 @@ patchsetversion=1.1
   header=163
 
       enabled=1
+      name=Add [Kills] to statistics
+      description=Returns TR1-TR3-like statistics entry, which tells how many enemies were killed by Lara throughout the level.
+      category=
+      dependencies=Delete tomb4.exe unused resources,Extend Tomb4.exe size
+      filename=tomb4.exe
+
+      dataoffset=0,7AB6D
+      datadefault=0,E88E81FEFF
+      datamodified=0,E9FEDD3900
+      datacondbehave=0,0
+
+      dataoffset=1,7AB74
+      datadefault=1,14
+      datamodified=1,20
+      datacondbehave=1,0
+
+      dataoffset=2,C8970
+      datadefault=2,
+      datamodified=2,E88BA3C4FF83C40C0FBF0556777F008D0CE4905068AC094B0051E8F051C8FFA1304F7F008D54E40C3E8D0CC5000000006A00A1B43B7500528BD0C1FA0203CE6A0603D05152E846A3C4FF6A0068DE898100A1B43B75008B54240CC1F8026A025250E82AA3C4FF83C41CE99421C6FF
+      datacondbehave=2,1
+
+      parenabled=0,1
+      parname=0,String
+      paroffset=0,C89DE
+      parvalue=0,Kills (level)
+      partype=0,2008
+      parcondbehave=0,1
+
+  footer=163
+
+
+  header=164
+
+      enabled=1
+      name=Global [Kills] Statistics entry
+      description=Prevents the entry value from being reset between levels.
+      category=
+      dependencies=
+      filename=tomb4.exe
+
+      dataoffset=0,51D25
+      datadefault=0,A356777F00
+      datamodified=0,9090909090
+      datacondbehave=0,0
+
+  footer=164
+
+
+  header=165
+
+      enabled=1
+      name=Fast alignment
+      description=Makes Lara align herself instantly, as she does in TR2.
+      category=
+      dependencies=Delete tomb4.exe unused resources,Extend Tomb4.exe size
+      filename=tomb4.exe
+
+      dataoffset=0,47B50
+      datadefault=0,83EC185355
+      datamodified=0,E9BB0E3D00
+      datacondbehave=0,0
+
+      dataoffset=1,C8A10
+      datadefault=1,
+      datamodified=1,66833DCCDE8000010F85C2EDC2FF83EC185355E92DF1C2FF
+      datacondbehave=1,1
+
+  footer=165
+
+
+  header=166
+
+      enabled=1
+      name=Violent bats
+      description=Changes the behaviour of bats with OCB 1 so that they can attack immediately.
+      category=
+      dependencies=Delete tomb4.exe unused resources,Extend Tomb4.exe size
+      filename=tomb4.exe
+
+      dataoffset=0,2A1C
+      datadefault=0,83C40466050500
+      datamodified=0,E92F6041009090
+      datacondbehave=0,0
+
+      dataoffset=1,2A37
+      datadefault=1,B806000000
+      datamodified=1,89C8C1E810
+      datacondbehave=1,0
+
+      dataoffset=2,2BF4
+      datadefault=2,8D4424206A00
+      datamodified=2,E9795E410090
+      datacondbehave=2,0
+
+      dataoffset=3,2C17
+      datadefault=3,6A00
+      datamodified=3,5590
+      datacondbehave=3,0
+
+      dataoffset=4,C8A50
+      datadefault=4,
+      datamodified=4,83C40466837E2C00740AB900000100E9BF9FBEFF66050500B900000600E9B19FBEFF8D44E42031D266837E2C000F95C289D555E972A1BEFF
+      datacondbehave=4,1
+
+  footer=166
+
+
+  header=167
+
+      enabled=1
+      name=Ladder to crawlspace
+      description=Enables ladder to crawlspace transition. At least one animation with state IDs 56 or 57 has to provide a state change for state ID 71. In TR5, this state change (for state ID 138, which does not exist in TR4) was registered in animation 164. The ladder to crawlspace animation must have state ID 19.
+      category=
+      dependencies=Delete tomb4.exe unused resources,Extend Tomb4.exe size
+      filename=tomb4.exe
+
+      dataoffset=0,2C486
+      datadefault=0,8BC12BC2
+      datamodified=0,89CF29D7
+      datacondbehave=0,0
+
+      dataoffset=1,2C48C
+      datadefault=1,8BC22BC1
+      datamodified=1,89D729CF
+      datacondbehave=1,0
+
+      dataoffset=2,2C491
+      datadefault=2,F8
+      datamodified=2,FF
+      datacondbehave=2,0
+
+      dataoffset=3,2C499
+      datadefault=3,8D04118B4E44
+      datamodified=3,E931C63E0090
+      datacondbehave=3,0
+
+      dataoffset=4,2C7E5
+      datadefault=4,50FFFFFF
+      datamodified=4,C7C23E00
+      datacondbehave=4,0
+
+      dataoffset=5,2D185
+      datadefault=5,8BC1
+      datamodified=5,89CD
+      datacondbehave=5,0
+
+      dataoffset=6,2D18A
+      datadefault=6,2BC2
+      datamodified=6,29D5
+      datacondbehave=6,0
+
+      dataoffset=7,2D18E
+      datadefault=7,8BC22BC1
+      datamodified=7,89D529CD
+      datacondbehave=7,0
+
+      dataoffset=8,2D193
+      datadefault=8,F8
+      datamodified=8,FD
+      datacondbehave=8,0
+
+      dataoffset=9,2D197
+      datadefault=9,8D04118B4E44
+      datamodified=9,E956B93E0090
+      datacondbehave=9,0
+
+      dataoffset=10,C8AB0
+      datadefault=10,
+      datamodified=10,81FA000200000F8C7D3CC1FF8B44E42889085F5E5D5B83C408B8FEFFFFFFC383FBFF751083F8FF750B8D04118B4E44E9BB39C1FF66C7461047005F5E5D5B83C408C383FFFF751083F8FF750B8D04118B4E44E99646C1FF66C7461047005F5E5D5B59C3
+      datacondbehave=10,1
+
+  footer=167
+
+
+  header=168
+
+      enabled=1
+      name=Motorbike and Jeep explosion in water
+      description=Skips the explosion if the water depth is below or equal to the maximum value.
+      category=
+      dependencies=Delete tomb4.exe unused resources,Extend Tomb4.exe size
+      filename=tomb4.exe
+
+      dataoffset=0,65B0B
+      datadefault=0,5366C746101400
+      datamodified=0,E920303B009090
+      datacondbehave=0,0
+
+      dataoffset=1,687B8
+      datadefault=1,5166C746100B00
+      datamodified=1,E9A3033B009090
+      datacondbehave=1,0
+
+      dataoffset=2,C8B30
+      datadefault=2,
+      datamodified=2,0FBF4318508B53488B4B448B4340525150E8BA9BC1FF83C4103D
+      datacondbehave=2,1
+
+      dataoffset=3,C8B4E
+      datadefault=3,
+      datamodified=3,0F8ECCCFC4FF5366C746101400E9B2CFC4FF89CB0FBF4318508B53488B4B448B4340525150E8889BC1FF83C4103D
+      datacondbehave=3,1
+
+      dataoffset=4,C8B80
+      datadefault=4,
+      datamodified=4,0F8E47FCC4FF5366C746100B00E92DFCC4FF
+      datacondbehave=4,1
+
+      parenabled=0,1
+      parname=0,Motorbike maximum water depth
+      paroffset=0,C8B4A
+      parvalue=0,256
+      partype=0,7
+      parcondbehave=0,1
+
+      parenabled=1,1
+      parname=1,Jeep maximum water depth
+      paroffset=1,C8B7C
+      parvalue=1,256
+      partype=1,7
+      parcondbehave=1,1
+
+  footer=168
+
+
+  header=169
+
+      enabled=1
+      name=Remove hardcoded Jeep audio
+      description=Prevents hardcoded changes of the background track when getting in and out of the Jeep.
+      category=
+      dependencies=
+      filename=tomb4.exe
+
+      dataoffset=0,66418
+      datadefault=0,E803590000
+      datamodified=0,9090909090
+      datacondbehave=0,0
+
+      dataoffset=1,66ECC
+      datadefault=1,E84F4E0000
+      datamodified=1,9090909090
+      datacondbehave=1,0
+
+  footer=169
+
+
+  header=170
+
+      enabled=1
+      name=Shotgun ammo parameters
+      description=Changes shotgun ammo spreading and amount of shots.
+      category=
+      dependencies=Delete tomb4.exe unused resources,Extend Tomb4.exe size
+      filename=tomb4.exe
+
+      dataoffset=0,28F4E
+      datadefault=0,80E10833ED
+      datamodified=0,E95DFC3E00
+      datacondbehave=0,0
+
+      dataoffset=1,C8BB0
+      datadefault=1,
+      datamodified=1,31ED8B5CE40856578B7CE412F6C108740FBE
+      datacondbehave=1,1
+
+      dataoffset=2,C8BC4
+      datadefault=2,
+      datamodified=2,0000C744E418
+      datacondbehave=2,1
+
+      dataoffset=3,C8BCB
+      datadefault=3,
+      datamodified=3,000000EB0DBE
+      datacondbehave=3,1
+
+      dataoffset=4,C8BD3
+      datadefault=4,
+      datamodified=4,0000C744E418
+      datacondbehave=4,1
+
+      dataoffset=5,C8BDA
+      datadefault=5,
+      datamodified=5,000000837CE418000F8EFF03C1FFE98A03C1FF
+      datacondbehave=5,1
+
+      parenabled=0,1
+      parname=0,Spreading (normal)
+      paroffset=0,C8BC2
+      parvalue=0,1820
+      partype=0,4
+      parcondbehave=0,1
+
+      parenabled=1,1
+      parname=1,Shots (normal)
+      paroffset=1,C8BCA
+      parvalue=1,6
+      partype=1,3
+      parcondbehave=1,1
+
+      parenabled=2,1
+      parname=2,Spreading (wideshot)
+      paroffset=2,C8BD1
+      parvalue=2,5460
+      partype=2,4
+      parcondbehave=2,1
+
+      parenabled=3,1
+      parname=3,Shots (wideshot)
+      paroffset=3,C8BD9
+      parvalue=3,6
+      partype=3,3
+      parcondbehave=3,1
+
+  footer=170
+
+
+  header=171
+
+      enabled=1
+      name=Disable manual aiming
+      description=Removes Shotgun, Grenade Gun and Crossbow manual aiming with the Look key.
+      category=
+      dependencies=
+      filename=tomb4.exe
+
+      dataoffset=0,28F2C
+      datadefault=0,75
+      datamodified=0,EB
+      datacondbehave=0,0
+
+      dataoffset=1,292E6
+      datadefault=1,75
+      datamodified=1,EB
+      datacondbehave=1,0
+
+      dataoffset=2,2A075
+      datadefault=2,75
+      datamodified=2,EB
+      datacondbehave=2,0
+
+  footer=171
+
+
+  header=172
+
+      enabled=1
+      name=Enhance torch flame
+      description=Improves torch flame appearance and fix the stuttering when playing LOOP_FOR_SMALL_FIRES sound.
+      category=
+      dependencies=
+      filename=tomb4.exe
+
+      dataoffset=0,1F8EA
+      datadefault=0,7528
+      datamodified=0,9090
+      datacondbehave=0,0
+
+      dataoffset=1,1FBFF
+      datadefault=1,750B
+      datamodified=1,9090
+      datacondbehave=1,0
+
+  footer=172
+
+
+  header=173
+
+      enabled=1
+      name=Fix cogwheel animation skip
+      description=Fixes the skipping of the cogwheel release animation (anim# 323)
+      category=
+      dependencies=Delete tomb4.exe unused resources,Extend Tomb4.exe size
+      filename=tomb4.exe
+
+      dataoffset=0,6256E
+      datadefault=0,66C742140B00
+      datamodified=0,909090909090
+      datacondbehave=0,0
+
+      dataoffset=1,6258B
+      datadefault=1,66894A16
+      datamodified=1,90909090
+      datacondbehave=1,0
+
+      dataoffset=2,62595
+      datadefault=2,66894110
+      datamodified=2,90909090
+      datacondbehave=2,0
+
+      dataoffset=3,6259F
+      datadefault=3,6689420E
+      datamodified=3,90909090
+      datacondbehave=3,0
+
+      dataoffset=4,624F6
+      datadefault=4,A11CE08000
+      datamodified=4,E915673B00
+      datacondbehave=4,0
+
+      dataoffset=5,6275C
+      datadefault=5,898EEA150000
+      datamodified=5,E9D9643B0090
+      datacondbehave=5,0
+
+      dataoffset=6,C8C10
+      datadefault=6,
+      datamodified=6,66837E10007519F605D85553004074108B151CE0800066C74210600066894610A11CE08000E9C198C4FF898EEA1500000FBF058606530083C001668946148D0C808B3D38395300668B44CF186689461666C7460E0100E9F79AC4FF
+      datacondbehave=6,1
+
+  footer=173
+
+
+  header=174
+
+      enabled=1
+      name=Allow crouching while holding any weapon
+      description=Does not prevent Lara from crouching if she is holding Shotgun, Grenade Gun or Crossbow.
+      category=
+      dependencies=
+      filename=tomb4.exe
+
+      dataoffset=0,24900
+      datadefault=0,74
+      datamodified=0,EB
+      datacondbehave=0,0
+
+  footer=174
+
+
+  header=175
+
+      enabled=1
+      name=Fix sprite bug
+      description=Solves errors in the sprite drawing code and auxiliary functions.
+      category=
+      dependencies=Delete tomb4.exe unused resources,Extend Tomb4.exe size
+      filename=tomb4.exe
+
+      dataoffset=0,39B7F
+      datadefault=0,24
+      datamodified=0,E4
+      datacondbehave=0,0
+
+      dataoffset=1,39B81
+      datadefault=1,A0D680
+      datamodified=1,908C81
+      datacondbehave=1,0
+
+      dataoffset=2,39E8B
+      datadefault=2,668901
+      datamodified=2,890190
+      datacondbehave=2,0
+
+      dataoffset=3,39EA3
+      datadefault=3,66894202
+      datamodified=3,89420490
+      datacondbehave=3,0
+
+      dataoffset=4,39F67
+      datadefault=4,B804000000
+      datamodified=4,83C2089090
+      datacondbehave=4,0
+
+      dataoffset=5,39F70
+      datadefault=5,03D003C8
+      datamodified=5,83C10490
+      datacondbehave=5,0
+
+      dataoffset=6,39F9D
+      datadefault=6,66894500
+      datamodified=6,89450090
+      datacondbehave=6,0
+
+      dataoffset=7,39FAC
+      datadefault=7,66894502
+      datamodified=7,89450490
+      datacondbehave=7,0
+
+      dataoffset=8,39FC6
+      datadefault=8,04
+      datamodified=8,08
+      datacondbehave=8,0
+
+      dataoffset=9,84CEB
+      datadefault=9,66A3A0D68000
+      datamodified=9,A3908C810090
+      datacondbehave=9,0
+
+      dataoffset=10,84D03
+      datadefault=10,66A3A2D68000
+      datamodified=10,A3948C810090
+      datacondbehave=10,0
+
+      dataoffset=11,84D79
+      datadefault=11,0FBF05A0D68000
+      datamodified=11,A1908C81009090
+      datacondbehave=11,0
+
+      dataoffset=12,84DAF
+      datadefault=12,0FBF05A2D68000
+      datamodified=12,A1948C81009090
+      datacondbehave=12,0
+
+      dataoffset=13,85F69
+      datadefault=13,0FBF09
+      datamodified=13,8B0990
+      datacondbehave=13,0
+
+      dataoffset=14,85FAA
+      datadefault=14,0FBF4902
+      datamodified=14,8B490490
+      datacondbehave=14,0
+
+      dataoffset=15,862CE
+      datadefault=15,0FBF100FBF4802
+      datamodified=15,8B10908B480490
+      datacondbehave=15,0
+
+      dataoffset=16,862DD
+      datadefault=16,0FBF50040FBF4006
+      datamodified=16,8B5008908B400C90
+      datacondbehave=16,0
+
+      dataoffset=17,851B9
+      datadefault=17,66A3A0D68000
+      datamodified=17,A3908C810090
+      datacondbehave=17,0
+
+      dataoffset=18,851D2
+      datadefault=18,66A3A2D68000
+      datamodified=18,A3948C810090
+      datacondbehave=18,0
+
+      dataoffset=19,8521B
+      datadefault=19,0FBF0DA0D68000
+      datamodified=19,8B0D908C810090
+      datacondbehave=19,0
+
+      dataoffset=20,85258
+      datadefault=20,0FBF0DA2D68000
+      datamodified=20,8B0D948C810090
+      datacondbehave=20,0
+
+      dataoffset=21,881FC
+      datadefault=21,A0D680
+      datamodified=21,908C81
+      datacondbehave=21,0
+
+      dataoffset=22,88322
+      datadefault=22,668903
+      datamodified=22,890390
+      datacondbehave=22,0
+
+      dataoffset=23,8833A
+      datadefault=23,66894302
+      datamodified=23,89430490
+      datacondbehave=23,0
+
+      dataoffset=24,883A1
+      datadefault=24,04
+      datamodified=24,08
+      datacondbehave=24,0
+
+      dataoffset=25,8842A
+      datadefault=25,668903
+      datamodified=25,890390
+      datacondbehave=25,0
+
+      dataoffset=26,8843A
+      datadefault=26,66894302
+      datamodified=26,89430490
+      datacondbehave=26,0
+
+      dataoffset=27,8844F
+      datadefault=27,04
+      datamodified=27,08
+      datacondbehave=27,0
+
+      dataoffset=28,8846E
+      datadefault=28,0FBF13
+      datamodified=28,8B1390
+      datacondbehave=28,0
+
+      dataoffset=29,88478
+      datadefault=29,0FBF5302
+      datamodified=29,8B530490
+      datacondbehave=29,0
+
+      dataoffset=30,88484
+      datadefault=30,0FBF5304
+      datamodified=30,8B530890
+      datacondbehave=30,0
+
+      dataoffset=31,8848C
+      datadefault=31,0FBF5306
+      datamodified=31,8B530C90
+      datacondbehave=31,0
+
+  footer=175
+
+
+  header=176
+
+      enabled=1
+      name=Footstep Sound Customizer
+      description=Changes the special footstep sound IDs. All sound effects are relative to "First Sound ID" (288: FOOTSTEPS_MUD by default).//For example: Gravel = 288 + 2 = 290 (FOOTSTEPS_GRAVEL)////Footstep sounds should be grouped together. The maximum distance between First Sound ID and the footstep sounds is 255.////(Note: Unknown14 and Unknown15 can only be accessed with Tomb Editor)
+      category=
+      dependencies=
+      filename=tomb4.exe
+
+      parenabled=0,1
+      parname=0,Mud
+      paroffset=0,ABF3C
+      parvalue=0,0
+      partype=0,3
+      parcondbehave=0,0
+
+      parenabled=1,1
+      parname=1,Snow
+      paroffset=1,ABF3D
+      parvalue=1,5
+      partype=1,3
+      parcondbehave=1,0
+
+      parenabled=2,1
+      parname=2,Sand
+      paroffset=2,ABF3E
+      parvalue=2,3
+      partype=2,3
+      parcondbehave=2,0
+
+      parenabled=3,1
+      parname=3,Gravel
+      paroffset=3,ABF3F
+      parvalue=3,2
+      partype=3,3
+      parcondbehave=3,0
+
+      parenabled=4,1
+      parname=4,Ice
+      paroffset=4,ABF40
+      parvalue=4,1
+      partype=4,3
+      parcondbehave=4,0
+
+      parenabled=5,1
+      parname=5,Water
+      paroffset=5,ABF41
+      parvalue=5,9
+      partype=5,3
+      parcondbehave=5,0
+
+      parenabled=6,1
+      parname=6,Stone
+      paroffset=6,ABF42
+      parvalue=6,9
+      partype=6,3
+      parcondbehave=6,0
+
+      parenabled=7,1
+      parname=7,Wood
+      paroffset=7,ABF43
+      parvalue=7,4
+      partype=7,3
+      parcondbehave=7,0
+
+      parenabled=8,1
+      parname=8,Metal
+      paroffset=8,ABF44
+      parvalue=8,6
+      partype=8,3
+      parcondbehave=8,0
+
+      parenabled=9,1
+      parname=9,Marble
+      paroffset=9,ABF45
+      parvalue=9,5
+      partype=9,3
+      parcondbehave=9,0
+
+      parenabled=10,1
+      parname=10,Grass
+      paroffset=10,ABF46
+      parvalue=10,3
+      partype=10,3
+      parcondbehave=10,0
+
+      parenabled=11,1
+      parname=11,Concrete
+      paroffset=11,ABF47
+      parvalue=11,9
+      partype=11,3
+      parcondbehave=11,0
+
+      parenabled=12,1
+      parname=12,Old Wood
+      paroffset=12,ABF48
+      parvalue=12,4
+      partype=12,3
+      parcondbehave=12,0
+
+      parenabled=13,1
+      parname=13,Old Metal
+      paroffset=13,ABF49
+      parvalue=13,6
+      partype=13,3
+      parcondbehave=13,0
+
+      parenabled=14,1
+      parname=14,Unknown14
+      paroffset=14,ABF4A
+      parvalue=14,0
+      partype=14,3
+      parcondbehave=14,0
+
+      parenabled=15,1
+      parname=15,Unknown15
+      paroffset=15,ABF4B
+      parvalue=15,0
+      partype=15,3
+      parcondbehave=15,0
+
+      parenabled=16,1
+      parname=16,First Sound ID
+      paroffset=16,37823
+      parvalue=16,288
+      partype=16,4
+      parcondbehave=16,0
+
+  footer=176
+
+
+  header=177
+
+      enabled=1
+      name=Enable all footstep sound effects
+      description=Enables the Stone, Water, and Concrete Footstep Sounds.
+      category=
+      dependencies=
+      filename=tomb4.exe
+
+      dataoffset=0,377FA
+      datadefault=0,6683F90674316683F905742B6683F90B7425
+      datamodified=0,909090909090909090909090909090909090
+      datacondbehave=0,0
+
+  footer=177
+
+
+
+  header=178
+
+      enabled=1
       name=Standing jump grab animation
       description=
       category=
@@ -13463,10 +14217,10 @@ patchsetversion=1.1
       partype=1,5
       parcondbehave=1,1
 
-  footer=163
+  footer=178
 
 
-  header=164
+  header=179
 
       enabled=1
       name=Ledge release animation
@@ -13499,10 +14253,10 @@ patchsetversion=1.1
       partype=1,5
       parcondbehave=1,1
 
-  footer=164
+  footer=179
 
 
-  header=165
+  header=180
 
       enabled=1
       name=Throw flare frame number
@@ -13550,10 +14304,10 @@ patchsetversion=1.1
       partype=1,5
       parcondbehave=1,0
 
-  footer=165
+  footer=180
 
 
-  header=166
+  header=181
 
       enabled=1
       name=Pickup flare frame numbers
@@ -13583,10 +14337,10 @@ patchsetversion=1.1
       partype=2,5
       parcondbehave=2,0
 
-  footer=166
+  footer=181
 
 
-  header=167
+  header=182
 
       enabled=1
       name=Pickup item frame numbers
@@ -13649,10 +14403,10 @@ patchsetversion=1.1
       partype=6,5
       parcondbehave=6,0
 
-  footer=167
+  footer=182
 
 
-  header=168
+  header=183
 
       enabled=1
       name=Running jump delay removal
@@ -13666,10 +14420,10 @@ patchsetversion=1.1
       datamodified=0,EB
       datacondbehave=0,0
 
-  footer=168
+  footer=183
 
 
-  header=169
+  header=184
 
       enabled=1
       name=Running jump delay customization
@@ -13685,10 +14439,10 @@ patchsetversion=1.1
       partype=0,5
       parcondbehave=0,0
 
-  footer=169
+  footer=184
 
 
-  header=170
+  header=185
 
       enabled=1
       name=Dive delay
@@ -13704,4 +14458,5 @@ patchsetversion=1.1
       partype=0,5
       parcondbehave=0,0
 
-  footer=170
+  footer=185
+
