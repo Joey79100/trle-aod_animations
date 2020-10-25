@@ -120,15 +120,26 @@ I don't plan to do it myself, simply because I'd have to do it everytime I push 
 
 - Repositionning meshes using WADTool:
    1. Open your WAD.
-   2. Unfold the Moveables list.
-   3. Right click on LARA and select Edit Skeleton.
-   4. In the Meshtree list, select the 1st mesh.
-   5. In the Transform tab, type the corresponding coordinates based on the table below.
+   2. Unfold the *Moveables* list.
+   3. Right click on *LARA* and select **Edit Skeleton**.
+   4. In the *Meshtree* list, select the 1st mesh.
+   5. In the *Transform* panel, type the corresponding coordinates based on the table below.
    6. Repeat steps 4. and 5. for every mesh.
    7. Hit OK and save your WAD.
 
-- Repositionning meshes using WADMerger... 
-I don't remember the exact steps, it crashed every time I tried. Just know that it involves the "Move center" feature (Edit menu, in the Animation Editor), but specific steps are required in order to prevent it from crashing.
+- Repositionning meshes using WADMerger: 
+First make sure you're using the TRNG fixer's version of WADMerger (downloadable [here](http://www.trlevelmanager.eu/ng.htm)).
+   1. Open your WAD.
+   2. Select *LARA* and open the *Animation Editor* (and don't select an animation, stay in "No Animation" mode).
+   3. In the *Meshes* list (bottom right), select any mesh, for example Mesh 1 (Mesh 0 can't be moved at all).
+   4. In the *toolbar* (top left), hit the **Move the selected mesh** button (the first one).
+   5. In the *Meshes* list, select the mesh you want to edit.  
+      *Note: you need to do this even if you already selected it before step 4, because when clicking on the Move button, the actual selection changes in the 3D view.*
+   6. In the *3D View and Mesh Buttons* panel (bottom right), use the 3 **Mov. Mesh** buttons to move the mesh respectively on the X, Y and Z axis.  
+      *Refer to the coordinates that appear just below these buttons, *not* the ones in the little popup window (which are scaled differently).*
+   7. Repeat steps 6. and 7. for every mesh.
+   8. Close the *Move* window.
+   9. In the *File* menu, hit Save WAD.
 
 <table style="table-layout: fixed; text-align: center;">
 	<thead>
@@ -361,7 +372,7 @@ There are 2 categories of animation related files:
 
 ## 2.7. FLEP patches
 [FLEP patches](https://www.tombraiderforums.com/showthread.php?t=196854) are required. In this repository, the "official" patches have been combined with [experimental patches](https://www.tombraiderforums.com/showpost.php?p=8135620&postcount=736) from ChocolateFan.  
-All these patches have been merged into a single file: [Patches.new_combined.flp](Patches.new_combined.flp).
+All these patches have been merged into a single file: [patches.2020-10-15.plus_experimental_patches.flp](patches.2020-10-15.plus_experimental_patches.flp) (the date, in YEAR-MONTH-DAY format, representing the update it is based on).
 
 Here are the required patches:
 - **Disable ledge climb delay**
