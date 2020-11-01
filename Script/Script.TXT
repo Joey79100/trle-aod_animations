@@ -94,9 +94,26 @@ DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, IGNORE		; Shows only info
 ; * You decide if you want them in your game or not
 #INCLUDE "Animations_Ladders.txt"
 #INCLUDE "Animations_WallKicking.txt"
-#INCLUDE "Animations_StanceToHang.txt"
+;#INCLUDE "Animations_StanceToHang.txt" ; BROKEN for some reason
 #INCLUDE "Animations_SkipRunBack.txt"
 ;#INCLUDE "Animations_HorizontalPoles.txt"
+
+; 180 degree turn (standing)
+#DEFINE KEY_B 48
+Animation=	446, KEY_B, IGNORE, FAN_KEYS_AS_SCANCODE, IGNORE, IGNORE, IGNORE, IGNORE, -103
+Animation=	446, KEY1_ROLL + KEY1_WALK, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -103
+Animation=	446, KEY1_ROLL + KEY1_WALK, IGNORE, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -146
+Animation=	446, KEY1_ROLL + KEY1_WALK, IGNORE, IGNORE, ENV_FRAME_NUMBER, 3, IGNORE, -146
+
+; 180 degree turn (backflip)
+#DEFINE KEY_V 47
+Animation=	696, KEY_V, IGNORE, FAN_KEYS_AS_SCANCODE, IGNORE, IGNORE, IGNORE, IGNORE, -103
+Animation=	696, KEY1_ROLL, KEY2_DASH, IGNORE, IGNORE, IGNORE, IGNORE, -103
+Animation=	696, KEY1_ROLL, KEY2_DASH, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -146
+Animation=	696, KEY1_ROLL, KEY2_DASH, IGNORE, ENV_FRAME_NUMBER, 3, IGNORE, -146
+
+
+
 
 
 
