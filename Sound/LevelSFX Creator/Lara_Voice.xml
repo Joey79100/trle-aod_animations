@@ -2,52 +2,11 @@
 <WadSounds xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SoundInfos>
     <WadSoundInfo>
-      <Id>51</Id>
-      <Name>LARA_BLOCK_PULL</Name>
-      <Volume>36</Volume>
-      <RangeInSectors>10</RangeInSectors>
+      <Id>1</Id>
+      <Name>LARA_CLIMB_SMALL</Name>
+      <Volume>55</Volume>
+      <RangeInSectors>7</RangeInSectors>
       <Chance>100</Chance>
-      <PitchFactor>0</PitchFactor>
-      <DisablePanning>false</DisablePanning>
-      <RandomizePitch>false</RandomizePitch>
-      <RandomizeVolume>false</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
-      <Samples>
-        <WadSample>
-          <FileName>lara_p&amp;p4.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_jump1.wav</FileName>
-        </WadSample>
-      </Samples>
-      <Global>true</Global>
-      <Indexed>true</Indexed>
-    </WadSoundInfo>
-    <WadSoundInfo>
-      <Id>46</Id>
-      <Name>LARA_BLOCK_PUSH1</Name>
-      <Volume>60</Volume>
-      <RangeInSectors>13</RangeInSectors>
-      <Chance>100</Chance>
-      <PitchFactor>0</PitchFactor>
-      <DisablePanning>false</DisablePanning>
-      <RandomizePitch>false</RandomizePitch>
-      <RandomizeVolume>true</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
-      <Samples>
-        <WadSample>
-          <FileName>lara_push.wav</FileName>
-        </WadSample>
-      </Samples>
-      <Global>true</Global>
-      <Indexed>true</Indexed>
-    </WadSoundInfo>
-    <WadSoundInfo>
-      <Id>47</Id>
-      <Name>LARA_BLOCK_PUSH2</Name>
-      <Volume>60</Volume>
-      <RangeInSectors>10</RangeInSectors>
-      <Chance>50</Chance>
       <PitchFactor>0</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>false</RandomizePitch>
@@ -65,30 +24,11 @@
       <Indexed>true</Indexed>
     </WadSoundInfo>
     <WadSoundInfo>
-      <Id>36</Id>
-      <Name>LARA_BREATH</Name>
+      <Id>2</Id>
+      <Name>LARA_NO</Name>
       <Volume>40</Volume>
-      <RangeInSectors>13</RangeInSectors>
+      <RangeInSectors>6</RangeInSectors>
       <Chance>100</Chance>
-      <PitchFactor>0</PitchFactor>
-      <DisablePanning>false</DisablePanning>
-      <RandomizePitch>false</RandomizePitch>
-      <RandomizeVolume>true</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
-      <Samples>
-        <WadSample>
-          <FileName>breath.wav</FileName>
-        </WadSample>
-      </Samples>
-      <Global>true</Global>
-      <Indexed>true</Indexed>
-    </WadSoundInfo>
-    <WadSoundInfo>
-      <Id>50</Id>
-      <Name>LARA_BULLET_HIT</Name>
-      <Volume>46</Volume>
-      <RangeInSectors>13</RangeInSectors>
-      <Chance>25</Chance>
       <PitchFactor>0</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>false</RandomizePitch>
@@ -96,16 +36,35 @@
       <LoopBehaviour>None</LoopBehaviour>
       <Samples>
         <WadSample>
-          <FileName>lara_hurt1.wav</FileName>
+          <FileName>lara_no.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>true</Global>
+      <Indexed>true</Indexed>
+    </WadSoundInfo>
+    <WadSoundInfo>
+      <Id>5</Id>
+      <Name>LARA_SIGH</Name>
+      <Volume>34</Volume>
+      <RangeInSectors>6</RangeInSectors>
+      <Chance>40</Chance>
+      <PitchFactor>0</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>true</RandomizePitch>
+      <RandomizeVolume>false</RandomizeVolume>
+      <LoopBehaviour>None</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>lara_sigh1.wav</FileName>
         </WadSample>
         <WadSample>
-          <FileName>lara_hurt2.wav</FileName>
+          <FileName>lara_sigh2.wav</FileName>
         </WadSample>
         <WadSample>
-          <FileName>lara_hurt3.wav</FileName>
+          <FileName>lara_sigh3.wav</FileName>
         </WadSample>
         <WadSample>
-          <FileName>lara_hurt4.wav</FileName>
+          <FileName>lara_sigh4.wav</FileName>
         </WadSample>
       </Samples>
       <Global>true</Global>
@@ -137,209 +96,8 @@
       <Indexed>true</Indexed>
     </WadSoundInfo>
     <WadSoundInfo>
-      <Id>1</Id>
-      <Name>LARA_CLIMB_SMALL</Name>
-      <Volume>55</Volume>
-      <RangeInSectors>7</RangeInSectors>
-      <Chance>100</Chance>
-      <PitchFactor>0</PitchFactor>
-      <DisablePanning>false</DisablePanning>
-      <RandomizePitch>false</RandomizePitch>
-      <RandomizeVolume>false</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
-      <Samples>
-        <WadSample>
-          <FileName>lara_jump1.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_jump2.wav</FileName>
-        </WadSample>
-      </Samples>
-      <Global>true</Global>
-      <Indexed>true</Indexed>
-    </WadSoundInfo>
-    <WadSoundInfo>
-      <Id>53</Id>
-      <Name>LARA_DEATH_FALL</Name>
-      <Volume>90</Volume>
-      <RangeInSectors>13</RangeInSectors>
-      <Chance>100</Chance>
-      <PitchFactor>20</PitchFactor>
-      <DisablePanning>false</DisablePanning>
-      <RandomizePitch>true</RandomizePitch>
-      <RandomizeVolume>true</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
-      <Samples>
-        <WadSample>
-          <FileName>lara_die_fall.wav</FileName>
-        </WadSample>
-      </Samples>
-      <Global>false</Global>
-      <Indexed>false</Indexed>
-    </WadSoundInfo>
-    <WadSoundInfo>
-      <Id>41</Id>
-      <Name>LARA_DEATH_RUN</Name>
-      <Volume>60</Volume>
-      <RangeInSectors>13</RangeInSectors>
-      <Chance>100</Chance>
-      <PitchFactor>-3</PitchFactor>
-      <DisablePanning>false</DisablePanning>
-      <RandomizePitch>false</RandomizePitch>
-      <RandomizeVolume>true</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
-      <Samples>
-        <WadSample>
-          <FileName>lara_die7.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_die8.wav</FileName>
-        </WadSample>
-      </Samples>
-      <Global>false</Global>
-      <Indexed>false</Indexed>
-    </WadSoundInfo>
-    <WadSoundInfo>
-      <Id>42</Id>
-      <Name>LARA_DEATH_STANDING</Name>
-      <Volume>60</Volume>
-      <RangeInSectors>13</RangeInSectors>
-      <Chance>100</Chance>
-      <PitchFactor>0</PitchFactor>
-      <DisablePanning>false</DisablePanning>
-      <RandomizePitch>false</RandomizePitch>
-      <RandomizeVolume>false</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
-      <Samples>
-        <WadSample>
-          <FileName>lara_die1.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_die6.wav</FileName>
-        </WadSample>
-      </Samples>
-      <Global>false</Global>
-      <Indexed>false</Indexed>
-    </WadSoundInfo>
-    <WadSoundInfo>
-      <Id>145</Id>
-      <Name>LARA_DEATH_SPIKES</Name>
-      <Volume>83</Volume>
-      <RangeInSectors>10</RangeInSectors>
-      <Chance>100</Chance>
-      <PitchFactor>0</PitchFactor>
-      <DisablePanning>false</DisablePanning>
-      <RandomizePitch>false</RandomizePitch>
-      <RandomizeVolume>false</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
-      <Samples>
-        <WadSample>
-          <FileName>lara_die_spikes.wav</FileName>
-        </WadSample>
-      </Samples>
-      <Global>true</Global>
-      <Indexed>true</Indexed>
-    </WadSoundInfo>
-    <WadSoundInfo>
-      <Id>146</Id>
-      <Name>LARA_DEATH_CRAWL</Name>
-      <Volume>60</Volume>
-      <RangeInSectors>10</RangeInSectors>
-      <Chance>100</Chance>
-      <PitchFactor>0</PitchFactor>
-      <DisablePanning>false</DisablePanning>
-      <RandomizePitch>false</RandomizePitch>
-      <RandomizeVolume>false</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
-      <Samples>
-        <WadSample>
-          <FileName>lara_die2.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_die3.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_die5.wav</FileName>
-        </WadSample>
-      </Samples>
-      <Global>true</Global>
-      <Indexed>true</Indexed>
-    </WadSoundInfo>
-    <WadSoundInfo>
-      <Id>30</Id>
-      <Name>LARA_SCREAM</Name>
-      <Volume>60</Volume>
-      <RangeInSectors>12</RangeInSectors>
-      <Chance>100</Chance>
-      <PitchFactor>0</PitchFactor>
-      <DisablePanning>false</DisablePanning>
-      <RandomizePitch>false</RandomizePitch>
-      <RandomizeVolume>false</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
-      <Samples>
-        <WadSample>
-          <FileName>lara_scream.wav</FileName>
-        </WadSample>
-      </Samples>
-      <Global>true</Global>
-      <Indexed>true</Indexed>
-    </WadSoundInfo>
-    <WadSoundInfo>
-      <Id>55</Id>
-      <Name>LARA_GRAB</Name>
-      <Volume>34</Volume>
-      <RangeInSectors>13</RangeInSectors>
-      <Chance>100</Chance>
-      <PitchFactor>0</PitchFactor>
-      <DisablePanning>false</DisablePanning>
-      <RandomizePitch>false</RandomizePitch>
-      <RandomizeVolume>false</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
-      <Samples>
-        <WadSample>
-          <FileName>lara_grab1.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_grab2.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_grab3.wav</FileName>
-        </WadSample>
-      </Samples>
-      <Global>true</Global>
-      <Indexed>true</Indexed>
-    </WadSoundInfo>
-    <WadSoundInfo>
       <Id>27</Id>
       <Name>LARA_HIT_WALL</Name>
-      <Volume>50</Volume>
-      <RangeInSectors>9</RangeInSectors>
-      <Chance>40</Chance>
-      <PitchFactor>0</PitchFactor>
-      <DisablePanning>false</DisablePanning>
-      <RandomizePitch>false</RandomizePitch>
-      <RandomizeVolume>false</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
-      <Samples>
-        <WadSample>
-          <FileName>lara_hurt1.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_hurt2.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_hurt3.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_hurt4.wav</FileName>
-        </WadSample>
-      </Samples>
-      <Global>true</Global>
-      <Indexed>true</Indexed>
-    </WadSoundInfo>
-    <WadSoundInfo>
-      <Id>31</Id>
-      <Name>LARA_HURT</Name>
       <Volume>50</Volume>
       <RangeInSectors>9</RangeInSectors>
       <Chance>40</Chance>
@@ -391,10 +149,10 @@
       <Indexed>true</Indexed>
     </WadSoundInfo>
     <WadSoundInfo>
-      <Id>2</Id>
-      <Name>LARA_NO</Name>
-      <Volume>40</Volume>
-      <RangeInSectors>6</RangeInSectors>
+      <Id>30</Id>
+      <Name>LARA_SCREAM</Name>
+      <Volume>60</Volume>
+      <RangeInSectors>12</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
       <DisablePanning>false</DisablePanning>
@@ -403,35 +161,277 @@
       <LoopBehaviour>None</LoopBehaviour>
       <Samples>
         <WadSample>
-          <FileName>lara_no.wav</FileName>
+          <FileName>lara_scream.wav</FileName>
         </WadSample>
       </Samples>
       <Global>true</Global>
       <Indexed>true</Indexed>
     </WadSoundInfo>
     <WadSoundInfo>
-      <Id>5</Id>
-      <Name>LARA_SIGH</Name>
-      <Volume>34</Volume>
-      <RangeInSectors>6</RangeInSectors>
+      <Id>31</Id>
+      <Name>LARA_HURT</Name>
+      <Volume>50</Volume>
+      <RangeInSectors>9</RangeInSectors>
       <Chance>40</Chance>
       <PitchFactor>0</PitchFactor>
       <DisablePanning>false</DisablePanning>
-      <RandomizePitch>true</RandomizePitch>
+      <RandomizePitch>false</RandomizePitch>
       <RandomizeVolume>false</RandomizeVolume>
       <LoopBehaviour>None</LoopBehaviour>
       <Samples>
         <WadSample>
-          <FileName>lara_sigh1.wav</FileName>
+          <FileName>lara_hurt1.wav</FileName>
         </WadSample>
         <WadSample>
-          <FileName>lara_sigh2.wav</FileName>
+          <FileName>lara_hurt2.wav</FileName>
         </WadSample>
         <WadSample>
-          <FileName>lara_sigh3.wav</FileName>
+          <FileName>lara_hurt3.wav</FileName>
         </WadSample>
         <WadSample>
-          <FileName>lara_sigh4.wav</FileName>
+          <FileName>lara_hurt4.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>true</Global>
+      <Indexed>true</Indexed>
+    </WadSoundInfo>
+    <WadSoundInfo>
+      <Id>36</Id>
+      <Name>LARA_BREATH</Name>
+      <Volume>40</Volume>
+      <RangeInSectors>13</RangeInSectors>
+      <Chance>100</Chance>
+      <PitchFactor>0</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>false</RandomizePitch>
+      <RandomizeVolume>true</RandomizeVolume>
+      <LoopBehaviour>None</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>lara_breath.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>true</Global>
+      <Indexed>true</Indexed>
+    </WadSoundInfo>
+    <WadSoundInfo>
+      <Id>41</Id>
+      <Name>LARA_DEATH_RUN</Name>
+      <Volume>60</Volume>
+      <RangeInSectors>13</RangeInSectors>
+      <Chance>100</Chance>
+      <PitchFactor>-3</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>false</RandomizePitch>
+      <RandomizeVolume>true</RandomizeVolume>
+      <LoopBehaviour>None</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>lara_die7.wav</FileName>
+        </WadSample>
+        <WadSample>
+          <FileName>lara_die8.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>false</Global>
+      <Indexed>false</Indexed>
+    </WadSoundInfo>
+    <WadSoundInfo>
+      <Id>42</Id>
+      <Name>LARA_DEATH_STANDING</Name>
+      <Volume>60</Volume>
+      <RangeInSectors>13</RangeInSectors>
+      <Chance>100</Chance>
+      <PitchFactor>0</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>false</RandomizePitch>
+      <RandomizeVolume>false</RandomizeVolume>
+      <LoopBehaviour>None</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>lara_die1.wav</FileName>
+        </WadSample>
+        <WadSample>
+          <FileName>lara_die6.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>false</Global>
+      <Indexed>false</Indexed>
+    </WadSoundInfo>
+    <WadSoundInfo>
+      <Id>46</Id>
+      <Name>LARA_BLOCK_PUSH1</Name>
+      <Volume>60</Volume>
+      <RangeInSectors>13</RangeInSectors>
+      <Chance>100</Chance>
+      <PitchFactor>0</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>false</RandomizePitch>
+      <RandomizeVolume>true</RandomizeVolume>
+      <LoopBehaviour>None</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>lara_push.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>true</Global>
+      <Indexed>true</Indexed>
+    </WadSoundInfo>
+    <WadSoundInfo>
+      <Id>47</Id>
+      <Name>LARA_BLOCK_PUSH2</Name>
+      <Volume>60</Volume>
+      <RangeInSectors>10</RangeInSectors>
+      <Chance>50</Chance>
+      <PitchFactor>0</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>false</RandomizePitch>
+      <RandomizeVolume>false</RandomizeVolume>
+      <LoopBehaviour>None</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>lara_jump1.wav</FileName>
+        </WadSample>
+        <WadSample>
+          <FileName>lara_jump2.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>true</Global>
+      <Indexed>true</Indexed>
+    </WadSoundInfo>
+    <WadSoundInfo>
+      <Id>50</Id>
+      <Name>LARA_BULLET_HIT</Name>
+      <Volume>46</Volume>
+      <RangeInSectors>13</RangeInSectors>
+      <Chance>25</Chance>
+      <PitchFactor>0</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>false</RandomizePitch>
+      <RandomizeVolume>false</RandomizeVolume>
+      <LoopBehaviour>None</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>lara_hurt1.wav</FileName>
+        </WadSample>
+        <WadSample>
+          <FileName>lara_hurt2.wav</FileName>
+        </WadSample>
+        <WadSample>
+          <FileName>lara_hurt3.wav</FileName>
+        </WadSample>
+        <WadSample>
+          <FileName>lara_hurt4.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>true</Global>
+      <Indexed>true</Indexed>
+    </WadSoundInfo>
+    <WadSoundInfo>
+      <Id>51</Id>
+      <Name>LARA_BLOCK_PULL</Name>
+      <Volume>36</Volume>
+      <RangeInSectors>10</RangeInSectors>
+      <Chance>100</Chance>
+      <PitchFactor>0</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>false</RandomizePitch>
+      <RandomizeVolume>false</RandomizeVolume>
+      <LoopBehaviour>None</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>lara_p&amp;p4.wav</FileName>
+        </WadSample>
+        <WadSample>
+          <FileName>lara_jump1.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>true</Global>
+      <Indexed>true</Indexed>
+    </WadSoundInfo>
+    <WadSoundInfo>
+      <Id>53</Id>
+      <Name>LARA_DEATH_FALL</Name>
+      <Volume>90</Volume>
+      <RangeInSectors>13</RangeInSectors>
+      <Chance>100</Chance>
+      <PitchFactor>20</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>true</RandomizePitch>
+      <RandomizeVolume>true</RandomizeVolume>
+      <LoopBehaviour>None</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>lara_die_fall.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>false</Global>
+      <Indexed>false</Indexed>
+    </WadSoundInfo>
+    <WadSoundInfo>
+      <Id>55</Id>
+      <Name>LARA_GRAB</Name>
+      <Volume>34</Volume>
+      <RangeInSectors>13</RangeInSectors>
+      <Chance>100</Chance>
+      <PitchFactor>0</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>false</RandomizePitch>
+      <RandomizeVolume>false</RandomizeVolume>
+      <LoopBehaviour>None</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>lara_grab1.wav</FileName>
+        </WadSample>
+        <WadSample>
+          <FileName>lara_grab2.wav</FileName>
+        </WadSample>
+        <WadSample>
+          <FileName>lara_grab3.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>true</Global>
+      <Indexed>true</Indexed>
+    </WadSoundInfo>
+    <WadSoundInfo>
+      <Id>145</Id>
+      <Name>LARA_DEATH_SPIKES</Name>
+      <Volume>83</Volume>
+      <RangeInSectors>10</RangeInSectors>
+      <Chance>100</Chance>
+      <PitchFactor>0</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>false</RandomizePitch>
+      <RandomizeVolume>false</RandomizeVolume>
+      <LoopBehaviour>None</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>lara_die_spikes.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>true</Global>
+      <Indexed>true</Indexed>
+    </WadSoundInfo>
+    <WadSoundInfo>
+      <Id>146</Id>
+      <Name>LARA_DEATH_CRAWL</Name>
+      <Volume>60</Volume>
+      <RangeInSectors>10</RangeInSectors>
+      <Chance>100</Chance>
+      <PitchFactor>0</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>false</RandomizePitch>
+      <RandomizeVolume>false</RandomizeVolume>
+      <LoopBehaviour>None</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>lara_die2.wav</FileName>
+        </WadSample>
+        <WadSample>
+          <FileName>lara_die3.wav</FileName>
+        </WadSample>
+        <WadSample>
+          <FileName>lara_die5.wav</FileName>
         </WadSample>
       </Samples>
       <Global>true</Global>

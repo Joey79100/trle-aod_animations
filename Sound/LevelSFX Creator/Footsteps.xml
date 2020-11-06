@@ -4,13 +4,13 @@
     <WadSoundInfo>
       <Id>0</Id>
       <Name>FOOT_SCRATCH</Name>
-      <Volume>17</Volume>
-      <RangeInSectors>7</RangeInSectors>
+      <Volume>19</Volume>
+      <RangeInSectors>6</RangeInSectors>
       <Chance>100</Chance>
-      <PitchFactor>9</PitchFactor>
+      <PitchFactor>13</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>true</RandomizePitch>
-      <RandomizeVolume>false</RandomizeVolume>
+      <RandomizeVolume>true</RandomizeVolume>
       <LoopBehaviour>None</LoopBehaviour>
       <Samples>
         <WadSample>
@@ -29,10 +29,10 @@
     <WadSoundInfo>
       <Id>17</Id>
       <Name>FOOTSTEPS_WATER</Name>
-      <Volume>40</Volume>
+      <Volume>44</Volume>
       <RangeInSectors>8</RangeInSectors>
       <Chance>100</Chance>
-      <PitchFactor>0</PitchFactor>
+      <PitchFactor>-4</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>true</RandomizePitch>
       <RandomizeVolume>true</RandomizeVolume>
@@ -54,7 +54,7 @@
     <WadSoundInfo>
       <Id>288</Id>
       <Name>FOOTSTEPS_0_MUD</Name>
-      <Volume>27</Volume>
+      <Volume>32</Volume>
       <RangeInSectors>7</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>35</PitchFactor>
@@ -79,7 +79,7 @@
     <WadSoundInfo>
       <Id>289</Id>
       <Name>FOOTSTEPS_1_ICE</Name>
-      <Volume>15</Volume>
+      <Volume>26</Volume>
       <RangeInSectors>7</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>5</PitchFactor>
@@ -104,7 +104,7 @@
     <WadSoundInfo>
       <Id>290</Id>
       <Name>FOOTSTEPS_2_GRAVEL</Name>
-      <Volume>17</Volume>
+      <Volume>22</Volume>
       <RangeInSectors>7</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
@@ -129,7 +129,7 @@
     <WadSoundInfo>
       <Id>291</Id>
       <Name>FOOTSTEPS_3_SAND</Name>
-      <Volume>20</Volume>
+      <Volume>29</Volume>
       <RangeInSectors>6</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
@@ -154,7 +154,7 @@
     <WadSoundInfo>
       <Id>292</Id>
       <Name>FOOTSTEPS_4_WOOD</Name>
-      <Volume>25</Volume>
+      <Volume>28</Volume>
       <RangeInSectors>7</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
@@ -204,7 +204,7 @@
     <WadSoundInfo>
       <Id>294</Id>
       <Name>FOOTSTEPS_6_METAL</Name>
-      <Volume>18</Volume>
+      <Volume>21</Volume>
       <RangeInSectors>8</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>-5</PitchFactor>
@@ -229,7 +229,7 @@
     <WadSoundInfo>
       <Id>295</Id>
       <Name>FOOTSTEPS_7_SNOW</Name>
-      <Volume>25</Volume>
+      <Volume>32</Volume>
       <RangeInSectors>6</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
@@ -254,10 +254,10 @@
     <WadSoundInfo>
       <Id>296</Id>
       <Name>FOOTSTEPS_8_WATER</Name>
-      <Volume>25</Volume>
+      <Volume>29</Volume>
       <RangeInSectors>7</RangeInSectors>
       <Chance>100</Chance>
-      <PitchFactor>15</PitchFactor>
+      <PitchFactor>21</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>true</RandomizePitch>
       <RandomizeVolume>false</RandomizeVolume>
@@ -279,10 +279,10 @@
     <WadSoundInfo>
       <Id>297</Id>
       <Name>FOOTSTEPS_9_STONE</Name>
-      <Volume>18</Volume>
+      <Volume>24</Volume>
       <RangeInSectors>7</RangeInSectors>
       <Chance>100</Chance>
-      <PitchFactor>0</PitchFactor>
+      <PitchFactor>1</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>true</RandomizePitch>
       <RandomizeVolume>false</RandomizeVolume>
@@ -304,7 +304,7 @@
     <WadSoundInfo>
       <Id>298</Id>
       <Name>FOOTSTEPS_10_GRASS</Name>
-      <Volume>15</Volume>
+      <Volume>20</Volume>
       <RangeInSectors>6</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
@@ -354,7 +354,7 @@
     <WadSoundInfo>
       <Id>300</Id>
       <Name>FOOTSTEPS_12_OLD_WOOD</Name>
-      <Volume>20</Volume>
+      <Volume>22</Volume>
       <RangeInSectors>7</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
@@ -379,7 +379,7 @@
     <WadSoundInfo>
       <Id>301</Id>
       <Name>FOOTSTEPS_13_OLD_METAL</Name>
-      <Volume>25</Volume>
+      <Volume>32</Volume>
       <RangeInSectors>7</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>-10</PitchFactor>
@@ -404,7 +404,7 @@
     <WadSoundInfo>
       <Id>302</Id>
       <Name>FOOTSTEPS_14_CARPET</Name>
-      <Volume>15</Volume>
+      <Volume>21</Volume>
       <RangeInSectors>5</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
@@ -429,7 +429,7 @@
     <WadSoundInfo>
       <Id>303</Id>
       <Name>FOOTSTEPS_15_LEAVES</Name>
-      <Volume>15</Volume>
+      <Volume>23</Volume>
       <RangeInSectors>7</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
