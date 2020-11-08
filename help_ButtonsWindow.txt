@@ -1,0 +1,377 @@
+INTRODUCTION
+============
+The buttons window is a new feature of NGLE program.
+You can have an extra window to store buttons to enable the commands of NGLE program.
+		
+There are different reasons to have these duplications of old ngle commands:
+
+* If you have a screen resolution wider than 1024x768 (the size of NGLE window) you can use the button window to have more button shortcuts of menu commands or keyboard commands and place this extra window at right of the NGLE window. Usually it's more fast the usage of buttons both menu commands. While for the keyboard commands the problem is that you could forget the precise keys to use, while with a button with its meaningful name, the problem doesn't exist.
+
+* If you have a screen resolution littler than 1024x768, like it happens on some netbooks (1024x600) or some very old PCs, you can use the button window to host the default buttons hidden and place the button window over the texture frame, while you are editing other matters, and minimize it when you have to select textures.
+Note: remember that you can show newly the minimized (or previously closed) button window, using the shortcut  CTRL + 0  (0 is zero digit)
+
+* Another chance is to use the button window to have the most of the commands typed in your language or described in better way, or typed with a bigger character. These solutions could be interesting for non english people,  beginners or miop people.
+
+Examples of Button Window
+=========================
+In trle folder you find two examples of button windows:
+
+NetBook_ButtonsWindow.txt
+and
+WideScreen_ButtonsWindow.txt
+
+To enable one of these you have to rename it as "ButtonsWindow.txt".
+The NGLE will create a button window only when it finds a file named "ButtonsWindow.txt" in trle folder.
+
+Above windows are only examples that you can change as you wish.
+
+The NetBook_ButtonsWindow.txt contains all lower buttons of the ngle window since they will be hidden in a resolution of 1024x600 used by many  net books.
+
+The WideScreen_ButtonsWindow.txt contains buttons to reproduce menu commands and keyboard commands.
+
+If the width of the WideScreen window is too large (or too slim for your taste) you can change it typing another value in the @COLUMNS tag. See below
+
+Syntax of button window commands
+================================
+In this document you find a description of the commands and their syntax to use in ButtonsWindow.txt file.
+
+Note: don't pass the lenght of 512 characters for line in the ButtonWindow.txt file. If you wish place more comments, break the long line in two o more shorter lines
+note: the max length for NewName is 79 characters
+
+Header of the Button Window
+===========================
+The header is in top side of the button window.
+In the header all commands begin with the @ charcter.
+The header commands allow to set the general preference for the window
+
+Commands in the header
+======================
+The header commands use the ':' character to divide their fields.
+
+@COLUMNS tag
+------------
+The columns tag says the number of button on the same row. The width of the window will be so
+given by the formula:  Columns * ButtonWidth, to have the width in pixel of the window
+Example:
+
+@COLUMNS:2
+
+The window will have two buttons for row and therefor its width will be 2 multiplied by ButtonWidth
+
+@TITLE tag
+----------
+The title allows to set the name of the window. 
+For example:
+
+@TITLE:My Buttons
+
+@BUTTON_WIDTH and @BUTTON_HEIGHT tags
+-------------------------------------
+With these two tags you set the size of all buttons in pixels.
+You should take care that the chosen font can be hosted in the buttons.
+
+For example:
+@BUTTON_WIDTH:104
+@BUTTON_HEIGHT:16
+
+In above example all buttons will have a size of 104x16 pixels.
+
+@BACK_COLOR and @FORE_COLOR tags
+--------------------------------
+Unfortunately Windows OS doesn't allow to change the color of the button, anyway you can set the color for Rows and Frames.
+The colors you type in the header will be used when a Row or Frame definition has no reference about colors for it.
+
+Example:
+
+@BACK_COLOR:$003344
+@FORE_COLOR:$552211
+
+The position of color gradients in the number is:
+$BBGGRR
+where: 
+RR = Red
+GG = Green
+BB = Blue
+
+@Font tag
+---------
+This tag has a more complex syntax:
+
+@FONT:Target:FontName:Size:BoldWeight 
+
+Target field could be:
+BUTTONS = font used for the text of the Buttons
+ROWS = font used for the text of Row ("R:") commands
+FRAMES = font used for the text of Frame ("F:") commands
+
+FontName field is the family name of the chosen font.
+Well known font names are: Arial, Courier, Ms Sans Serif, ect. but you can use any font present in your PC if you mean use only you the button window, while if you wish develope the window on the web it's better using a very famous font name to be sure that all people had it on his computer.
+
+Size field gives the height in pixel of the character. The width of character will be got in proportional way, about the 60 % of the height.
+
+BoldWeight field set the depth of the pen used to draw the character. Usually the range of values is enclosed in the limits: 100 / 900 
+
+Examples:
+
+@FONT:BUTTONS:Ms Sans Serif:9:100
+@FONT:FRAMES:Ms Sans Serif:11:100
+@FONT:ROWS:Arial:15:400
+
+Button Definitions
+==================
+
+After the header there is the list of button definitions.
+The general syntax for each button definition is:
+
+#CharType:OriginalName=NewName(Optional):NewBackGroundColor(Optional):NewForegroundColor(Optional)
+
+Note: The background and foreground color works only for Rows "#R" and Frames "#F" definitions.
+
+Remark: the buttons of 2d panel (all over the buttons "Place Object" and "Move Lara Here") are not officially supported because their updating is a bit complicated. In spite of this limitation you can duplicate some of them, those that have a real name and no numeric value or multistate mode.
+
+CharType field
+--------------
+"#B" Button. This is the duplicate of a common button, where the "OriginalName" it's the same you see in some button of NGLE window.
+
+"#M" Menu. This is the duplicate of a Menu command, where the "OriginalName" it's the same you read in NGLE menu.
+note: about the shortcut part of the menu name, you have to exclude it
+in your OriginalName for old menu, while you should keep it for the new menu created in NGLE
+for example:
+in the menu item of "Room" menu:
+"Center   Shift C"
+you have to set the name as "Center"  because it is an old menu
+while for the menu item of "Shapes" menu:
+"Pyramid Floor     CTRL F5"
+you should type all above text, but it's not important you compute
+the precise spaces, so you can use the name: "Pyramid Floor CTRL F5
+Note: the new menus are those from, and at right of, "Shapes" menu title.
+
+"#R" Row. This is not a button but only a separator row with text you can use to divide your button windows in different panels, each of them with its descriptive name and colors. The name will be that you type as OriginalName.
+ for example:
+#R:Lighting Buttons:$000000:$A0A000
+note: the width of above row will be the whole width of the button window, of course
+
+"#F" Frame. This is not a button but a frame (rectangular zone) where it will be drawn variable text. Currently	it used only with INFO_BOX as original name and it will show the infos about editing (selection, height floor, ceiling ect.) and level (used items, triggers, moveables ect)
+In the NewName field you type the number of button rows of this frame, to set its height
+for example if you wish that this frame had an height of 4 buttons you'll type:
+#F:INFO_BOX=4:$505050:$000000
+note: about the width of the info_box it's always the same of the button window, i.e. the width of single button multiplied by @COLUMNS value
+
+"#C" Colors. This type is not a common button but a serie of very little buttons, simulating the first 15 colors of the palette of NGLE. 
+The width for each coloured little button will be the size of the width of the button window divided by 15
+in this type it will be ignored all fields but you have to type the originalname field, you can use the name COLOR_PALETTE
+example:
+#C:COLOR_PALETTE
+
+"#P" Preset. This is a duplicate of a button using a preset name to distinguish it from others with same real text. For example there are  many little buttons marked as [+] or [-] for different light parameters or other buttons that have not innner name but only an outer descriptive text.
+For these buttons you have to use the preset names to identify them in univoque mode.
+see the Appendix with the list of preset names you can use.
+Remark: 
+If you wish duplicate a button that is not enclosed in above list you can identify it typing in OriginalName field the couple of (x,y) coordinates of its origin.
+for example, since the pink button, to place a trigger in the map, has the origin in (265,412) coordinates, you can have this button in your window with a definition like this:
+#P:(265,412)=Add Trigger
+note: remember that the origin of the button has to be computed like the distance between the top/left pixel of the button with the top/left origin of the ngle window when it is maximized, therefore excluding the title bar and borders.
+When you use the generic definition way you should always supply a NewName, of course
+
+"#K" Keyboard. This command creates a button used to send a keyboard shortcut to invoke some command.
+Note that some commands in NGLE are present only as shortcut, with no button or menu present for them.
+When you wish create a #K button you have to type in OriginalName field the hexadecimal number with the scancode of main key + further bit status for SHIFT, CTRL, ALT in high order byte.
+So the format of the number will be:
+$YXX  (where XX is the scancode of main character and Y are the status keys.)
+Status keys can be:
+$8..  ALT
+$4..  CTRL
+$2..  SHIFT (of left side, if the $1.. is missing)
+$1..  SHIFT (of right side togheter with $2..)
+You can sum them as hex numbers. For example if you wish use ALT and CTRL in same moment, it will become $800 + $400 = $C00
+
+The scan codes are the same you read in Keyboard Scan Codes list of Reference panel of NG_Center, anyway you can find in this document a summary of the main (only) keyboard command in NGLE.
+See the Keyboard Appendix at bottom of this document.
+
+OriginalName field
+------------------
+In the OriginalName field you type the same text you see inside the original buttons or menu you wish replicate in your button window.
+The exceptions about above rules are when you work with:
+
+#P : In the Original name type one of preset texts you find in the Preset buttons Appendix
+#K : Type an hexadecimal number to describe the keyboard command to invoke. See the Keyboard Appendix at bottom of this document.
+#F : Type always INFO_BOX as Original name
+#C : Type always COLOR_PALETTE as Original name
+#R : Type the text you wish printed in this row
+
+NewName field
+-------------
+You use the OriginalName to locate the source button to duplicate but then you can assign another name (descriptive text) for it
+This NewName field is optional, so you can omit it and in this case the button will have the same name of the original button.
+
+examples:
+
+#B:Trigger -> Object
+The button will have the same text of original: "Trigger -> Object"
+
+while if you wish rename it, you can type:
+#B:Trigger -> Object=Find From Trigger
+
+In above case the name in your button window will be "Find From Trigger"
+
+NewBackGroundColor field
+------------------------
+This field works only for Rows and Frame text.
+if you wish that this row had a background color different than
+the default back color set with the @BACK_COLOR header definition
+you can type here a new rgb color for background
+if you type in hexadecimal you have to use the "$" sign  in front of it followed by a hexadecimal number
+The NewBackGroundColor field is optional, so means you can omit it and the row will have the defaul color set with @BACK_COLOR
+header definition.
+Anyway remember that if you omit the NewBackGroundColor color you have to omit also the following NewForegroundColor to avoid ambiguity in the parsing of the command.
+
+NewForegroundColor field
+------------------------
+if you wish change the foreground color for this row, i.e. the color of the text, you can type this field with the rgb value for the text of this button.
+Note that if you type the NewForegroundColor field you are forced to
+type, before of it, the NewBackGroundColor field, too.
+
+****************************************************************
+*              Appendix A: Preset Button Names                 *
+****************************************************************
+
+This list show the text to type in OriginalName field for #P button type.
+
+TINT_RED+
+TINT_RED-
+TINT_RED_NUMBER
+TINT_GREEN+
+TINT_GREEN-
+TINT_GREEN_NUMBER
+TINT_BLUE+
+TINT_BLUE-
+TINT_BLUE_NUMBER
+
+OBJECT+
+OBJECT-
+OBJECT_NAME
+
+the following are all little buttons of light panel
+AMBIENCE_RED+
+AMBIENCE_RED-
+AMBIENCE_RED_NUMBER
+AMBIENCE_GREEN+
+AMBIENCE_GREEN-
+AMBIENCE_GREEN_NUMBER
+AMBIENCE_BLUE+
+AMBIENCE_BLUE-
+AMBIENCE_BLUE_NUMBER
+
+LIGHT_X+
+LIGHT_X-
+LIGHT_X_NUMBER
+LIGHT_Y+
+LIGHT_Y-
+LIGHT_Y_NUMBER
+LIGHT_LEN+
+LIGHT_LEN-
+LIGHT_LEN_NUMBER
+LIGHT_CUT+
+LIGHT_CUT-
+LIGHT_CUT_NUMBER
+
+LIGHT_INT+
+LIGHT_INT-
+LIGHT_INT_NUMBER
+LIGHT_OUT+
+LIGHT_OUT-
+LIGHT_OUT_NUMBER
+LIGHT_IN+
+LIGHT_IN-
+LIGHT_IN_NUMBER
+
+COLOUR_RED+
+COLOUR_RED-
+COLOUR_RED_NUMBER
+COLOUR_GREEN+
+COLOUR_GREEN-
+COLOUR_GREEN_NUMBER
+COLOUR_BLUE+
+COLOUR_BLUE-
+COLOUR_BLUE_NUMBER
+
+***********************************************************************************
+*                Appendix B: Examples of button definitions                       *
+***********************************************************************************
+
+#R:Menu Commands:$00A0A0:$000000
+#M:Load Objects
+#B:Last Projects
+#B:Backup Project
+#B:Load TGA
+#M:Smooth slope floor CTRL F1=Sweet Slope
+#M:Grid all Walls F12=Grid All
+#M:Grid Selected Wall F1=Grid Selection
+#R:Technical Infos:$00A0A0:$000000
+#F:INFO_BOX=4:$80ffff:$000000
+#P:(265,412)=Add Trigger
+#K:$04C8:Move Obj to North
+#R:Management Files:$FF0000:$FFFFFF
+#P:OBJECT_NAME=Objects
+#P:LIGHT_LEN_NUMBER=Light Lenght
+#P:LIGHT_CUT_NUMBER=Light Cut
+#R:Colours of Palette:$FF0000:$FFFFFF
+#C:COLOR_PALETTE
+#R:Info Panel:$FF0000:$FFFFFF
+#F:INFO_BOX=8:$80ffff:$000000
+
+***********************************************************************************
+*                Appendix C: Code Numbers for Keyboard commands                   *
+***********************************************************************************
+Note: the Code is already supplied with the further status bits in high byte.
+
+Status keys can be:
+$8..  ALT
+$4..  CTRL
+$2..  SHIFT (of left side, if the $1.. is missing)
+$1..  SHIFT (of right side togheter with $2..)
+You can sum them as hex numbers. For example if you wish use ALT and CTRL in same moment, it will become $800 + $400 = $C00
+
+The keys of numeric keypad zone have usually the same code of main key + $80 value.
+For example:
+
+Arrow key UP: $48
+Arrow up of keypad: $C8
+
+Above work mode is a bit different than that you see in KeyBoard scancode list in Reference panel of NG_Center
+
+Code   Keys      	Descriptions
+------------------------------------------------------------------------
+$023B  SHIFT F1    Show infos about current project (Wad path and tga path)
+$023F  SHIFT F5    Set size of 2d selection 
+$0422  CTRL G      Goto following edited room.
+$0414  CTRL T      Change current triangular texture selection
+$0016  U           Unmark current room to remove it from 'edited room' list
+$0F36  CTRL ALT SHIFT  Increase number of rooms
+$0010  Q           Raises floor square
+$001E  A           Lowers floor square
+$0011  W         	Raises ceiling Square
+$001F  S     		Lowers ceiling Square
+$0012  E     		Raises sub-divided lower wall section
+$0020  D     		Lowers sub-divided lower wall section
+$0013  R    		Raises sub-divided upper wall section
+$0021  F    		Lowers sub-divided upper wall section
+$0018  O   		Object code bits window for current item
+$0418  CTRL O      Reload current Object wad file. ('O' = literal)
+$00D3  Del  		Delete selected item
+$00C9  Page Up 	Zoom in
+$00D1  Page Down 	Zoom out
+$00C8  UP  		Rotate room
+$00D0  DOWN 		Rotate room
+$00CB  LEFT 		Rotate room
+$00CD  RIGHT 		Rotate room
+$04C8  CTRL UP   	Move item to north
+$04D0  CTRL DOWN   Move item to south
+$04CB  CTRL LEFT   Move item to west
+$04CD  CTRL RIGHT  Move item to east
+$001A  [  		Scroll texture next 5 rows
+$0028  '  		Scroll texture previous 5 rows
+$000C  - 		     Select previous texture
+$004E  PAD + 		Select next texture
+$040A  CTRL 9      Open tga file with default program for tga type
+$0814  ALT T       Reload current TGA file

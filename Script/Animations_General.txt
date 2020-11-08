@@ -46,12 +46,12 @@ Animation=		224, KEY1_UP, KEY2_DASH, IGNORE, ENV_FRAME_NUMBER, 12, IGNORE, -56		
 ; When Lara plays animations 55 or 56 (stepping up a block while running), tell the engine she's
 ; not in the water anymore
 
-GlobalTrigger=	56, FGT_SINGLE_SHOT_RESUMED, GT_CONDITION_GROUP, IGNORE, 55, 56, IGNORE
-TriggerGroup=	55, $8000, 55, $1E, >			; IF anim 55
-			TGROUP_OR + $8000, 56, $1E		; OR anim 56
-
-TriggerGroup=	56, $2000, 246, $8		; THEN Tell the engine she's not in the water anymore
-			    					; (Variables. Memory. Set in <"Lara. Environment where lara is">Savegame Memory the ("0")Value)
+;GlobalTrigger=	56, FGT_SINGLE_SHOT_RESUMED, GT_CONDITION_GROUP, IGNORE, 55, 56, IGNORE
+;TriggerGroup=	55, $8000, 55, $1E, >			; IF anim 55
+;			TGROUP_OR + $8000, 56, $1E		; OR anim 56
+;
+;TriggerGroup=	56, $2000, 246, $8		; THEN Tell the engine she's not in the water anymore
+;			    					; (Variables. Memory. Set in <"Lara. Environment where lara is">Savegame Memory the ("0")Value)
 			    
 
 ;---------------------------------------------------------
@@ -64,6 +64,13 @@ TriggerGroup=	56, $2000, 246, $8		; THEN Tell the engine she's not in the water 
 ; 3 = Special: dozy, vehicle, hardcoded cutscenes
 ; 4 = Low water at ankles
 ;---------------------------------------------------------
+
+
+;================================================================================================
+; Small jump
+;================================================================================================
+
+Animation=		529, KEY1_WALK, IGNORE, IGNORE, ENV_FRAME_NUMBER, 10, IGNORE, -73
 
 
 
