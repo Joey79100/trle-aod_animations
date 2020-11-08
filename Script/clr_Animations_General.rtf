@@ -1,4 +1,4 @@
-{\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset0 Courier New;}}
+{\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fnil\fcharset0 Courier New;}}
 \viewkind4\uc1\pard\lang1036\b\f0\fs23 
 \par ;================================================================================================
 \par ; Generic 
@@ -41,38 +41,13 @@
 \par 
 \par 
 \par 
-\par ;================================================================================================
-\par ; Fixing the waist-deep water bug
-\par ;================================================================================================
-\par ; When Lara plays animations 55 or 56 (stepping up a block while running), tell the engine she's
-\par ; not in the water anymore
-\par 
-\par ;GlobalTrigger=\tab 56, FGT_SINGLE_SHOT_RESUMED, GT_CONDITION_GROUP, IGNORE, 55, 56, IGNORE
-\par ;TriggerGroup=\tab 55, $8000, 55, $1E, >\tab\tab\tab ; IF anim 55
-\par ;\tab\tab\tab TGROUP_OR + $8000, 56, $1E\tab\tab ; OR anim 56
-\par ;
-\par ;TriggerGroup=\tab 56, $2000, 246, $8\tab\tab ; THEN Tell the engine she's not in the water anymore
-\par ;\tab\tab\tab     \tab\tab\tab\tab\tab ; (Variables. Memory. Set in <"Lara. Environment where lara is">Savegame Memory the ("0")Value)
-\par \tab\tab\tab     
-\par 
-\par ;---------------------------------------------------------
-\par ; Variable: Savegame Memory zone
-\par ;---------------------------------------------------------
-\par ; Lara. Environment where lara is.
-\par ; 0 = Ground, but also climbing, monkey, jumping, falling
-\par ; 1 = Underwater
-\par ; 2 = Floating on the water
-\par ; 3 = Special: dozy, vehicle, hardcoded cutscenes
-\par ; 4 = Low water at ankles
-\par ;---------------------------------------------------------
-\par \pard 
 \par 
 \par ;================================================================================================
 \par ; Small jump
 \par ;================================================================================================
 \par 
 \par Animation=\tab\tab 529, KEY1_WALK, IGNORE, IGNORE, ENV_FRAME_NUMBER, 10, IGNORE, -73
-\par \pard 
+\par 
 \par 
 \par 
 \par ;================================================================================================
