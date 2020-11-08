@@ -1,29 +1,6 @@
 
 
 ;============================================================================
-;   Fog
-;============================================================================
-
-Fog=		18,26,34
-FogRange=	6, 20
-ColAddHorizon=	ENABLED
-Layer1=	16,16,16,2
-Layer2=	10,18,24,7
-;----------------------------------------------------------------------------
-
-;Fog=		0,0,0
-;FogRange=	0, 12
-
-Organizer=		237, IGNORE, IGNORE, 0, 237, 1, 238, 6, 239		; Called in-game near the pool
-
-TriggerGroup=	237, $2000, 355, $A03		; Screen. Flash screen - White - Fast
-TriggerGroup=	238, $2000, 228, $10D		; Weather. Fog. Change End limit of Distance Fog - 32 sectors - 4 seconds
-TriggerGroup=	239, $2000, 230, $1		; Weather. Fog. Stop the [Change END LIMIT fog distance] effect
-
-
-
-
-;============================================================================
 ;   Animations
 ;============================================================================
 
@@ -38,6 +15,24 @@ Animation=		452, KEY_L, IGNORE, FAN_KEYS_AS_SCANCODE + FAN_DISABLE_GRAVITY,  ENV
 ; ---- Big hit Front test ----
 #DEFINE	KEY_J		36
 Animation=		656, KEY_J, IGNORE, FAN_KEYS_AS_SCANCODE, IGNORE, IGNORE, IGNORE, -11, -103
+
+
+; ---- 180 degree turn (standing) ----
+#DEFINE KEY_B 48
+Animation=	446, KEY_B, IGNORE, FAN_KEYS_AS_SCANCODE, IGNORE, IGNORE, IGNORE, IGNORE, -103
+Animation=	446, KEY1_ROLL + KEY1_WALK, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -103
+;Animation=	446, KEY1_ROLL + KEY1_WALK, IGNORE, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -146
+;Animation=	446, KEY1_ROLL + KEY1_WALK, IGNORE, IGNORE, ENV_FRAME_NUMBER, 3, IGNORE, -146
+
+
+; ---- 180 degree turn (backflip) ----
+#DEFINE KEY_V 47
+Animation=	696, KEY_V, IGNORE, FAN_KEYS_AS_SCANCODE, IGNORE, IGNORE, IGNORE, IGNORE, -103
+Animation=	696, KEY1_ROLL, KEY2_DASH, IGNORE, IGNORE, IGNORE, IGNORE, -103
+;Animation=	696, KEY1_ROLL, KEY2_DASH, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -146
+;Animation=	696, KEY1_ROLL, KEY2_DASH, IGNORE, ENV_FRAME_NUMBER, 3, IGNORE, -146
+
+
 
 
 

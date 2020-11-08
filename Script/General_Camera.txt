@@ -3,10 +3,6 @@
 ;General Camera Settings
 ;================================================================================================
 
-;Customize=		CUST_CAMERA, FCAM_DISABLE_COMBAT_CAM, 1152, -1365, -1, -1, -1, -1, -1, 8
-;Customize=		CUST_CAMERA, IGNORE, 1152, -1365, -1, 1152, -1365, -1, -1, 8
-;Customize=		CUST_CAMERA, IGNORE, 1152, -1365, -1, 1152, -4865, -1, -1, 8
-;Customize=		CUST_CAMERA, IGNORE, 1152, -1365, -1, 1752, -5365, -1, -1, 8
 Customize=		CUST_CAMERA, IGNORE, 1352, -1365, -1, 1752, -5365, -1, -1, 8
 
 ; -- Raildex's workaround to fix camera not continuously updating its position --

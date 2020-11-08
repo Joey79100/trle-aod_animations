@@ -2,23 +2,23 @@
 <WadSounds xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SoundInfos>
     <WadSoundInfo>
-      <Id>107</Id>
-      <Name>EARTHQUAKE_LOOP</Name>
-      <Volume>90</Volume>
-      <RangeInSectors>10</RangeInSectors>
+      <Id>59</Id>
+      <Name>WATER_PUDDLE</Name>
+      <Volume>45</Volume>
+      <RangeInSectors>5</RangeInSectors>
       <Chance>100</Chance>
-      <PitchFactor>-40</PitchFactor>
+      <PitchFactor>-47</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>false</RandomizePitch>
       <RandomizeVolume>false</RandomizeVolume>
       <LoopBehaviour>Looped</LoopBehaviour>
       <Samples>
         <WadSample>
-          <FileName>l_quake.wav</FileName>
+          <FileName>l_swloop.wav</FileName>
         </WadSample>
       </Samples>
-      <Global>true</Global>
-      <Indexed>true</Indexed>
+      <Global>false</Global>
+      <Indexed>false</Indexed>
     </WadSoundInfo>
     <WadSoundInfo>
       <Id>105</Id>
@@ -62,6 +62,44 @@
       <Indexed>true</Indexed>
     </WadSoundInfo>
     <WadSoundInfo>
+      <Id>107</Id>
+      <Name>EARTHQUAKE_LOOP</Name>
+      <Volume>90</Volume>
+      <RangeInSectors>10</RangeInSectors>
+      <Chance>100</Chance>
+      <PitchFactor>-40</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>false</RandomizePitch>
+      <RandomizeVolume>false</RandomizeVolume>
+      <LoopBehaviour>Looped</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>l_quake.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>true</Global>
+      <Indexed>true</Indexed>
+    </WadSoundInfo>
+    <WadSoundInfo>
+      <Id>118</Id>
+      <Name>WATER</Name>
+      <Volume>60</Volume>
+      <RangeInSectors>7</RangeInSectors>
+      <Chance>100</Chance>
+      <PitchFactor>-42</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>false</RandomizePitch>
+      <RandomizeVolume>false</RandomizeVolume>
+      <LoopBehaviour>Looped</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>l_wloop.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>false</Global>
+      <Indexed>false</Indexed>
+    </WadSoundInfo>
+    <WadSoundInfo>
       <Id>182</Id>
       <Name>THUNDER_RUMBLE</Name>
       <Volume>80</Volume>
@@ -82,6 +120,82 @@
       </Samples>
       <Global>true</Global>
       <Indexed>true</Indexed>
+    </WadSoundInfo>
+    <WadSoundInfo>
+      <Id>371</Id>
+      <Name>RAIN_METAL</Name>
+      <Volume>49</Volume>
+      <RangeInSectors>8</RangeInSectors>
+      <Chance>100</Chance>
+      <PitchFactor>-22</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>false</RandomizePitch>
+      <RandomizeVolume>false</RandomizeVolume>
+      <LoopBehaviour>Looped</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>rain_metal.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>false</Global>
+      <Indexed>false</Indexed>
+    </WadSoundInfo>
+    <WadSoundInfo>
+      <Id>372</Id>
+      <Name>RAIN_WATER</Name>
+      <Volume>40</Volume>
+      <RangeInSectors>8</RangeInSectors>
+      <Chance>100</Chance>
+      <PitchFactor>-17</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>false</RandomizePitch>
+      <RandomizeVolume>false</RandomizeVolume>
+      <LoopBehaviour>Looped</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>rain_water.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>false</Global>
+      <Indexed>false</Indexed>
+    </WadSoundInfo>
+    <WadSoundInfo>
+      <Id>380</Id>
+      <Name>LAVA</Name>
+      <Volume>75</Volume>
+      <RangeInSectors>4</RangeInSectors>
+      <Chance>100</Chance>
+      <PitchFactor>-65</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>false</RandomizePitch>
+      <RandomizeVolume>false</RandomizeVolume>
+      <LoopBehaviour>Looped</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>lava_loop.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>false</Global>
+      <Indexed>false</Indexed>
+    </WadSoundInfo>
+    <WadSoundInfo>
+      <Id>370</Id>
+      <Name>RAIN</Name>
+      <Volume>40</Volume>
+      <RangeInSectors>8</RangeInSectors>
+      <Chance>100</Chance>
+      <PitchFactor>0</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>false</RandomizePitch>
+      <RandomizeVolume>false</RandomizeVolume>
+      <LoopBehaviour>Looped</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>l_rain1.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>false</Global>
+      <Indexed>false</Indexed>
     </WadSoundInfo>
   </SoundInfos>
 </WadSounds>
