@@ -97,7 +97,7 @@ DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, IGNORE		; Shows only info
 ;#INCLUDE "Animations_StanceToHang.txt" ; BROKEN for some reason
 #INCLUDE "Animations_SkipRunBack.txt"
 ;#INCLUDE "Animations_HorizontalPoles.txt"
-
+;#INCLUDE "Animations_Stealth.txt" ; WIP - with basic implementation (replacing Walk for now)
 
 
 

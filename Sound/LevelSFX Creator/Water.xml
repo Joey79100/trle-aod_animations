@@ -35,7 +35,7 @@
       <Volume>82</Volume>
       <RangeInSectors>10</RangeInSectors>
       <Chance>100</Chance>
-      <PitchFactor>0</PitchFactor>
+      <PitchFactor>5</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>true</RandomizePitch>
       <RandomizeVolume>true</RandomizeVolume>
@@ -70,10 +70,10 @@
     <WadSoundInfo>
       <Id>35</Id>
       <Name>SWIM</Name>
-      <Volume>40</Volume>
+      <Volume>20</Volume>
       <RangeInSectors>4</RangeInSectors>
       <Chance>100</Chance>
-      <PitchFactor>-4</PitchFactor>
+      <PitchFactor>-2</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>true</RandomizePitch>
       <RandomizeVolume>false</RandomizeVolume>
@@ -170,7 +170,7 @@
     <WadSoundInfo>
       <Id>60</Id>
       <Name>UNDERWATER</Name>
-      <Volume>90</Volume>
+      <Volume>95</Volume>
       <RangeInSectors>10</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>-86</PitchFactor>

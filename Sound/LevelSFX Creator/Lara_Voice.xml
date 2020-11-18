@@ -4,20 +4,17 @@
     <WadSoundInfo>
       <Id>1</Id>
       <Name>LARA_CLIMB_SMALL</Name>
-      <Volume>55</Volume>
-      <RangeInSectors>7</RangeInSectors>
+      <Volume>45</Volume>
+      <RangeInSectors>10</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>false</RandomizePitch>
       <RandomizeVolume>false</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
+      <LoopBehaviour>OneShotWait</LoopBehaviour>
       <Samples>
         <WadSample>
-          <FileName>lara_jump1.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_jump2.wav</FileName>
+          <FileName>climb3.wav</FileName>
         </WadSample>
       </Samples>
       <Global>true</Global>
@@ -26,17 +23,17 @@
     <WadSoundInfo>
       <Id>2</Id>
       <Name>LARA_NO</Name>
-      <Volume>40</Volume>
-      <RangeInSectors>6</RangeInSectors>
+      <Volume>45</Volume>
+      <RangeInSectors>8</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>false</RandomizePitch>
       <RandomizeVolume>false</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
+      <LoopBehaviour>OneShotWait</LoopBehaviour>
       <Samples>
         <WadSample>
-          <FileName>lara_no.wav</FileName>
+          <FileName>no.wav</FileName>
         </WadSample>
       </Samples>
       <Global>true</Global>
@@ -45,26 +42,26 @@
     <WadSoundInfo>
       <Id>5</Id>
       <Name>LARA_SIGH</Name>
-      <Volume>34</Volume>
+      <Volume>25</Volume>
       <RangeInSectors>6</RangeInSectors>
       <Chance>40</Chance>
       <PitchFactor>0</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>true</RandomizePitch>
       <RandomizeVolume>false</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
+      <LoopBehaviour>OneShotWait</LoopBehaviour>
       <Samples>
         <WadSample>
-          <FileName>lara_sigh1.wav</FileName>
+          <FileName>sigh1.wav</FileName>
         </WadSample>
         <WadSample>
-          <FileName>lara_sigh2.wav</FileName>
+          <FileName>sigh2.wav</FileName>
         </WadSample>
         <WadSample>
-          <FileName>lara_sigh3.wav</FileName>
+          <FileName>sigh3.wav</FileName>
         </WadSample>
         <WadSample>
-          <FileName>lara_sigh4.wav</FileName>
+          <FileName>sigh4.wav</FileName>
         </WadSample>
       </Samples>
       <Global>true</Global>
@@ -74,50 +71,19 @@
       <Id>26</Id>
       <Name>LARA_CLIMB_BIG</Name>
       <Volume>45</Volume>
-      <RangeInSectors>6</RangeInSectors>
-      <Chance>100</Chance>
+      <RangeInSectors>13</RangeInSectors>
+      <Chance>90</Chance>
       <PitchFactor>0</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>false</RandomizePitch>
       <RandomizeVolume>false</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
+      <LoopBehaviour>OneShotWait</LoopBehaviour>
       <Samples>
         <WadSample>
-          <FileName>lara_climb1.wav</FileName>
+          <FileName>climb1.wav</FileName>
         </WadSample>
         <WadSample>
-          <FileName>lara_climb2.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_climb3.wav</FileName>
-        </WadSample>
-      </Samples>
-      <Global>true</Global>
-      <Indexed>true</Indexed>
-    </WadSoundInfo>
-    <WadSoundInfo>
-      <Id>27</Id>
-      <Name>LARA_HIT_WALL</Name>
-      <Volume>50</Volume>
-      <RangeInSectors>9</RangeInSectors>
-      <Chance>40</Chance>
-      <PitchFactor>0</PitchFactor>
-      <DisablePanning>false</DisablePanning>
-      <RandomizePitch>false</RandomizePitch>
-      <RandomizeVolume>false</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
-      <Samples>
-        <WadSample>
-          <FileName>lara_hurt1.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_hurt2.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_hurt3.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_hurt4.wav</FileName>
+          <FileName>climb2.wav</FileName>
         </WadSample>
       </Samples>
       <Global>true</Global>
@@ -126,23 +92,20 @@
     <WadSoundInfo>
       <Id>29</Id>
       <Name>LARA_JUMP</Name>
-      <Volume>55</Volume>
-      <RangeInSectors>8</RangeInSectors>
-      <Chance>70</Chance>
+      <Volume>45</Volume>
+      <RangeInSectors>13</RangeInSectors>
+      <Chance>75</Chance>
       <PitchFactor>0</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>false</RandomizePitch>
       <RandomizeVolume>false</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
+      <LoopBehaviour>OneShotWait</LoopBehaviour>
       <Samples>
         <WadSample>
-          <FileName>lara_jump1.wav</FileName>
+          <FileName>jump1.wav</FileName>
         </WadSample>
         <WadSample>
-          <FileName>lara_jump2.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_jump3.wav</FileName>
+          <FileName>jump2.wav</FileName>
         </WadSample>
       </Samples>
       <Global>true</Global>
@@ -151,17 +114,17 @@
     <WadSoundInfo>
       <Id>30</Id>
       <Name>LARA_SCREAM</Name>
-      <Volume>60</Volume>
-      <RangeInSectors>12</RangeInSectors>
+      <Volume>85</Volume>
+      <RangeInSectors>15</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>false</RandomizePitch>
       <RandomizeVolume>false</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
+      <LoopBehaviour>OneShotWait</LoopBehaviour>
       <Samples>
         <WadSample>
-          <FileName>lara_scream.wav</FileName>
+          <FileName>scream.wav</FileName>
         </WadSample>
       </Samples>
       <Global>true</Global>
@@ -170,26 +133,23 @@
     <WadSoundInfo>
       <Id>31</Id>
       <Name>LARA_HURT</Name>
-      <Volume>50</Volume>
-      <RangeInSectors>9</RangeInSectors>
-      <Chance>40</Chance>
+      <Volume>45</Volume>
+      <RangeInSectors>10</RangeInSectors>
+      <Chance>50</Chance>
       <PitchFactor>0</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>false</RandomizePitch>
       <RandomizeVolume>false</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
+      <LoopBehaviour>OneShotWait</LoopBehaviour>
       <Samples>
         <WadSample>
-          <FileName>lara_hurt1.wav</FileName>
+          <FileName>hit1.wav</FileName>
         </WadSample>
         <WadSample>
-          <FileName>lara_hurt2.wav</FileName>
+          <FileName>hit2.wav</FileName>
         </WadSample>
         <WadSample>
-          <FileName>lara_hurt3.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_hurt4.wav</FileName>
+          <FileName>hit3.wav</FileName>
         </WadSample>
       </Samples>
       <Global>true</Global>
@@ -199,16 +159,16 @@
       <Id>36</Id>
       <Name>LARA_BREATH</Name>
       <Volume>40</Volume>
-      <RangeInSectors>13</RangeInSectors>
+      <RangeInSectors>7</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>false</RandomizePitch>
       <RandomizeVolume>true</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
+      <LoopBehaviour>OneShotWait</LoopBehaviour>
       <Samples>
         <WadSample>
-          <FileName>lara_breath.wav</FileName>
+          <FileName>breath.wav</FileName>
         </WadSample>
       </Samples>
       <Global>true</Global>
@@ -217,20 +177,17 @@
     <WadSoundInfo>
       <Id>41</Id>
       <Name>LARA_DEATH_RUN</Name>
-      <Volume>60</Volume>
+      <Volume>45</Volume>
       <RangeInSectors>13</RangeInSectors>
       <Chance>100</Chance>
-      <PitchFactor>-3</PitchFactor>
+      <PitchFactor>0</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>false</RandomizePitch>
       <RandomizeVolume>true</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
+      <LoopBehaviour>OneShotWait</LoopBehaviour>
       <Samples>
         <WadSample>
-          <FileName>lara_die7.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_die8.wav</FileName>
+          <FileName>die1.wav</FileName>
         </WadSample>
       </Samples>
       <Global>false</Global>
@@ -239,20 +196,17 @@
     <WadSoundInfo>
       <Id>42</Id>
       <Name>LARA_DEATH_STANDING</Name>
-      <Volume>60</Volume>
+      <Volume>45</Volume>
       <RangeInSectors>13</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>false</RandomizePitch>
       <RandomizeVolume>false</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
+      <LoopBehaviour>OneShotWait</LoopBehaviour>
       <Samples>
         <WadSample>
-          <FileName>lara_die1.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_die6.wav</FileName>
+          <FileName>die2.wav</FileName>
         </WadSample>
       </Samples>
       <Global>false</Global>
@@ -261,17 +215,20 @@
     <WadSoundInfo>
       <Id>46</Id>
       <Name>LARA_BLOCK_PUSH1</Name>
-      <Volume>60</Volume>
+      <Volume>45</Volume>
       <RangeInSectors>13</RangeInSectors>
-      <Chance>100</Chance>
+      <Chance>85</Chance>
       <PitchFactor>0</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>false</RandomizePitch>
       <RandomizeVolume>true</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
+      <LoopBehaviour>OneShotWait</LoopBehaviour>
       <Samples>
         <WadSample>
-          <FileName>lara_push.wav</FileName>
+          <FileName>grab2.wav</FileName>
+        </WadSample>
+        <WadSample>
+          <FileName>hit2.wav</FileName>
         </WadSample>
       </Samples>
       <Global>true</Global>
@@ -280,20 +237,20 @@
     <WadSoundInfo>
       <Id>47</Id>
       <Name>LARA_BLOCK_PUSH2</Name>
-      <Volume>60</Volume>
-      <RangeInSectors>10</RangeInSectors>
-      <Chance>50</Chance>
+      <Volume>45</Volume>
+      <RangeInSectors>13</RangeInSectors>
+      <Chance>75</Chance>
       <PitchFactor>0</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>false</RandomizePitch>
       <RandomizeVolume>false</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
+      <LoopBehaviour>OneShotWait</LoopBehaviour>
       <Samples>
         <WadSample>
-          <FileName>lara_jump1.wav</FileName>
+          <FileName>climb1.wav</FileName>
         </WadSample>
         <WadSample>
-          <FileName>lara_jump2.wav</FileName>
+          <FileName>climb2.wav</FileName>
         </WadSample>
       </Samples>
       <Global>true</Global>
@@ -302,26 +259,26 @@
     <WadSoundInfo>
       <Id>50</Id>
       <Name>LARA_BULLET_HIT</Name>
-      <Volume>46</Volume>
+      <Volume>45</Volume>
       <RangeInSectors>13</RangeInSectors>
-      <Chance>25</Chance>
+      <Chance>85</Chance>
       <PitchFactor>0</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>false</RandomizePitch>
       <RandomizeVolume>false</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
+      <LoopBehaviour>OneShotWait</LoopBehaviour>
       <Samples>
         <WadSample>
-          <FileName>lara_hurt1.wav</FileName>
+          <FileName>hurtbad1.wav</FileName>
         </WadSample>
         <WadSample>
-          <FileName>lara_hurt2.wav</FileName>
+          <FileName>hurtbad2.wav</FileName>
         </WadSample>
         <WadSample>
-          <FileName>lara_hurt3.wav</FileName>
+          <FileName>hurtbad3.wav</FileName>
         </WadSample>
         <WadSample>
-          <FileName>lara_hurt4.wav</FileName>
+          <FileName>hurtbad4.wav</FileName>
         </WadSample>
       </Samples>
       <Global>true</Global>
@@ -330,22 +287,15 @@
     <WadSoundInfo>
       <Id>51</Id>
       <Name>LARA_BLOCK_PULL</Name>
-      <Volume>36</Volume>
-      <RangeInSectors>10</RangeInSectors>
+      <Volume>45</Volume>
+      <RangeInSectors>13</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>false</RandomizePitch>
       <RandomizeVolume>false</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
-      <Samples>
-        <WadSample>
-          <FileName>lara_p&amp;p4.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_jump1.wav</FileName>
-        </WadSample>
-      </Samples>
+      <LoopBehaviour>OneShotWait</LoopBehaviour>
+      <Samples />
       <Global>true</Global>
       <Indexed>true</Indexed>
     </WadSoundInfo>
@@ -355,14 +305,14 @@
       <Volume>90</Volume>
       <RangeInSectors>13</RangeInSectors>
       <Chance>100</Chance>
-      <PitchFactor>20</PitchFactor>
+      <PitchFactor>15</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>true</RandomizePitch>
       <RandomizeVolume>true</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
+      <LoopBehaviour>OneShotWait</LoopBehaviour>
       <Samples>
         <WadSample>
-          <FileName>lara_die_fall.wav</FileName>
+          <FileName>die_fall.wav</FileName>
         </WadSample>
       </Samples>
       <Global>false</Global>
@@ -371,7 +321,32 @@
     <WadSoundInfo>
       <Id>55</Id>
       <Name>LARA_GRAB</Name>
-      <Volume>34</Volume>
+      <Volume>45</Volume>
+      <RangeInSectors>13</RangeInSectors>
+      <Chance>100</Chance>
+      <PitchFactor>0</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>false</RandomizePitch>
+      <RandomizeVolume>false</RandomizeVolume>
+      <LoopBehaviour>OneShotWait</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>grab1.wav</FileName>
+        </WadSample>
+        <WadSample>
+          <FileName>grab2.wav</FileName>
+        </WadSample>
+        <WadSample>
+          <FileName>hit2.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>true</Global>
+      <Indexed>true</Indexed>
+    </WadSoundInfo>
+    <WadSoundInfo>
+      <Id>145</Id>
+      <Name>LARA_DEATH_SPIKES</Name>
+      <Volume>80</Volume>
       <RangeInSectors>13</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
@@ -381,32 +356,7 @@
       <LoopBehaviour>None</LoopBehaviour>
       <Samples>
         <WadSample>
-          <FileName>lara_grab1.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_grab2.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_grab3.wav</FileName>
-        </WadSample>
-      </Samples>
-      <Global>true</Global>
-      <Indexed>true</Indexed>
-    </WadSoundInfo>
-    <WadSoundInfo>
-      <Id>145</Id>
-      <Name>LARA_DEATH_SPIKES</Name>
-      <Volume>83</Volume>
-      <RangeInSectors>10</RangeInSectors>
-      <Chance>100</Chance>
-      <PitchFactor>0</PitchFactor>
-      <DisablePanning>false</DisablePanning>
-      <RandomizePitch>false</RandomizePitch>
-      <RandomizeVolume>false</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
-      <Samples>
-        <WadSample>
-          <FileName>lara_die_spikes.wav</FileName>
+          <FileName>die_spikes.wav</FileName>
         </WadSample>
       </Samples>
       <Global>true</Global>
@@ -415,23 +365,17 @@
     <WadSoundInfo>
       <Id>146</Id>
       <Name>LARA_DEATH_CRAWL</Name>
-      <Volume>60</Volume>
-      <RangeInSectors>10</RangeInSectors>
+      <Volume>45</Volume>
+      <RangeInSectors>13</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>false</RandomizePitch>
       <RandomizeVolume>false</RandomizeVolume>
-      <LoopBehaviour>None</LoopBehaviour>
+      <LoopBehaviour>OneShotWait</LoopBehaviour>
       <Samples>
         <WadSample>
-          <FileName>lara_die2.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_die3.wav</FileName>
-        </WadSample>
-        <WadSample>
-          <FileName>lara_die5.wav</FileName>
+          <FileName>die3.wav</FileName>
         </WadSample>
       </Samples>
       <Global>true</Global>

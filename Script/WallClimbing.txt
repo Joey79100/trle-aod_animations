@@ -1,2 +1,0 @@
-; You can type in this include file your script command like in the mai script
-
