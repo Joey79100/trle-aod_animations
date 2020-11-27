@@ -26,7 +26,8 @@ Triggergroup= TG_UPD_CAM_SUB_1, >
 ;   Death camera as in TR3's source code
 ;============================================================================
 
-Parameters=		PARAM_SET_CAMERA, 70, IGNORE, IGNORE, -4096, 5472, 15
+;Parameters=		PARAM_SET_CAMERA, 70, IGNORE, IGNORE, -4096, 5472, 15
+Parameters=		PARAM_SET_CAMERA, 70, IGNORE, IGNORE, -6536, 2972, 15
 GlobalTrigger=	112, IGNORE, GT_CONDITION_GROUP, IGNORE, 224, 225, IGNORE
 TriggerGroup=	224, $8000, 1, $21D		; IF Lara HP < 1
 TriggerGroup=	225, $2000, 214, $46		; THEN Change camera to PARAM_SET_CAMERA <70>
