@@ -340,7 +340,7 @@ To workaround this ugly workaround, and have only the correct footstep sound pla
 Here's a list of the objects that have been worked on. Some of them have custom animations in order to fit Lara's new animations.  
 Unlisted objects means that Lara's animations have not been touched for them yet.
 
-Note that object sounds have *all* been removed from LARA's animations, and have been added to the objects themselves instead!
+Note: __object sounds have *all* been removed from LARA's animations, and have been added to the objects themselves instead!__
 
 | Slot					| Description					| Custom animations	| Remarks											|
 |- 						| -								|-					|-													|
@@ -348,15 +348,17 @@ Note that object sounds have *all* been removed from LARA's animations, and have
 | PUSHABLE_BLOCK*		| Movable block					| -					| -													|
 | SWITCH_TYPE1		 	| Wall lever switch				| Yes				| -													|
 | SWITCH_TYPE3		 	| Electric switch				| Yes				| The object's dimensions are also different!		|
-| SWITCH_TYPE5		 	| Wall switch					| -					| -													|
+| SWITCH_TYPE4		 	| Small button switch			| -					| -													|
+| SWITCH_TYPE5		 	| Valve switch					| Yes				| The object's dimensions are also different!		|
 | UNDERWATER_SWITCH1 	| Underwater switch				| Yes	 			| -													|
 | LEVER_SWITCH		 	| Floor lever switch			| -					| -													|
 | JUMP_SWITCH		 	| Elevated wall switch			| -					| -													|
 | PULLEY			 	| Pulley						| Yes				| NOT WORKING - there seems to be harcoded things breaking due to the fact that the animation's length is different	|
 | KICK_DOOR*			| Kickable door					| Yes				| Only Animation 1 is modified						|
 | PUSHPULL_DOOR*		| Normal door					| -					| -													|
-| DOUBLE_DOORS			| Double door					| -					| -													|
+| DOUBLE_DOORS			| Double door					| -					| Using the Big Double Doors animation from AOD (eg. Archeological Digsite)	|
 | SARCOPHAGUS			| Sarcophagus					| -					| -													|
+| SEQUENCE_SWITCH*		| Big button switch				| -					| -													|
 
 
 ## 2.6. Scripted extra abilities
@@ -402,9 +404,9 @@ Here are the required patches:
 
 # 3. Credits
 - Direct contributions
+  - [Krystian](https://www.trsearch.org/member/3312): Ladder system, animation utilities, and help generally speaking
   - [Caesum](https://twitter.com/Caesum): General interface design
   - [Daledrau](https://twitter.com/daledrau): General interface design, Title screen render
-  - [Krystian](https://www.trsearch.org/member/3312): Ladder system
   - [Mrshina](https://www.trsearch.org/member/3507): Outfit
   - [The Lost Dominion team](https://www.tombraiderforums.com/showthread.php?t=196197) ([members](https://www.tombraiderforums.com/showthread.php?t=179784)) & [The Lost Dominion Revival team](https://www.tombraiderforums.com/showthread.php?t=216488): Medipacks, Batteries, Stength upgrade system, Health bar graphics, Dynamic camera presets, Quick save system, Grip bar system
 - Indirect contributions
