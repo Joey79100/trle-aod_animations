@@ -59,7 +59,7 @@ My workflow is usually as follow:
 * Put them side by side, and start recreating on TRLE Lara the poses AOD Lara does. I make extensive use of Interactive IK with position/orientation locking when needed.
 * When I'm finished, I remove AOD Lara, and see if there is anything that looks jerky or accidental that I should fix. I also try to make the animation faster if it doesn't make it look like fast forward.
 
-For other animations that do not exist in AOD, I usually use real-life references. This currenly mainly applies to roll in air, polerope, and die after jumping animations.
+For other animations that do not exist in AOD, I usually use real-life references. This currenly mainly applies to roll in air, polerope, shovel, a few switches, and die after jumping animations.
 
 What I want to emphasize is that I *never* "import" an animation: it is always re/created by hand.
 
