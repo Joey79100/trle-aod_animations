@@ -233,7 +233,7 @@ First make sure you're using the TRNG fixer's version of WADMerger (downloadable
 			<th>TORSO</th>
 			<th>7</th>
 			<td style='font-weight: bold; color: pink;'>-1</td>
-			<td style='font-weight: bold; color: lightgreen;'>-49</td>
+			<td style='font-weight: bold; color: lightgreen;'>49</td>
 			<td style='font-weight: bold; color: lightblue;'>11</td>
 			<td style='opacity: 0.5'>0</td>
 			<td style='opacity: 0.5'>83</td>
