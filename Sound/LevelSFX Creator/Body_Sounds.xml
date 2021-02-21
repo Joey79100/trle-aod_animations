@@ -42,7 +42,7 @@
     <WadSoundInfo>
       <Id>22</Id>
       <Name>CLOTHES_GRAB</Name>
-      <Volume>45</Volume>
+      <Volume>47</Volume>
       <RangeInSectors>20</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
@@ -64,7 +64,7 @@
     <WadSoundInfo>
       <Id>24</Id>
       <Name>KNEES_SHUFFLE</Name>
-      <Volume>26</Volume>
+      <Volume>30</Volume>
       <RangeInSectors>6</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
@@ -114,7 +114,7 @@
     <WadSoundInfo>
       <Id>32</Id>
       <Name>ROLL</Name>
-      <Volume>38</Volume>
+      <Volume>42</Volume>
       <RangeInSectors>7</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
@@ -133,7 +133,7 @@
     <WadSoundInfo>
       <Id>143</Id>
       <Name>GENERIC_BODY_SLAM</Name>
-      <Volume>50</Volume>
+      <Volume>55</Volume>
       <RangeInSectors>10</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>

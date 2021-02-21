@@ -4,7 +4,7 @@
     <WadSoundInfo>
       <Id>1</Id>
       <Name>LARA_CLIMB_SMALL</Name>
-      <Volume>45</Volume>
+      <Volume>50</Volume>
       <RangeInSectors>10</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
@@ -23,7 +23,7 @@
     <WadSoundInfo>
       <Id>2</Id>
       <Name>LARA_NO</Name>
-      <Volume>45</Volume>
+      <Volume>50</Volume>
       <RangeInSectors>8</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
@@ -42,7 +42,7 @@
     <WadSoundInfo>
       <Id>5</Id>
       <Name>LARA_SIGH</Name>
-      <Volume>25</Volume>
+      <Volume>30</Volume>
       <RangeInSectors>6</RangeInSectors>
       <Chance>40</Chance>
       <PitchFactor>0</PitchFactor>
@@ -70,7 +70,7 @@
     <WadSoundInfo>
       <Id>26</Id>
       <Name>LARA_CLIMB_BIG</Name>
-      <Volume>45</Volume>
+      <Volume>50</Volume>
       <RangeInSectors>13</RangeInSectors>
       <Chance>90</Chance>
       <PitchFactor>0</PitchFactor>
@@ -92,7 +92,7 @@
     <WadSoundInfo>
       <Id>29</Id>
       <Name>LARA_JUMP</Name>
-      <Volume>45</Volume>
+      <Volume>50</Volume>
       <RangeInSectors>13</RangeInSectors>
       <Chance>75</Chance>
       <PitchFactor>0</PitchFactor>
@@ -114,7 +114,7 @@
     <WadSoundInfo>
       <Id>30</Id>
       <Name>LARA_SCREAM</Name>
-      <Volume>85</Volume>
+      <Volume>90</Volume>
       <RangeInSectors>15</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
@@ -133,7 +133,7 @@
     <WadSoundInfo>
       <Id>31</Id>
       <Name>LARA_HURT</Name>
-      <Volume>45</Volume>
+      <Volume>50</Volume>
       <RangeInSectors>10</RangeInSectors>
       <Chance>50</Chance>
       <PitchFactor>0</PitchFactor>
@@ -158,7 +158,7 @@
     <WadSoundInfo>
       <Id>36</Id>
       <Name>LARA_BREATH</Name>
-      <Volume>40</Volume>
+      <Volume>45</Volume>
       <RangeInSectors>7</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
@@ -177,7 +177,7 @@
     <WadSoundInfo>
       <Id>41</Id>
       <Name>LARA_DEATH_RUN</Name>
-      <Volume>45</Volume>
+      <Volume>50</Volume>
       <RangeInSectors>13</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
@@ -196,7 +196,7 @@
     <WadSoundInfo>
       <Id>42</Id>
       <Name>LARA_DEATH_STANDING</Name>
-      <Volume>45</Volume>
+      <Volume>50</Volume>
       <RangeInSectors>13</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
@@ -215,7 +215,7 @@
     <WadSoundInfo>
       <Id>46</Id>
       <Name>LARA_BLOCK_PUSH1</Name>
-      <Volume>45</Volume>
+      <Volume>50</Volume>
       <RangeInSectors>13</RangeInSectors>
       <Chance>85</Chance>
       <PitchFactor>0</PitchFactor>
@@ -237,7 +237,7 @@
     <WadSoundInfo>
       <Id>47</Id>
       <Name>LARA_BLOCK_PUSH2</Name>
-      <Volume>45</Volume>
+      <Volume>50</Volume>
       <RangeInSectors>13</RangeInSectors>
       <Chance>75</Chance>
       <PitchFactor>0</PitchFactor>
@@ -259,7 +259,7 @@
     <WadSoundInfo>
       <Id>50</Id>
       <Name>LARA_BULLET_HIT</Name>
-      <Volume>45</Volume>
+      <Volume>50</Volume>
       <RangeInSectors>13</RangeInSectors>
       <Chance>85</Chance>
       <PitchFactor>0</PitchFactor>
@@ -287,7 +287,7 @@
     <WadSoundInfo>
       <Id>51</Id>
       <Name>LARA_BLOCK_PULL</Name>
-      <Volume>45</Volume>
+      <Volume>50</Volume>
       <RangeInSectors>13</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
@@ -302,7 +302,7 @@
     <WadSoundInfo>
       <Id>53</Id>
       <Name>LARA_DEATH_FALL</Name>
-      <Volume>90</Volume>
+      <Volume>95</Volume>
       <RangeInSectors>13</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>15</PitchFactor>
@@ -346,7 +346,7 @@
     <WadSoundInfo>
       <Id>145</Id>
       <Name>LARA_DEATH_SPIKES</Name>
-      <Volume>80</Volume>
+      <Volume>85</Volume>
       <RangeInSectors>13</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
@@ -365,7 +365,7 @@
     <WadSoundInfo>
       <Id>146</Id>
       <Name>LARA_DEATH_CRAWL</Name>
-      <Volume>45</Volume>
+      <Volume>50</Volume>
       <RangeInSectors>13</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
