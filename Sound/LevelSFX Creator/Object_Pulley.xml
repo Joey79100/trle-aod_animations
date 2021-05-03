@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<WadSounds xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SoundInfos>
+    <WadSoundInfo>
+      <Id>342</Id>
+      <Name>VALVE_TURN_PART_1</Name>
+      <Volume>50</Volume>
+      <RangeInSectors>6</RangeInSectors>
+      <Chance>100</Chance>
+      <PitchFactor>0</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>false</RandomizePitch>
+      <RandomizeVolume>false</RandomizeVolume>
+      <LoopBehaviour>None</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>chain pull 01.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>false</Global>
+      <Indexed>false</Indexed>
+    </WadSoundInfo>
+  </SoundInfos>
+</WadSounds>

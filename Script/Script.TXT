@@ -20,6 +20,7 @@ FMV=			.BIK
 File=			0,English.TXT
 
 [Options]
+Plugin=	5, Plugin_AkyVMix03, IGNORE
 ; UNINSTALLED PLUGIN: Plugin=		6, Plugin_SlopeFix, IGNORE
 ; UNINSTALLED PLUGIN: Plugin=		5, Plugin_CeilingClimbing, IGNORE
 Plugin=		4, Plugin_ClassicInventory, IGNORE
@@ -75,7 +76,7 @@ DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, IGNORE		; Shows only info
 #INCLUDE "General_BarDesign.txt"
 #INCLUDE "General_Quicksaving.txt"
 ;#INCLUDE "General_Walkmode.txt"
-#INCLUDE "General_LimitedGrip.txt" ; required to show the bar properly
+;#INCLUDE "General_LimitedGrip.txt" ; required to show the bar properly
 #INCLUDE "Inventory.txt"
 
 #INCLUDE "Demo_TE.txt"
@@ -96,7 +97,7 @@ DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, IGNORE		; Shows only info
 #INCLUDE "Animations_WallKicking.txt"
 ;#INCLUDE "Animations_StanceToHang.txt" ; BROKEN for some reason
 #INCLUDE "Animations_SkipRunBack.txt"
-;#INCLUDE "Animations_HorizontalPoles.txt"
+#INCLUDE "Animations_HorizontalPoles.txt"
 ;#INCLUDE "Animations_Stealth.txt" ; WIP - with basic implementation (replacing Walk for now)
 
 
@@ -107,7 +108,7 @@ DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, IGNORE		; Shows only info
 #INCLUDE "CustomCameras.txt"
 #INCLUDE "Shovel.txt"
 ;#INCLUDE "PickableStatues.txt"
-;#INCLUDE "EnemyInfo.txt"
+#INCLUDE "EnemyInfo.txt"
 
 
 

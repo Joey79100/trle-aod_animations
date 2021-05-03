@@ -70,23 +70,23 @@
     <WadSoundInfo>
       <Id>35</Id>
       <Name>SWIM</Name>
-      <Volume>20</Volume>
-      <RangeInSectors>4</RangeInSectors>
+      <Volume>35</Volume>
+      <RangeInSectors>5</RangeInSectors>
       <Chance>100</Chance>
-      <PitchFactor>-2</PitchFactor>
+      <PitchFactor>-17</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>true</RandomizePitch>
       <RandomizeVolume>false</RandomizeVolume>
       <LoopBehaviour>None</LoopBehaviour>
       <Samples>
         <WadSample>
-          <FileName>swim1.wav</FileName>
+          <FileName>lara swim underwater 01.wav</FileName>
         </WadSample>
         <WadSample>
-          <FileName>swim2.wav</FileName>
+          <FileName>lara swim underwater 02.wav</FileName>
         </WadSample>
         <WadSample>
-          <FileName>swim3.wav</FileName>
+          <FileName>lara swim underwater 03.wav</FileName>
         </WadSample>
       </Samples>
       <Global>true</Global>

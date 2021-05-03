@@ -1,20 +1,41 @@
 
-; Trying to show info about SAS<0>
+; ---- Enemy: BADDY_1 ----
+;#DEFINE DIAG_ITEM_SLOT	41
+;#DEFINE DIAG_ITEM_ID		30
+
+; ------ Enemy: SAS ------
+;#DEFINE DIAG_ITEM_SLOT		95
+;#DEFINE DIAG_ITEM_ID		0
+
+; ----- Item: PULLEY -----
+#DEFINE DIAG_ITEM_SLOT		321
+#DEFINE DIAG_ITEM_ID		141
+
 GlobalTrigger=	234, IGNORE, GT_ALWAYS, IGNORE, IGNORE, 234, IGNORE
+
+; Show Animation & state info about selected item
 TriggerGroup=	234,	>
 				>				; ==== Selecting SLOT and ITEM for further operations ====
->;				$2000, 292, $5F, >	; Variables. Memory. Set the <SAS[95]>Slot as Selected Slot Memory
->;				$5000, 0, $0036, >	; Variables. Memory. Set the <SAS[0]>Item as Selected Item
-				$2000, 292, $29, >	; Variables. Memory. Set the <BADDY_1[41]>Slot as Selected Slot Memory
-				$5000, 30, $0036, >	; Variables. Memory. Set the <SAS[30]>Item as Selected Item
+				$2000, 292, DIAG_ITEM_SLOT, >	; Variables. Memory. Set the <DIAG_ITEM_SLOT>Slot as Selected Slot Memory
+				$5000, DIAG_ITEM_ID, $0036, >	; Variables. Memory. Set the <DIAG_ITEM_ID>Item as Selected Item
 				>
-				>				; ==== Getting the relative Animation index from SAS ===
+				>				; ==== Getting the relative Animation index (= absolute anim index - 1st anim index) ===
 				$2000, 293, $1255, >	; Variables. Memory. Copy from (First Animation Index)Selected Slot Memory to <LSD2>Numeric Variable
 				$2000, 256, $7FF, >	; Variables. Memory. Copy value from Selected Item's (Animation Now) field to <CurrentValue>
-				$2000, 286, $55, >	; Variables. Numeric. Subtract from CurrentValue the <LS2>Numeric Variable
+				$2000, 286, $55, >	; Variables. Numeric. Subtract from CurrentValue the <LSD2>Numeric Variable
 				$2000, 272, $55, >	; Variables. Numeric. Copy CurrentValue to <LSD2>Numeric Variable
 				>
-				>				; ==== Copying the stuff we need to variables ====
+				>				; ==== Getting the relative Frame index ===
+				>;$2000, 293, $1252, >	; Variables. Memory. Copy from (First Animation Index)Selected Slot Memory to <LSB1>Numeric Variable
+				$2000,256,$08FF, >	; Variables. Memory. Copy value from Selected Item's (Frame Now) field to <CurrentValue>
+				>;$2000, 286, $52, >	; Variables. Numeric. Subtract from CurrentValue the <LSB1>Numeric Variable
+				$2000, 272, $52, >	; Variables. Numeric. Copy CurrentValue to <LSB1>Numeric Variable
+				>
+				>;$2000, 256, $08FF, >	; Variables. Memory. Copy value from Selected Item's (Frame Now) field to <CurrentValue>
+				>;$2000, 286, $0055, >	; Variables. Numeric. Subtract from CurrentValue the <LSD2>Numeric Variable
+				>;$2000, 272, $0052, >	; Variables. Numeric. Copy CurrentValue to <LSB1>Numeric Variable
+				>
+				>				; ==== Copying the other stuff we need to variables ====
 				$2000, 256, $450, >	; Variables. Memory. Copy value from Selected Item's (StateID Now) field to <LSA1>
 				$2000, 256, $551, >	; Variables. Memory. Copy value from Selected Item's (StateID Next) field to <LSA2>
 				$2000, 256, $654, >	; Variables. Memory. Copy value from Selected Item's (StateID Goal) field to <LSD1>
@@ -25,10 +46,11 @@ TriggerGroup=	234,	>
 				$2000, 81, $3, >		; Text. <Half Width and Height>size characters for next print string command
 				$2000, 65, $C		; Text. Print Standard <ENGLISH.txt:12>string on screen for (Forever) seconds
 
+; Show CUSTOM_X fields about selected item
 TriggerGroup=	235,	>
 				>				; ==== Selecting SLOT and ITEM for further operations ====
-				$2000, 292, $5F, >	; Variables. Memory. Set the <SAS[95]>Slot as Selected Slot Memory
-				$5000, 0, $0036, >	; Variables. Memory. Set the <SAS[0]>Item as Selected Item
+				$2000, 292, DIAG_ITEM_SLOT, >	; Variables. Memory. Set the <DIAG_ITEM_SLOT>Slot as Selected Slot Memory
+				$5000, DIAG_ITEM_ID, $0036, >	; Variables. Memory. Set the <DIAG_ITEM_ID>Item as Selected Item
 				>
 				>				; ==== Copying the stuff we need to variables ====
 				$2000, 256, $1550, >	; Variables. Memory. Copy value from Selected Item's (Custom_A) field to <LSA1>
@@ -41,5 +63,32 @@ TriggerGroup=	235,	>
 				$2000, 66, $505, >	; Text. Set <Metal>color and (Top line, right alignment)position for next Print String flipeffect
 				$2000, 81, $3, >		; Text. <Half Width and Height>size characters for next print string command
 				$2000, 65, $11		; Text. Print Standard <ENGLISH.txt:17>string on screen for (Forever) seconds
+
+
+
+
+
+; Trigger for FlipEffect
+; <#> Variables. Memory. Copy from (E)Selected Animation Memory to <&>Numeric Variable (F295)
+; <&> Current Value
+; <E> First absolute Frame index (Short)
+; Copy following values to your script:
+; $2000,295,$0BFF
+
+
+; Trigger for FlipEffect
+; <#> Variables. Memory. Copy to <&> Numeric Variable the (E)Selected Item Memory (F256)
+; <&> Local Short Beta1
+; <E> Frame Now (warning it's an abs value) (Short)
+; Copy following values to your script:
+; $2000,256,$0852
+
+
+
+
+
+
+
+
 
 

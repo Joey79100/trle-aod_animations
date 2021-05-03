@@ -11,7 +11,7 @@ The Zenoath
 Lost Valley
 Himalayan Precipice
 Beneath the Great Pyramid
-Anim Now: #0055 (LSD2)\nStateID Now: #0050 (LSA1)\nStateID Next: #0051 (LSA2)\nStateID Goal: #0054 (LSD1)\n
+Anim Now: #0055 (LSD2)\nFrame Now: #0052 (LSB1)\nStateID Now: #0050 (LSA1)\nStateID Next: #0051 (LSA2)\nStateID Goal: #0054 (LSD1)\n
 Schonbrunn Palace
 Line of Descent
 Passport
@@ -381,3 +381,4 @@ THE LAST STRING ENTRY
 17: Plugin_ClassicInventory
 18: Plugin_SlopeFix
 19: Plugin_AkyVMix02
+20: Plugin_AkyVMix03

@@ -5,18 +5,20 @@
 ;================================================================================================
 
 Customize=		CUST_PARALLEL_BARS, PB_DOUBLE_FACE+PB_LARA_CAN_SLIDE, 2, 10
-Animation=		463, KEY1_UP,    -1,  FAN_START_FROM_EXTRA_FRAME, ENV_FRAME_NUMBER, 19, 16, -474
-Animation=		474, KEY1_UP + KEY1_RELEASED,  -1,  FAN_START_FROM_EXTRA_FRAME, ENV_FRAME_NUMBER, 14, 19, -463
-Animation=		462, KEY1_UP,    -1, -1, -1, -1, -1, -461
-Animation=		463, KEY1_UP,    -1, -1, -1, -1, -1, -471
-Animation=		28,  KEY1_ACTION + KEY1_RELEASED, -1, FAN_ENABLE_GRAVITY, -1, -1, -1, -471
-Animation=		464, KEY1_DOWN,  -1, -1, -1, -1, -1, -471
-Animation=		466, KEY1_DOWN,  -1, -1, ENV_FRAME_NUMBER, 23, -1, -462
-Animation=		472, KEY1_DOWN,  -1, -1, ENV_FRAME_NUMBER,  7, -1, -462
-Animation=		468, KEY1_JUMP,  -1, -1, ENV_FRAME_NUMBER,  8, -1, -462
-Animation=      537, KEY1_JUMP, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -471						;Swingpole to Crouch
-Animation=      539, KEY1_JUMP, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -538						;Jump Off Swingpole
-Animation=      540, KEY1_LEFT, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -538						;Crouch to Tightrope
+
+Animation=		463, KEY1_UP,    -1,  FAN_START_FROM_EXTRA_FRAME, ENV_FRAME_NUMBER, 19, 16, -474				; Stop to Swing
+Animation=		474, KEY1_UP + KEY1_RELEASED,  -1,  FAN_START_FROM_EXTRA_FRAME, ENV_FRAME_NUMBER, 14, 19, -463		; Stop
+Animation=		462, KEY1_UP,    -1, -1, -1, -1, -1, -461											; Keep swinging
+Animation=		463, KEY1_UP,    -1, -1, -1, -1, -1, -471											; Start swinging
+Animation=		28,  KEY1_ACTION + KEY1_RELEASED, -1, FAN_ENABLE_GRAVITY, -1, -1, -1, -471					; Release
+Animation=		464, KEY1_DOWN,  -1, -1, -1, -1, -1, -471											; Still - Turn around
+Animation=		466, KEY1_DOWN,  -1, -1, ENV_FRAME_NUMBER, 23, -1, -462									; Top - Turn around
+Animation=		472, KEY1_DOWN,  -1, -1, ENV_FRAME_NUMBER,  7, -1, -462									; Swinging - Turn around
+Animation=		468, KEY1_JUMP,  -1, -1, ENV_FRAME_NUMBER,  8, -1, -462									; Release & Jump
+
+;Animation=      537, KEY1_JUMP, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -471						;Swingpole to Crouch
+;Animation=      539, KEY1_JUMP, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -538						;Jump Off Swingpole
+;Animation=      540, KEY1_LEFT, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -538						;Crouch to Tightrope
 
 
 
