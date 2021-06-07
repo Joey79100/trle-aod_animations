@@ -381,5 +381,24 @@
       <Global>true</Global>
       <Indexed>true</Indexed>
     </WadSoundInfo>
+    <WadSoundInfo>
+      <Id>157</Id>
+      <Name>LARA_DROWN</Name>
+      <Volume>57</Volume>
+      <RangeInSectors>6</RangeInSectors>
+      <Chance>100</Chance>
+      <PitchFactor>-64</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>false</RandomizePitch>
+      <RandomizeVolume>false</RandomizeVolume>
+      <LoopBehaviour>OneShotWait</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>drown.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>true</Global>
+      <Indexed>true</Indexed>
+    </WadSoundInfo>
   </SoundInfos>
 </WadSounds>

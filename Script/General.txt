@@ -59,6 +59,6 @@ GlobalTrigger=	24, FGT_SINGLE_SHOT_RESUMED, GT_LARA_HP_HIGHER_THAN, 300, IGNORE,
 GlobalTrigger=	25, FGT_SINGLE_SHOT_RESUMED, GT_LARA_HP_LESS_THAN,1, IGNORE,46, IGNORE
 
 Organizer=		12, FO_TICK_TIME+FO_LOOP, IGNORE, 30, 44
-Triggergroup=	44, $2000, 71, $1F5C 														;Play lara_nof.wav once
+Triggergroup=	44, $2000, 70, $1F70 														;Play 112:TICK_TOCK once
 TriggerGroup=	45, $2000, 127, $C 														;Enable Organizer 12
 TriggerGroup=	46, $2000, 128, $C 														;Stop Organizer 12
