@@ -18,6 +18,7 @@ db_patches_crash.bin
 Script/.vscode/
 Exported_*.txt
 *.trw
+*.anim
 Crash_Report_*.txt
 db_patches_crash.bin
 NG_Settings.bin

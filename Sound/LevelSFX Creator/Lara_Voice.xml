@@ -382,6 +382,7 @@
       <Indexed>true</Indexed>
     </WadSoundInfo>
     <WadSoundInfo>
+      <!-- <Id>381</Id> -->
       <Id>157</Id>
       <Name>LARA_DROWN</Name>
       <Volume>57</Volume>

@@ -95,10 +95,8 @@ DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, IGNORE		; Shows only info
 ; * You decide if you want them in your game or not
 #INCLUDE "Animations_Ladders.txt"
 #INCLUDE "Animations_WallKicking.txt"
-;#INCLUDE "Animations_StanceToHang.txt" ; BROKEN for some reason
 #INCLUDE "Animations_SkipRunBack.txt"
 #INCLUDE "Animations_HorizontalPoles.txt"
-;#INCLUDE "Animations_Stealth.txt" ; WIP - with basic implementation (replacing Walk for now)
 
 
 
@@ -110,6 +108,10 @@ DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, IGNORE		; Shows only info
 ;#INCLUDE "PickableStatues.txt"
 #INCLUDE "EnemyInfo.txt"
 
+;#INCLUDE "Animations_StanceToHang.txt" ; BROKEN for some reason
+;#INCLUDE "Animations_Stealth.txt" ; WIP - with basic implementation (replacing Walk for now)
+
+#INCLUDE "Wolf.txt"
 
 
 

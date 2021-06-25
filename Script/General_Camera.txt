@@ -6,7 +6,7 @@
 Customize=		CUST_CAMERA, IGNORE, 1352, -1365, -1, 1752, -5365, -1, -1, 8
 
 ; -- Raildex's workaround to fix camera not continuously updating its position --
-#DEFINE LARA_ID			102
+#DEFINE LARA_ID			120
 #DEFINE ORG_UPD_CAM		321
 #DEFINE TG_UPD_CAM_ADD_1	321
 #DEFINE TG_UPD_CAM_SUB_1	320

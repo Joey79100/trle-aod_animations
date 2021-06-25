@@ -26,14 +26,14 @@ Animation=		468, KEY1_JUMP,  -1, -1, ENV_FRAME_NUMBER,  8, -1, -462									; Re
 ; Tightrope (by Symsi)
 ;================================================================================================
 
-Animation=		530, KEY1_DOWN,          -1, -1, -1, -1, -1, -477								;Idle  to Turn #1
-Animation=		532, KEY1_DOWN,          -1, -1, -1, -1, -1, -478								;Idle  to Turn #2
-Animation=		530, KEY1_ROLL,          -1, -1, -1, -1, -1, -477								;Idle  to Turn #1
-Animation=		532, KEY1_ROLL,          -1, -1, -1, -1, -1, -478								;Idle  to Turn #2
+Animation=		488, KEY1_DOWN,          -1, -1, -1, -1, -1, -477								;Idle  to Turn #1
+Animation=		490, KEY1_DOWN,          -1, -1, -1, -1, -1, -478								;Idle  to Turn #2
+Animation=		488, KEY1_ROLL,          -1, -1, -1, -1, -1, -477								;Idle  to Turn #1
+Animation=		490, KEY1_ROLL,          -1, -1, -1, -1, -1, -478								;Idle  to Turn #2
 
 
-Animation=		479, KEY1_UP + KEY1_ACTION,    -1, -1, -1, -1, -1, -477								;Idle  to Walk #1
-Animation=		480, KEY1_UP + KEY1_ACTION,    -1, -1, -1, -1, -1, -478								;Idle  to Walk #2
+Animation=		479, KEY1_UP,    -1, -1, -1, -1, -1, -477											;Idle  to Walk #1
+Animation=		480, KEY1_UP,    -1, -1, -1, -1, -1, -478											;Idle  to Walk #2
 
 
 Animation=		482, KEY1_UP + KEY1_RELEASED,  -1, -1, ENV_FRAME_NUMBER, 36, -1, -481					;Walk  to Idle #1
@@ -43,19 +43,19 @@ Animation=		487, KEY1_UP + KEY1_RELEASED,  -1, -1, ENV_FRAME_NUMBER, 23, -1, -48
 Animation=		484, KEY1_UP + KEY1_RELEASED,  -1, -1, ENV_FRAME_NUMBER, 10, -1, -481					;Walk  to Idle #5
 Animation=		485, KEY1_UP + KEY1_RELEASED,  -1, -1, ENV_FRAME_NUMBER, 30, -1, -481					;Walk  to Idle #6
 
-Animation=		482, KEY1_ACTION + KEY1_RELEASED, -1, -1, ENV_FRAME_NUMBER, 36, -1, -481						;Walk  to Idle #1
-Animation=		483, KEY1_ACTION + KEY1_RELEASED, -1, -1, ENV_FRAME_NUMBER, 16, -1, -481						;Walk  to Idle #2
-Animation=		486, KEY1_ACTION + KEY1_RELEASED, -1, -1, ENV_FRAME_NUMBER, 3, -1, -481						;Walk  to Idle #3
-Animation=		487, KEY1_ACTION + KEY1_RELEASED, -1, -1, ENV_FRAME_NUMBER, 23, -1, -481						;Walk  to Idle #4
-Animation=		484, KEY1_ACTION + KEY1_RELEASED, -1, -1, ENV_FRAME_NUMBER, 10, -1, -481						;Walk  to Idle #5
-Animation=		485, KEY1_ACTION + KEY1_RELEASED, -1, -1, ENV_FRAME_NUMBER, 30, -1, -481						;Walk  to Idle #6
+;Animation=		482, KEY1_ACTION + KEY1_RELEASED, -1, -1, ENV_FRAME_NUMBER, 36, -1, -481						;Walk  to Idle #1
+;Animation=		483, KEY1_ACTION + KEY1_RELEASED, -1, -1, ENV_FRAME_NUMBER, 16, -1, -481						;Walk  to Idle #2
+;Animation=		486, KEY1_ACTION + KEY1_RELEASED, -1, -1, ENV_FRAME_NUMBER, 3, -1, -481							;Walk  to Idle #3
+;Animation=		487, KEY1_ACTION + KEY1_RELEASED, -1, -1, ENV_FRAME_NUMBER, 23, -1, -481						;Walk  to Idle #4
+;Animation=		484, KEY1_ACTION + KEY1_RELEASED, -1, -1, ENV_FRAME_NUMBER, 10, -1, -481						;Walk  to Idle #5
+;Animation=		485, KEY1_ACTION + KEY1_RELEASED, -1, -1, ENV_FRAME_NUMBER, 30, -1, -481						;Walk  to Idle #6
 
 
 Animation=		459, KEY1_ACTION + KEY1_RELEASED, -1, -1, ENV_DISTANCE_FLOOR + ENV_NON_TRUE, $75, -1, -477		;Idle  to Stance #1
 Animation=		460, KEY1_ACTION + KEY1_RELEASED, -1, -1, ENV_DISTANCE_FLOOR + ENV_NON_TRUE, $75, -1, -478		;Idle  to Stance #2
 
 
-Animation=		534, -1,         -1,  FAN_RANDOM,  IGNORE, -1,  3, -534						;Random walk
+;Animation=		534, -1,         -1,  FAN_RANDOM,  IGNORE, -1,  3, -534						;Random walk
 ;Animation=		541, KEY1_ACTION + KEY1_RELEASED, -1, -1, 39, $350, -1, -475						;Idle  to Hang #1
 
 

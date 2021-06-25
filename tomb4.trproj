@@ -10,11 +10,6 @@
     <ProjectLevel>
       <Name>Demo</Name>
       <FolderPath>$(ProjectDirectory)\Maps\Demo</FolderPath>
-      <SpecificFile>demo.prj2</SpecificFile>
-    </ProjectLevel>
-    <ProjectLevel>
-      <Name>SkidooTest</Name>
-      <FolderPath>$(ProjectDirectory)\Maps\SkidooTest</FolderPath>
       <SpecificFile>$(LatestFile)</SpecificFile>
     </ProjectLevel>
     <ProjectLevel>
