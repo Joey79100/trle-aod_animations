@@ -1,0 +1,51 @@
+;================================================================================================
+;Notes
+;================================================================================================
+
+;Used Variables:
+
+;Local Short Alfa1
+;Local Short Alfa2
+;Local Short Beta1
+;Local Short Beta2
+;Local Short Delta1 	(Lara's Shadow)
+;Local Byte Delta1		
+;Local Byte Delta2		
+;Local Byte Delta3		(Grip Meter %)
+;Global Short Alfa2		(Money Value)					(NOT USED?)
+;Global Short Beta1		(Health Bar)					(NOT USED?)
+;Global Short Beta2		(Ammo Counter)
+;Global Byte Alfa1		(Grip Upgrade Amount)				(NOT USED?)
+;Global Byte Alfa2		(Ammo Counter Ammo Type)
+;Global Byte Delta1		(Flashlight Time) (optional)		(NOT USED ANYMORE)
+;Global Byte Delta2		(Flashlight On/Off)				(NOT USED ANYMORE)
+;Current Value			(Not continuously)
+
+;================================================================================================
+;Water and Alpha fixes
+;================================================================================================
+Customize= CUST_TR5_UNDERWATER_COLLISIONS
+Customize= CUST_FIX_WATER_FOG_BUG, ENABLED
+Customize= CUST_FIX_BUGS, BUGF_TRANSPARENT_WHITE_ON_FOG
+Customize= CUST_KEEP_DEAD_ENEMIES, ENABLED
+
+;================================================================================================
+;Flares
+;================================================================================================
+
+Customize= CUST_FLARE, >
+	FFL_ADD_SPARKS + FFL_ADD_SMOKE_TO_SPARKS + FFL_ADD_GLOW_LIGHT, >
+	60, >
+	255, 96, 72, >
+	24
+
+;================================================================================================
+;Ammo Counter
+;================================================================================================
+
+Customize= CUST_SHOW_AMMO_COUNTER, >
+	CL_WHITE, >
+	FT_UNDER_LEFT_BARS + FT_NARROW_CHARS, >
+	IGNORE, >
+	SC_NORMAL, >
+	SHOWC_USE_GRAPHIC_AMMO

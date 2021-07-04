@@ -1,0 +1,279 @@
+
+#DEFINE LG_VAR_GRIP_VALUE								$4A			; Local Byte Delta 3 (hex value)
+#DEFINE LG_VARPH_GRIP_VALUE								#004A		; Local Byte Delta 3 (placeholdler value)
+
+#DEFINE LG_GT_CHECK_IF_HANGING							37
+#DEFINE LG_GT_CHECK_IF_CLIMING							38
+#DEFINE LG_GT_CHECK_IF_NEITHER							41
+#DEFINE LG_GT_CHECK_IF_GRIP_ZERO						40
+#DEFINE LG_GT_CHECK_IF_FALLING							42
+#DEFINE LG_GT_CHECK_IF_NOT_FALLING						43
+#DEFINE LG_GT_DO_SHOW_GRIP_LEVELS						20
+#DEFINE LG_GT_DO_INITIALIZE_GRIP_LEVEL					21
+
+#DEFINE LG_TG_COND_IF_HANGING							82
+#DEFINE LG_TG_COND_IF_CLIMBING							84
+#DEFINE LG_TG_COND_IF_NEITHER							90
+#DEFINE LG_TG_COND_IF_GRIP_ZERO							88
+
+#DEFINE LG_TG_DO_DECREASE_GRIP							92
+#DEFINE LG_TG_DO_ENABLE_DECREASE_GRIP_WHILE_HANGING		83
+#DEFINE LG_TG_DO_ENABLE_DECREASE_GRIP_WHILE_CLIMBING	85
+#DEFINE LG_TG_DO_DISBLE_DECREASE_GRIP_ALL				91
+#DEFINE LG_TG_DO_MAKE_LARA_RELEASE						89
+
+#DEFINE LG_TG_DO_SHOW_GRIP_LEVELS						47
+#DEFINE LG_TG_DO_HIDE_ALL_GRIP_LEVELS					120
+#DEFINE LG_TG_DO_SHOW_GRIP_LEVEL_10						121
+#DEFINE LG_TG_DO_SHOW_GRIP_LEVEL_20						122
+#DEFINE LG_TG_DO_SHOW_GRIP_LEVEL_30						123
+#DEFINE LG_TG_DO_SHOW_GRIP_LEVEL_40						124
+#DEFINE LG_TG_DO_SHOW_GRIP_LEVEL_50						125
+#DEFINE LG_TG_DO_SHOW_GRIP_LEVEL_60						126
+#DEFINE LG_TG_DO_SHOW_GRIP_LEVEL_70						127
+#DEFINE LG_TG_DO_SHOW_GRIP_LEVEL_80						128
+#DEFINE LG_TG_DO_SHOW_GRIP_LEVEL_90						129
+#DEFINE LG_TG_DO_SHOW_GRIP_LEVEL_100					130
+
+#DEFINE LG_SWT_SHOW_CORRECT_GRIP_LEVEL					1
+
+#DEFINE LG_ORG_DECREASE_GRIP_WHILE_HANGING				13
+#DEFINE LG_ORG_DECREASE_GRIP_WHILE_CLIMBING				14
+
+#DEFINE LG_PSS_GRIP_LEVEL_10							11
+#DEFINE LG_PSS_GRIP_LEVEL_20							12
+#DEFINE LG_PSS_GRIP_LEVEL_30							13
+#DEFINE LG_PSS_GRIP_LEVEL_40							14
+#DEFINE LG_PSS_GRIP_LEVEL_50							15
+#DEFINE LG_PSS_GRIP_LEVEL_60							16
+#DEFINE LG_PSS_GRIP_LEVEL_70							17
+#DEFINE LG_PSS_GRIP_LEVEL_80							18
+#DEFINE LG_PSS_GRIP_LEVEL_90							19
+#DEFINE LG_PSS_GRIP_LEVEL_100							20
+
+; The following constants are "settings", if you want to customize the speed a little
+#DEFINE LG_DECREASE_DELAY_WHILE_HANGING					9
+#DEFINE LG_DECREASE_DELAY_WHILE_CLIMBING				18
+
+;================================================================================================
+; Grip Strength Control
+;================================================================================================
+; // There is something in this setup that disables the Action key (Ctrl+Enter too) for 1 second
+; // when starting the level, and the counter doesn't move while you're in the pause screen
+; // (so if you open the Pause menu too soon, you won't be able to do anything, you'll have to
+; //  close it, wait, then open it again to have it useable)
+
+
+
+
+; Remove 1 unit from LBD3
+TriggerGroup= LG_TG_DO_DECREASE_GRIP, >
+	$2000, 233, $100 + LG_VAR_GRIP_VALUE
+
+
+; Fast decrease (hands only): Remove 1 unit from LBD3 every  9 tick
+Organizer= LG_ORG_DECREASE_GRIP_WHILE_HANGING, >
+	FO_TICK_TIME + FO_LOOP, IGNORE, >
+	LG_DECREASE_DELAY_WHILE_HANGING, LG_TG_DO_DECREASE_GRIP
+
+; Slow decrease (hands & feet): Remove 1 unit from LBD3 every 18 tick
+Organizer= LG_ORG_DECREASE_GRIP_WHILE_CLIMBING, >
+	FO_TICK_TIME + FO_LOOP, IGNORE, >
+	LG_DECREASE_DELAY_WHILE_CLIMBING, LG_TG_DO_DECREASE_GRIP
+
+
+
+
+;--If grabbing with hands only, Perform Organiser 13
+GlobalTrigger= LG_GT_CHECK_IF_HANGING, >
+	FGT_SINGLE_SHOT_RESUMED, GT_CONDITION_GROUP, IGNORE, LG_TG_COND_IF_HANGING, LG_TG_DO_ENABLE_DECREASE_GRIP_WHILE_HANGING, IGNORE
+
+TriggerGroup= LG_TG_COND_IF_HANGING, >
+	$8000, 12, $5, >	; IF Lara is performing <Monkey> action
+	TGROUP_OR + $8000,  18,  $5, >	; OR Lara is performing <Hanging> action
+	TGROUP_OR + $8000, 215, $1E, >	; OR Lara is performing animation 215	// deathslide - sliding
+	TGROUP_OR + $8000, 331, $1E, >	; OR Lara is performing animation 331	// polerope - grab (forward jump)
+	TGROUP_OR + $8000, 337, $1E, >	; OR Lara is performing animation 337	// polerope - grab (standing jump grab)
+	TGROUP_OR + $8000, 355, $1E, >	; OR Lara is performing animation 355	// hanging - outer corner (left) (part 1)
+	TGROUP_OR + $8000, 356, $1E, >	; OR Lara is performing animation 356	// hanging - outer corner (left) (part 2)
+	TGROUP_OR + $8000, 357, $1E, >	; OR Lara is performing animation 357	// hanging - outer corner (right) (part 1)
+	TGROUP_OR + $8000, 358, $1E, >	; OR Lara is performing animation 358	// hanging - outer corner (right) (part 2)
+	TGROUP_OR + $8000, 359, $1E, >	; OR Lara is performing animation 359	// hanging - inner corner (left) (part 1)
+	TGROUP_OR + $8000, 360, $1E, >	; OR Lara is performing animation 360	// hanging - inner corner (left) (part 2)
+	TGROUP_OR + $8000, 361, $1E, >	; OR Lara is performing animation 361	// hanging - inner corner (right) (part 1)
+	TGROUP_OR + $8000, 362, $1E		; OR Lara is performing animation 362	// hanging - inner corner (right) (part 2)
+
+TriggerGroup= LG_TG_DO_ENABLE_DECREASE_GRIP_WHILE_HANGING, >
+	$2000, 127, LG_ORG_DECREASE_GRIP_WHILE_HANGING, >		; Start Organizer <13> (fast decrease)
+	$2000, 128, LG_ORG_DECREASE_GRIP_WHILE_CLIMBING			; Stop Organizer <14> (slow decrease)
+
+
+
+
+;--If grabbing with hands & feet, Perform Organiser 14
+GlobalTrigger=	LG_GT_CHECK_IF_CLIMING, >
+	FGT_SINGLE_SHOT_RESUMED, GT_CONDITION_GROUP, IGNORE, LG_TG_COND_IF_CLIMBING, LG_TG_DO_ENABLE_DECREASE_GRIP_WHILE_CLIMBING, IGNORE
+
+TriggerGroup= LG_TG_COND_IF_CLIMBING, >
+	$8000, 0, $5, >	; IF Lara is performing <Climbing> action
+	TGROUP_OR + $8000, 363, $1E, >	; OR Lara is performing animation 363	// climbing - outer corner (left) (part 1)
+	TGROUP_OR + $8000, 364, $1E, >	; OR Lara is performing animation 364	// climbing - outer corner (left) (part 2)
+	TGROUP_OR + $8000, 365, $1E, >	; OR Lara is performing animation 365	// climbing - outer corner (right) (part 1)
+	TGROUP_OR + $8000, 366, $1E, >	; OR Lara is performing animation 366	// climbing - outer corner (right) (part 2)
+	TGROUP_OR + $8000, 367, $1E, >	; OR Lara is performing animation 367	// climbing - inner corner (left) (part 1)
+	TGROUP_OR + $8000, 368, $1E, >	; OR Lara is performing animation 368	// climbing - inner corner (left) (part 2)
+	TGROUP_OR + $8000, 369, $1E, >	; OR Lara is performing animation 369	// climbing - inner corner (right) (part 1)
+	TGROUP_OR + $8000, 370, $1E		; OR Lara is performing animation 370	// climbing - inner corner (right) (part 2)
+
+TriggerGroup= LG_TG_DO_ENABLE_DECREASE_GRIP_WHILE_CLIMBING, >
+	$2000, 127, LG_ORG_DECREASE_GRIP_WHILE_CLIMBING, >	; Start Organizer <14> (slow decrease)
+	$2000, 128, LG_ORG_DECREASE_GRIP_WHILE_HANGING		; Stop Organizer <13> (fast decrease)
+
+
+
+
+
+;--If not grabbing, Set grip to 100, Stop Organisers, Hide bar
+GlobalTrigger= LG_GT_CHECK_IF_NEITHER, >
+	IGNORE, >
+	GT_CONDITION_GROUP, IGNORE, >
+	LG_TG_COND_IF_NEITHER, LG_TG_DO_DISBLE_DECREASE_GRIP_ALL, IGNORE
+
+TriggerGroup= LG_TG_COND_IF_NEITHER, >
+	TGROUP_NOT + $8000, LG_TG_COND_IF_HANGING, $F, >	; IF conditions of TG <82> are NOT true (Lara is not hanging)
+	TGROUP_NOT + $8000, LG_TG_COND_IF_CLIMBING, $F		; AND conditions of TG <84> are NOT true (Lara is not climbing)
+
+TriggerGroup= LG_TG_DO_DISBLE_DECREASE_GRIP_ALL, >
+	$2000, 232, $6400 + LG_VAR_GRIP_VALUE, >			; Set LBD3 = 100
+	$2000, 128, LG_ORG_DECREASE_GRIP_WHILE_HANGING, >	; Stop Organizer 13 (fast decrease)
+	$2000, 128, LG_ORG_DECREASE_GRIP_WHILE_CLIMBING		; Stop Organizer 14 (slow decrease)
+
+
+
+
+
+
+;--If grip = 0, Disable action for 1 second
+GlobalTrigger= LG_GT_CHECK_IF_GRIP_ZERO, >
+	FGT_SINGLE_SHOT_RESUMED, >
+	GT_CONDITION_GROUP, IGNORE, >
+	LG_TG_COND_IF_GRIP_ZERO, LG_TG_DO_MAKE_LARA_RELEASE, IGNORE
+
+TriggerGroup= LG_TG_COND_IF_GRIP_ZERO, >
+	$8000, 74, $2B		; IF LBD3 = 0
+
+TriggerGroup= LG_TG_DO_MAKE_LARA_RELEASE, >
+	$2000, 51, $109, >									; THEN Disable Action (and Enter) keys for 1 second
+	$2000, 128, LG_ORG_DECREASE_GRIP_WHILE_HANGING, >	; Stop Organizer <13> (fast decrease)
+	$2000, 128, LG_ORG_DECREASE_GRIP_WHILE_CLIMBING		; Stop Organizer <14> (slow decrease)
+
+
+
+
+;================================================================================================
+; Grip Strength Bar
+;================================================================================================
+
+; -- Showing the Grip HUD
+; -- (decide which TG to call depending on the grip level)
+Switch=	LG_SWT_SHOW_CORRECT_GRIP_LEVEL, >
+	LG_VARPH_GRIP_VALUE, >
+	SWT_BASE_ZERO, >										; GRIP LEVEL
+	LG_TG_DO_HIDE_ALL_GRIP_LEVELS, >						;  0
+	LG_TG_DO_SHOW_GRIP_LEVEL_10,	LG_TG_DO_SHOW_GRIP_LEVEL_10,	LG_TG_DO_SHOW_GRIP_LEVEL_10,	LG_TG_DO_SHOW_GRIP_LEVEL_10,	LG_TG_DO_SHOW_GRIP_LEVEL_10,	LG_TG_DO_SHOW_GRIP_LEVEL_10,	LG_TG_DO_SHOW_GRIP_LEVEL_10,	LG_TG_DO_SHOW_GRIP_LEVEL_10,	LG_TG_DO_SHOW_GRIP_LEVEL_10,	LG_TG_DO_SHOW_GRIP_LEVEL_10, >	;  1-10
+	LG_TG_DO_SHOW_GRIP_LEVEL_20,	LG_TG_DO_SHOW_GRIP_LEVEL_20,	LG_TG_DO_SHOW_GRIP_LEVEL_20,	LG_TG_DO_SHOW_GRIP_LEVEL_20,	LG_TG_DO_SHOW_GRIP_LEVEL_20,	LG_TG_DO_SHOW_GRIP_LEVEL_20,	LG_TG_DO_SHOW_GRIP_LEVEL_20,	LG_TG_DO_SHOW_GRIP_LEVEL_20,	LG_TG_DO_SHOW_GRIP_LEVEL_20,	LG_TG_DO_SHOW_GRIP_LEVEL_20, >	; 11-20
+	LG_TG_DO_SHOW_GRIP_LEVEL_30,	LG_TG_DO_SHOW_GRIP_LEVEL_30,	LG_TG_DO_SHOW_GRIP_LEVEL_30,	LG_TG_DO_SHOW_GRIP_LEVEL_30,	LG_TG_DO_SHOW_GRIP_LEVEL_30,	LG_TG_DO_SHOW_GRIP_LEVEL_30,	LG_TG_DO_SHOW_GRIP_LEVEL_30,	LG_TG_DO_SHOW_GRIP_LEVEL_30,	LG_TG_DO_SHOW_GRIP_LEVEL_30,	LG_TG_DO_SHOW_GRIP_LEVEL_30, >	; 21-30
+	LG_TG_DO_SHOW_GRIP_LEVEL_40,	LG_TG_DO_SHOW_GRIP_LEVEL_40,	LG_TG_DO_SHOW_GRIP_LEVEL_40,	LG_TG_DO_SHOW_GRIP_LEVEL_40,	LG_TG_DO_SHOW_GRIP_LEVEL_40,	LG_TG_DO_SHOW_GRIP_LEVEL_40,	LG_TG_DO_SHOW_GRIP_LEVEL_40,	LG_TG_DO_SHOW_GRIP_LEVEL_40,	LG_TG_DO_SHOW_GRIP_LEVEL_40,	LG_TG_DO_SHOW_GRIP_LEVEL_40, >	; 31-40
+	LG_TG_DO_SHOW_GRIP_LEVEL_50,	LG_TG_DO_SHOW_GRIP_LEVEL_50,	LG_TG_DO_SHOW_GRIP_LEVEL_50,	LG_TG_DO_SHOW_GRIP_LEVEL_50,	LG_TG_DO_SHOW_GRIP_LEVEL_50,	LG_TG_DO_SHOW_GRIP_LEVEL_50,	LG_TG_DO_SHOW_GRIP_LEVEL_50,	LG_TG_DO_SHOW_GRIP_LEVEL_50,	LG_TG_DO_SHOW_GRIP_LEVEL_50,	LG_TG_DO_SHOW_GRIP_LEVEL_50, >	; 41-50
+	LG_TG_DO_SHOW_GRIP_LEVEL_60,	LG_TG_DO_SHOW_GRIP_LEVEL_60,	LG_TG_DO_SHOW_GRIP_LEVEL_60,	LG_TG_DO_SHOW_GRIP_LEVEL_60,	LG_TG_DO_SHOW_GRIP_LEVEL_60,	LG_TG_DO_SHOW_GRIP_LEVEL_60,	LG_TG_DO_SHOW_GRIP_LEVEL_60,	LG_TG_DO_SHOW_GRIP_LEVEL_60,	LG_TG_DO_SHOW_GRIP_LEVEL_60,	LG_TG_DO_SHOW_GRIP_LEVEL_60, >	; 51-60
+	LG_TG_DO_SHOW_GRIP_LEVEL_70,	LG_TG_DO_SHOW_GRIP_LEVEL_70,	LG_TG_DO_SHOW_GRIP_LEVEL_70,	LG_TG_DO_SHOW_GRIP_LEVEL_70,	LG_TG_DO_SHOW_GRIP_LEVEL_70,	LG_TG_DO_SHOW_GRIP_LEVEL_70,	LG_TG_DO_SHOW_GRIP_LEVEL_70,	LG_TG_DO_SHOW_GRIP_LEVEL_70,	LG_TG_DO_SHOW_GRIP_LEVEL_70,	LG_TG_DO_SHOW_GRIP_LEVEL_70, >	; 61-70
+	LG_TG_DO_SHOW_GRIP_LEVEL_80,	LG_TG_DO_SHOW_GRIP_LEVEL_80,	LG_TG_DO_SHOW_GRIP_LEVEL_80,	LG_TG_DO_SHOW_GRIP_LEVEL_80,	LG_TG_DO_SHOW_GRIP_LEVEL_80,	LG_TG_DO_SHOW_GRIP_LEVEL_80,	LG_TG_DO_SHOW_GRIP_LEVEL_80,	LG_TG_DO_SHOW_GRIP_LEVEL_80,	LG_TG_DO_SHOW_GRIP_LEVEL_80,	LG_TG_DO_SHOW_GRIP_LEVEL_80, >	; 71-80
+	LG_TG_DO_SHOW_GRIP_LEVEL_90,	LG_TG_DO_SHOW_GRIP_LEVEL_90,	LG_TG_DO_SHOW_GRIP_LEVEL_90,	LG_TG_DO_SHOW_GRIP_LEVEL_90,	LG_TG_DO_SHOW_GRIP_LEVEL_90,	LG_TG_DO_SHOW_GRIP_LEVEL_90,	LG_TG_DO_SHOW_GRIP_LEVEL_90,	LG_TG_DO_SHOW_GRIP_LEVEL_90,	LG_TG_DO_SHOW_GRIP_LEVEL_90,	LG_TG_DO_SHOW_GRIP_LEVEL_90, >	; 81-90
+	LG_TG_DO_SHOW_GRIP_LEVEL_100,	LG_TG_DO_SHOW_GRIP_LEVEL_100,	LG_TG_DO_SHOW_GRIP_LEVEL_100,	LG_TG_DO_SHOW_GRIP_LEVEL_100,	LG_TG_DO_SHOW_GRIP_LEVEL_100,	LG_TG_DO_SHOW_GRIP_LEVEL_100,	LG_TG_DO_SHOW_GRIP_LEVEL_100,	LG_TG_DO_SHOW_GRIP_LEVEL_100,	LG_TG_DO_SHOW_GRIP_LEVEL_100,	LG_TG_DO_SHOW_GRIP_LEVEL_100	; 91-100
+
+
+Parameters=	PARAM_SHOW_SPRITE, LG_PSS_GRIP_LEVEL_10, IGNORE, 6, 13, 70, 93, CUSTOM_SPRITES, 11, IGNORE, IGNORE, IGNORE, IGNORE
+Parameters=	PARAM_SHOW_SPRITE, LG_PSS_GRIP_LEVEL_20, IGNORE, 6, 13, 70, 93, CUSTOM_SPRITES, 12, IGNORE, IGNORE, IGNORE, IGNORE
+Parameters=	PARAM_SHOW_SPRITE, LG_PSS_GRIP_LEVEL_30, IGNORE, 6, 13, 70, 93, CUSTOM_SPRITES, 13, IGNORE, IGNORE, IGNORE, IGNORE
+Parameters=	PARAM_SHOW_SPRITE, LG_PSS_GRIP_LEVEL_40, IGNORE, 6, 13, 70, 93, CUSTOM_SPRITES, 14, IGNORE, IGNORE, IGNORE, IGNORE
+Parameters=	PARAM_SHOW_SPRITE, LG_PSS_GRIP_LEVEL_50, IGNORE, 6, 13, 70, 93, CUSTOM_SPRITES, 15, IGNORE, IGNORE, IGNORE, IGNORE
+Parameters=	PARAM_SHOW_SPRITE, LG_PSS_GRIP_LEVEL_60, IGNORE, 6, 13, 70, 93, CUSTOM_SPRITES, 16, IGNORE, IGNORE, IGNORE, IGNORE
+Parameters=	PARAM_SHOW_SPRITE, LG_PSS_GRIP_LEVEL_70, IGNORE, 6, 13, 70, 93, CUSTOM_SPRITES, 17, IGNORE, IGNORE, IGNORE, IGNORE
+Parameters=	PARAM_SHOW_SPRITE, LG_PSS_GRIP_LEVEL_80, IGNORE, 6, 13, 70, 93, CUSTOM_SPRITES, 18, IGNORE, IGNORE, IGNORE, IGNORE
+Parameters=	PARAM_SHOW_SPRITE, LG_PSS_GRIP_LEVEL_90, IGNORE, 6, 13, 70, 93, CUSTOM_SPRITES, 19, IGNORE, IGNORE, IGNORE, IGNORE
+Parameters=	PARAM_SHOW_SPRITE, LG_PSS_GRIP_LEVEL_100, IGNORE, 6, 13, 70, 93, CUSTOM_SPRITES, 20, IGNORE, IGNORE, IGNORE, IGNORE
+
+; -- Show only one sprite at a time
+; Hide all sprites (PARAM_SHOW_SPRITE <11-20>)
+TriggerGroup= LG_TG_DO_HIDE_ALL_GRIP_LEVELS, >
+	$2000, 358, LG_PSS_GRIP_LEVEL_10, >
+	$2000, 358, LG_PSS_GRIP_LEVEL_20, >
+	$2000, 358, LG_PSS_GRIP_LEVEL_30, >
+	$2000, 358, LG_PSS_GRIP_LEVEL_40, >
+	$2000, 358, LG_PSS_GRIP_LEVEL_50, >
+	$2000, 358, LG_PSS_GRIP_LEVEL_60, >
+	$2000, 358, LG_PSS_GRIP_LEVEL_70, >
+	$2000, 358, LG_PSS_GRIP_LEVEL_80, >
+	$2000, 358, LG_PSS_GRIP_LEVEL_90, >
+	$2000, 358, LG_PSS_GRIP_LEVEL_100
+
+; Hide all sprites (TG <120>), then show PARAM_SHOW_SPRITE <11>
+TriggerGroup= LG_TG_DO_SHOW_GRIP_LEVEL_10, >
+	$2000, 371, LG_TG_DO_HIDE_ALL_GRIP_LEVELS, >
+	$2000, 357, LG_PSS_GRIP_LEVEL_10
+
+; Hide all sprites (TG <120>), then show PARAM_SHOW_SPRITE <12>
+TriggerGroup= LG_TG_DO_SHOW_GRIP_LEVEL_20, >
+	$2000, 371, LG_TG_DO_HIDE_ALL_GRIP_LEVELS, >
+	$2000, 357, LG_PSS_GRIP_LEVEL_20
+
+; Hide all sprites (TG <120>), then show PARAM_SHOW_SPRITE <13>
+TriggerGroup= LG_TG_DO_SHOW_GRIP_LEVEL_30, >
+	$2000, 371, LG_TG_DO_HIDE_ALL_GRIP_LEVELS, >
+	$2000, 357, LG_PSS_GRIP_LEVEL_30
+
+; Hide all sprites (TG <120>), then show PARAM_SHOW_SPRITE <14>
+TriggerGroup= LG_TG_DO_SHOW_GRIP_LEVEL_40, >
+	$2000, 371, LG_TG_DO_HIDE_ALL_GRIP_LEVELS, >
+	$2000, 357, LG_PSS_GRIP_LEVEL_40
+
+; Hide all sprites (TG <120>), then show PARAM_SHOW_SPRITE <15>
+TriggerGroup= LG_TG_DO_SHOW_GRIP_LEVEL_50, >
+	$2000, 371, LG_TG_DO_HIDE_ALL_GRIP_LEVELS, >
+	$2000, 357, LG_PSS_GRIP_LEVEL_50
+
+; Hide all sprites (TG <120>), then show PARAM_SHOW_SPRITE <16>
+TriggerGroup= LG_TG_DO_SHOW_GRIP_LEVEL_60, >
+	$2000, 371, LG_TG_DO_HIDE_ALL_GRIP_LEVELS, >
+	$2000, 357, LG_PSS_GRIP_LEVEL_60
+
+; Hide all sprites (TG <120>), then show PARAM_SHOW_SPRITE <17>
+TriggerGroup= LG_TG_DO_SHOW_GRIP_LEVEL_70, >
+	$2000, 371, LG_TG_DO_HIDE_ALL_GRIP_LEVELS, >
+	$2000, 357, LG_PSS_GRIP_LEVEL_70
+
+; Hide all sprites (TG <120>), then show PARAM_SHOW_SPRITE <18>
+TriggerGroup= LG_TG_DO_SHOW_GRIP_LEVEL_80, >
+	$2000, 371, LG_TG_DO_HIDE_ALL_GRIP_LEVELS, >
+	$2000, 357, LG_PSS_GRIP_LEVEL_80
+
+; Hide all sprites (TG <120>), then show PARAM_SHOW_SPRITE <19>
+TriggerGroup= LG_TG_DO_SHOW_GRIP_LEVEL_90, >
+	$2000, 371, LG_TG_DO_HIDE_ALL_GRIP_LEVELS, >
+	$2000, 357, LG_PSS_GRIP_LEVEL_90
+
+; Hide all sprites (TG <120>), then show PARAM_SHOW_SPRITE <20>
+TriggerGroup= LG_TG_DO_SHOW_GRIP_LEVEL_100, >
+	$2000, 371, LG_TG_DO_HIDE_ALL_GRIP_LEVELS, >
+	$2000, 357, LG_PSS_GRIP_LEVEL_100
+
+
+
+;--Always enable SWITCH <1> to show the correct sprite according to the grip level
+GlobalTrigger= LG_TG_DO_SHOW_GRIP_LEVELS, >
+	IGNORE, >
+	GT_ALWAYS, IGNORE, >
+	IGNORE, LG_TG_DO_SHOW_GRIP_LEVELS, IGNORE
+
+TriggerGroup= LG_TG_DO_SHOW_GRIP_LEVELS, >
+	$2000, 289, LG_SWT_SHOW_CORRECT_GRIP_LEVEL ; Perform Switch <1>

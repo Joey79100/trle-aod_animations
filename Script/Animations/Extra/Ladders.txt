@@ -1,0 +1,220 @@
+
+#DEFINE ANIM_LDR_MEC_LADDERMOUNT		30
+#DEFINE ANIM_LDR_MEC_LADDERUP			26
+#DEFINE ANIM_LDR_MEC_LADDERUPSTOP1		20
+#DEFINE ANIM_LDR_MEC_LADDERUPSTOP2		21
+#DEFINE ANIM_LDR_MEC_LADDERDOWNSTOP1	22
+#DEFINE ANIM_LDR_MEC_LADDERDOWNSTOP2	23
+#DEFINE ANIM_LDR_MEC_LADDERDISMOUNT		27
+#DEFINE ANIM_LDR_MEC_LADDERPULLUP1		24
+#DEFINE ANIM_LDR_MEC_LADDERPULLUP2		25
+
+#DEFINE ANIM_LDR_TP_LADDERMOUNT		1
+
+;================================================================================================
+; Mounting
+;================================================================================================
+
+; Stand to Ladder
+Animation= 586, >
+	KEY1_ACTION, IGNORE, >
+	FAN_ALIGN_TO_ENV_POS, >
+	ENV_MULT_CONDITION, ANIM_LDR_MEC_LADDERMOUNT, IGNORE, >
+	-103
+
+MultEnvCondition= ANIM_LDR_MEC_LADDERMOUNT, >
+	ENV_ITEM_TEST_POSITION, ANIM_LDR_TP_LADDERMOUNT, IGNORE, >
+	ENV_FREE_HANDS, IGNORE, IGNORE
+
+
+; TestPosition for Ladder
+TestPosition= ANIM_LDR_TP_LADDERMOUNT, >
+	TPOS_FAST_ALIGNMENT, >
+	ANIMATING4, >
+	0-300, 0+300, 0-128, 0+128, 348-348, 348+200, >
+	0-6000, 0+6000, 0-6000, 0+6000, 0-6000, 0+6000
+
+
+
+;================================================================================================
+; Going up
+;================================================================================================
+
+; Start climbing up
+Animation= 588, >
+	KEY1_UP, IGNORE, >
+	IGNORE, >
+	ENV_MULT_CONDITION, ANIM_LDR_MEC_LADDERUP, IGNORE, >
+	-587
+
+MultEnvCondition= ANIM_LDR_MEC_LADDERUP, >
+	ENV_DISTANCE_CEILING, $500, IGNORE, >
+	ENV_SUPPORT_IN_FRONT_WALL + ENV_NON_TRUE, $0333, IGNORE
+
+
+; Stop climbing up (UP key released)
+Animation= 590, >
+	KEY1_UP + KEY1_RELEASED, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 0, IGNORE, >
+	-589
+
+
+; Stop climbing up (ceiling in the way)
+Animation= 590, >
+	IGNORE, IGNORE, >
+	IGNORE, >
+	ENV_MULT_CONDITION, ANIM_LDR_MEC_LADDERUPSTOP1, IGNORE, >
+	-589
+
+MultEnvCondition= ANIM_LDR_MEC_LADDERUPSTOP1, >
+	ENV_DISTANCE_CEILING + ENV_NON_TRUE, 1536, IGNORE, >
+	ENV_FRAME_NUMBER, 0, IGNORE
+
+
+; Stop climbing up (UP key released)
+Animation= 591, >
+	KEY1_UP + KEY1_RELEASED, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 18, IGNORE, >
+	-589
+
+
+; Stop climbing up (ceiling in the way)
+Animation= 591, >
+	IGNORE, IGNORE, >
+	IGNORE, >
+	ENV_MULT_CONDITION, ANIM_LDR_MEC_LADDERUPSTOP2, IGNORE, >
+	-589
+
+MultEnvCondition= ANIM_LDR_MEC_LADDERUPSTOP2, >
+	ENV_DISTANCE_CEILING + ENV_NON_TRUE, 1536, IGNORE, >
+	ENV_FRAME_NUMBER, 18, IGNORE
+
+
+
+;================================================================================================
+; Going down
+;================================================================================================
+
+; Start climbing down
+Animation= 592, >
+	KEY1_DOWN, IGNORE, >
+	IGNORE, >
+	ENV_DISTANCE_FLOOR, 256, IGNORE, >
+	-587
+
+
+; Stop climbing down (DOWN key released)
+Animation= 594, >
+	KEY1_DOWN + KEY1_RELEASED, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 0, IGNORE, >
+	-593
+
+
+; Stop climbing down (floor in the way)
+Animation= 594, >
+	IGNORE, IGNORE, >
+	IGNORE, >
+	ENV_MULT_CONDITION, ANIM_LDR_MEC_LADDERDOWNSTOP1, IGNORE, >
+	-593
+
+MultEnvCondition= ANIM_LDR_MEC_LADDERDOWNSTOP1, >
+	ENV_DISTANCE_FLOOR + ENV_NON_TRUE, 512, IGNORE, >
+	ENV_FRAME_NUMBER, 0, IGNORE
+
+
+; Stop climbing down (DOWN key released)
+Animation= 595, >
+	KEY1_DOWN + KEY1_RELEASED, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 18, IGNORE, >
+	-593
+
+
+; Stop climbing down (floor in the way)
+Animation= 595, >
+	IGNORE, IGNORE, >
+	IGNORE, >
+	ENV_MULT_CONDITION, ANIM_LDR_MEC_LADDERDOWNSTOP2, IGNORE, >
+	-593
+
+MultEnvCondition= ANIM_LDR_MEC_LADDERDOWNSTOP2, >
+	ENV_DISTANCE_FLOOR + ENV_NON_TRUE, 512, IGNORE, >
+	ENV_FRAME_NUMBER, 18, IGNORE
+
+
+
+;================================================================================================
+; Dismounting
+;================================================================================================
+
+; Ladder to Stand (doesn't work as planned)
+Animation= 596, >
+	KEY1_DOWN, IGNORE, >
+	IGNORE, >
+	ENV_DISTANCE_FLOOR + ENV_NON_TRUE, 256, IGNORE, >
+	-587
+
+
+; Ladder to Stand (doesn't work as planned)
+Animation= 596, >
+	KEY1_ACTION + KEY1_RELEASED, IGNORE, >
+	IGNORE, >
+	ENV_DISTANCE_FLOOR + ENV_NON_TRUE, 256, IGNORE, >
+	-587
+
+
+; Ladder to Stand
+Animation= 596, >
+	KEY1_ACTION + KEY1_RELEASED, IGNORE, >
+	FAN_START_FROM_EXTRA_FRAME, >
+	ENV_MULT_CONDITION, ANIM_LDR_MEC_LADDERDISMOUNT, 12, >
+	-586
+
+MultEnvCondition= ANIM_LDR_MEC_LADDERDISMOUNT, >
+	ENV_DISTANCE_FLOOR + ENV_NON_TRUE, 256, IGNORE, >
+	ENV_ANIM_COMPLETE, IGNORE, IGNORE
+
+
+
+;================================================================================================
+; Jump off
+;================================================================================================
+
+; Jump off
+Animation= 597, >
+	KEY1_JUMP, IGNORE, >
+	IGNORE, >
+	IGNORE, IGNORE, IGNORE, >
+	-587
+
+
+
+;================================================================================================
+; Climb up
+;================================================================================================
+
+; Pull up on top (from climbing up)
+Animation= 598, >
+	IGNORE, IGNORE, >
+	IGNORE, >
+	ENV_MULT_CONDITION, ANIM_LDR_MEC_LADDERPULLUP1, IGNORE, >
+	-589
+
+MultEnvCondition= ANIM_LDR_MEC_LADDERPULLUP1, >
+	ENV_SUPPORT_IN_FRONT_WALL, $0433, IGNORE, >
+	ENV_FRAME_NUMBER, 0, IGNORE
+
+
+; Pull up on top (from climbing up)
+Animation= 599, >
+	IGNORE, IGNORE, >
+	IGNORE, >
+	ENV_MULT_CONDITION, ANIM_LDR_MEC_LADDERPULLUP2, IGNORE, >
+	-589
+
+MultEnvCondition= ANIM_LDR_MEC_LADDERPULLUP2, >
+	ENV_SUPPORT_IN_FRONT_WALL, $0433, IGNORE, >
+	ENV_FRAME_NUMBER, 18, IGNORE

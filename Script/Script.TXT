@@ -20,23 +20,20 @@ FMV=			.BIK
 File=			0,English.TXT
 
 [Options]
-Plugin=	5, Plugin_AkyVMix03, IGNORE
-; UNINSTALLED PLUGIN: Plugin=		6, Plugin_SlopeFix, IGNORE
-; UNINSTALLED PLUGIN: Plugin=		5, Plugin_CeilingClimbing, IGNORE
-Plugin=		4, Plugin_ClassicInventory, IGNORE
-Plugin=		3, Plugin_ChocolateFanFlareSFX, IGNORE
-Plugin=		2, Plugin_Renaissance, IGNORE
-Plugin=		1, Plugin_AkyVMix01, IGNORE
 LoadSave=		ENABLED
-Title=		ENABLED
+Title=			ENABLED
 PlayAnyLevel=	DISABLED
 InputTimeout=	18000													;Frames * Seconds = 60x30
 FlyCheat=		ENABLED
 Security=		$55
 DemoDisc=		DISABLED
-LoadSave=		DISABLED
 CRS=			ENABLED
 WorldFarView=	127
+
+Plugin=		1, Plugin_AkyVMix01, IGNORE
+Plugin=		4, Plugin_ClassicInventory, IGNORE
+Plugin=		5, Plugin_AkyVMix03, IGNORE
+Plugin=		6, Plugin_AutomaticFov, IGNORE
 
 ;-------------------------------------------------
 ; Diagnostic
@@ -47,6 +44,7 @@ Diagnostic=		ENABLED
 
 ; -- Shows only cheat codes --
 DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, IGNORE		; Shows only information about Lara
+
 ;DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, EDGX_SWAP_VIEW	; Shows only information about Lara and allows rotating camera (by forcing a custom camera)
 ;DiagnosticType=	DGX_SFX_SOUNDS+DGX_CHEATS, IGNORE					; Shows only information about sounds
 
@@ -64,54 +62,57 @@ DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, IGNORE		; Shows only info
 ;-------------------------------------------------
 
 [Title]
-#INCLUDE "Title.txt"
+#INCLUDE "Levels\Title.txt"
 
 
 [Level]		;TECH DEMO - LARA - TOMB EDITOR version
 
 ; * These files only make the level "show and play" the intended way - you don't need them
-; * They are remnants from The Dark Renaissance project
-#INCLUDE "General.txt"
-#INCLUDE "General_Camera.txt"
-#INCLUDE "General_BarDesign.txt"
-#INCLUDE "General_Quicksaving.txt"
-;#INCLUDE "General_Walkmode.txt"
-;#INCLUDE "General_LimitedGrip.txt" ; required to show the bar properly
-#INCLUDE "Inventory.txt"
+; * They are mostly remnants from The Dark Renaissance project
+#INCLUDE "Common\General.txt"
+#INCLUDE "Common\Camera.txt"
+#INCLUDE "Common\Inventory.txt"
+#INCLUDE "Common\Quicksaving.txt"
 
-#INCLUDE "Demo_TE.txt"
+#INCLUDE "Common\BarDesign.txt"
+#INCLUDE "Common\LimitedGrip.txt" ; required to show the bar properly
+#INCLUDE "Common\HeartbeatEffect.txt"
+
+#INCLUDE "Levels\Demo_TE.txt"
 
 
 
-; * Basic responsivity extensions, that could not be implemented through regular State Changes (animation dispatches)
+; * BASIC RESPONSIVITY EXTENSIONS, that could not be implemented through regular State Changes (animation dispatches)
 ; * It is recommended to use these extensions
-#INCLUDE "Animations_General.txt"
-#INCLUDE "Animations_WallClimbing.txt"
-#INCLUDE "Animations_CrawlspaceFlexibility.txt"
+#INCLUDE "Animations\General.txt"
+#INCLUDE "Animations\WallClimbing.txt"
+#INCLUDE "Animations\Crawlspace.txt"
 
 
 
-; * Extra optional abilities, generally based on AOD itself
+; * EXTRA OPTIONAL ABILITIES, generally based on AOD itself
 ; * You decide if you want them in your game or not
-#INCLUDE "Animations_Ladders.txt"
-#INCLUDE "Animations_WallKicking.txt"
-#INCLUDE "Animations_SkipRunBack.txt"
-#INCLUDE "Animations_HorizontalPoles.txt"
+#INCLUDE "Animations\Extra\Ladders.txt"
+
+#INCLUDE "Animations\Extra\WallKicking.txt"
+#INCLUDE "Animations\Extra\SkipRunBack.txt"
+#INCLUDE "Animations\Extra\HorizontalPoles.txt"
 
 
 
+; * Contains UNFINISHED IMPLEMENTATIONS of additional abilities
+;#INCLUDE "Animations\Extra\StanceToHang.txt" ; BROKEN for some reason (sends Lara to position 0,0,0, unless alignement is removed)
+;#INCLUDE "Animations\Extra\Stealth.txt" ; WIP - with basic implementation (replacing Walk for now)
+#INCLUDE "WIP\Shovel.txt"
+;#INCLUDE "WIP\PickableStatues.txt"
+#INCLUDE "WIP\WIP_stuff.txt"
 
-; * Contains unfinished implementations of additional abilities
-#INCLUDE "WIP_stuff.txt"
-#INCLUDE "CustomCameras.txt"
-#INCLUDE "Shovel.txt"
-;#INCLUDE "PickableStatues.txt"
-#INCLUDE "EnemyInfo.txt"
+#INCLUDE "WIP\Wolf.txt"
 
-;#INCLUDE "Animations_StanceToHang.txt" ; BROKEN for some reason
-;#INCLUDE "Animations_Stealth.txt" ; WIP - with basic implementation (replacing Walk for now)
 
-#INCLUDE "Wolf.txt"
+
+;#INCLUDE "Debug\EnemyInfo.txt"
+#INCLUDE "Debug\CustomCameras.txt"
 
 
 

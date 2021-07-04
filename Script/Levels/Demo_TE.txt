@@ -1,0 +1,18 @@
+Name=			Demo - Lara - TE
+
+Horizon=		ENABLED
+ColAddHorizon=	ENABLED
+Layer1=		 25, 30, 34, 2
+Layer2=		 15, 19, 20, 5
+Fog=			18,26,34
+FogRange=		6, 20
+
+Rain=			RAIN_SINGLE_ROOMS
+Customize=		CUST_RAIN, FR_CORRECT_SPRINKLERS, IGNORE, 0, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE
+
+LoadCamera=	0,0,0,0,0,0,255
+Level=		DATA\DEMO2,031
+
+Customize=		CUST_HAIR_TYPE, HAIR_ONE_TR5_PONYTAIL
+
+ForceVolumetricFX= DISABLED

@@ -1,0 +1,139 @@
+
+
+
+;================================================================================================
+; Generic 
+;================================================================================================
+
+Customize= CUST_TR5_UNDERWATER_COLLISIONS
+Customize= CUST_DISABLE_PUSH_AWAY_ANIMATION
+
+
+; -- Slide to run --
+
+; Slide to Run
+Animation= 246, >
+	KEY1_UP, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 0, IGNORE, >
+	-71
+
+; Slide to Run (later)
+Animation= 247,	>
+	KEY1_UP, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 7, IGNORE, >
+	-71
+
+
+
+; -- Roll to run --
+Animation= 175, >
+	KEY1_UP, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 11, IGNORE, >
+	-147
+
+
+
+; -- Crouch to sprint --
+Animation= 224, >
+	KEY1_UP, KEY2_DASH, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 11, IGNORE, >
+	-227
+
+
+
+;================================================================================================
+; Dive roll to run
+;================================================================================================
+
+; Roll > Run
+Animation= 176, >
+	KEY1_UP, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 6, IGNORE, -151
+
+; End of roll > Walk
+Animation= 20, >
+	KEY1_UP + KEY1_WALK, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_RANGE, 23 + 6912, IGNORE, > ; F23 to F27 - (F27*256+F23= 6 935)
+	-151
+
+; End of roll > Run
+Animation= 6, >
+	KEY1_UP, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_RANGE, 23 + 6912, IGNORE, > ; F23 to F27 - (F27*256+F23= 6 935)
+	-151
+
+
+
+
+;================================================================================================
+; Responsiveness fixes after 1-click step up while running 
+;================================================================================================
+
+
+; -- LEFT FOOT --
+
+; To walk
+Animation= 9, >
+	KEY1_UP + KEY1_WALK, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 16, IGNORE, >
+	-55
+
+; To jump
+Animation= 16, >
+	KEY1_UP + KEY1_JUMP, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 15, IGNORE, >
+	-55
+
+; To sprint
+Animation= 225, >
+	KEY1_UP, KEY2_DASH, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 12, IGNORE, >
+	-55
+
+
+; -- RIGHT FOOT --
+
+; To walk
+Animation= 10, >
+	KEY1_UP + KEY1_WALK, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 16, IGNORE, >
+	-56
+
+; To jump
+Animation= 18, >
+	KEY1_UP + KEY1_JUMP, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 15, IGNORE, >
+	-56
+
+; To sprint
+Animation= 224, >
+	KEY1_UP, KEY2_DASH, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 12, IGNORE, >
+	-56
+
+
+
+
+;================================================================================================
+; Small jump
+;================================================================================================
+
+Animation=		529, >
+	KEY1_WALK, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 10, IGNORE, >
+	-73
+

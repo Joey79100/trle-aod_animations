@@ -1,0 +1,194 @@
+
+#DEFINE ANIM_TGHTRP_TG_TMPDISABLEKEYUP 459
+
+;================================================================================================
+; Swing Pole (by Symsi)
+;================================================================================================
+
+Customize= CUST_PARALLEL_BARS, >
+	PB_DOUBLE_FACE + PB_LARA_CAN_SLIDE, 2, IGNORE
+
+
+
+; Start swinging
+Animation= 463, >
+	KEY1_UP, IGNORE, >
+	IGNORE, >
+	IGNORE, IGNORE, IGNORE, >
+	-471
+
+; Keep swinging
+Animation= 462, KEY1_UP, IGNORE, >
+	IGNORE, >
+	IGNORE, IGNORE, IGNORE, >
+	-461
+
+; Stop
+Animation= 474, >
+	KEY1_UP + KEY1_RELEASED, IGNORE, >
+	FAN_START_FROM_EXTRA_FRAME, >
+	ENV_FRAME_NUMBER, 14, 19, >
+	-463
+
+
+; Stop > Start again
+Animation= 463, >
+	KEY1_UP, IGNORE, >
+	FAN_START_FROM_EXTRA_FRAME, >
+	ENV_FRAME_NUMBER, 19, 16, >
+	-474
+
+; Still - Release
+Animation= 28, >
+	KEY1_ACTION + KEY1_RELEASED, IGNORE, >
+	FAN_ENABLE_GRAVITY, >
+	IGNORE, IGNORE, IGNORE, >
+	-471, -474
+
+
+; Still - Turn around
+Animation= 464, >
+	KEY1_DOWN, IGNORE, >
+	IGNORE, >
+	IGNORE, IGNORE, IGNORE, >
+	-471
+
+; Top - Turn around
+Animation= 466, >
+	KEY1_DOWN, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 23, IGNORE, >
+	-462
+
+; Swinging - Turn around
+Animation= 472, >
+	KEY1_DOWN, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 7, IGNORE, >
+	-462
+
+
+; Release & Jump
+Animation= 468, >
+	KEY1_JUMP, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 8, IGNORE, >
+	-462
+
+
+
+
+;================================================================================================
+; Tightrope (by Symsi)
+;================================================================================================
+
+;Idle  to Stance (force it)
+Animation= 459, >
+	IGNORE, IGNORE, >
+	FAN_PERFORM_TRIGGER_GROUP, >
+	ENV_DISTANCE_FLOOR + ENV_NON_TRUE, $75, IGNORE, >
+	-477, -478, -481
+
+TriggerGroup= ANIM_TGHTRP_TG_TMPDISABLEKEYUP, >
+	$2000, 51, $0201 ; F51: <#> Keyboard. Disable <Up>keyboard command for (2 seconds) time (F51)
+
+
+
+; -- 180° turn --
+
+; #1 - DOWN key
+Animation= 488, >
+	KEY1_DOWN, IGNORE, >
+	IGNORE, >
+	IGNORE, IGNORE, IGNORE, >
+	-477
+
+; #1 - ROLL key
+Animation= 488, >
+	KEY1_ROLL, IGNORE, >
+	IGNORE, >
+	IGNORE, IGNORE, IGNORE, >
+	-477
+
+; #2 - DOWN key
+Animation= 490, >
+	KEY1_DOWN, IGNORE, >
+	IGNORE, >
+	IGNORE, IGNORE, IGNORE, >
+	-478
+
+; #2 - ROLL key
+Animation= 490, >
+	KEY1_ROLL, IGNORE, >
+	IGNORE, >
+	IGNORE, IGNORE, IGNORE, >
+	-478
+
+
+
+; -- Idle to Walk --
+
+Animation= 479, >
+	KEY1_UP, IGNORE, >
+	IGNORE, >
+	IGNORE, IGNORE, IGNORE, >
+	-477
+
+Animation= 480, >
+	KEY1_UP,    IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -478
+
+
+
+; -- Walk to Idle --
+
+Animation= 482, >
+	KEY1_UP + KEY1_RELEASED, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 36, IGNORE, >
+	-481
+
+Animation= 483, >
+	KEY1_UP + KEY1_RELEASED, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 16, IGNORE, >
+	-481
+
+Animation= 486, >
+	KEY1_UP + KEY1_RELEASED, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 3, IGNORE, >
+	-481
+
+Animation= 487, >
+	KEY1_UP + KEY1_RELEASED, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 23, IGNORE, >
+	-481
+
+Animation= 484, >
+	KEY1_UP + KEY1_RELEASED, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 10, IGNORE, >
+	-481
+
+Animation= 485, >
+	KEY1_UP + KEY1_RELEASED, IGNORE, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, 30, IGNORE, >
+	-481
+
+
+
+; -- Idle  to Stance --
+
+Animation= 459, >
+	KEY1_ACTION + KEY1_RELEASED, IGNORE, >
+	IGNORE, >
+	ENV_DISTANCE_FLOOR + ENV_NON_TRUE, $75, IGNORE, >
+	-477
+
+Animation= 460, >
+	KEY1_ACTION + KEY1_RELEASED, IGNORE, >
+	IGNORE, >
+	ENV_DISTANCE_FLOOR + ENV_NON_TRUE, $75, IGNORE, >
+	-478

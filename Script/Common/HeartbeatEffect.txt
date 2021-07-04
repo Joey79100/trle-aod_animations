@@ -1,0 +1,57 @@
+﻿
+#DEFINE HBE_GT_CHECK_IF_HEALTH_LOW		23
+#DEFINE HBE_GT_CHECK_IF_HEALTH_HIGH		24
+#DEFINE HBE_GT_CHECK_IF_HEALTH_ZERO		25
+
+#DEFINE HBE_TG_MAKE_SOUND				44
+#DEFINE HBE_TG_START_HEARTBEAT			45
+#DEFINE HBE_TG_STOP_HEARTBEAT			46
+
+#DEFINE HBE_ORG_MAKE_SOUND				12
+
+; The following constants are "settings", if you want to customize the effect a little
+#DEFINE HBE_SFX_HEARTBEAT				112	; ID of the sound to play (default is 112: TICK_TOCK)
+#DEFINE HBE_TIME_BETWEEN_SOUND			30	; Duration between each heartbeat sound, in frames (30 * seconds)
+
+
+;================================================================================================
+; Heartbeat effect
+;================================================================================================
+
+; WHEN health < 300, THEN start heartbeat effect
+GlobalTrigger=	HBE_GT_CHECK_IF_HEALTH_LOW, >
+	FGT_SINGLE_SHOT_RESUMED, >
+	GT_LARA_HP_LESS_THAN, 300, >
+	IGNORE, HBE_TG_START_HEARTBEAT, IGNORE
+
+; WHEN health > 300, THEN stop heartbeat effect
+GlobalTrigger=	HBE_GT_CHECK_IF_HEALTH_HIGH, >
+	FGT_SINGLE_SHOT_RESUMED, >
+	GT_LARA_HP_HIGHER_THAN, 300, >
+	IGNORE, HBE_TG_STOP_HEARTBEAT, IGNORE
+
+; WHEN health < 1, THEN stop heartbeat effect
+GlobalTrigger=	HBE_GT_CHECK_IF_HEALTH_ZERO, >
+	FGT_SINGLE_SHOT_RESUMED, >
+	GT_LARA_HP_LESS_THAN, 1, >
+	IGNORE, HBE_TG_STOP_HEARTBEAT, IGNORE
+
+
+; Every X frames, trigger the heartbeat sound
+Organizer= HBE_ORG_MAKE_SOUND, >
+	FO_TICK_TIME + FO_LOOP, IGNORE, >
+	HBE_TIME_BETWEEN_SOUND, HBE_TG_MAKE_SOUND
+
+
+; Make heartbeat sound
+Triggergroup= HBE_TG_MAKE_SOUND, >
+	$2000, 70, HBE_SFX_HEARTBEAT + $1F00 ; F70: Sound. Play <112: TICK_TOCK>Sound sample of first group (0-255) for (Perform one single time) time 
+
+; Start heartbeat effect
+TriggerGroup= HBE_TG_START_HEARTBEAT, >
+	$2000, 127, HBE_ORG_MAKE_SOUND ; F127: Organizer. Enable <Organizer=12>Organizer
+
+; Stop heartbeat effect
+TriggerGroup= HBE_TG_STOP_HEARTBEAT, >
+	$2000, 128, HBE_ORG_MAKE_SOUND ; F128: Organizer. Stop <Organizer=12>Organizer
+

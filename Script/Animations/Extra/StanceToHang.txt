@@ -1,0 +1,66 @@
+
+#DEFINE ANIM_STC2HNG_MEC_LEDGEBACK		644
+#DEFINE ANIM_STC2HNG_MEC_LEDGEFRONT		647
+#DEFINE ANIM_STC2HNG_MEC_LEDGECROUCH	648
+
+;============================================================================
+; Stance to hang on a ledge
+;============================================================================
+
+
+; -- BACK --
+Animation= 644, >
+	KEY1_ACTION, IGNORE, >
+	FAN_SET_BUSY_HANDS + FAN_ALIGN_TO_ENV_POS, >
+	ENV_MULT_CONDITION, ANIM_STC2HNG_MEC_LEDGEBACK, IGNORE, >
+	-103, >					; during stance
+	-66, -68				; during sidestep end
+
+MultEnvCondition= ANIM_STC2HNG_MEC_LEDGEBACK, >
+	ENV_HOLE_FLOOR_BACK, 769, IGNORE, >
+	ENV_LARA_IN_MICRO_STRIP, 7424+28, IGNORE, >		; distance from front sector limit | range 0..32 | used: 28..29
+	ENV_FREE_HANDS, IGNORE, IGNORE, >
+	ENV_ONLAND, IGNORE, IGNORE
+
+
+
+; -- FRONT --
+Animation= 647, >
+	KEY1_ACTION, IGNORE, >
+	FAN_SET_BUSY_HANDS + FAN_ALIGN_TO_ENV_POS, >
+	ENV_MULT_CONDITION, ANIM_STC2HNG_MEC_LEDGEFRONT, IGNORE, >
+	-103, >					; during stance
+	-66, -68				; during sidestep end
+
+MultEnvCondition= ANIM_STC2HNG_MEC_LEDGEFRONT, >
+		ENV_HOLE_FLOOR_IN_FRONT, 769, IGNORE, >
+		ENV_LARA_IN_MICRO_STRIP, 1024+3, IGNORE, >		; distance from front sector limit | range 0..32 | used: 2..3
+		ENV_FREE_HANDS, IGNORE, IGNORE, >
+		ENV_POS_HORTOGONAL, IGNORE, IGNORE, >
+		ENV_ONLAND, IGNORE, IGNORE
+
+
+
+; -- FRONT CROUCH --
+Animation= 648, >
+	KEY1_ACTION, IGNORE, >
+	FAN_SET_BUSY_HANDS + FAN_ALIGN_TO_ENV_POS, >
+	ENV_MULT_CONDITION, ANIM_STC2HNG_MEC_LEDGECROUCH, IGNORE, >
+	-222, >					; during crouch stance
+	-263, -264, -266, -268	; during crawl stance
+
+MultEnvCondition= ANIM_STC2HNG_MEC_LEDGECROUCH, >
+	ENV_HOLE_FLOOR_IN_FRONT, 769, IGNORE, >
+	ENV_LARA_IN_MICRO_STRIP, 1024+3, IGNORE, >		; distance from front sector limit | range 0..32 | used: 2..3
+	ENV_FREE_HANDS, IGNORE, IGNORE, >
+	ENV_ONLAND, IGNORE, IGNORE
+
+
+
+; standing cz=56219
+; hanging cz=56421
+; difference: -202 | 202
+
+; crouching: cz=56069
+; hanging cz=56421
+; difference: -352 | 352 (anim: 250??)

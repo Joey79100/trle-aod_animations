@@ -1,0 +1,101 @@
+
+
+;============================================================================
+;   Stealth
+;============================================================================
+
+
+
+; [Stealth]
+
+
+; ---- Stance > Stealth stance ----
+Animation=		659, KEY1_WALK, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -11, -103
+
+; ---- Stealth stance > Stance ----
+Animation=		661, KEY1_RELEASED + KEY1_WALK, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -660
+Animation=		661, KEY1_RELEASED + KEY1_WALK, IGNORE, FAN_START_FROM_EXTRA_FRAME, ENV_FRAME_NUMBER, 3, 7, -659
+Animation=		661, KEY1_RELEASED + KEY1_WALK, IGNORE, FAN_START_FROM_EXTRA_FRAME, ENV_FRAME_NUMBER, 6, 4, -659
+Animation=		661, KEY1_RELEASED + KEY1_WALK, IGNORE, FAN_START_FROM_EXTRA_FRAME, ENV_FRAME_NUMBER, 10, 2, -659
+
+
+
+; [Stealth walk]
+
+
+; ---- Stealth stance > Stealth walk ----
+Animation=		662, KEY1_WALK + KEY1_UP, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -660
+Animation=		662, KEY1_WALK + KEY1_UP, IGNORE, IGNORE, ENV_FRAME_RANGE, 3591, IGNORE, -659 ; F07 to F14 - (F14*256+F07= 3591)
+
+; ---- Stance > Stealth walk ----
+Animation=		663, KEY1_WALK + KEY1_UP, IGNORE, IGNORE, ENV_FRAME_NUMBER, 2, IGNORE, -659
+
+; ---- Stealth Walk > Stealth stance ----
+Animation=		666, KEY1_UP + KEY1_RELEASED, IGNORE, FAN_START_FROM_EXTRA_FRAME, ENV_FRAME_NUMBER, 19, 1, -662 ; early (stealth stance to stealth walk)
+Animation=		666, KEY1_UP + KEY1_RELEASED, IGNORE, FAN_START_FROM_EXTRA_FRAME, ENV_FRAME_NUMBER, 22, 1, -663 ; early (stance to stealth walk)
+Animation=		665, KEY1_UP + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 11, IGNORE, -664 ; left
+Animation=		666, KEY1_UP + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 38, IGNORE, -664 ; right
+
+; ---- Stealth Walk > Stance ----
+Animation=		667, KEY1_WALK + KEY1_RELEASED, IGNORE, FAN_START_FROM_EXTRA_FRAME, ENV_FRAME_NUMBER, 2, 2, -665
+Animation=		668, KEY1_WALK + KEY1_RELEASED, IGNORE, FAN_START_FROM_EXTRA_FRAME, ENV_FRAME_NUMBER, 2, 2, -666 ; NOT DONE YET
+
+
+; [Stealth walk back]
+; NOT DONE YET
+
+; ---- Stealth stance > Stealth walk back ----
+Animation=		673, KEY1_WALK + KEY1_DOWN, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -660
+Animation=		673, KEY1_WALK + KEY1_DOWN, IGNORE, IGNORE, ENV_FRAME_RANGE, 3591, IGNORE, -659 ; F07 to F14 - (F14*256+F07= 3591)
+
+; ---- Stealth Walk back > Stealth stance ----
+Animation=		676, KEY1_DOWN + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -674
+Animation=		677, KEY1_DOWN + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 37, IGNORE, -674
+
+
+
+; [Stealth walk left]
+; NOT DONE YET
+
+
+
+; [Stealth walk right]
+; NOT DONE YET
+
+
+
+; [Stealth rotate left]
+; NOT DONE YET
+
+; ---- Stealth rotate left ----
+;Animation=		679, KEY1_WALK + KEY1_LEFT, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -660
+
+; ---- Stealth rotate left : Stealth stance ----
+;Animation=		680, KEY1_LEFT + KEY1_RELEASED, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -679
+
+
+
+; [Stealth rotate right]
+; NOT DONE YET
+
+; ---- Stealth rotate right ----
+;Animation=		681, KEY1_WALK + KEY1_RIGHT, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -660
+
+; ---- Stealth rotate right > Stealth stance ----
+;Animation=		682, KEY1_RIGHT + KEY1_RELEASED, IGNORE, IGNORE, IGNORE, IGNORE, IGNORE, -681
+
+
+
+; [Stealth to run]
+Animation=		669, KEY1_WALK + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 18, IGNORE, -662
+Animation=		669, KEY1_WALK + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 21, IGNORE, -663
+Animation=		669, KEY1_WALK + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 38, IGNORE, -664
+Animation=		670, KEY1_WALK + KEY1_RELEASED, IGNORE, IGNORE, ENV_FRAME_NUMBER, 19, IGNORE, -664 ; NOT DONE YET
+
+
+; [Run to stealth]
+; NOT DONE YET
+;Animation=		671, KEY1_WALK, IGNORE, IGNORE, ENV_FRAME_NUMBER, 0, IGNORE, -0
+Animation=		671, KEY1_WALK, IGNORE, FAN_START_FROM_EXTRA_FRAME, ENV_FRAME_NUMBER, 0, 2, -7 ; called during run to walk transition
+;Animation=		672, KEY1_WALK, IGNORE, IGNORE, ENV_FRAME_NUMBER, 12, IGNORE, -0
+Animation=		672, KEY1_WALK, IGNORE, FAN_START_FROM_EXTRA_FRAME, ENV_FRAME_NUMBER, 0, 3, -9 ; called during run to walk transition

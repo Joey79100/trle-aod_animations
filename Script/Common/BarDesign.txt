@@ -1,0 +1,87 @@
+
+#DEFINE BD_CRGB_DARKBLUE					1
+#DEFINE BD_CRGB_RED							2
+#DEFINE BD_CRGB_DARKRED						3
+#DEFINE BD_CRGB_BLUE						4
+#DEFINE BD_CRGB_GREEN						5
+
+#DEFINE BD_PSS_SHOW_BAR_PART_1				3
+#DEFINE BD_PSS_SHOW_ACTION_NONE_DOT			6
+#DEFINE BD_PSS_SHOW_ACTION_POSSIBLE_DOT		7
+
+#DEFINE BD_TG_DO_SHOW_ACTION_NONE_DOT		43
+
+#DEFINE BD_ORG_SHOW_ACTION_NONE_DOT			5
+
+;================================================================================================
+;Bar Graphic
+;================================================================================================
+
+ColorRGB= BD_CRGB_DARKBLUE, >
+	16, 64, 164
+
+TriggerGroup= 1, >
+	$2000, 357, BD_PSS_SHOW_BAR_PART_1 ; F357: Sprite. Show sprite with data in <Parameters=PARAM_SHOW_SPRITE,3>Parameters for (Forever (use other action/effect to disable it))Durate
+
+Organizer= 3, >
+	FO_ENABLED + FO_TICK_TIME, IGNORE, >
+	0, 1
+
+Parameters=	PARAM_SHOW_SPRITE, BD_PSS_SHOW_BAR_PART_1, >
+	FSS_SHOW_SPRITE_GRID, >
+	6, 13, 70, 93, >
+	CUSTOM_SPRITES, 4, >
+	IGNORE, >
+	4, 1, >
+	20
+
+Organizer= BD_ORG_SHOW_ACTION_NONE_DOT, >
+	FO_ENABLED + FO_TICK_TIME, IGNORE, >
+	0, BD_TG_DO_SHOW_ACTION_NONE_DOT
+
+TriggerGroup= BD_TG_DO_SHOW_ACTION_NONE_DOT, >
+	$2000, 357, BD_PSS_SHOW_ACTION_NONE_DOT ; F357: Sprite. Show sprite with data in <Parameters=PARAM_SHOW_SPRITE,6>Parameters for (Forever (use other action/effect to disable it))Durate
+
+Parameters=	PARAM_SHOW_SPRITE, BD_PSS_SHOW_ACTION_NONE_DOT, >
+	FSS_TRANSPARENT, >
+	6, 13, 70, 93, >
+	CUSTOM_SPRITES, 21, >
+	IGNORE, >
+	1, 1, >
+	IGNORE
+
+
+
+;================================================================================================
+;Bar Design
+;================================================================================================
+
+ColorRGB= BD_CRGB_RED, >
+	192, 0, 0
+
+ColorRGB= BD_CRGB_DARKRED, >
+	96, 0, 0
+
+ColorRGB= BD_CRGB_BLUE, >
+	112, 208, 255
+
+ColorRGB= BD_CRGB_GREEN, >
+	112, 255, 112
+
+Customize= CUST_BAR, BAR_HEALTH, >
+	FBAR_DRAW_ALWAYS, >
+	44, 26, 129, 9, >
+	BD_CRGB_RED, BD_CRGB_RED, >
+	IGNORE
+
+Customize= CUST_BAR, BAR_AIR, >
+	IGNORE, >
+	42, 35, 99, 7, >
+	BD_CRGB_BLUE, BD_CRGB_BLUE, >
+	IGNORE
+
+Customize= CUST_BAR, BAR_DASH, >
+	IGNORE, >
+	42, 35, 99, 7, >
+	BD_CRGB_GREEN, BD_CRGB_GREEN, >
+	IGNORE

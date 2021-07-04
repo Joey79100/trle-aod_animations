@@ -1,0 +1,79 @@
+;================================================================================================
+;Quick Save
+;================================================================================================
+#DEFINE QCKSV_GT_DO_SAVE_BACKFILE		16
+#DEFINE QCKSV_GT_DO_LOAD_BACKFILE		17
+#DEFINE QCKSV_GT_DO_REMOVE_SPRITE		18
+
+#DEFINE QCKSV_TG_COND_SHIFT_IS_NOT_HELD	36
+#DEFINE QCKSV_TG_DO_SAVE_BACKFILE		37
+#DEFINE QCKSV_TG_DO_LOAD_BACKFILE		38
+#DEFINE QCKSV_TG_DO_REMOVE_SPRITE		39
+
+#DEFINE QCKSV_PSS_SAVED_SPRITE			4
+
+#DEFINE KEY_F5							63
+#DEFINE KEY_F6							64
+#DEFINE KEY_SHIFT_LEFT					42
+#DEFINE KEY_SHIFT_RIGHT					54
+
+
+
+Parameters=	PARAM_SHOW_SPRITE, QCKSV_PSS_SAVED_SPRITE, >
+	IGNORE, >
+	860, 860, >
+	60, 60, >
+	CUSTOM_SPRITES, 3, >
+	IGNORE, >
+	IGNORE, IGNORE, >
+	IGNORE
+
+
+;Condition: is NOT holding SHIFT (left or right)
+TriggerGroup= QCKSV_TG_COND_SHIFT_IS_NOT_HELD, >
+	$8000, KEY_SHIFT_LEFT, $20C, >	; C12: Keyboard. <SHIFT Left>keyboard scancode is currently (INACTIVE (Multi shot for positive condition))
+	$8000, KEY_SHIFT_RIGHT, $20C	; C12: Keyboard. <SHIFT Right>keyboard scancode is currently (INACTIVE (Multi shot for positive condition))
+
+
+;================================================================================================
+
+
+;-- QUICK SAVE --
+
+;IF player presses F5 AND is NOT holding SHIFT LEFT
+GlobalTrigger= QCKSV_GT_DO_SAVE_BACKFILE, >
+	FGT_REMOVE_INPUT + FGT_SINGLE_SHOT_RESUMED, >
+	GT_KEYBOARD_CODE, KEY_F5, >
+	QCKSV_TG_COND_SHIFT_IS_NOT_HELD, QCKSV_TG_DO_SAVE_BACKFILE, IGNORE
+
+;THEN Save game in backup file 1, show sprite 3 on screen
+TriggerGroup= QCKSV_TG_DO_SAVE_BACKFILE, >
+	$2000, 97, $1, >							; F97: Backup. Save in silent way the current game in <Game Backup 1> backup file
+	$2000, 357, QCKSV_PSS_SAVED_SPRITE + $300 	; F357: Sprite. Show sprite with data in <Parameters=PARAM_SHOW_SPRITE,4>Parameters for (3 seconds)Durate
+
+
+
+;-- QUICK LOAD --
+
+;IF player presses F6 AND is NOT holding SHIFT LEFT
+GlobalTrigger= QCKSV_GT_DO_LOAD_BACKFILE, >
+	FGT_REMOVE_INPUT + FGT_SINGLE_SHOT_RESUMED, >
+	GT_KEYBOARD_CODE, KEY_F6, >
+	QCKSV_TG_COND_SHIFT_IS_NOT_HELD, QCKSV_TG_DO_LOAD_BACKFILE, IGNORE
+
+;THEN Load game in backup file 1
+TriggerGroup= QCKSV_TG_DO_LOAD_BACKFILE, >
+	$2000, 98, $1		; F98: Backup. Restore (load) the <Game Backup 1>backup file in (Standard way (progress bar + load camera screen))way
+
+
+
+;IF Player has just loaded a savegame
+GlobalTrigger= QCKSV_GT_DO_REMOVE_SPRITE, >
+	IGNORE, >
+	GT_LOADED_SAVEGAME, IGNORE, >
+	IGNORE, QCKSV_TG_DO_REMOVE_SPRITE, IGNORE
+
+;THEN Remove sprite 3 from screen
+TriggerGroup= QCKSV_TG_DO_REMOVE_SPRITE, >
+	$2000, 358, QCKSV_PSS_SAVED_SPRITE		; F358: Sprite. Remove from the screen the sprite with data in <Parameters=PARAM_SHOW_SPRITE,4>Parameters
+

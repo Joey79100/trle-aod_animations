@@ -1,0 +1,63 @@
+
+#DEFINE CAM_LARA_ID						120
+
+#DEFINE CAM_ORG_UPDATE_CAMERA			321
+
+#DEFINE CAM_TG_UPDATE_CAMERA_ADD_1		321
+#DEFINE CAM_TG_UPDATE_CAMERA_SUB_1		320
+
+#DEFINE CAM_GT_CHECK_IF_HEALTH_ZERO		112
+#DEFINE CAM_TG_SET_DEATH_CAMERA			225
+#DEFINE CAM_PSC_DEATH_CAMERA			70
+
+
+;================================================================================================
+; General Camera Settings
+;================================================================================================
+
+Customize= CUST_CAMERA, >
+	IGNORE, >
+	1352, -1365, IGNORE, >
+	1752, -5365, >
+	IGNORE, IGNORE, >
+	8
+
+;================================================================================================
+; Workaround to make the camera always follow Lara (by Raildex)
+;================================================================================================
+
+Organizer= CAM_ORG_UPDATE_CAMERA, >
+	FO_LOOP + FO_ENABLED + FO_TICK_TIME, IGNORE, >
+	1, CAM_TG_UPDATE_CAMERA_ADD_1, >
+	1, CAM_TG_UPDATE_CAMERA_SUB_1
+
+
+Triggergroup= CAM_TG_UPDATE_CAMERA_ADD_1, >
+	$5000, CAM_LARA_ID, $0036,	 >	; A54: Variables. Set the index of <LARA_ID>moveable as Selected Item
+	$2000, 232, $01FF, >			; F232: Variables. Numeric. Set <CurrentValue>Variable with (1)value
+	$2000, 275, $001C				; F275: Variables. Memory. Add to <Facing Vertical (Short)>Selected Item Memory  the CurrentValue
+
+Triggergroup= CAM_TG_UPDATE_CAMERA_SUB_1, >
+	$5000, CAM_LARA_ID, $0036, >	; A54: Variables. Set the index of <LARA_ID>moveable as Selected Item
+	$2000, 232, $01FF, >			; F232: Variables. Numeric. Set <CurrentValue>Variable with (1)value
+	$2000, 276, $001C				; F275: Variables. Memory. Subtract to <Facing Vertical (Short)>Selected Item Memory  the CurrentValue
+
+
+;================================================================================================
+; Death camera (slightly on the left side)
+;================================================================================================
+
+Parameters= PARAM_SET_CAMERA, CAM_PSC_DEATH_CAMERA, >
+	IGNORE, >
+	IGNORE, -6536, 2972, >
+	15
+
+; IF health < 1
+GlobalTrigger= CAM_GT_CHECK_IF_HEALTH_ZERO, >
+	FGT_SINGLE_SHOT_RESUMED, > ; Could be FGT_SINGLE_SHOT since Lara only dies once in a normal playthrough
+	GT_LARA_HP_LESS_THAN, 1, >
+	IGNORE, CAM_TG_SET_DEATH_CAMERA, IGNORE
+
+; THEN Change camera to PARAM_SET_CAMERA <70>
+TriggerGroup= CAM_TG_SET_DEATH_CAMERA, >
+	$2000, 214, CAM_PSC_DEATH_CAMERA ; F214: Camera. Change camera mode with <Parameters=PARAM_SET_CAMERA,70>Parameters for (Forever (use other action/effect to disable it))time

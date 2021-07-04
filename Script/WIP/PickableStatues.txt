@@ -1,0 +1,68 @@
+
+;--------------------------------
+; Variables used:
+;	GLA (Lara's X position)
+;	GLB (Lara's Y position)
+;	GLD (Lara's Z position)
+;--------------------------------
+
+#DEFINE STATUE_SLOT			ANIMATING5
+#DEFINE STATUE_1_ID			129
+#DEFINE STATUE_2_ID			130
+
+#DEFINE LARA_ID				102
+#DEFINE ANIM_STATUE_PICK_UP		644
+#DEFINE FRAME_STATUE_PICK_UP	16
+#DEFINE ANIM_STATUE_PUT_DOWN	645
+#DEFINE FRAME_STATUE_PUT_DOWN	21
+
+
+
+#DEFINE X_min 0-256
+#DEFINE X_max 0+256
+#DEFINE Y_min 0-256
+#DEFINE Y_max 0+256
+#DEFINE Z_min 0-256
+#DEFINE Z_max 0+256
+
+#DEFINE H_min 0-4096
+#DEFINE H_max 0+4096
+#DEFINE V_min 0-4096
+#DEFINE V_max 0+4096
+#DEFINE R_min 0-4096
+#DEFINE R_max 0+4096
+
+
+
+
+
+; ---- Picking up a statue ----
+Animation=		ANIM_STATUE_PICK_UP, KEY1_ACTION, IGNORE, FAN_ALIGN_TO_ENV_POS, ENV_ITEM_TEST_POSITION, 10, IGNORE, STATE_STOP
+TestPosition=	10, TPOS_ROUND_HORIENT, ANIMATING5, >
+				X_min, X_max,    Y_min, Y_max,    Z_min, Z_max, >
+				H_min, H_max,    V_min, V_max,    R_min, R_max
+
+
+
+; ---- Putting down a statue ----
+Animation=		ANIM_STATUE_PUT_DOWN, IGNORE, KEY2_DASH, IGNORE, IGNORE, IGNORE, IGNORE, -103
+
+;Animation=		301, IGNORE, IGNORE, FAN_PERFORM_TRIGGER_GROUP, ENV_FRAME_NUMBER, FRAME_STATUE_PUT_DOWN, IGNORE, -ANIM_STATUE_PUT_DOWN
+
+GlobalTrigger=	300, IGNORE, GT_CONDITION_GROUP, IGNORE, 300, 301, IGNORE
+TriggerGroup=	300,	$8000, ANIM_STATUE_PUT_DOWN, $1E, >				; IF LARA is playing animation <ANIM_STATUE_PUT_DOWN>
+				$8000, 300, $10								; AND Conditions of MultEnvCond <300>
+MultEnvCondition=	300, ENV_FRAME_NUMBER, FRAME_STATUE_PUT_DOWN, IGNORE	; Frame number of current animation is 21
+
+TriggerGroup=		301, >					; THEN
+					$2000, 355, $1407, >		; FLASH BLUE
+					$5000, 102, $37,	>		; Save LARA<102>'s position in Store Long A
+					$5000, 129, $38, >		; Move ANIMATING5<129> to position stored in Store Long A (Lara's position)
+					$5000, 129, $3C			; Save ANIMATING5<129>'s position in Savegame
+
+
+
+
+
+
+

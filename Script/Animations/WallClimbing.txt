@@ -1,0 +1,46 @@
+
+#DEFINE ANIM_WLCLB_MEC_WALLDISMOUNTLEFT		62
+#DEFINE ANIM_WLCLB_MEC_WALLDISMOUNTRIGHT	63
+
+
+;============================================================================
+; Wallclimb To Overhang Monkey (by GeckoKid)
+;============================================================================
+
+Animation= 624, >
+	KEY1_ACTION + KEY1_UP, IGNORE, >
+	IGNORE, >
+	ENV_MONKEY_CEILING, 1027, IGNORE, >
+	-164
+; TODO: This script triggers even when the monkey ceiling isn't flat (incompatible with sloped ceiling climbing)
+
+
+
+;============================================================================
+; Wallclimb Sideways Dismounts (by Krystian)
+;============================================================================
+
+; dismount ladder on the left
+Animation= 625, >
+	KEY1_LEFT, IGNORE, >
+	IGNORE, >
+	ENV_MULT_CONDITION, ANIM_WLCLB_MEC_WALLDISMOUNTLEFT, IGNORE, >
+	-164
+
+MultEnvCondition= ANIM_WLCLB_MEC_WALLDISMOUNTLEFT, >
+	ENV_DISTANCE_FLOOR + ENV_NON_TRUE, 300, IGNORE, >
+	ENV_HOLE_FLOOR_AT_RIGHT, 240, IGNORE, >
+	ENV_CLIMB_RIGHT_SPACE + ENV_NON_TRUE, 8, IGNORE
+
+; dismount ladder on the right
+Animation= 626, >
+	KEY1_RIGHT, IGNORE, >
+	IGNORE, >
+	ENV_MULT_CONDITION, ANIM_WLCLB_MEC_WALLDISMOUNTRIGHT, IGNORE, >
+	-164
+
+MultEnvCondition= ANIM_WLCLB_MEC_WALLDISMOUNTRIGHT, >
+	ENV_DISTANCE_FLOOR + ENV_NON_TRUE, 300, IGNORE, >
+	ENV_HOLE_FLOOR_AT_LEFT, 240, IGNORE, >
+	ENV_CLIMB_LEFT_SPACE + ENV_NON_TRUE, 8, IGNORE
+

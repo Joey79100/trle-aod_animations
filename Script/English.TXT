@@ -1,5 +1,9 @@
+; Automatically generated document using TombIDE 1.3.14
+; Do not add any comments into this document as they are
+; going to be removed next time the file is regenerated.
+
 [Strings]
-\nWerner's Notebook
+Werner's Notebook
 Title Load Screen
 Demo - Lara - NGLE
 Demo - Kurtis
@@ -11,12 +15,12 @@ The Zenoath
 Lost Valley
 Himalayan Precipice
 Beneath the Great Pyramid
-Anim Now: #0055 (LSD2)\nFrame Now: #0052 (LSB1)\nStateID Now: #0050 (LSA1)\nStateID Next: #0051 (LSA2)\nStateID Goal: #0054 (LSD1)\n
+Anim Now: #0055 (LSD2)\nFrame Now: #0052 (LSB1)\nStateID Now: #0050 (LSA1)\nStateID Next: #0051 (LSA2)\nStateID Goal: #0054 (LSD1)
 Schonbrunn Palace
 Line of Descent
 Passport
 Dread Palace Ghemal
-Custom_A: #0050 (LSA1)\nCustom_B: #0051 (LSA2)\nCustom_C: #0054 (LSD1)\nCustom_D: #0055 (LSD2)\n
+Custom_A: #0050 (LSA1)\nCustom_B: #0051 (LSA2)\nCustom_C: #0054 (LSD1)\nCustom_D: #0055 (LSD2)
 SkidooTest
 Tomb Raider: The Dark Renaissance
 N/A
@@ -52,33 +56,33 @@ EXAMINE
 \x14 Select Ammo
 \x14 Select Option
 \x14 Combine
-\nScorpion Xs
-\nVector R-35s
-\nV-Packer
-\nDesert Ranger
-\nDesert Ranger + Scope
-\nCrossbow/Mag Vega
-\nCrossbow/Mag Vega + Scope
-\nGrenades
-\nStandard Cartridges
-\nSpreadshot Cartridges
-\nHand Grenades
-\nCluster Grenades
-\nFlash Grenades
-\nStandard Bolts
-\nPoison Bolts
-\nExplosive Bolts
-\n.50 Caliber Ammo
-\n9mm Ammo
-\n.45 Caliber Ammo
-\nScope
-\nLarge Health Pack
-\nSmall Health Pack
-\nBinoculars
-\nFlashlight
-\nCompass
-\nLoad
-\nSave
+Scorpion Xs
+Vector R-35s
+V-Packer
+Desert Ranger
+Desert Ranger + Scope
+Crossbow/Mag Vega
+Crossbow/Mag Vega + Scope
+Grenades
+Standard Cartridges
+Spreadshot Cartridges
+Hand Grenades
+Cluster Grenades
+Flash Grenades
+Standard Bolts
+Poison Bolts
+Explosive Bolts
+.50 Caliber Ammo
+9mm Ammo
+.45 Caliber Ammo
+Scope
+Large Health Pack
+Small Health Pack
+Binoculars
+Flashlight
+Compass
+Load
+Save
 Small Waterskin (Empty)
 Small Waterskin containing 1 litre
 Small Waterskin containing 2 litres
@@ -89,7 +93,7 @@ Large WaterSkin containing 2 litres
 Large WaterSkin containing 3 litres
 Large WaterSkin containing 4 litres
 Large WaterSkin containing 5 litres
-\nCrowbar
+Crowbar
 QuestItem1:Amulet Of Horus
 QuestItem2:Breast Plate
 QuestItem3:Left Greave
@@ -102,10 +106,10 @@ Winding Key
 Armoury Key
 The Guards Keys
 Werner's Notebook
-\nChocolate Bar
-\nHealth Pills
-\nHealth Bandages
-\nPoison Antidote
+Chocolate Bar
+Health Pills
+Health Bandages
+Poison Antidote
 Northern Shaft Key
 Southern Shaft Key
 Eastern Shaft Key
@@ -203,6 +207,7 @@ Inventory
 RULES1:To win the game, get all your pieces off the\nboard by landing them on the final ankh\nsquare. On your turn spin the sticks. Your\n throw is the number of white sides showing.
 RULES2:If no white sides show, your throw is a six.\nIf you throw a six or land on an ankh square\nyou get an extra turn. If you land on an\nopponent's piece, it is returned to the start
 PETEPOO:For the serpents to live,\nall must first be stilled.\nprovoke each in turn,\nand the circle will burn\ncomplete.
+
 [PSXStrings]
 BSELECT:\x14 Select
 BCANCEL:\x17 Cancel
@@ -244,8 +249,8 @@ Vibration On
 Vibration Off
 Manual Targeting
 Automatic Targeting
-PAD:\t\t\t\t\t\t\t\t\n\n\n\n\n
-PAD2:\t\t\t\t\t\t\t\t\t\n\n\n\n\n\n\n\n\n
+PAD:\t\t\t\t\t\t\t\t
+PAD2:\t\t\t\t\t\t\t\t\t
 Programmers
 Additional Programmers
 AI Programming
@@ -300,6 +305,7 @@ TEAM37:Jeremy H. Smith
 TEAM38:Adrian Smith
 TEAM39:Clint Nembhard
 TEAM40:Benjamin Twose
+
 [PCStrings]
 PC Programmer
 Programmers
@@ -331,7 +337,7 @@ Low Resolution Textures
 Low Resolution Bump Maps
 Sound Device
 Disable
-Bit\t\t\t; As In 16 Bit
+Bit\t\t\t
 Full Screen
 Windowed
 Render Options
@@ -360,12 +366,13 @@ Select Level
 No FMV
 OEM1:\n\n\nCongratulations on reaching the end\nof this special version of the game.\nIf you want to continue Lara's adventure,\nyou need to purchase the full version.\nRemember to keep your save game files,\nto continue from where you are now.\nFor details of transferring your save game\nfiles refer to the readme file,\nthis is accessed via the task bar.
 THE LAST STRING ENTRY
+
 [ExtraNG]
 0: #0012
 1: @page_1.txt
 2: Neptun's Hall
 3: Viner Hand ITC
-4: €#0011
+4: ?#0011
 5: #0048
 6: Plugin_Cleaner
 7: Plugin_Cranes
@@ -382,3 +389,6 @@ THE LAST STRING ENTRY
 18: Plugin_SlopeFix
 19: Plugin_AkyVMix02
 20: Plugin_AkyVMix03
+21: Plugin_AutomaticFov
+22: 
+
