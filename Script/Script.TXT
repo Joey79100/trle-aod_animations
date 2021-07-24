@@ -30,10 +30,9 @@ DemoDisc=		DISABLED
 CRS=			ENABLED
 WorldFarView=	127
 
-Plugin=		1, Plugin_AkyVMix01, IGNORE
+;Plugin=		1, Plugin_AkyVMix01, IGNORE
 Plugin=		4, Plugin_ClassicInventory, IGNORE
-Plugin=		5, Plugin_AkyVMix03, IGNORE
-Plugin=		6, Plugin_AutomaticFov, IGNORE
+;Plugin=		5, Plugin_AkyVMix03, IGNORE
 
 ;-------------------------------------------------
 ; Diagnostic
@@ -72,7 +71,7 @@ DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, IGNORE		; Shows only info
 #INCLUDE "Common\General.txt"
 #INCLUDE "Common\Camera.txt"
 #INCLUDE "Common\Inventory.txt"
-#INCLUDE "Common\Quicksaving.txt"
+;#INCLUDE "Common\Quicksaving.txt" ; When Plugin_ClassicInventory is used, F5 doesn't work for quicksaving (some conflict?)
 
 #INCLUDE "Common\BarDesign.txt"
 #INCLUDE "Common\LimitedGrip.txt" ; required to show the bar properly
@@ -97,7 +96,6 @@ DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, IGNORE		; Shows only info
 #INCLUDE "Animations\Extra\WallKicking.txt"
 #INCLUDE "Animations\Extra\SkipRunBack.txt"
 #INCLUDE "Animations\Extra\HorizontalPoles.txt"
-
 
 
 ; * Contains UNFINISHED IMPLEMENTATIONS of additional abilities

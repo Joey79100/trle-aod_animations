@@ -12,6 +12,8 @@
 
 #DEFINE QCKSV_PSS_SAVED_SPRITE			4
 
+#DEFINE QCKSV_BACKGAME_SLOT				1
+
 #DEFINE KEY_F5							63
 #DEFINE KEY_F6							64
 #DEFINE KEY_SHIFT_LEFT					42
@@ -48,7 +50,7 @@ GlobalTrigger= QCKSV_GT_DO_SAVE_BACKFILE, >
 
 ;THEN Save game in backup file 1, show sprite 3 on screen
 TriggerGroup= QCKSV_TG_DO_SAVE_BACKFILE, >
-	$2000, 97, $1, >							; F97: Backup. Save in silent way the current game in <Game Backup 1> backup file
+	$2000, 97, QCKSV_BACKGAME_SLOT, >			; F97: Backup. Save in silent way the current game in <Game Backup 1> backup file
 	$2000, 357, QCKSV_PSS_SAVED_SPRITE + $300 	; F357: Sprite. Show sprite with data in <Parameters=PARAM_SHOW_SPRITE,4>Parameters for (3 seconds)Durate
 
 
@@ -63,7 +65,7 @@ GlobalTrigger= QCKSV_GT_DO_LOAD_BACKFILE, >
 
 ;THEN Load game in backup file 1
 TriggerGroup= QCKSV_TG_DO_LOAD_BACKFILE, >
-	$2000, 98, $1		; F98: Backup. Restore (load) the <Game Backup 1>backup file in (Standard way (progress bar + load camera screen))way
+	$2000, 98, QCKSV_BACKGAME_SLOT			; F98: Backup. Restore (load) the <Game Backup 1>backup file in (Standard way (progress bar + load camera screen))way
 
 
 
