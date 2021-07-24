@@ -122,6 +122,25 @@
       <Indexed>true</Indexed>
     </WadSoundInfo>
     <WadSoundInfo>
+      <Id>370</Id>
+      <Name>RAIN</Name>
+      <Volume>40</Volume>
+      <RangeInSectors>8</RangeInSectors>
+      <Chance>100</Chance>
+      <PitchFactor>0</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>false</RandomizePitch>
+      <RandomizeVolume>false</RandomizeVolume>
+      <LoopBehaviour>Looped</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>l_rain1.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>false</Global>
+      <Indexed>false</Indexed>
+    </WadSoundInfo>
+    <WadSoundInfo>
       <Id>371</Id>
       <Name>RAIN_METAL</Name>
       <Volume>49</Volume>
@@ -179,10 +198,10 @@
       <Indexed>false</Indexed>
     </WadSoundInfo>
     <WadSoundInfo>
-      <Id>370</Id>
-      <Name>RAIN</Name>
-      <Volume>40</Volume>
-      <RangeInSectors>8</RangeInSectors>
+      <Id>381</Id>
+      <Name>AOD_TEST_LEFT</Name>
+      <Volume>99</Volume>
+      <RangeInSectors>6</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
       <DisablePanning>false</DisablePanning>
@@ -191,7 +210,70 @@
       <LoopBehaviour>Looped</LoopBehaviour>
       <Samples>
         <WadSample>
-          <FileName>l_rain1.wav</FileName>
+          <FileName>aod_test_left.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>false</Global>
+      <Indexed>false</Indexed>
+    </WadSoundInfo>
+    <WadSoundInfo>
+      <Id>382</Id>
+      <Name>AOD_TEST_RIGHT</Name>
+      <Volume>99</Volume>
+      <RangeInSectors>6</RangeInSectors>
+      <Chance>100</Chance>
+      <PitchFactor>0</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>false</RandomizePitch>
+      <RandomizeVolume>false</RandomizeVolume>
+      <LoopBehaviour>Looped</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>aod_test_right.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>false</Global>
+      <Indexed>false</Indexed>
+    </WadSoundInfo>
+    <WadSoundInfo>
+      <Id>150</Id>
+      <Name>SMALL_FIRE</Name>
+      <Volume>37</Volume>
+      <RangeInSectors>5</RangeInSectors>
+      <Chance>100</Chance>
+      <PitchFactor>-50</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>false</RandomizePitch>
+      <RandomizeVolume>false</RandomizeVolume>
+      <LoopBehaviour>Looped</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>l_fire.wav</FileName>
+        </WadSample>
+      </Samples>
+      <Global>false</Global>
+      <Indexed>false</Indexed>
+    </WadSoundInfo>
+    <WadSoundInfo>
+      <Id>383</Id>
+      <Name>FIRE_CRACKS_FOR_TORCH</Name>
+      <Volume>24</Volume>
+      <RangeInSectors>9</RangeInSectors>
+      <Chance>4</Chance>
+      <PitchFactor>-14</PitchFactor>
+      <DisablePanning>false</DisablePanning>
+      <RandomizePitch>true</RandomizePitch>
+      <RandomizeVolume>true</RandomizeVolume>
+      <LoopBehaviour>OneShotRewound</LoopBehaviour>
+      <Samples>
+        <WadSample>
+          <FileName>fi_crk_1.wav</FileName>
+        </WadSample>
+        <WadSample>
+          <FileName>fi_crk_2.wav</FileName>
+        </WadSample>
+        <WadSample>
+          <FileName>fi_crk_3.wav</FileName>
         </WadSample>
       </Samples>
       <Global>false</Global>
