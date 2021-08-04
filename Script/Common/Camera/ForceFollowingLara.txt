@@ -1,0 +1,28 @@
+﻿
+#DEFINE CAM_LARA_ID						120
+
+#DEFINE CAM_ORG_UPDATE_CAMERA			321
+
+#DEFINE CAM_TG_UPDATE_CAMERA_ADD_1		321
+#DEFINE CAM_TG_UPDATE_CAMERA_SUB_1		320
+
+
+;================================================================================================
+; Workaround to make the camera always follow Lara (by Raildex)
+;================================================================================================
+
+Organizer= CAM_ORG_UPDATE_CAMERA, >
+	FO_LOOP + FO_ENABLED + FO_TICK_TIME, IGNORE, >
+	1, CAM_TG_UPDATE_CAMERA_ADD_1, >
+	1, CAM_TG_UPDATE_CAMERA_SUB_1
+
+
+Triggergroup= CAM_TG_UPDATE_CAMERA_ADD_1, >
+	$5000, CAM_LARA_ID, $0036,	 >	; A54: Variables. Set the index of <LARA_ID>moveable as Selected Item
+	$2000, 232, $01FF, >			; F232: Variables. Numeric. Set <CurrentValue>Variable with (1)value
+	$2000, 275, $001C				; F275: Variables. Memory. Add to <Facing Vertical (Short)>Selected Item Memory  the CurrentValue
+
+Triggergroup= CAM_TG_UPDATE_CAMERA_SUB_1, >
+	$5000, CAM_LARA_ID, $0036, >	; A54: Variables. Set the index of <LARA_ID>moveable as Selected Item
+	$2000, 232, $01FF, >			; F232: Variables. Numeric. Set <CurrentValue>Variable with (1)value
+	$2000, 276, $001C				; F275: Variables. Memory. Subtract to <Facing Vertical (Short)>Selected Item Memory  the CurrentValue

@@ -1,0 +1,24 @@
+﻿
+#DEFINE CAM_GT_CHECK_IF_HEALTH_ZERO		112
+#DEFINE CAM_TG_SET_DEATH_CAMERA			225
+#DEFINE CAM_PSC_DEATH_CAMERA			70
+
+
+;================================================================================================
+; Death camera (slightly on the left side)
+;================================================================================================
+
+Parameters= PARAM_SET_CAMERA, CAM_PSC_DEATH_CAMERA, >
+	IGNORE, >
+	IGNORE, -6536, 2972, >
+	15
+
+; IF health < 1
+GlobalTrigger= CAM_GT_CHECK_IF_HEALTH_ZERO, >
+	FGT_SINGLE_SHOT_RESUMED, > ; Could be FGT_SINGLE_SHOT since Lara only dies once in a normal playthrough
+	GT_LARA_HP_LESS_THAN, 1, >
+	IGNORE, CAM_TG_SET_DEATH_CAMERA, IGNORE
+
+; THEN Change camera to PARAM_SET_CAMERA <70>
+TriggerGroup= CAM_TG_SET_DEATH_CAMERA, >
+	$2000, 214, CAM_PSC_DEATH_CAMERA ; F214: Camera. Change camera mode with <Parameters=PARAM_SET_CAMERA,70>Parameters for (Forever (use other action/effect to disable it))time

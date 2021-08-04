@@ -1,0 +1,31 @@
+﻿
+#DEFINE KEY_B		48
+#DEFINE KEY_V		47
+
+
+; ---- 180 degree turn (standing) ----
+Animation=	446, >
+	KEY_B, IGNORE, >
+	FAN_KEYS_AS_SCANCODE, >
+	IGNORE, IGNORE, IGNORE, >
+	-103
+
+Animation=	446, >
+	KEY1_ROLL + KEY1_WALK, >
+	IGNORE, >
+	IGNORE, IGNORE, IGNORE, -103
+
+
+; ---- 180 degree turn (backflip) ----
+Animation=	696, >
+	KEY_V, IGNORE, >
+	FAN_KEYS_AS_SCANCODE, >
+	IGNORE, IGNORE, IGNORE, >
+	-103
+
+Animation=	696, >
+	KEY1_ROLL, KEY2_DASH, >
+	IGNORE, >
+	IGNORE, IGNORE, IGNORE, >
+	-103
+

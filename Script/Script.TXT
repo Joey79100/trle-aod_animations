@@ -69,7 +69,9 @@ DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, IGNORE		; Shows only info
 ; * These files only make the level "show and play" the intended way - you don't need them
 ; * They are mostly remnants from The Dark Renaissance project
 #INCLUDE "Common\General.txt"
-#INCLUDE "Common\Camera.txt"
+#INCLUDE "Common\Camera\General.txt"
+;#INCLUDE "Common\Camera\ForceFollowingLara.txt"
+#INCLUDE "Common\Camera\TiltedDeathCamera.txt"
 #INCLUDE "Common\Inventory.txt"
 ;#INCLUDE "Common\Quicksaving.txt" ; When Plugin_ClassicInventory is used, F5 doesn't work for quicksaving (some conflict?)
 
@@ -98,19 +100,20 @@ DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, IGNORE		; Shows only info
 #INCLUDE "Animations\Extra\HorizontalPoles.txt"
 
 
-; * Contains UNFINISHED IMPLEMENTATIONS of additional abilities
+; * Contains UNFINISHED IMPLEMENTATIONS of additional ANIMATIONS (general stuff that should work everywhere)
 ;#INCLUDE "Animations\Extra\StanceToHang.txt" ; BROKEN for some reason (sends Lara to position 0,0,0, unless alignement is removed)
 ;#INCLUDE "Animations\Extra\Stealth.txt" ; WIP - with basic implementation (replacing Walk for now)
-#INCLUDE "WIP\Shovel.txt"
-;#INCLUDE "WIP\PickableStatues.txt"
-#INCLUDE "WIP\WIP_stuff.txt"
+#INCLUDE "WIP\Animations\180_turn.txt"
+;#INCLUDE "WIP\Animations\DiagonalWallClimbing.txt"
 
-#INCLUDE "WIP\Wolf.txt"
-
+; * Contains UNFINISHED IMPLEMENTATIONS of additional GAMEPLAY stuff (stuff that works in specific situations, with specific setups)
+;#INCLUDE "WIP\Gameplay\PickableStatues.txt"
+#INCLUDE "WIP\Gameplay\Shovel.txt"
+#INCLUDE "WIP\Gameplay\KickOverKnight.txt"
+#INCLUDE "WIP\Gameplay\WolfPushingLaraDown.txt"
 
 
 ;#INCLUDE "Debug\EnemyInfo.txt"
 #INCLUDE "Debug\CustomCameras.txt"
-
 
 

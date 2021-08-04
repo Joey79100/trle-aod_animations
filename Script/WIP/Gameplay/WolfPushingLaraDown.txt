@@ -1,0 +1,148 @@
+﻿
+#DEFINE WOLF_GT_DETECT_COLLISION 286
+#DEFINE WOLF_MEC_LARA_ON_LAND 286
+#DEFINE WOLF_TG_TRIGGER_LARA_HIT_ANIM 286
+
+#DEFINE WOLF_ANIM_LARA_HIT_FRONT_P1 656
+#DEFINE WOLF_ANIM_LARA_HIT_FRONT_P2 657
+
+
+#DEFINE WOLF_ANIM_LARA_HIT_BACK_P1 700
+#DEFINE WOLF_ANIM_LARA_HIT_BACK_TO_ROLL 706
+
+#DEFINE WOLF_ANIM_LARA_HIT_FRONT_P1 656 ; 656 is temporary (reusing AOD's big hit animation)
+
+
+; GT approach
+
+;; -- Making wolves bring Lara down
+;GlobalTrigger=	WOLF_GT_DETECT_COLLISION, >
+	;IGNORE, GT_COLLIDE_SLOT, DOG, IGNORE, WOLF_TG_TRIGGER_LARA_HIT_ANIM, IGNORE
+
+;MultEnvCondition= WOLF_MEC_LARA_ON_LAND, >
+	;ENV_ONLAND, IGNORE, IGNORE
+
+;TriggerGroup=	WOLF_TG_TRIGGER_LARA_HIT_ANIM, >
+	;TGROUP_USE_FOUND_ITEM_INDEX + >
+	;$9000, 219, $0915, >										; [IF]		Creature. Current animation of <#>creature is (9)animation (0-31) (C21)
+	;TGROUP_USE_TRIGGER_ITEM_INDEX + >
+	;TGROUP_NOT + $8000, WOLF_ANIM_LARA_HIT_FRONT_P1, $001E, >	; [IF NOT]	C30: Lara. (Animation) Lara is performing <656>animation
+	;TGROUP_NOT + $8000, WOLF_ANIM_LARA_HIT_FRONT_P2, $001E, >	; [IF NOT]	C30: Lara. (Animation) Lara is performing <657>animation
+	;$8000, WOLF_MEC_LARA_ON_LAND, $10, >						; [IF]		C16: Multiple condition of <286>MultEnvCondition script command in (AND)way
+	;$2000, 170, WOLF_ANIM_LARA_HIT_FRONT_P1, >					;			F170: Lara. (Animation) Force <656>Animation for Lara, set new StateId
+	;$2000, 89, $0013											;			F89: Lara. (Health) Damage Lara, decreasing life by <20>percentage of full vitality
+
+
+
+; Anim= command approach
+
+Animation=	WOLF_ANIM_LARA_HIT_FRONT_P1, >
+	IGNORE, >
+	IGNORE, >
+	FAN_SET_FREE_HANDS_TEMP, >
+	ENV_MULT_CONDITION, >
+	WOLF_MEC_LARA_ON_LAND, >
+	IGNORE, >
+	IGNORE
+
+TriggerGroup=	WOLF_TG_TRIGGER_LARA_HIT_ANIM, >
+	$9000, 219, $0915, >										; [IF]		Creature. Current animation of <#>creature is (9)animation (0-31) (C21)
+	TGROUP_NOT + $8000, WOLF_ANIM_LARA_HIT_FRONT_P1, $001E, >	; [IF NOT]	C30: Lara. (Animation) Lara is performing <656>animation
+	TGROUP_NOT + $8000, WOLF_ANIM_LARA_HIT_FRONT_P2, $001E		; [IF NOT]	C30: Lara. (Animation) Lara is performing <657>animation
+
+
+MultEnvCondition=	WOLF_MEC_LARA_ON_LAND, >
+	>; ENV_CONDITION_TRIGGER_GROUP, WOLF_TG_TRIGGER_LARA_HIT_ANIM, IGNORE, >
+	ENV_ONLAND, IGNORE, IGNORE, >
+	ENV_ITEM_EXTRA_IN_FRONT, 128, DOG
+
+
+
+
+
+
+
+
+; Trigger for FlipEffect
+; <#> Lara. (Health) Damage Lara, decreasing life by <&>percentage of full vitality in (E) way (F89)
+; <&> 30 Percentage
+; <E> Immediatly, one-shot
+; Copy following values to your script:
+; $2000,89,$0014
+
+; Trigger for FlipEffect
+; <#> Lara. (Animation) Force <&>Animation for Lara, set new StateId (F170)
+; <&> Animation=656
+; Copy following values to your script:
+; $2000,170,$0290
+
+; ConditionNg for ParameterNg
+; <#> Animation=656
+; <&> Lara. (Animation) Lara is performing <#>animation (C30)
+; Copy following values to your script:
+; $8000,656,$001E
+
+; ConditionNg for ParameterNg
+; <#> (350) PISTOLS_AMMO_ITEM, Room = Room0, X = 8, Z = 16, Ocb = 0, ScriptId = 10
+; <&> Creature. Current animation of <#>creature is (E)animation (0-31) (C21)
+; <E> Animation=9
+; Copy following values to your script:
+; $9000,10,$0915
+
+; Set Trigger Type - CONDITION 16
+; Exporting: CONDITION(16:62) for PARAMETER(2) {Tomb_NextGeneration}
+; <#> : MultEnvCondition=     2
+; <&> : Multiple condition of <#>MultEnvCondition script command in (E)way
+; (E) :  In AND way. (All ENV conditions have to be true)
+; Values to add in script command: $8000, 2, $10
+
+
+
+
+
+
+
+
+
+
+#DEFINE	KEY_NUMPAD_2		80
+#DEFINE	KEY_NUMPAD_4		75
+#DEFINE	KEY_NUMPAD_6		77
+#DEFINE	KEY_NUMPAD_8		72
+
+
+
+; ---- Medium hit test ----
+
+; -- Medium hit back --
+Animation=	WOLF_ANIM_LARA_HIT_BACK_P1, >
+	KEY_NUMPAD_2, >
+	IGNORE, >
+	FAN_KEYS_AS_SCANCODE, >
+	IGNORE, >
+	IGNORE, >
+	IGNORE, >
+	STATE_STOP, STATE_RUN, STATE_FAST_BACK, STATE_TURN_LEFT, STATE_TURN_RIGHT, STATE_FAST_TURN, STATE_STEP_LEFT, STATE_STEP_RIGHT
+
+; -- Medium hit back to Roll (quick recover) --
+Animation=	WOLF_ANIM_LARA_HIT_BACK_TO_ROLL, >
+	KEY1_JUMP, >
+	IGNORE, >
+	IGNORE, >
+	ENV_FRAME_NUMBER, >
+	0, >
+	IGNORE, >
+	-702
+	
+
+
+; -- Medium hit front --
+Animation=	WOLF_ANIM_LARA_HIT_FRONT_P1, >
+	KEY_NUMPAD_8, >
+	IGNORE, >
+	FAN_KEYS_AS_SCANCODE, >
+	IGNORE, >
+	IGNORE, >
+	IGNORE, >
+	STATE_STOP, STATE_RUN, STATE_FAST_BACK, STATE_TURN_LEFT, STATE_TURN_RIGHT, STATE_FAST_TURN, STATE_STEP_LEFT, STATE_STEP_RIGHT
+

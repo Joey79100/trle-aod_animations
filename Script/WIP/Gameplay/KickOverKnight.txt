@@ -1,0 +1,22 @@
+﻿
+#DEFINE	KEY_K		37
+#DEFINE	KEY_L		38
+
+
+; ---- Kick Over Knight ----
+
+
+; Grab curtain
+Animation=	450, >
+	KEY_K, IGNORE, >
+	FAN_KEYS_AS_SCANCODE + FAN_DISABLE_GRAVITY, >
+	IGNORE, IGNORE, IGNORE, >
+	STATE_REACH
+
+
+; Hit statue and jump off it
+Animation=	452, >
+	KEY_L, IGNORE, >
+	FAN_KEYS_AS_SCANCODE + FAN_DISABLE_GRAVITY, >
+	ENV_FRAME_RANGE, 4100, IGNORE, > ; F04 to F16 - (F16*256+F04= 4100)
+	-451

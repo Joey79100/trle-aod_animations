@@ -42,7 +42,7 @@
     <WadSoundInfo>
       <Id>5</Id>
       <Name>LARA_SIGH</Name>
-      <Volume>30</Volume>
+      <Volume>25</Volume>
       <RangeInSectors>6</RangeInSectors>
       <Chance>40</Chance>
       <PitchFactor>0</PitchFactor>
@@ -135,7 +135,7 @@
       <Name>LARA_HURT</Name>
       <Volume>50</Volume>
       <RangeInSectors>10</RangeInSectors>
-      <Chance>50</Chance>
+      <Chance>70</Chance>
       <PitchFactor>0</PitchFactor>
       <DisablePanning>false</DisablePanning>
       <RandomizePitch>false</RandomizePitch>
@@ -382,7 +382,6 @@
       <Indexed>true</Indexed>
     </WadSoundInfo>
     <WadSoundInfo>
-      <!-- <Id>381</Id> -->
       <Id>157</Id>
       <Name>LARA_DROWN</Name>
       <Volume>57</Volume>
