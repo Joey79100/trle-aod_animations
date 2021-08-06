@@ -10,10 +10,11 @@ Animation=	446, >
 	IGNORE, IGNORE, IGNORE, >
 	-103
 
-Animation=	446, >
-	KEY1_ROLL + KEY1_WALK, >
-	IGNORE, >
-	IGNORE, IGNORE, IGNORE, -103
+;Animation=	446, >
+	;KEY1_ROLL + KEY1_WALK, >
+	;IGNORE, >
+	;IGNORE, IGNORE, IGNORE, >
+	;-103
 
 
 ; ---- 180 degree turn (backflip) ----
