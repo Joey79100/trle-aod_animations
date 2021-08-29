@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Name>trle-aod_animations</Name>
+  <Name>TRLE - AOD Animations</Name>
   <GameVersion>TRNG</GameVersion>
   <DefaultLanguage>English</DefaultLanguage>
-  <LaunchFilePath>$(ProjectDirectory)\tomb4.exe</LaunchFilePath>
+  <LaunchFilePath>$(ProjectDirectory)\launch.exe</LaunchFilePath>
   <ScriptPath>$(ProjectDirectory)\Script</ScriptPath>
-  <LevelsPath>$(ProjectDirectory)\Maps</LevelsPath>
+  <LevelsPath>$(ProjectDirectory)\Levels</LevelsPath>
   <Levels>
     <ProjectLevel>
       <Name>Demo</Name>
-      <FolderPath>$(ProjectDirectory)\Maps\Demo</FolderPath>
+      <FolderPath>$(ProjectDirectory)\Levels\Demo</FolderPath>
       <SpecificFile>$(LatestFile)</SpecificFile>
     </ProjectLevel>
     <ProjectLevel>
       <Name>Title</Name>
-      <FolderPath>$(ProjectDirectory)\Maps\Title</FolderPath>
+      <FolderPath>$(ProjectDirectory)\Levels\Title</FolderPath>
       <SpecificFile>$(LatestFile)</SpecificFile>
     </ProjectLevel>
   </Levels>

@@ -1,6 +1,20 @@
 
-#DEFINE ANIM_WLCLB_MEC_WALLDISMOUNTLEFT		62
-#DEFINE ANIM_WLCLB_MEC_WALLDISMOUNTRIGHT	63
+#DEFINE ANIM_WLCLB_MEC_WALLDISMOUNTLEFT			62
+#DEFINE ANIM_WLCLB_MEC_WALLDISMOUNTRIGHT		63
+#DEFINE ANIM_WLCLB_MEC_MONKEYTOOVERHANGLADDER	64
+
+
+;============================================================================
+; Monkey To Overhang Ladder (by Krystian)
+;============================================================================
+
+Animation= 622, >
+	KEY1_UP, IGNORE, >
+	FAN_ALIGN_TO_ENV_POS, >
+	ENV_HOLE_IN_FRONT_CEILING_CLIMB + ENV_POS_HORTOGONAL + ENV_POS_STRIP_1, IGNORE, IGNORE, >
+	-234, -150
+;MultEnvCondition= ANIM_WLCLB_MEC_MONKEYTOOVERHANGLADDER, >
+	;ENV_HOLE_IN_FRONT_CEILING_CLIMB + ENV_POS_HORTOGONAL + ENV_POS_STRIP_1, IGNORE, IGNORE
 
 
 ;============================================================================
@@ -13,7 +27,6 @@ Animation= 624, >
 	ENV_MONKEY_CEILING, 1027, IGNORE, >
 	-164
 ; TODO: This script triggers even when the monkey ceiling isn't flat (incompatible with sloped ceiling climbing)
-
 
 
 ;============================================================================
@@ -29,7 +42,7 @@ Animation= 625, >
 
 MultEnvCondition= ANIM_WLCLB_MEC_WALLDISMOUNTLEFT, >
 	ENV_DISTANCE_FLOOR + ENV_NON_TRUE, 300, IGNORE, >
-	ENV_HOLE_FLOOR_AT_RIGHT, 240, IGNORE, >
+	ENV_HOLE_FLOOR_AT_RIGHT, 128, IGNORE, >
 	ENV_CLIMB_RIGHT_SPACE + ENV_NON_TRUE, 8, IGNORE
 
 ; dismount ladder on the right
@@ -41,6 +54,6 @@ Animation= 626, >
 
 MultEnvCondition= ANIM_WLCLB_MEC_WALLDISMOUNTRIGHT, >
 	ENV_DISTANCE_FLOOR + ENV_NON_TRUE, 300, IGNORE, >
-	ENV_HOLE_FLOOR_AT_LEFT, 240, IGNORE, >
+	ENV_HOLE_FLOOR_AT_LEFT, 128, IGNORE, >
 	ENV_CLIMB_LEFT_SPACE + ENV_NON_TRUE, 8, IGNORE
 

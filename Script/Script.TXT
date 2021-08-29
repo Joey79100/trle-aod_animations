@@ -1,4 +1,4 @@
-
+﻿
 ; 1-1000 = range of TRIGGERGROUPS and GLOBALTRIGGERS reserved for GLOBAL scripts
 ; 1-99 = range of ORGANIZERS, PARAMETERS and other STUFF reserved for GLOBAL scripts
 
@@ -30,9 +30,7 @@ DemoDisc=		DISABLED
 CRS=			ENABLED
 WorldFarView=	127
 
-;Plugin=		1, Plugin_AkyVMix01, IGNORE
 Plugin=		4, Plugin_ClassicInventory, IGNORE
-;Plugin=		5, Plugin_AkyVMix03, IGNORE
 
 ;-------------------------------------------------
 ; Diagnostic
@@ -73,7 +71,7 @@ DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, IGNORE		; Shows only info
 ;#INCLUDE "Common\Camera\ForceFollowingLara.txt"
 #INCLUDE "Common\Camera\TiltedDeathCamera.txt"
 #INCLUDE "Common\Inventory.txt"
-;#INCLUDE "Common\Quicksaving.txt" ; When Plugin_ClassicInventory is used, F5 doesn't work for quicksaving (some conflict?)
+#INCLUDE "Common\Quicksaving.txt" ; When Plugin_ClassicInventory is used, F5 doesn't work for quicksaving (some conflict?)
 
 #INCLUDE "Common\BarDesign.txt"
 #INCLUDE "Common\LimitedGrip.txt" ; required to show the bar properly
