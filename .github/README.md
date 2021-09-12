@@ -335,8 +335,8 @@ UNDERWATER_SWITCH1    | Underwater switch                  | Yes                
 LEVER_SWITCH          | Floor lever switch                 | -                    | -
 JUMP_SWITCH           | Elevated wall switch               | -                    | -
 PULLEY                | Pulley                             | Yes                  | Looping is disabled, it was causing issues (1st pull was ok, then it broke)
-KICK_DOOR             | Kickable door                      | Yes                  | Only Animation 1 is modified
-PUSHPULL_DOOR         | Normal door                        | -                    | -
+KICK_DOOR             | Kickable door                      | Yes                  | -
+PUSHPULL_DOOR         | Normal door                        | Yes                  | -
 DOUBLE_DOORS          | Double door                        | -                    | Uses the Big Double Doors animation from AOD (eg. Archeological Digsite)
 SARCOPHAGUS           | Sarcophagus                        | -                    | -
 SEQUENCE_SWITCH       | Big button switch                  | -                    | -

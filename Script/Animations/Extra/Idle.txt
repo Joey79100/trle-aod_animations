@@ -1,0 +1,13 @@
+﻿
+#DEFINE ANIM_IDLE_MEC 540
+
+; Animations from 540 to 549 will be played randomly
+Animation=	540, >
+	IGNORE, IGNORE, >
+	FAN_RANDOM, >
+	ENV_MULT_CONDITION, ANIM_IDLE_MEC, 10, >
+	-103
+
+MultEnvCondition= ANIM_IDLE_MEC, >
+	ENV_ANIM_COMPLETE, IGNORE, IGNORE, >
+	ENV_FREE_HANDS, IGNORE, IGNORE

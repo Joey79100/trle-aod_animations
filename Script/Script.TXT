@@ -68,7 +68,6 @@ DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, IGNORE		; Shows only info
 ; * They are mostly remnants from The Dark Renaissance project
 #INCLUDE "Common\General.txt"
 #INCLUDE "Common\Camera\General.txt"
-;#INCLUDE "Common\Camera\ForceFollowingLara.txt"
 #INCLUDE "Common\Camera\TiltedDeathCamera.txt"
 #INCLUDE "Common\Inventory.txt"
 #INCLUDE "Common\Quicksaving.txt" ; When Plugin_ClassicInventory is used, F5 doesn't work for quicksaving (some conflict?)
@@ -92,10 +91,11 @@ DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, IGNORE		; Shows only info
 ; * EXTRA OPTIONAL ABILITIES, generally based on AOD itself
 ; * You decide if you want them in your game or not
 #INCLUDE "Animations\Extra\Ladders.txt"
+#INCLUDE "Animations\Extra\HorizontalPoles.txt"
 
 #INCLUDE "Animations\Extra\WallKicking.txt"
-#INCLUDE "Animations\Extra\SkipRunBack.txt"
-#INCLUDE "Animations\Extra\HorizontalPoles.txt"
+#INCLUDE "Animations\Extra\SkipRunBack.txt" ; Will make Lara run backwards when holding weapons or holding Dash
+;#INCLUDE "Animations\Extra\Idle.txt" ; Random animations triggering while Lara is doing nothing
 
 
 ; * Contains UNFINISHED IMPLEMENTATIONS of additional ANIMATIONS (general stuff that should work everywhere)

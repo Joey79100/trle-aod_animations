@@ -3,9 +3,18 @@
 ; General Camera Settings
 ;================================================================================================
 
+; TR1 style (lower)
+;Customize= CUST_CAMERA, >
+	;IGNORE, >
+	;1352, -1365, IGNORE, >
+	;1752, -5365, >
+	;IGNORE, IGNORE, >
+	;8
+
+; AOD style (closer)
 Customize= CUST_CAMERA, >
 	IGNORE, >
-	1352, -1365, IGNORE, >
+	1224, -2076, IGNORE, >
 	1752, -5365, >
 	IGNORE, IGNORE, >
 	8
