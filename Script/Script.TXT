@@ -111,7 +111,7 @@ DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, IGNORE		; Shows only info
 #INCLUDE "WIP\Gameplay\WolfPushingLaraDown.txt"
 
 
-;#INCLUDE "Debug\EnemyInfo.txt"
+;#INCLUDE "Debug\EnemyInfo.txt" ; Warning: conflicts with "Common\LimitedGrip.txt"
 #INCLUDE "Debug\CustomCameras.txt"
 
 
