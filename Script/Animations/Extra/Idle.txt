@@ -3,7 +3,7 @@
 
 ; Animations from 540 to 549 will be played randomly
 Animation=	540, >
-	IGNORE, IGNORE, >
+	KEY1_LOOK + KEY1_RELEASED, IGNORE, >
 	FAN_RANDOM, >
 	ENV_MULT_CONDITION, ANIM_IDLE_MEC, 10, >
 	-103

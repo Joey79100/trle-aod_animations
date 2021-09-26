@@ -95,7 +95,7 @@ DiagnosticType=	DGX_LARA + DGX_ANIMATION + DGX_CHEATS, IGNORE		; Shows only info
 
 #INCLUDE "Animations\Extra\WallKicking.txt"
 #INCLUDE "Animations\Extra\SkipRunBack.txt" ; Will make Lara run backwards when holding weapons or holding Dash
-;#INCLUDE "Animations\Extra\Idle.txt" ; Random animations triggering while Lara is doing nothing
+#INCLUDE "Animations\Extra\Idle.txt" ; Random animations triggering while Lara is doing nothing
 
 
 ; * Contains UNFINISHED IMPLEMENTATIONS of additional ANIMATIONS (general stuff that should work everywhere)

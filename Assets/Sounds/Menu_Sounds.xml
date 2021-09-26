@@ -21,13 +21,13 @@
       <Indexed>false</Indexed>
     </WadSoundInfo>
     <WadSoundInfo>
-      <Id>108</Id>
+      <Id>111</Id>
       <Name>MENU_ROTATE</Name>
       <Volume>20</Volume>
       <RangeInSectors>10</RangeInSectors>
       <Chance>100</Chance>
-      <PitchFactor>0</PitchFactor>
-      <DisablePanning>false</DisablePanning>
+      <PitchFactor>20</PitchFactor>
+      <DisablePanning>true</DisablePanning>
       <RandomizePitch>false</RandomizePitch>
       <RandomizeVolume>false</RandomizeVolume>
       <LoopBehaviour>None</LoopBehaviour>
@@ -45,8 +45,8 @@
       <Volume>30</Volume>
       <RangeInSectors>10</RangeInSectors>
       <Chance>100</Chance>
-      <PitchFactor>20</PitchFactor>
-      <DisablePanning>false</DisablePanning>
+      <PitchFactor>30</PitchFactor>
+      <DisablePanning>true</DisablePanning>
       <RandomizePitch>false</RandomizePitch>
       <RandomizeVolume>false</RandomizeVolume>
       <LoopBehaviour>None</LoopBehaviour>
@@ -59,13 +59,13 @@
       <Indexed>true</Indexed>
     </WadSoundInfo>
     <WadSoundInfo>
-      <Id>111</Id>
-      <Name>MENU_CHOOSE</Name>
-      <Volume>35</Volume>
+      <Id>108</Id>
+      <Name>MENU_BACK</Name>
+      <Volume>25</Volume>
       <RangeInSectors>10</RangeInSectors>
       <Chance>100</Chance>
-      <PitchFactor>0</PitchFactor>
-      <DisablePanning>false</DisablePanning>
+      <PitchFactor>5</PitchFactor>
+      <DisablePanning>true</DisablePanning>
       <RandomizePitch>false</RandomizePitch>
       <RandomizeVolume>false</RandomizeVolume>
       <LoopBehaviour>None</LoopBehaviour>
@@ -84,7 +84,7 @@
       <RangeInSectors>10</RangeInSectors>
       <Chance>100</Chance>
       <PitchFactor>0</PitchFactor>
-      <DisablePanning>false</DisablePanning>
+      <DisablePanning>true</DisablePanning>
       <RandomizePitch>false</RandomizePitch>
       <RandomizeVolume>false</RandomizeVolume>
       <LoopBehaviour>None</LoopBehaviour>

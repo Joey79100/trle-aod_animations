@@ -404,6 +404,7 @@ Here are the required patches:
 - Indirect contributions
   - [Silent Viper](https://www.trsearch.org/member/5): [SAS](https://www.trsearch.org/item/1183)
   - [Timmie_Croft](https://www.trsearch.org/member/167): [Knife](https://www.trsearch.org/item/767)
+  - [Mr XY](https://www.trsearch.org/member/1878): [Bookcase](https://www.trsearch.org/item/3148)
   - Symsi: Swingpole and tightrope
   - [Lwmte](https://www.tombraiderforums.com/member.php?u=40773): FLEP
   - [ChocolateFan](https://www.tombraiderforums.com/member.php?u=57965): Additional FLEP patches

@@ -107,6 +107,9 @@
         <WadSample>
           <FileName>jump2.wav</FileName>
         </WadSample>
+        <WadSample>
+          <FileName>climb3.wav</FileName>
+        </WadSample>
       </Samples>
       <Global>true</Global>
       <Indexed>true</Indexed>
