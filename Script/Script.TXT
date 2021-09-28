@@ -36,7 +36,7 @@ Plugin=		4, Plugin_ClassicInventory, IGNORE
 ; Diagnostic
 ;-------------------------------------------------
 
-Diagnostic=		ENABLED
+;Diagnostic=		ENABLED
 ;DiagnosticType=		DGX_COMMON_VARIABLES, IGNORE ; show variable values
 
 ; -- Shows only cheat codes --

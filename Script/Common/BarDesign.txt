@@ -9,23 +9,22 @@
 #DEFINE BD_PSS_SHOW_ACTION_NONE_DOT			6
 #DEFINE BD_PSS_SHOW_ACTION_POSSIBLE_DOT		7
 
+#DEFINE BD_TG_SHOW_BAR_PART_1				1
 #DEFINE BD_TG_DO_SHOW_ACTION_NONE_DOT		43
 
+#DEFINE BD_ORG_SHOW_BAR_PART_1				3
 #DEFINE BD_ORG_SHOW_ACTION_NONE_DOT			5
 
 ;================================================================================================
 ;Bar Graphic
 ;================================================================================================
 
-ColorRGB= BD_CRGB_DARKBLUE, >
-	16, 64, 164
-
-TriggerGroup= 1, >
+TriggerGroup= BD_TG_SHOW_BAR_PART_1, >
 	$2000, 357, BD_PSS_SHOW_BAR_PART_1 ; F357: Sprite. Show sprite with data in <Parameters=PARAM_SHOW_SPRITE,3>Parameters for (Forever (use other action/effect to disable it))Durate
 
-Organizer= 3, >
+Organizer= BD_ORG_SHOW_BAR_PART_1, >
 	FO_ENABLED + FO_TICK_TIME, IGNORE, >
-	0, 1
+	0, BD_TG_SHOW_BAR_PART_1
 
 Parameters=	PARAM_SHOW_SPRITE, BD_PSS_SHOW_BAR_PART_1, >
 	FSS_SHOW_SPRITE_GRID, >
@@ -49,7 +48,6 @@ Parameters=	PARAM_SHOW_SPRITE, BD_PSS_SHOW_ACTION_NONE_DOT, >
 	IGNORE, >
 	1, 1, >
 	IGNORE
-
 
 
 ;================================================================================================

@@ -1,11 +1,11 @@
-; Automatically generated document using TombIDE 1.3.14
+; Automatically generated document using TombIDE 1.4.2
 ; Do not add any comments into this document as they are
 ; going to be removed next time the file is regenerated.
 
 [Strings]
 Werner's Notebook
 Title Load Screen
-Demo - Lara - NGLE
+TRLE - AOD Animations
 Demo - Kurtis
 Mountain of the Martyrs
 Castle Kriegler
