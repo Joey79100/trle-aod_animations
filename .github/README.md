@@ -43,7 +43,7 @@ The reason is: downloading files directly from the website converts text files (
   1. Launch Github Desktop.
   2. Open the `File` menu and choose `Clone repository...`.
   3. Switch to the `URL` tab, and:
-     - In the 1st field, paste the URL of the repository: `[https://github.com/Joey79100/trle-aod_animations](https://github.com/Joey79100/trle-aod_animations)`
+     - In the 1st field, paste the URL of the repository: [https://github.com/Joey79100/trle-aod_animations](https://github.com/Joey79100/trle-aod_animations)
      - In the 2nd field, choose the folder in which you want to download the package.
   4. Hit the `Clone` button to start the download.
 
