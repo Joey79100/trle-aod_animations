@@ -1,23 +1,12 @@
 # TRLE - AOD Animations
 
 
-> ## **2022-11-05 - PROGRESS UPDATE**:
+> ## **2024-05-24 - PROJECT MIGRATED**:
 >
-> ### Target engine change
-> - From now on, the **TRNG version** of this project is terminated.  
->   I might fix a few things here and there if bugs are reported, but support will end here.
->
-> - The project will now be aimed at **TombEngine** exclusively (as planned initially).  
->   It will naturally rely exclusively on .WAD2 format. All animations that were not mine (legacy of The Dark Renaissance / The Lost Dominion) will be purged.
->
-> I don't know yet if I'll make a new repository for the TombEngine version, or push it into this one and move the TRNG stuff into another repository.  
-> I don't know yet when I'll finish this new version, but progress has started already.
+> From now on, the **TRNG version** of this project is terminated. No further update is planned on this version.
 > 
-> ### Animations progress
-> As you may have noticed, no new animations were pushed for a bit more than 1 year. This is because my 3DS Max free license has expired, and I'm not buying one.  
-> I plan to switch to Blender, but I still have to learn how to properly use it, and the Blender <-> WadTool workflow. And for this I need some time.
->
-> (note that all the rest of this readme file was written before this note, I haven't updated it yet)
+> The project now continues with **TombEngine**:  
+> → **[ten-aod_animations](https://github.com/Joey79100/ten-aod_animations)**
 
 
 A **Tomb Raider: The Angel Of Darkness** based animation set for **Tomb Raider: Level Editor**.
